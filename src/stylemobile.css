@@ -4425,15 +4425,20 @@
 }
 
 /* Header mobile transparent : le contenu du Hero reste visible derrière. */
+.nb-topbar,
+.app--light .nb-topbar,
+.nb-topbar--scrolled,
+.app--light .nb-topbar--scrolled,
 .nav,
 .app--light .nav,
 .nav--scrolled,
 .app--light .nav--scrolled {
   background: transparent !important;
   border-bottom-color: transparent !important;
+  border-bottom: none !important;
   box-shadow: none !important;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 /* Photo du Hero mobile en couleur, placée au-dessus du nom par le JSX. */
 .hv4-photo-mob-inner .hv4-photo {

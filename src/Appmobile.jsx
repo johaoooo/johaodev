@@ -1095,7 +1095,7 @@ const Navbar = ({ dark, onToggle }) => {
       {open && <div className="mob-overlay" onClick={() => setOpen(false)} />}
 
       {/* ── HEADER TOP BAR — logo gauche | date+heure centre | dispo droite ── */}
-      <header className={`nb-topbar ${scrolled ? 'nb-topbar--scrolled' : ''} ${dark ? 'nb-topbar--dark' : ''}`}>
+      <header className={`nb-topbar ${scrolled ? 'nb-topbar--scrolled' : ''} ${dark ? 'nb-topbar--dark' : ''}`} style={{ background: 'transparent', backdropFilter: 'none', WebkitBackdropFilter: 'none', borderBottom: 'none' }}>
         {/* Gauche : logo + nom */}
         <div className="nb-topbar-left" onClick={() => go('home')} style={{ cursor: 'pointer' }}>
           <AkafolioLogo size={52} dark={dark} animate={false} />

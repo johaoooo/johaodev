@@ -1671,7 +1671,7 @@ function RecentProjects() {
   useEffect(() => {
     const wrap = trackWrapRef.current
     if (!wrap) return
-    const SPEED = 0.5 // px / frame (~30px/s à 60fps)
+    const SPEED = 1.2 // px / frame (~72px/s à 60fps)
     let raf
     const step = () => {
       if (!pausedRef.current) {
@@ -1752,7 +1752,7 @@ function RecentProjects() {
       {/* ── Sous-section 2 : Mes réalisations, piste infinie (slide_pour_app.html) ── */}
       <div className="rp-slider-header">
         <h3 className="rp-slider-title">Mes réalisations</h3>
-        <span>{PROJECTS.length} projets · défilement automatique, survolez pour mettre en pause</span>
+        <span>{PROJECTS.length} projets · défilement automatique</span>
         <div className="rp-slider-controls">
           <button type="button" className="pe-nav-btn" onClick={() => nudge(-1)} aria-label="Précédent">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
@@ -1763,7 +1763,7 @@ function RecentProjects() {
         </div>
       </div>
 
-      <div className="rp-track-wrap" ref={trackWrapRef} onMouseEnter={pause} onMouseLeave={resume}>
+      <div className="rp-track-wrap" ref={trackWrapRef}>
         <div className="rp-track">
           {loopedProjects.map((p, i) => (
             <div key={`${p.id}-${i}`} className="pcard" onClick={() => select(p)}>
@@ -1773,9 +1773,6 @@ function RecentProjects() {
               <div className="pcard-upper">
                 <ProjectVideoMedia project={p} />
               </div>
-              <div className="pcard-hover-reveal">
-              <img src={p.img} alt={`${p.title} — aperçu WebP au survol`} loading="lazy" />
-            </div>
               <ProjectMarquee tech={p.tech} />
               <div className="pcard-bottom">
                 <span className="pcard-title">{p.title}</span>
