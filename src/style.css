@@ -643,7 +643,7 @@
      font-family: var(--fs-retro);
      font-weight: 400;
      text-transform: uppercase;
-     font-size: clamp(2.4rem, 12vw, 8rem);
+     font-size: clamp(1.8rem, 7.5vw, 4.8rem);
      letter-spacing: 0.06em;
      white-space: nowrap;
    }
@@ -659,7 +659,7 @@
    }
     .hv4-portrait-photo {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: min(40vw, 76vh, 620px); aspect-ratio: 1 / 1; z-index: 2;
+      width: min(32vw, 60vh, 460px); aspect-ratio: 1 / 1; z-index: 2;
       border: 1px solid rgba(94, 130, 75, 0.35);
       box-shadow: 0 30px 80px -15px rgba(0,0,0,0.95), 0 0 50px rgba(0,0,0,0.9), 0 0 25px rgba(94, 130, 75,0.12);
       border-radius: 18px; overflow: hidden;
@@ -3819,7 +3819,7 @@
      .nb-topbar { padding: 0 4vw; }
    
      /* ─ Hero ─ */
-     .hv4-portrait-bg, .hv4-portrait-fg { font-size: clamp(2.4rem,10.5vw,4rem); }
+     .hv4-portrait-bg, .hv4-portrait-fg { font-size: clamp(1.6rem, 7vw, 3rem); }
      .hv4-typed { font-size: clamp(18px,5.2vw,24px); }
      .hv4-desc  { font-size: .82rem; }
      .hv4-ctas  { flex-direction: row; align-items: center; width: 100%; gap: .6rem; flex-wrap: nowrap; }
@@ -3876,7 +3876,7 @@
    
      /* ─ Hero ─ */
      #hero { padding-top: 5rem; padding-bottom: 2rem; }
-     .hv4-portrait-bg, .hv4-portrait-fg { font-size: clamp(2rem,11vw,3.4rem); }
+     .hv4-portrait-bg, .hv4-portrait-fg { font-size: clamp(1.4rem, 7vw, 2.5rem); }
      .hv4-stats { border-radius: 14px; }
      .hv4-stat  { padding: 8px 10px; }
      .hv4-stat-n { font-size: 1.1rem; }
@@ -3939,7 +3939,7 @@
    
    /* ── 375px ─────────────────────────────────── */
    @media(max-width:375px){
-     .hv4-portrait-bg, .hv4-portrait-fg { font-size: clamp(1.8rem,11.5vw,3rem); }
+     .hv4-portrait-bg, .hv4-portrait-fg { font-size: clamp(1.2rem, 7.5vw, 2.2rem); }
      .hv4-ctas .btn-fill, .hv4-ctas .btn-ghost { font-size: .65rem; padding: 11px 8px; }
      .price-card { flex: 0 0 90vw; }
      .price-card:first-child { margin-left: 5vw; }

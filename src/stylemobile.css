@@ -614,7 +614,7 @@
        margin: 0 auto clamp(12px, 2vh, 20px) auto;
      }
      .hv4-name-line {
-       font-size: clamp(28px, 8.2vw, 44px);
+       font-size: clamp(20px, 5.8vw, 30px);
        letter-spacing: -0.035em;
        text-align: center;
        display: block;
@@ -661,7 +661,7 @@
        padding-bottom: 40px;
      }
      .hv4-name-line {
-       font-size: clamp(24px, 8vw, 38px);
+       font-size: clamp(18px, 5.2vw, 26px);
      }
      .hv4-stats {
        width: 100%;
@@ -675,7 +675,7 @@
    }
    @media (max-width: 480px) {
      .hv4-name-line {
-       font-size: clamp(22px, 7.6vw, 32px);
+       font-size: clamp(16px, 4.8vw, 22px);
      }
      .hv4-desc {
        font-size: 13px;
@@ -748,7 +748,7 @@
    .hv4-name-line {
      display:block;
      font-family:var(--fd); font-weight:900; letter-spacing:-.045em; color:var(--ink);
-     font-size:clamp(46px,10.5vw,122px);
+     font-size:clamp(26px, 6.5vw, 46px);
      animation:hv4NameIn .82s cubic-bezier(.22,1,.36,1) both; animation-delay:var(--d,.1s);
    }
    @keyframes hv4NameIn { from{opacity:0;transform:translateY(32px) skewX(-1.5deg)} to{opacity:1;transform:translateY(0) skewX(0)} }
@@ -842,7 +842,7 @@
    .hv4-photo-mob { display:none; margin-bottom:clamp(16px,3vh,26px); margin-top:clamp(10px,2vh,18px); width:100%; justify-content:center; align-items:center; }
    .hv4-photo-mob-inner {
      position:relative;
-     width: min(320px, 88vw);
+     width: min(240px, 70vw);
      margin: 0 auto;
      border: 1px solid rgba(94, 130, 75, 0.35);
      box-shadow: 0 20px 60px rgba(0,0,0,0.95), 0 0 25px rgba(94, 130, 75,0.12);
@@ -853,7 +853,7 @@
    }
    .hv4-photo-mob-inner .hv4-photo {
      aspect-ratio: unset;
-     height: min(75vw, 420px);
+     height: min(58vw, 290px);
      width: 100%;
      object-fit: cover;
      object-position: center 12%;
