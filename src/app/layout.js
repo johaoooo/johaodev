@@ -24,17 +24,17 @@ export const metadata = {
   title: seo.title,
   description: seo.description,
   keywords: seo.keywords,
-  authors: [{ name: "M'Bollo aka" }],
+  authors: [{ name: "Joseph Dehazounde" }],
   robots: 'index, follow, max-image-preview:large, max-snippet:-1',
   alternates: { canonical: seo.url },
   icons: {
-    icon: '/assets/images/favicon.png',
-    apple: '/assets/images/favicon.png',
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
   other: {
-    'geo.region': 'CI',
-    'geo.placename': 'Abidjan',
+    'geo.region': 'BJ',
+    'geo.placename': 'Porto-Novo',
   },
   openGraph: {
     type: 'website',
@@ -42,8 +42,8 @@ export const metadata = {
     title: seo.title,
     description: seo.description,
     images: [{ url: seo.image, width: 1200, height: 1200 }],
-    locale: 'fr_CI',
-    siteName: "M'Bollo Aka — AKATech Studio.",
+    locale: 'fr_BJ',
+    siteName: "Joseph Dehazounde — Portfolio Cybersécurité & Dev Fullstack",
   },
   twitter: {
     card: 'summary_large_image',
@@ -56,7 +56,7 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#FF5500',
+  themeColor: '#9E0C1B',
 }
 
 export default function RootLayout({ children }) {

@@ -404,7 +404,7 @@ export default function DissolveTransition({
 
 const WIPE_COVER_DUR = 0.45
 const WIPE_REVEAL_DUR = 0.45
-const WIPE_COLOR = '#FF5500' /* même orange que les lignes Gooey remplacées */
+const WIPE_COLOR = '#9E0C1B' /* même orange que les lignes Gooey remplacées */
 
 function solidTexture(hex) {
   const c = document.createElement('canvas')

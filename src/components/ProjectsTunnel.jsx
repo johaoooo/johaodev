@@ -6,7 +6,7 @@ import { gsap } from 'gsap'
 import { PROJECTS } from '../data/portfolioData.js'
 import ProjectDetailModal from './ProjectDetailModal.jsx'
 
-const TUNNEL_ACCENT_A = 0xff5500 // --accent
+const TUNNEL_ACCENT_A = 0x9e0c1b // --accent
 const TUNNEL_ACCENT_B = 0x1affc2 // glow complémentaire cinématique
 function ProjectsTunnel() {
   const sectionRef = useRef(null)

@@ -155,14 +155,14 @@ export async function POST(request) {
          Si ton domaine n'est pas vérifié, garde onboarding@resend.dev
          pour les tests, puis passe à noreply@tondomaine.com en prod.   */
       from: process.env.FROM_EMAIL ?? 'onboarding@resend.dev',
-      to:   process.env.ADMIN_EMAIL ?? 'wthomasss06@gmail.com',
+      to:   process.env.ADMIN_EMAIL ?? 'josephdehazounde@gmail.com',
       reply_to: email,
       subject: `🚀 NOUVEAU MESSAGE — ${safeName}`,
       html: `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px;
                     background:#0d0d0d;border-radius:12px;
-                    border:1px solid rgba(255,85,0,0.2);">
-          <h2 style="color:#FF5500;margin-bottom:24px;">
+                    border:1px solid rgba(158, 12, 27,0.2);">
+          <h2 style="color:#9E0C1B;margin-bottom:24px;">
             📬 Nouveau message via votre portfolio
           </h2>
           <table style="width:100%;border-collapse:collapse;">
@@ -173,7 +173,7 @@ export async function POST(request) {
             <tr>
               <td style="padding:8px 0;font-weight:700;color:#aaa;">Email</td>
               <td style="padding:8px 0;color:#f2ede8;">
-                <a href="mailto:${safeEmail}" style="color:#FF5500;">${safeEmail}</a>
+                <a href="mailto:${safeEmail}" style="color:#9E0C1B;">${safeEmail}</a>
               </td>
             </tr>
             <tr>
@@ -181,15 +181,15 @@ export async function POST(request) {
               <td style="padding:8px 0;color:#f2ede8;">${projectLabel}</td>
             </tr>
           </table>
-          <hr style="border:none;border-top:1px solid rgba(255,85,0,0.2);margin:20px 0;" />
+          <hr style="border:none;border-top:1px solid rgba(158, 12, 27,0.2);margin:20px 0;" />
           <p style="font-weight:700;color:#aaa;margin-bottom:8px;">Message :</p>
           <p style="color:#f2ede8;line-height:1.7;
-                    background:rgba(255,85,0,0.06);padding:16px;
-                    border-radius:8px;border-left:4px solid #FF5500;">
+                    background:rgba(158, 12, 27,0.06);padding:16px;
+                    border-radius:8px;border-left:4px solid #9E0C1B;">
             ${safeMessage}
           </p>
           <p style="margin-top:24px;font-size:12px;color:#555;">
-            Envoyé depuis elvis-portfolio · ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Abidjan' })}
+            Envoyé depuis johao-portfolio · ${new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Porto-Novo' })}
           </p>
         </div>
       `,

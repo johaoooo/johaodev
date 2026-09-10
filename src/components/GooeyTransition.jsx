@@ -32,7 +32,7 @@ const COVER_DUR    = 0.4
 const COVER_STAG   = 0.5
 const REVEAL_DUR   = 0.4
 const REVEAL_STAG  = 0.3
-const LINE_COLOR   = '#FF5500'   /* couleur des lignes — orange akaFOLIO (référence, la couleur réelle vient de GooeyTransition.css / .mobile.css) */
+const LINE_COLOR   = '#9E0C1B'   /* couleur des lignes — orange akaFOLIO (référence, la couleur réelle vient de GooeyTransition.css / .mobile.css) */
 const EASE_COVER   = 'power3.inOut'
 const EASE_REVEAL  = 'power3.inOut'
 

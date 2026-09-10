@@ -12,7 +12,7 @@ export default function Footer() {
       }}
     >
       <div className="container">
-        <FluidWatermark text="AKATECH" />
+        <FluidWatermark text="JOHAODEV" />
         <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
           <a className="akatech-cyclic-link" href={CONTACT.github} target="_blank" rel="noreferrer"><CyclicText text="GitHub" cycle={getAkatechCycle('GitHub')} triggerParent /></a>
           <a className="akatech-cyclic-link" href={CONTACT.linkedin} target="_blank" rel="noreferrer"><CyclicText text="LinkedIn" cycle={['LinkedIn', 'Voir le profil', 'Me retrouver', 'LinkedIn']} triggerParent /></a>

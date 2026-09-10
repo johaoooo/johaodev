@@ -1,5 +1,5 @@
 .card-swap-container{position:relative;display:flex;align-items:center;justify-content:center;z-index:10}
-.card-swap-container .card{position:absolute;left:50%;top:78%;transform:translate(-50%,-50%);border-radius:20px;overflow:hidden;background:var(--bg);box-shadow:0 24px 60px rgba(10,10,10,0.10);display:flex;flex-direction:column;border:1px solid rgba(255,85,0,.15)}
+.card-swap-container .card{position:absolute;left:50%;top:78%;transform:translate(-50%,-50%);border-radius:20px;overflow:hidden;background:var(--bg);box-shadow:0 24px 60px rgba(10,10,10,0.10);display:flex;flex-direction:column;border:1px solid rgba(158, 12, 27,.15)}
 .card .card-inner{padding:32px;display:flex;flex-direction:column;gap:14px;max-width:calc(100% - 48px)}
 .card .card-title{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;color:var(--text)}
 .card .card-desc{font-size:16px;color:var(--muted)}

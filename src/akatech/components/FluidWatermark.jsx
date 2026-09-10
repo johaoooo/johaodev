@@ -167,7 +167,7 @@ export default function FluidWatermark({ text = 'AKATECH' }) {
       idleBufCtx.clearRect(0, 0, W, H)
       activeBufCtx.clearRect(0, 0, W, H)
       idleBufCtx.fillStyle = `rgb(${baseColor[0]}, ${baseColor[1]}, ${baseColor[2]})`
-      activeBufCtx.fillStyle = 'rgb(255, 85, 0)'
+      activeBufCtx.fillStyle = 'rgb(158, 12, 27)'
 
       let idleCount = 0
       let activeMaxForce = 0

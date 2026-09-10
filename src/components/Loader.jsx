@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
@@ -194,12 +194,12 @@ export default function Loader({ onDone, isMobile = false }) {
           transition={{ duration: 0.12, ease: 'linear' }}
           role="status"
           aria-live="polite"
-          aria-label="Chargement d’AKATech Studio"
+          aria-label="Chargement de JohaoDev"
         >
           <canvas ref={canvasRef} className="aka-loader-burn-canvas" aria-hidden="true" />
           <div ref={contentRef} className="aka-loader-center">
-            <img src={cld('/assets/images/logo-akatech.webp')} alt="AKATech Studio" className="aka-loader-logo" />
-            <div className="aka-loader-name">AKATECH</div>
+            <img src="/assets/images/hero-profile.webp" alt="JohaoDev" className="aka-loader-logo" style={{ borderRadius: '50%', objectFit: 'cover' }} />
+            <div className="aka-loader-name">JOHAODEV</div>
             <div className="aka-loader-progress" aria-label={`${progress}% chargé`}>
               {String(progress).padStart(3, '0')}<span>%</span>
             </div>

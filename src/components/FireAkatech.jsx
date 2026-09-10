@@ -14,19 +14,19 @@ import { gsap } from 'gsap'
 
 const NUM_LAYERS = 60
 
-/* Couleur en fonction de la position dans la flamme (0=bas, 1=haut) */
+/* Couleur en fonction de la position dans la flamme (0=bas, 1=haut) — palette vin rouge / rubis */
 function getFireColor(p) {
   if (p < 0.08) {
-    return { r: 255, g: 255, b: Math.round(255 - (p / 0.08) * 130) }
+    return { r: 255, g: Math.round(245 - (p / 0.08) * 55), b: Math.round(245 - (p / 0.08) * 55) }
   } else if (p < 0.35) {
     const t = (p - 0.08) / 0.27
-    return { r: 255, g: Math.round(255 - t * 125), b: Math.round(112 - t * 112) }
+    return { r: Math.round(255 - t * 56), g: Math.round(190 - t * 165), b: Math.round(190 - t * 150) }
   } else if (p < 0.65) {
     const t = (p - 0.35) / 0.30
-    return { r: 255, g: Math.round(130 - t * 105), b: 0 }
+    return { r: Math.round(199 - t * 41), g: Math.round(25 - t * 13), b: Math.round(40 - t * 13) }
   } else {
     const t = (p - 0.65) / 0.35
-    return { r: Math.round(255 - t * 115), g: Math.round(25 - t * 25), b: 0 }
+    return { r: Math.round(158 - t * 61), g: Math.round(12 - t * 10), b: Math.round(27 - t * 16) }
   }
 }
 
@@ -47,7 +47,7 @@ export default function Fireakatech({ className = '' }) {
     for (let i = 0; i < NUM_LAYERS; i++) {
       const el = document.createElement('div')
       el.className = 'fak-layer'
-      el.textContent = 'akaTECH'
+      el.textContent = 'JOHAODEV'
 
       const p = i / NUM_LAYERS
       const { r, g, b } = getFireColor(p)
@@ -267,22 +267,22 @@ export default function Fireakatech({ className = '' }) {
           color: '#fff',
           textShadow: `
             -1px 1px 0 #fff,
-            -2px 2px 0 #ffffee,
-            -3px 3px 0 #ffee99,
-            -4px 4px 0 #ffcc00,
-            -5px 5px 0 #ffaa00,
-            -6px 6px 0 #ff8800,
-            -7px 7px 0 #ff5500,
-            -8px 8px 0 #ee2200,
-            -9px 9px 0 #cc1100,
-            -10px 10px 0 #aa0000,
+            -2px 2px 0 #ffeef0,
+            -3px 3px 0 #fca5a5,
+            -4px 4px 0 #f43f5e,
+            -5px 5px 0 #e11d48,
+            -6px 6px 0 #be123c,
+            -7px 7px 0 #9e0c1b,
+            -8px 8px 0 #880817,
+            -9px 9px 0 #61020b,
+            -10px 10px 0 #400107,
             -12px 12px 20px rgba(0,0,0,0.92)
           `,
           userSelect: 'none',
           pointerEvents: 'none',
         }}
       >
-        akaTECH
+        JOHAODEV
       </div>
 
       {/* Canvas pour les braises */}

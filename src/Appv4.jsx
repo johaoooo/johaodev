@@ -27,7 +27,7 @@ gsap.registerPlugin(ScrollTrigger)
 /* ════════════════════════════════════════════
    ANIMATED SVG ICONS  (replaces emojis)
    ════════════════════════════════════════════ */
-const AnimIcon = ({ type, size = 15, color = '#FF5500', className = '' }) => {
+const AnimIcon = ({ type, size = 15, color = '#9E0C1B', className = '' }) => {
   const icons = {
     globe: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" className={`anim-icon ${className}`}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
     monitor: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" className={`anim-icon ${className}`}><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
@@ -832,7 +832,7 @@ function Navbar({ theme, onToggleTheme }) {
             <img src="/assets/images/logo-akatech.webp" alt="akaTech" className="nb-drawer-logo-img"
               onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'inline' }}
             />
-            <span style={{ display: 'none' }}>aka<span style={{ color: '#FF5500' }}>TECH</span></span>
+            <span style={{ display: 'none' }}>aka<span style={{ color: '#9E0C1B' }}>TECH</span></span>
           </span>
           <button className="nb-drawer-close" onClick={() => setDrawerOpen(false)} aria-label="Fermer">✕</button>
         </div>
@@ -856,7 +856,7 @@ function Navbar({ theme, onToggleTheme }) {
           {[
             { href: 'https://github.com/wthomasss06-stack', title: 'GitHub', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
             { href: 'https://www.linkedin.com/in/m-bollo-aka', title: 'LinkedIn', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
-            { href: 'mailto:wthomasss06@gmail.com', title: 'Email', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="15" rx="3" /><path d="M2 8l10 7 10-7" /></svg> },
+            { href: 'mailto:wthomasss06@gmail.com', title: 'Email', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="15" rx="3" /><path d="M2 8l10 7 10-7" /></svg> },
             { href: 'https://akatech.vercel.app/', title: 'akaTech', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="9.5" /><ellipse cx="12" cy="12" rx="4.5" ry="9.5" /><line x1="2.5" y1="12" x2="21.5" y2="12" opacity=".5" /></svg> },
           ].map(({ href, title, d }) => (
             <a key={title} href={href} target="_blank" rel="noreferrer" title={title}>{d}</a>
@@ -1169,7 +1169,7 @@ function FeaturedCreationDesktop() {
               <div className="fc-mobile-home" />
             </div>
             <div className="fc-resp-badge">
-              <AnimIcon type="check" size={12} color="#FF5500" /> 100% Responsive
+              <AnimIcon type="check" size={12} color="#9E0C1B" /> 100% Responsive
             </div>
           </div>
           <div className="fc-glow" />
@@ -1211,7 +1211,7 @@ function About() {
     })
   }, [])
   return (
-    <section id="about-section" className="sec" style={{ padding: 0, borderTop: '1px solid rgba(255,85,0,.08)' }}>
+    <section id="about-section" className="sec" style={{ padding: 0, borderTop: '1px solid rgba(158, 12, 27,.08)' }}>
       <div className="about-grid">
         <div className="about-left">
           <div
@@ -1407,10 +1407,10 @@ function SkewSection() {
         .fm-wrap { width: 100%; }
         .fm-item {
           position: relative;
-          border-top: 1px solid rgba(255,85,0,.15);
+          border-top: 1px solid rgba(158, 12, 27,.15);
           overflow: hidden;
         }
-        .fm-item:last-child { border-bottom: 1px solid rgba(255,85,0,.15); }
+        .fm-item:last-child { border-bottom: 1px solid rgba(158, 12, 27,.15); }
         .fm-link {
           display: flex;
           align-items: flex-start;
@@ -1442,7 +1442,7 @@ function SkewSection() {
           position: absolute;
           top: 0; left: 0;
           width: 100%; height: 101%;
-          background-color: #FF5500;
+          background-color: #9E0C1B;
           z-index: 1;
           display: flex;
           align-items: center;
@@ -1641,14 +1641,14 @@ function SkillsSection() {
         <br />
         <ScrollReveal>de travail.</ScrollReveal>
       </h2>
-      <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '.62rem', color: 'rgba(255,85,0,.55)', letterSpacing: '.2em', margin: '2.5rem 0 1rem' }}>
+      <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '.62rem', color: 'rgba(158, 12, 27,.55)', letterSpacing: '.2em', margin: '2.5rem 0 1rem' }}>
         // déplace ta souris pour explorer
       </p>
-      <div style={{ position: 'relative', width: '100%', height: '520px', borderRadius: '16px', border: '1px solid rgba(255,85,0,.1)', overflow: 'hidden', background: 'rgba(255,85,0,.02)' }}>
+      <div style={{ position: 'relative', width: '100%', height: '520px', borderRadius: '16px', border: '1px solid rgba(158, 12, 27,.1)', overflow: 'hidden', background: 'rgba(158, 12, 27,.02)' }}>
         {/* Skill names listed as hint */}
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '1.2rem', padding: '2rem', pointerEvents: 'none', zIndex: 0 }}>
           {[...SKILLS.frontend, ...SKILLS.backend, ...SKILLS.tools].map(sk => (
-            <span key={sk.name} style={{ fontFamily: "'Space Mono',monospace", fontSize: '.62rem', color: 'rgba(255,85,0,.18)', letterSpacing: '.15em', textTransform: 'uppercase' }}>
+            <span key={sk.name} style={{ fontFamily: "'Space Mono',monospace", fontSize: '.62rem', color: 'rgba(158, 12, 27,.18)', letterSpacing: '.15em', textTransform: 'uppercase' }}>
               {sk.name}
             </span>
           ))}
@@ -1818,7 +1818,7 @@ function PricingSection() {
               <div className="price-amount">{p.price}</div>
               <div className="price-delivery"><AnimIcon type="clock" size={12} /> {p.delivery}</div>
               <div className="price-sep" />
-              <ul className="price-feat">{p.features.map((f, j) => <li key={j}><AnimIcon type="check" size={11} color="#FF5500" /> {f}</li>)}</ul>
+              <ul className="price-feat">{p.features.map((f, j) => <li key={j}><AnimIcon type="check" size={11} color="#9E0C1B" /> {f}</li>)}</ul>
               <button className="price-cta" onClick={() => scrollTo('contact')}>Me contacter</button>
             </div>
           ))}
@@ -1882,7 +1882,7 @@ function GallerySection() {
         const c = document.createElement('canvas'); c.width = 800; c.height = 550
         const ctx = c.getContext('2d'); const g = ctx.createLinearGradient(0, 0, 0, 550)
         g.addColorStop(0, '#0d0800'); g.addColorStop(1, '#1a0800'); ctx.fillStyle = g; ctx.fillRect(0, 0, 800, 550)
-        ctx.font = 'bold 52px Syne, sans-serif'; ctx.fillStyle = 'rgba(255,85,0,0.4)'
+        ctx.font = 'bold 52px Syne, sans-serif'; ctx.fillStyle = 'rgba(158, 12, 27,0.4)'
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(title, 400, 275)
         const tex = new Texture(glCtx, { generateMipmaps: false }); tex.image = c; return tex
       }
@@ -1934,7 +1934,7 @@ function GallerySection() {
         'Redis': { src: '/assets/icons/devicon/redis/redis-original.svg', color: '#DC382D' },
         'Framer Motion': { src: '/assets/icons/devicon/framermotion/framermotion-original.svg', color: '#BB4BFF' },
         'Bulma': { src: '/assets/icons/devicon/bulma/bulma-plain.svg', color: '#00D1B2' },
-        'Canvas API': { src: '/assets/icons/devicon/canvasapi/canvasapi-original.svg', color: '#FF8C00' },
+        'Canvas API': { src: '/assets/icons/devicon/canvasapi/canvasapi-original.svg', color: '#C71A32' },
         'Howler.js': { src: '/assets/icons/devicon/howlerjs/howlerjs-original.svg', color: '#FF6B35' },
         'WebSockets': { src: '/assets/icons/devicon/websockets/websockets-original.svg', color: '#FF9500' },
         'WebGL Aurora': { src: '/assets/icons/devicon/webgl/webgl-original.svg', color: '#7B2FF7' },
@@ -2037,7 +2037,7 @@ function GallerySection() {
         </div>
       </div>
       <div id="gallery-container" ref={containerRef} />
-      <div id="gl-detail-panel" style={{ position: 'absolute', bottom: '3rem', left: '50%', transform: 'translateX(-50%)', background: 'rgba(6,8,16,.88)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,85,0,.2)', borderRadius: '18px', padding: '1.4rem 2rem', width: 'min(92vw,540px)', opacity: 0, transition: 'opacity .35s ease,transform .35s ease', pointerEvents: 'none', zIndex: 10 }}>
+      <div id="gl-detail-panel" style={{ position: 'absolute', bottom: '3rem', left: '50%', transform: 'translateX(-50%)', background: 'rgba(6,8,16,.88)', backdropFilter: 'blur(20px)', border: '1px solid rgba(158, 12, 27,.2)', borderRadius: '18px', padding: '1.4rem 2rem', width: 'min(92vw,540px)', opacity: 0, transition: 'opacity .35s ease,transform .35s ease', pointerEvents: 'none', zIndex: 10 }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
           <div style={{ flex: 1, minWidth: '200px' }}>
             <div id="gl-p-title" style={{ fontFamily: "'Clash Display','Syne',sans-serif", fontSize: '1.15rem', fontWeight: 800, color: '#F2EDE8', marginBottom: '3px' }} />
@@ -2046,7 +2046,7 @@ function GallerySection() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '.5rem', alignItems: 'flex-end', flexShrink: 0 }}>
             <div id="gl-p-techs" style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem', justifyContent: 'flex-end', maxWidth: '210px', pointerEvents: 'auto' }} />
-            <a id="gl-p-link" href="#" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '.4rem', background: 'linear-gradient(135deg,#FF5500,#CC3300)', color: '#fff', padding: '8px 16px', borderRadius: '999px', fontFamily: "'Clash Display','Syne',sans-serif", fontWeight: 700, fontSize: '.68rem', letterSpacing: '.06em', textTransform: 'uppercase', textDecoration: 'none', pointerEvents: 'auto' }}>
+            <a id="gl-p-link" href="#" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '.4rem', background: 'linear-gradient(135deg,#9E0C1B,#CC3300)', color: '#fff', padding: '8px 16px', borderRadius: '999px', fontFamily: "'Clash Display','Syne',sans-serif", fontWeight: 700, fontSize: '.68rem', letterSpacing: '.06em', textTransform: 'uppercase', textDecoration: 'none', pointerEvents: 'auto' }}>
               Voir →
             </a>
           </div>
@@ -2073,8 +2073,8 @@ function TestiCard({ t }) {
     const tiltY = (x - xc) / 12
     gsap.to(el, {
       transform: `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.04, 1.04, 1.04)`,
-      borderColor: 'rgba(255,85,0,.6)',
-      boxShadow: '0 30px 60px rgba(255,85,0,0.12), 0 20px 40px rgba(0,0,0,.5)',
+      borderColor: 'rgba(158, 12, 27,.6)',
+      boxShadow: '0 30px 60px rgba(158, 12, 27,0.12), 0 20px 40px rgba(0,0,0,.5)',
       duration: 0.35,
       ease: 'power2.out',
       overwrite: 'auto'
@@ -2104,7 +2104,7 @@ function TestiCard({ t }) {
         <div className="testi-stars">
           {Array(5).fill(null).map((_, j) => (
             <svg key={j} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#FF5500" />
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#9E0C1B" />
             </svg>
           ))}
         </div>
@@ -2145,7 +2145,7 @@ function TestimonialsSection() {
       <div style={{ display: 'flex', gap: '3px', marginBottom: '.8rem' }}>
         {Array(5).fill(null).map((_, j) => (
           <svg key={j} viewBox="0 0 24 24" width="14" height="14">
-            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#FF5500" />
+            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#9E0C1B" />
           </svg>
         ))}
       </div>
@@ -2156,15 +2156,15 @@ function TestimonialsSection() {
         fontSize: 'clamp(.9rem,1.3vw,1.05rem)', lineHeight: 1.72,
         color: 'rgba(242,237,232,.85)', flex: 1
       }}>
-        <span style={{ fontSize: '2.2rem', lineHeight: .5, color: 'rgba(255,85,0,.3)', fontWeight: 800, display: 'block', marginBottom: '.4rem' }}>"</span>
+        <span style={{ fontSize: '2.2rem', lineHeight: .5, color: 'rgba(158, 12, 27,.3)', fontWeight: 800, display: 'block', marginBottom: '.4rem' }}>"</span>
         {t.text}
       </p>
 
       {/* Footer */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '.9rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,85,0,.15)', marginTop: '1rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '.9rem', paddingTop: '1rem', borderTop: '1px solid rgba(158, 12, 27,.15)', marginTop: '1rem' }}>
         <div style={{
           width: 40, height: 40, borderRadius: '50%',
-          background: 'linear-gradient(135deg,#FF5500,#CC3300)',
+          background: 'linear-gradient(135deg,#9E0C1B,#CC3300)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontFamily: "var(--fd)", fontWeight: 800, fontSize: '.9rem', color: '#0A0A0A', flexShrink: 0
         }}>{t.avatar}</div>
@@ -2211,7 +2211,7 @@ function TestimonialsSection() {
             {TESTIMONIALS.map(t => (
               <span key={t.name} style={{
                 fontFamily: "'Space Mono',monospace", fontSize: '.58rem',
-                color: 'var(--muted)', border: '1px solid rgba(255,85,0,.18)',
+                color: 'var(--muted)', border: '1px solid rgba(158, 12, 27,.18)',
                 borderRadius: '999px', padding: '3px 10px'
               }}>{t.name}</span>
             ))}
@@ -2528,7 +2528,7 @@ function GitHubInteractiveCard() {
             ]).map((repo, i) => {
               const langColor = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#2b7489', HTML: '#e34c26', CSS: '#563d7c' }
               const pct = { JavaScript: '100% JS', Python: '55% Py / 45% HTML', TypeScript: '90% TS / 10% CSS', HTML: '100% HTML' }
-              const color = langColor[repo.language] || '#FF5500'
+              const color = langColor[repo.language] || '#9E0C1B'
               return (
                 <div key={i} className="github-repo-card">
                   <div className="github-repo-header">
@@ -2642,7 +2642,7 @@ function ContactSection({ onToast }) {
     const centerEl = document.getElementById('cojn-center')
     if (!container || !svg || !centerEl) return
     const nodeIds = ['cojn-github', 'cojn-linkedin', 'cojn-facebook', 'cojn-whatsapp', 'cojn-akatech', 'cojn-gmail', 'cojn-uvci', 'cojn-cv']
-    const colors = ['#FF5500', '#ff7733', '#FF5500', '#ffaa44', '#FF5500', '#ff7733', '#ffaa44', '#FF5500']
+    const colors = ['#9E0C1B', '#b8142a', '#9E0C1B', '#850614', '#9E0C1B', '#b8142a', '#850614', '#9E0C1B']
     const phases = [0, 0.37, 0.74, 1.11, 1.48, 1.85, 2.22, 2.59]
     let paths = [], animating = false, started = false, startTime = null
     const DURATION = 2400
@@ -2679,14 +2679,14 @@ function ContactSection({ onToast }) {
   }, [])
 
   const nodeLinks = [
-    { id: 'cojn-github', href: 'https://github.com/wthomasss06-stack', label: 'GitHub', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
-    { id: 'cojn-linkedin', href: 'https://www.linkedin.com/in/m-bollo-aka', label: 'LinkedIn', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
-    { id: 'cojn-facebook', href: 'https://web.facebook.com/profile.php?id=61577494705852', label: 'Facebook', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
-    { id: 'cojn-whatsapp', href: 'https://wa.me/2250142507750', label: 'WhatsApp', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
-    { id: 'cojn-akatech', href: 'https://akatech.vercel.app/', label: 'akaTech', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" /></svg> },
-    { id: 'cojn-gmail', href: 'mailto:wthomasss06@gmail.com', label: 'Gmail', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
-    { id: 'cojn-uvci', href: 'https://uvci.edu.ci/', label: 'UVCI', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M2 10l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
-    { id: 'cojn-cv', href: '/assets/CV_MBOLLO_aka_ELVIS.pdf', label: 'Mon CV', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
+    { id: 'cojn-github', href: 'https://github.com/wthomasss06-stack', label: 'GitHub', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
+    { id: 'cojn-linkedin', href: 'https://www.linkedin.com/in/m-bollo-aka', label: 'LinkedIn', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
+    { id: 'cojn-facebook', href: 'https://web.facebook.com/profile.php?id=61577494705852', label: 'Facebook', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
+    { id: 'cojn-whatsapp', href: 'https://wa.me/2250142507750', label: 'WhatsApp', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
+    { id: 'cojn-akatech', href: 'https://akatech.vercel.app/', label: 'akaTech', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" /></svg> },
+    { id: 'cojn-gmail', href: 'mailto:wthomasss06@gmail.com', label: 'Gmail', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
+    { id: 'cojn-uvci', href: 'https://uvci.edu.ci/', label: 'UVCI', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M2 10l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
+    { id: 'cojn-cv', href: '/assets/CV_MBOLLO_aka_ELVIS.pdf', label: 'Mon CV', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
   ]
 
   return (
@@ -2715,8 +2715,8 @@ function ContactSection({ onToast }) {
             </div>
           </div>
           {[
-            { href: 'tel:+2250142507750', text: '+225 01 42 50 77 50', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.86 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.66a16 16 0 006.29 6.29l1.02-1.02a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg> },
-            { href: 'mailto:wthomasss06@gmail.com', text: 'wthomasss06@gmail.com', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
+            { href: 'tel:+2250142507750', text: '+225 01 42 50 77 50', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.86 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.66a16 16 0 006.29 6.29l1.02-1.02a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg> },
+            { href: 'mailto:wthomasss06@gmail.com', text: 'wthomasss06@gmail.com', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
           ].map((item, i) => (
             <div key={i} className="contact-item" style={{ marginTop: i === 0 ? '1.8rem' : 0 }}>
               <div className="c-icon">{item.svg}</div>
@@ -2724,7 +2724,7 @@ function ContactSection({ onToast }) {
             </div>
           ))}
           <div className="contact-item">
-            <div className="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg></div>
+            <div className="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg></div>
             <span style={{ color: 'var(--muted)' }}>Abidjan, Côte d'Ivoire</span>
           </div>
         </div>
@@ -2733,8 +2733,8 @@ function ContactSection({ onToast }) {
           <p style={{ fontSize: '.85rem', color: 'var(--muted)', marginBottom: '1.5rem' }}>Remplissez le formulaire et je vous réponds rapidement.</p>
           {sent ? (
             <div style={{ textAlign: 'center', padding: '3rem 2rem' }}>
-              <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,85,0,.12)', border: '1.5px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.2rem' }}>
-                <AnimIcon type="check" size={28} color="#FF5500" />
+              <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(158, 12, 27,.12)', border: '1.5px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.2rem' }}>
+                <AnimIcon type="check" size={28} color="#9E0C1B" />
               </div>
               <p style={{ fontFamily: "'Clash Display','Syne',sans-serif", fontWeight: 700, marginBottom: '.5rem' }}>Message envoyé !</p>
               <p style={{ fontSize: '.85rem', color: 'var(--muted)' }}>Je vous réponds sous 24h. <AnimIcon type="rocket" size={14} /></p>
@@ -2884,7 +2884,7 @@ function Footer() {
         </div>{/* /ft-main-block */}
 
         {/* Séparateur */}
-        <div style={{ height: '1px', background: 'rgba(255,85,0,.1)', margin: '3rem 0 0' }} />
+        <div style={{ height: '1px', background: 'rgba(158, 12, 27,.1)', margin: '3rem 0 0' }} />
       </div>
 
       {/* akaTECH massif — Iridescence clippée dans les lettres via CSS mask */}

@@ -178,7 +178,7 @@ function HeroZoomSection() {
               ref={canvasRef}
               className="hzx-canvas"
               role="img"
-              aria-label="M'Bollo Aka au travail, de nuit, face à la ville"
+              aria-label="Joseph Dehazounde au travail, de nuit, face à la ville"
             />
           </div>
         </div>

@@ -8,13 +8,13 @@ import './ImageTrail.css';
  */
 function normalizeItem(item, i) {
   if (typeof item === 'string') {
-    return { key: `${item}-${i}`, name: '', icon: item, color: '#FF5500' };
+    return { key: `${item}-${i}`, name: '', icon: item, color: '#9E0C1B' };
   }
   return {
     key: `${item.name || item.icon}-${i}`,
     name: item.name || '',
     icon: item.icon,
-    color: item.color || '#FF5500',
+    color: item.color || '#9E0C1B',
   };
 }
 
@@ -57,7 +57,7 @@ function MarqueeRow({ items, direction = 'left', speed = 38, rowIndex = 0 }) {
 
 function MarqueeChip({ item }) {
   const [hovered, setHovered] = useState(false);
-  const col = item.color || '#FF5500';
+  const col = item.color || '#9E0C1B';
 
   return (
     <div

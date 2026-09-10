@@ -46,12 +46,12 @@ export default function Method({ onNext, onNavigate }) {
       </div>
 
       <h3 className="mono" style={{ fontSize: '0.8rem', letterSpacing: '0.15em', marginBottom: '2rem', color: 'var(--accent)' }}>
-        AKATECH SKILLS — MON SYSTÈME
+        JOHAODEV SKILLS — MON SYSTÈME
       </h3>
 
       <div ref={skillsGridRef} className="grid-3 akatech-skills-grid">
         <div className="akatech-skill-card">
-          <h4 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>AKATECH BACKEND</h4>
+          <h4 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>JOHAODEV BACKEND</h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--muted)', fontSize: '0.9rem' }}>
             <li>✓ Architecture</li>
             <li>✓ Conventions</li>
@@ -62,7 +62,7 @@ export default function Method({ onNext, onNavigate }) {
         </div>
 
         <div className="akatech-skill-card">
-          <h4 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>AKATECH FRONTEND</h4>
+          <h4 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>JOHAODEV FRONTEND</h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--muted)', fontSize: '0.9rem' }}>
             <li>✓ Animation</li>
             <li>✓ Performance</li>
@@ -72,11 +72,11 @@ export default function Method({ onNext, onNavigate }) {
         </div>
 
         <div className="akatech-skill-card">
-          <h4 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>AKATECH DESIGN</h4>
+          <h4 style={{ color: 'var(--accent)', marginBottom: '1rem' }}>JOHAODEV SÉCURITÉ &amp; AUDIT</h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--muted)', fontSize: '0.9rem' }}>
-            <li>✓ UI</li>
-            <li>✓ UX</li>
-            <li>✓ Motion</li>
+            <li>✓ OWASP Top 10</li>
+            <li>✓ Pentest Burp Suite</li>
+            <li>✓ Durcissement &amp; Hardening</li>
           </ul>
         </div>
       </div>

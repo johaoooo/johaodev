@@ -20,7 +20,7 @@ import HoverFadeText from './components/HoverFadeText.jsx'
 import PixelSliceTrail from './components/PixelSliceTrail.jsx'
 import CardSwap, { Card } from './components/CardSwap.jsx'
 import FlowingMenu from './components/FlowingMenu.jsx'
-import { PROJECTS, PRICING_TABS, FAQ_ITEMS, WRITING_POSTS, CONTACT } from './data/portfolioData.js'
+import { PROJECTS, PRICING_TABS, FAQ_ITEMS, WRITING_POSTS, CONTACT, SKILLS, TIMELINE } from './data/portfolioData.js'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -495,7 +495,7 @@ function SectionHeading({ num, title, sub, subAs = 'h2', className = '', style =
 /* ════════════════════════════════════════════
  ANIMATED SVG ICONS (replaces emojis)
  ════════════════════════════════════════════ */
-const AnimIcon = ({ type, size = 15, color = '#FF5500', className = '' }) => {
+const AnimIcon = ({ type, size = 15, color = '#9E0C1B', className = '' }) => {
   const icons = {
     globe: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" className={`anim-icon ${className}`}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
     monitor: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" className={`anim-icon ${className}`}><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
@@ -918,82 +918,17 @@ const PROCESS_STEPS = [
    Chaque tab a : plans[] (entête + prix) et rows[] (lignes de features).
    Chaque cellule peut être : true (check vert) | false (tiret) | 'Limité' | 'Texte'
    ─────────────────────────────────────────────────────────────────── */
-const SKILLS = {
-  frontend: [
-    { name: 'React', icon: '/assets/icons/devicon/react/react-original.svg', color: '#61DAFB' },
-    { name: 'JavaScript', icon: '/assets/icons/devicon/javascript/javascript-original.svg', color: '#F7DF1E' },
-    { name: 'TypeScript', icon: '/assets/icons/devicon/typescript/typescript-original.svg', color: '#3178C6' },
-    { name: 'Next.js', icon: '/assets/icons/devicon/nextjs/nextjs-original.svg', color: '#ffffff' },
-    { name: 'Tailwind', icon: '/assets/icons/devicon/tailwindcss/tailwindcss-original.svg', color: '#38BDF8' },
-    { name: 'HTML5', icon: '/assets/icons/devicon/html5/html5-original.svg', color: '#E34F26' },
-    { name: 'CSS3', icon: '/assets/icons/devicon/css3/css3-original.svg', color: '#1572B6' },
-    { name: 'Bootstrap', icon: '/assets/icons/devicon/bootstrap/bootstrap-original.svg', color: '#7952B3' },
-    { name: 'GSAP', icon: '/assets/icons/simple-icons/gsap.svg', color: '#0AE448' },
-    { name: 'WebGL', icon: '/assets/icons/simple-icons/webgl.svg', color: '#990000' },
-    { name: 'Chart.js', icon: '/assets/icons/devicon/chartjs/chartjs-original.svg', color: '#FF6384' },
-    { name: 'Leaflet.js', icon: '/assets/icons/simple-icons/leaflet.svg', color: '#199900' },
-  ],
-  backend: [
-    { name: 'Python', icon: '/assets/icons/devicon/python/python-original.svg', color: '#4B8BBE' },
-    { name: 'Flask', icon: '/assets/icons/devicon/flask/flask-original.svg', color: '#AAAAAA' },
-    { name: 'Django', icon: '/assets/icons/devicon/django/django-plain.svg', color: '#44B78B' },
-    { name: 'Node.js', icon: '/assets/icons/devicon/nodejs/nodejs-original.svg', color: '#539E43' },
-    { name: 'Express.js', icon: '/assets/icons/devicon/express/express-original.svg', color: '#444444' },
-    { name: 'MySQL', icon: '/assets/icons/devicon/mysql/mysql-original.svg', color: '#F29111' },
-  ],
-  tools: [
-    { name: 'Git', icon: '/assets/icons/devicon/git/git-original.svg', color: '#F05032' },
-    { name: 'VS Code', icon: '/assets/icons/devicon/vscode/vscode-original.svg', color: '#007ACC' },
-    { name: 'GitHub', icon: '/assets/icons/devicon/github/github-original.svg', color: '#ffffff' },
-    { name: 'Vercel', icon: '/assets/icons/devicon/vercel/vercel-original.svg', color: '#ffffff' },
-    { name: 'Prisma', icon: '/assets/icons/devicon/prisma/prisma-original.svg', color: '#2D3748' },
-    { name: 'Cloudinary', icon: '/assets/icons/simple-icons/cloudinary.svg', color: '#3448C5' },
-  ],
-}
-
-const TIMELINE = [
-  { date: '2025–2026', title: 'Développeur Freelance Fullstack', company: 'AKATech Studio', items: ["Conception et déploiement de +10 Projets web (SaaS, e-commerce, plateformes)", "Développement d'API REST avec Django et Flask", "Mise en place de dashboards et systèmes de gestion de données"], tags: ['Freelance', 'Full-Stack', 'Django', 'React', 'SaaS'] },
-  { date: 'Mai–Nov. 2025', title: 'Informaticien Stagiaire', company: "Mairie d'Agboville", items: ['Maintenance du parc informatique et du réseau', 'Support technique aux utilisateurs', 'Contribution à la gestion et numérisation des données'], tags: ['Maintenance', 'Réseau', 'Support'] },
-  { date: '2023–2024', title: 'Projet Académique – ARTICI', company: 'UVCI', items: ["Plateforme web de promotion de l'artisanat local", "Travail collaboratif en équipe pluridisciplinaire", "Intégration de bonnes pratiques de sécurité"], tags: ['Frontend', 'Backend', 'Sécurité'] },
-  { date: '2023–2024', title: 'Licence Réseau et Sécurité Informatique', company: 'UVCI', items: ['Formation complète en développement web, bases de données et sécurité', 'Certification E-Banking — Réf: CC/24-002485'], tags: ['Diplôme', 'Certification'] },
-  { date: '2020–2021', title: 'Baccalauréat Série D', company: "Lycée Moderne d'Arrah", items: ['Mention : Assez Bien'], tags: ['Diplôme'] },
-]
-
 const ABOUT_IMAGES = [
-  cld('/assets/images/IMG_20250124_124101KK.webp'),
-  cld('/assets/images/moi/93027469_127097918918167_9124333187680436224_n.webp'),
-  cld('/assets/images/moi/CamScanner 24-02-2026 14.43.webp'),
-  cld('/assets/images/moi/CamScanner 24-02-2026 17.16 (1) (1).webp'),
-  cld('/assets/images/moi/ChatGPT Image 26 avr. 2026, 00_44_06.webp'),
-  cld('/assets/images/moi/ChatGPT Image 26 avr. 2026, 00_47_11.webp'),
-  cld('/assets/images/moi/ChatGPT Image 26 avr. 2026, 00_49_13.webp'),
-  cld('/assets/images/moi/ChatGPT Image 26 avr. 2026, 00_52_59.webp'),
-  cld('/assets/images/moi/FB_IMG_17092288705757644.webp'),
-  cld('/assets/images/moi/IMG-20260203-WA0012.webp'),
-  cld('/assets/images/moi/IMG-20260203-WA0014.webp'),
-  cld('/assets/images/moi/IMG-20260222-WA0020.webp'),
-  cld('/assets/images/moi/IMG-20260222-WA0091.webp'),
-  cld('/assets/images/moi/IMG-20260222-WA0096.webp'),
-  cld('/assets/images/moi/IMG-20260222-WA0109.webp'),
-  cld('/assets/images/moi/IMG_20200414_130507_968.webp'),
-  cld('/assets/images/moi/IMG_20200426_182719033.webp'),
-  cld('/assets/images/moi/IMG_20211205_173445935 (2).webp'),
-  cld('/assets/images/moi/IMG_20240331_135514.webp'),
-  cld('/assets/images/moi/IMG_20240404_145052.webp'),
-  cld('/assets/images/moi/IMG_20250604_220919.webp'),
-  cld('/assets/images/moi/IMG_20250608_174833.webp'),
-  cld('/assets/images/moi/Snapchat-1841890434.webp'),
-  cld('/assets/images/moi/Snapchat-304169344-COLLAGE.webp'),
+  CONTACT.photo,
 ]
 
 const ABOUT_ITEMS = ABOUT_IMAGES.map(img => ({ image: img, link: '#', title: '', description: '' }))
 
 const TESTIMONIALS = [
-  { name: 'Koné Ibrahima', role: 'Fondateur · TechFlow', avatar: 'K', proj: 'Site Vitrine', text: "Elvis a livré notre site vitrine en un temps record. Design moderne, responsive, exactement ce qu'on voulait. Très professionnel." },
-  { name: 'Calvin Dexter', role: 'Gérant · New Horizon Service', avatar: 'C', proj: 'Location Résidences', text: 'La plateforme de location est impeccable. Les clients peuvent réserver facilement, le backend est solide. Je recommande à 100%.' },
-  { name: 'Mory Koné', role: 'Graphiste · MK Portfolio', avatar: 'M', proj: 'Portfolio Créatif', text: "Mon portfolio reflète parfaitement mon univers créatif. Elvis a su traduire ma vision en une expérience visuelle mémorable." },
-  { name: 'Tatiana D.', role: 'Influenceuse · Tatii', avatar: 'T', proj: 'Portfolio', text: "Super boulot ! Mon site de présentation est élégant, rapide et je reçois beaucoup de compliments. Merci Elvis !" },
-  { name: 'Manobeat 777', role: 'Beatmaker · ManoBeat', avatar: 'B', proj: 'Beat Store', text: "La boutique de beats marche très bien. Les clients achètent facilement via WhatsApp. Interface propre et professionnelle." },
+  { name: 'Dr. Mensah K.', role: 'Directeur · CNIB Platform', avatar: 'M', proj: 'Plateforme E-learning', text: "Joseph a développé l'architecture complète de CNIB Platform avec une rigueur exemplaire. Paiements KKiaPay fluides et gestion des certifications sans faille." },
+  { name: 'Arnaud B.', role: 'Organisateur · XoboTicket', avatar: 'A', proj: 'Gestion Stands RBAC', text: "La solution XoboTicket conçue par Joseph a sécurisé et automatisé l'attribution des stands de notre événement. Un vrai gain d'efficacité." },
+  { name: 'Aïcha D.', role: 'Fondatrice · Saveurs d\'Agojiés', avatar: 'S', proj: 'E-commerce Terroir', text: "Notre boutique en ligne valorise parfaitement nos produits locaux. Joseph a su allier esthétique, rapidité et sécurité pour nos clients." },
+  { name: 'Maison Afi Collection', role: 'Direction · AfiShop', avatar: 'A', proj: 'Audit & E-commerce', text: "Joseph nous a accompagnés sur l'audit cyber de notre infrastructure et la réalisation de notre vitrine e-commerce. Professionnel et très compétent." },
 ]
 
 /* ─── FAQ — 6 questions les plus pertinentes avant/pendant une commande ─── */
@@ -1174,12 +1109,11 @@ function Navbar({ theme, onToggleTheme, onToggleExplorer, isExplorerOpen }) {
 
   /* Socials pour StaggeredMenu */
   const SM_SOCIALS = [
-    { label: 'WhatsApp', link: 'https://wa.me/2250142507750' },
-    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/m-bollo-aka' },
-    { label: 'GitHub', link: 'https://github.com/wthomasss06-stack' },
-    { label: 'Facebook', link: 'https://web.facebook.com/profile.php?id=61577494705852' },
-    { label: 'AKATech Studio', link: 'https://akatech.vercel.app/' },
-    { label: 'Mon CV', link: '/assets/CV_MBOLLO_AKA_ELVIS.pdf' },
+    { label: 'WhatsApp', link: CONTACT.whatsappUrl },
+    { label: 'LinkedIn', link: CONTACT.linkedin },
+    { label: 'GitHub', link: CONTACT.github },
+    { label: 'Email', link: `mailto:${CONTACT.email}` },
+    { label: 'Mon CV', link: CONTACT.cv },
   ]
 
   /* SM_ITEMS : transforme NAV_LINKS en format attendu par StaggeredMenu */
@@ -1211,12 +1145,12 @@ function Navbar({ theme, onToggleTheme, onToggleExplorer, isExplorerOpen }) {
   )
 
   const logoBlock = (
-    <>
-      <img src={cld("/assets/images/logo-akatech.webp")} alt="AKATech Studio" className="nb-logo-img"
-        onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'inline' }}
-      />
-      <span className="nb-logo-text" style={{ display: 'none' }}>AKA<span className="nb-logo-acc">TECH</span></span>
-    </>
+    <img
+      src={cld('/assets/images/logo.webp')}
+      alt="Logo"
+      className="nb-logo-img"
+      style={{ filter: 'drop-shadow(0 0 8px rgba(158, 12, 27,0.45))' }}
+    />
   )
 
   return (
@@ -1268,7 +1202,7 @@ function Navbar({ theme, onToggleTheme, onToggleExplorer, isExplorerOpen }) {
 /* ════════════════════════════════════════════
  HERO — Plasma WebGL + ScrambleText
  ════════════════════════════════════════════ */
-const HERO_ROTATING_WORDS = ['Full-Stack', 'React & Python', 'Django & Flask', 'orienté produit', 'Data & Carto']
+const HERO_ROTATING_WORDS = ['Audit Web', 'DevSecOps', 'React', 'Django', 'Pentesting']
 
 function Hero() {
   const scrollTo = id => {
@@ -1283,8 +1217,8 @@ function Hero() {
 
   /* Nom — cycle plain sur le même texte, réutilisé pour le calque
      contour (avant-plan) du portrait sandwich ci-dessous */
-  const nameLine1 = useSHNameCycle("M'BOLLO")
-  const nameLine2 = useSHNameCycle("Aka")
+  const nameLine1 = useSHNameCycle("JOSEPH")
+  const nameLine2 = useSHNameCycle("Dehazounde")
 
   /* Mots rotatifs — glitch scramble en boucle auto */
   const rotating = useSHRotatingCycle(HERO_ROTATING_WORDS, 2500)
@@ -1330,9 +1264,9 @@ function Hero() {
       <div className="hv4-god-rays" id="hv4-rays" aria-hidden="true" />
       <div className="hv4-bg-layer" id="hv4-bg-layer" aria-hidden="true">
         <Iridescence
-          color={[1, 0.22, 0.04]}
-          speed={0.42}
-          amplitude={0.08}
+          color={[0.38, 0.01, 0.04]}
+          speed={0.22}
+          amplitude={0.06}
           mouseReact={false}
         />
       </div>
@@ -1345,9 +1279,9 @@ function Hero() {
            avec la photo carrée qui vient "trancher" les deux lignes,
            repris du prototype de référence (variante Double Stack) ── */}
         <div className="hv4-portrait">
-          <h1 className="hv4-portrait-name" aria-label="M'Bollo Aka">
+          <h1 className="hv4-portrait-name" aria-label="Joseph Dehazounde">
             <span className="hv4-portrait-row hv4-portrait-row--top">
-              <span className="hv4-portrait-bg hv4-rv" style={{ '--d': '.1s' }} aria-hidden="true">M'BOLLO</span>
+              <span className="hv4-portrait-bg hv4-rv" style={{ '--d': '.1s' }} aria-hidden="true">JOSEPH</span>
               <span className="hv4-portrait-fg" aria-hidden="true">
                 <span className="sh-cycle-wrap" style={{ height: '0.86em', verticalAlign: 'bottom' }}>
                   <span className="sh-cycle-inner" ref={nameLine1.innerRef}>
@@ -1357,7 +1291,7 @@ function Hero() {
               </span>
             </span>
             <span className="hv4-portrait-row hv4-portrait-row--bottom">
-              <span className="hv4-portrait-bg hv4-rv" style={{ '--d': '.16s' }} aria-hidden="true">Aka</span>
+              <span className="hv4-portrait-bg hv4-rv" style={{ '--d': '.16s' }} aria-hidden="true">Dehazounde</span>
               <span className="hv4-portrait-fg" aria-hidden="true">
                 <span className="sh-cycle-wrap" style={{ height: '0.86em', verticalAlign: 'bottom' }}>
                   <span className="sh-cycle-inner" ref={nameLine2.innerRef}>
@@ -1372,9 +1306,9 @@ function Hero() {
             <img
               ref={photoRef}
               className="hv4-rv"
-              style={{ '--d': '.26s' }}
-              src={cld("/assets/images/MBA.webp")}
-              alt="M'Bollo Aka"
+              style={{ '--d': '.26s', objectFit: 'cover', objectPosition: 'center 12%' }}
+              src={CONTACT.heroPhoto || CONTACT.photo}
+              alt="Joseph Dehazounde"
               onError={e => { e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600' }}
             />
           </div>
@@ -1385,16 +1319,28 @@ function Hero() {
         <div className="hv4-corner hv4-corner--left">
 
           <div className="hv4-typed hv4-left-description hv4-rv" style={{ '--d': '.42s' }}>
-            Développeur web orienté produits, spécialisé Django &amp; React.<br />
-            Je construis des applications pensées pour des usages réels.
+            Analyste en cybersécurité, développeur web fullstack et marketeur.
           </div>
 
           {/* Rotating words — cycle-text scramble */}
           <h3 className="hv4-typed hv4-rv" style={{ '--d': '.56s' }}>
-            Développeur&nbsp;<span className="hero-word" style={{ color: '#ffffff', display: 'inline-block' }}>
+            Spécialiste&nbsp;<span className="hero-word" style={{ color: '#ffffff', display: 'inline-block' }}>
               <span className="sh-cycle-wrap">
                 <span className="sh-cycle-inner" ref={rotating.innerRef}>
-                  {rotating.lines.map((l, i) => <span className="sh-cycle-line" key={i}>{l}</span>)}
+                  {rotating.lines.map((l, i) => (
+                    <span
+                      className="sh-cycle-line"
+                      key={i}
+                      aria-hidden={i !== rotating.lines.length - 1}
+                      style={{
+                        height: '0.86em',
+                        lineHeight: '0.86em',
+                        userSelect: i === rotating.lines.length - 1 ? 'auto' : 'none',
+                      }}
+                    >
+                      {l}
+                    </span>
+                  ))}
                 </span>
               </span>
             </span>
@@ -1507,42 +1453,62 @@ function NeonFlickerText({ children, tag: Tag = 'h3', className = '', ...rest })
     const letters = el.querySelectorAll('.nf-letter')
     if (!letters.length) return
 
-    const cs = getComputedStyle(el)
-    const accent = (cs.getPropertyValue('--accent') || '#FF5500').trim()
-    const restColor = (cs.getPropertyValue('--text') || '#F2EDE8').trim()
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let tl = null
 
-    if (reduceMotion) {
-      gsap.set(letters, { color: restColor, textShadow: '0 0 0px transparent' })
-      return
+    const buildTimeline = () => {
+      if (tl) {
+        tl.scrollTrigger?.kill()
+        tl.kill()
+        gsap.set(letters, { clearProps: 'all' })
+      }
+
+      const isLight = document.body.classList.contains('light-mode')
+      const cs = getComputedStyle(el)
+      const accent = (cs.getPropertyValue('--accent') || '#9E0C1B').trim()
+      const restColor = isLight ? '#0A0A0A' : (cs.getPropertyValue('--text') || '#F2EDE8').trim()
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+      if (reduceMotion) {
+        gsap.set(letters, { color: restColor, textShadow: '0 0 0px transparent' })
+        return
+      }
+
+      const glow = `0 0 12px ${accent}, 0 0 30px ${accent}`
+      tl = gsap.timeline({
+        scrollTrigger: { trigger: el, start: 'top 85%', end: 'bottom 55%', scrub: true },
+      })
+      tl.fromTo(letters,
+        { color: 'transparent' },
+        { color: accent, textShadow: glow, duration: 0.1, stagger: 0.02 },
+        0
+      ).to(letters, {
+        color: restColor,
+        textShadow: '0 0 0px transparent',
+        duration: 0.1,
+        stagger: 0.02,
+        clearProps: 'color,textShadow',
+      }, 0.15)
     }
 
-    const glow = `0 0 12px ${accent}, 0 0 30px ${accent}`
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: el, start: 'top 85%', end: 'bottom 55%', scrub: true },
+    buildTimeline()
+
+    const observer = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.type === 'attributes' && m.attributeName === 'class') {
+          buildTimeline()
+          break
+        }
+      }
     })
-    /* stagger natif GSAP plutôt qu'une boucle créant 2×N tweens
-       individuels : sur un gros bloc de texte (About fusionné en un
-       seul paragraphe, 500+ lettres), 2×N tweens séparés dans un
-       même timeline scrubbé devenait perceptiblement moins fluide
-       que sur un texte court. stagger:0.02 reproduit exactement le
-       même décalage par lettre (index*0.02) mais en 2 tweens au
-       total au lieu de 2×N — GSAP l'optimise nativement en interne. */
-    tl.fromTo(letters,
-      { color: 'transparent' },
-      { color: accent, textShadow: glow, duration: 0.1, stagger: 0.02 },
-      0
-    ).to(letters, {
-      color: restColor,
-      textShadow: '0 0 0px transparent',
-      duration: 0.1,
-      stagger: 0.02,
-      clearProps: 'color,textShadow',
-    }, 0.15)
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] })
 
     return () => {
-      tl.scrollTrigger?.kill()
-      tl.kill()
+      observer.disconnect()
+      if (tl) {
+        tl.scrollTrigger?.kill()
+        tl.kill()
+        gsap.set(letters, { clearProps: 'all' })
+      }
     }
   }, [])
 
@@ -1650,11 +1616,14 @@ function ProjectVideoMedia({ project }) {
   )
 }
 
-const RECENT_PROJECT_TITLES = ['ChapChap Bara', 'NEXURA', 'Chez Florence', 'KokoEat', 'Jean Edy · Portfolio']
+const RECENT_PROJECT_TITLES = ['CNIB Platform', 'XoboTicket', 'Golden Invest', "Saveurs d'Agojiés"]
 
-const RECENT_PROJECTS = RECENT_PROJECT_TITLES
-  .map(t => PROJECTS.find(p => p.title === t))
-  .filter(Boolean)
+const RECENT_PROJECTS = (() => {
+  const matched = RECENT_PROJECT_TITLES
+    .map(t => PROJECTS.find(p => p.title === t))
+    .filter(Boolean)
+  return matched.length >= 4 ? matched.slice(0, 4) : PROJECTS.slice(0, 4)
+})()
 
 function RecentProjects() {
   const { selectedProject, caseFlipped, select, close, setCaseFlipped } = useProjectSelection()
@@ -1931,7 +1900,7 @@ function About() {
       className="sec"
       style={{
         padding: 'clamp(6rem, 14vh, 9rem) 0 10vh',
-        borderTop: '1px solid rgba(255,85,0,.08)'
+        borderTop: '1px solid rgba(158, 12, 27,.08)'
       }}
     >
       <div
@@ -1951,44 +1920,15 @@ function About() {
 
           <div className="about-text-col">
             <NeonFlickerText tag="p" className="about-text-lg">
-              Je suis <strong>M'Bollo Aka</strong> ,développeur web basé à <strong>Abidjan</strong>, avec une vraie envie de
-              créer des produits utiles, beaux et agréables à utiliser.
+              Je suis <strong>Joseph Dehazounde</strong>, analyste en cybersécurité et développeur fullstack basé à <strong>Porto-Novo (Bénin)</strong>.
               <br /><br />
-              Mon parcours a commencé dans le <strong>réseau</strong> et la
-              <strong> sécurité informatique</strong>, et cette base m’a appris à construire
-              avec méthode, à penser la fiabilité et à garder une vision propre de
-              l’architecture.
+              Diplômé en <strong>Sécurité Informatique de l'IFRI (Université d'Abomey-Calavi)</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et expertise de développement web moderne.
               <br /><br />
-              Avec le temps, j’ai trouvé ma place dans le développement web. Aujourd’hui,
-              j’aime concevoir des interfaces qui respirent, qui bougent, et qui donnent une
-              vraie sensation de produit fini.
+              Côté développement, je conçois des applications robustes et scalables avec <strong>React</strong>, <strong>Django REST Framework</strong>, <strong>PostgreSQL</strong> et <strong>Tailwind CSS</strong>, guidé par les principes de <em>Security by Design</em>.
               <br /><br />
-              Je travaille surtout avec <strong>React</strong> et <strong>Django</strong>,
-              tout en explorant <strong>Next.js</strong>, <strong>GSAP</strong>,
-              <strong>Framer Motion</strong> et parfois <strong>Three.js</strong> pour donner
-              plus de vie et de profondeur aux expériences.
+              J'ai conçu et déployé des plateformes complètes telles que <strong>CNIB Platform</strong> (e-learning avec paiement local KKiaPay), <strong>XoboTicket</strong> (gestion de stands avec contrôle d'accès RBAC) ou <strong>Saveurs d'Agojiés</strong>.
               <br /><br />
-              J’aime créer des applications pensées pour de vrais usages : dashboards, outils
-              métier, plateformes web, SaaS et sites immersifs. Mon approche reste simple :
-              faire quelque chose de clair, solide et agréable à utiliser.
-              <br /><br />
-              En grande partie <strong>autodidacte</strong>, j’apprends en construisant, en
-              testant et en améliorant chaque projet. C’est aussi dans cet esprit que j’ai
-              créé{' '}
-              <a
-                href="https://akatech.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  color: 'var(--accent)',
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  borderBottom: '1.5px solid var(--accent)'
-                }}
-              >
-                AKATech Studio
-              </a>
-              , un espace où je donne forme à des idées web modernes et concrètes.
+              Certifié par <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet), formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong> et en cours de finalisation du <strong>Google Cybersecurity Certificate</strong>, je mets mon savoir-faire au service de projets web résilients et sécurisés.
             </NeonFlickerText>
 
             {/* Bloc identitaire */}
@@ -1999,9 +1939,9 @@ function About() {
                 border: '2px solid var(--accent)',
               }}>
                 <img
-                  src={cld("/assets/images/IMG_20250124_124101KK.webp")}
-                  alt="M'Bollo Aka" itemProp="image"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 10%' }}
+                  src={CONTACT.photo}
+                  alt={CONTACT.name} itemProp="image"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   loading="lazy"
                   onError={e => { e.target.style.display = 'none' }}
                 />
@@ -2012,12 +1952,12 @@ function About() {
                   fontFamily: 'var(--fd)', fontWeight: 800,
                   fontSize: '1rem', color: 'var(--text)',
                   letterSpacing: '-.01em', lineHeight: 1.2,
-                }}>M'bollo Aka</h3>
+                }}>{CONTACT.name}</h3>
                 <span itemProp="jobTitle" style={{
                   fontFamily: "'Space Mono', monospace",
                   fontSize: '.62rem', letterSpacing: '.06em',
                   color: 'var(--muted)', textTransform: 'uppercase', lineHeight: 1.3,
-                }}>Développeur Web Full Stack · Fondateur, AKATech Studio</span>
+                }}>{CONTACT.title} · {CONTACT.location}</span>
               </div>
             </div>
           </div>
@@ -2329,9 +2269,9 @@ function SkewSection() {
             speed={14}
             textColor="var(--text)"
             bgColor="transparent"
-            marqueeBgColor="#FF5500"
+            marqueeBgColor="#9E0C1B"
             marqueeTextColor="#fff"
-            borderColor="rgba(255,85,0,.18)"
+            borderColor="rgba(158, 12, 27,.18)"
           />
         </div>
       </div>
@@ -2471,7 +2411,7 @@ function ContentBoardCard({ item, index, layout, setCardRef, total }) {
       <div className="tl-sc-title">{item.title}</div>
       <div className="tl-sc-company">
         <span className="tl-sc-company-icon">◈</span>
-        {item.sub || 'AKATech Studio'}
+        {item.sub || 'JohaoDev'}
       </div>
       <p className="content-board-desc">{item.desc}</p>
       <ul className="tl-sc-items content-board-items">
@@ -2592,7 +2532,7 @@ function InteractiveContentBoard({ items, variant }) {
   return (
     <div className={`tl-board content-board content-board--${variant}`} ref={boardRef}>
       <div className="tl-board-spotlight" ref={spotlightRef} aria-hidden="true" />
-      <div className="tl-board-bgtext" aria-hidden="true"><span>{variant}</span><span>AKATECH</span></div>
+      <div className="tl-board-bgtext" aria-hidden="true"><span>{variant}</span><span>JOHAODEV</span></div>
       <div className="tl-board-cards">
         {items.map((item, i) => (
           <ContentBoardCard key={`${variant}-${item.n || i}`} item={item} index={i} total={items.length} layout={layoutFor(i)} setCardRef={setCardRef} />
@@ -2631,53 +2571,53 @@ function ProcessSection() {
 const PROCESS_CARD_COPY = PROCESS_STEPS.map(({ img, imgAlt, ...step }) => step)
 
 const SERVICES_MOBILE_COPY = [
-  { n: '01', title: 'Conception de Site Web', sub: 'Votre présence en ligne professionnelle', desc: 'Création de sites web modernes, responsive et optimisés pour convertir vos visiteurs en clients.', features: ['Sites responsive & modernes', 'Optimisés pour la conversion', "Du portfolio à l'e-commerce"] },
-  { n: '02', title: 'Cartes Interactives & Dashboards', sub: 'Cartes Mapbox et visualisation de données', desc: 'Intégration de cartes interactives Mapbox / Leaflet et de dashboards de visualisation de données.', features: ['Cartes Mapbox / Leaflet', 'Dashboards de données', 'Interfaces lisibles & actionnables'] },
-  { n: '03', title: 'API & Backend Robustes', sub: 'Connectez et automatisez vos systèmes', desc: "Conception d'API RESTful sécurisées avec Django ou Flask, auth JWT et déploiement.", features: ['API RESTful Django / Flask', 'Auth JWT & gestion des rôles', 'Intégration Mobile Money'] },
-  { n: '04', title: 'Maintenance & Support', sub: 'Votre projet performant, sécurisé et à jour', desc: 'Suivi technique, corrections de bugs, mises à jour de sécurité et améliorations continues.', features: ['Suivi technique continu', 'Mises à jour de sécurité', 'Améliorations sur la durée'] },
-  { n: '05', title: 'Fiche Google My Business', sub: 'Soyez visible sur Google Maps et la recherche locale', desc: 'Création ou optimisation de votre fiche Google et suivi mensuel : avis, publications et statistiques.', features: ['Création ou optimisation de la fiche', 'Description optimisée SEO local', 'Suivi mensuel : avis & statistiques'] },
+  { n: '01', title: 'Audit de Sécurité & Pentest Web', sub: 'Évaluez et protégez vos applications', desc: 'Détection des failles OWASP Top 10, tests d\'intrusion avec Burp Suite et rapport d\'audit avec remédiations.', features: ['Tests OWASP Top 10', 'Audit de configuration & headers', 'Rapport CVSS & remédiations'] },
+  { n: '02', title: 'Développement Web Fullstack', sub: 'Applications modernes et résilientes', desc: 'Création d\'applications sur-mesure avec React, Next.js, Django REST et PostgreSQL selon les normes Secure by Design.', features: ['React / Next.js / Django', 'API REST sécurisée & JWT', 'Bases PostgreSQL robustes'] },
+  { n: '03', title: 'E-commerce & Mobile Money', sub: 'Vendez en ligne en toute sécurité', desc: 'Boutiques en ligne optimisées avec intégration sécurisée KKiaPay / Mobile Money et validation par webhooks.', features: ['Intégration KKiaPay / Mobile Money', 'Panier & gestion de stocks', 'Webhooks serveurs vérifiés'] },
+  { n: '04', title: 'Maintenance & Réseaux', sub: 'Parc informatique fiable et sécurisé', desc: 'Dépannage système, sécurisation de réseaux locaux (LAN), stratégies de sauvegarde et durcissement d\'OS.', features: ['Diagnostic & dépannage', 'Réseau LAN sécurisé', 'Sauvegarde & durcissement'] },
+  { n: '05', title: 'Formation & Sensibilisation', sub: 'Développez vos compétences numériques', desc: 'Ateliers pratiques en développement web, bureautique avancée et sensibilisation aux cybermenaces.', features: ['Initiation au code web', 'Bureautique & outils pro', 'Sensibilisation cyber & phishing'] },
 ]
 
 const SERVICES_DATA = [
   {
     num: '01',
-    title: 'Conception\nde Site Web',
-    sub: 'Votre présence en ligne professionnelle',
-    desc: "Création de sites web modernes, responsive et optimisés pour convertir vos visiteurs en clients. Du portfolio à la plateforme e-commerce, je conçois chaque page avec soin.",
-    img: cld('/assets/images/service/creation de site web.webp'),
-    imgAlt: 'Conception de site web',
+    title: 'Audit de Sécurité\n& Pentest Web',
+    sub: 'Évaluez et protégez vos applications',
+    desc: "Détection proactive des failles OWASP Top 10 (XSS, SQLi, IDOR) avec Burp Suite. Audit de configuration serveur et fourniture d'un rapport complet avec guide de remédiation technique pas-à-pas.",
+    img: cld('/assets/images/service/api.webp'),
+    imgAlt: 'Audit de sécurité et pentest',
   },
   {
     num: '02',
-    title: 'Cartes Interactives\n& Dashboards',
-    sub: 'Cartes Mapbox et visualisation de données',
-    desc: "Intégration de cartes interactives Mapbox / Leaflet et de dashboards de visualisation de données. Je transforme vos données brutes en interfaces lisibles et actionnables.",
-    img: cld('/assets/images/service/dasbord.webp'),
-    imgAlt: 'Dashboard interactif',
+    title: 'Développement Web\nFullstack',
+    sub: 'Applications modernes et résilientes',
+    desc: "Conception et déploiement d'applications web scalables et sécurisées (React, Next.js, Django REST Framework, PostgreSQL). Architecture découplée et authentification robuste.",
+    img: cld('/assets/images/service/creation de site web.webp'),
+    imgAlt: 'Développement Web Fullstack',
   },
   {
     num: '03',
-    title: 'API & Backend\nRobustes',
-    sub: 'Connectez et automatisez vos systèmes',
-    desc: "Conception d'API RESTful sécurisées avec Django ou Flask. Authentification JWT, gestion des rôles, intégration Mobile Money et déploiement sur Vercel ou PythonAnywhere.",
-    img: cld('/assets/images/service/api.webp'),
-    imgAlt: 'API et backend',
+    title: 'E-commerce &\nPaiement Mobile',
+    sub: 'Vendez en toute sérénité',
+    desc: "Création de boutiques en ligne fluides avec intégration de paiements locaux africains (KKiaPay, MTN, Moov). Validation asynchrone des commandes par webhooks signés et gestion des stocks.",
+    img: cld('/assets/images/service/dasbord.webp'),
+    imgAlt: 'E-commerce et paiement sécurisé',
   },
   {
     num: '04',
-    title: 'Maintenance\n& Support',
-    sub: 'Votre projet performant, sécurisé et à jour',
-    desc: "Suivi technique, corrections de bugs, mises à jour de sécurité et améliorations continues. Vous vous concentrez sur votre métier, je m'occupe du reste.",
+    title: 'Maintenance &\nSécurisation Réseau',
+    sub: 'Infrastructure saine et protégée',
+    desc: "Diagnostic matériel et logiciel, maintenance préventive du parc informatique, configuration de réseaux locaux sécurisés (LAN) et mise en place de sauvegardes automatiques.",
     img: cld('/assets/images/service/maintenence.webp'),
-    imgAlt: 'Maintenance et support',
+    imgAlt: 'Maintenance et réseau',
   },
   {
     num: '05',
-    title: 'Fiche Google\nMy Business',
-    sub: 'Soyez visible sur Google Maps et la recherche locale',
-    desc: "Création ou optimisation de votre fiche Google (NAP, catégories, photos, description SEO local) et suivi mensuel : réponse aux avis, publications et statistiques. Plus de clients vous trouvent près de chez eux.",
+    title: 'Formation &\nSensibilisation',
+    sub: 'Montée en compétences numériques',
+    desc: "Sessions de formation sur-mesure : apprentissage du développement web, utilisation avancée des outils informatiques et ateliers d'hygiène cyber pour vous prémunir du phishing et des intrusions.",
     img: cld('/assets/images/service/fiche-google.webp'),
-    imgAlt: 'Fiche Google My Business',
+    imgAlt: 'Formation et sensibilisation',
   },
 ]
 
@@ -2964,8 +2904,8 @@ function TestiCard({ t }) {
     const tiltY = (x - xc) / 12
     gsap.to(el, {
       transform: `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.04, 1.04, 1.04)`,
-      borderColor: 'rgba(255,85,0,.6)',
-      boxShadow: '0 30px 60px rgba(255,85,0,0.12), 0 20px 40px rgba(0,0,0,.5)',
+      borderColor: 'rgba(158, 12, 27,.6)',
+      boxShadow: '0 30px 60px rgba(158, 12, 27,0.12), 0 20px 40px rgba(0,0,0,.5)',
       duration: 0.35,
       ease: 'power2.out',
       overwrite: 'auto'
@@ -2995,7 +2935,7 @@ function TestiCard({ t }) {
         <div className="testi-stars">
           {Array(5).fill(null).map((_, j) => (
             <svg key={j} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#FF5500" />
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#9E0C1B" />
             </svg>
           ))}
         </div>
@@ -3104,7 +3044,7 @@ function WritingSection() {
                         letterSpacing: '.1em',
                         textTransform: 'uppercase',
                         color: 'var(--accent)',
-                        border: '1px solid rgba(255,85,0,.3)',
+                        border: '1px solid rgba(158, 12, 27,.3)',
                         borderRadius: '999px',
                         padding: '3px 10px',
                         marginBottom: '1rem',
@@ -3194,7 +3134,7 @@ function TestimonialsSection() {
                   fontFamily: "'Space Mono',monospace",
                   fontSize: '.58rem',
                   color: 'var(--muted)',
-                  border: '1px solid rgba(255,85,0,.18)',
+                  border: '1px solid rgba(158, 12, 27,.18)',
                   borderRadius: '999px',
                   padding: '3px 10px'
                 }}
@@ -3273,7 +3213,7 @@ function TestimonialsSection() {
                         style={{
                           fontSize: '2.2rem',
                           lineHeight: '.5',
-                          color: 'rgba(255,85,0,.3)',
+                          color: 'rgba(158, 12, 27,.3)',
                           fontWeight: 800,
                           display: 'block',
                           marginBottom: '.4rem'
@@ -3291,7 +3231,7 @@ function TestimonialsSection() {
                       alignItems: 'center',
                       gap: '.9rem',
                       paddingTop: '1rem',
-                      borderTop: '1px solid rgba(255,85,0,.15)',
+                      borderTop: '1px solid rgba(158, 12, 27,.15)',
                       marginTop: '1rem'
                     }}
                   >
@@ -3383,17 +3323,17 @@ function FAQSection() {
  INTERACTIVE GITHUB CARD — Temps réel via GitHub API
  ════════════════════════════════════════════ */
 function GitHubInteractiveCard() {
-  const GH_USER = 'wthomasss06-stack'
+  const GH_USER = 'johaoooo'
 
   const [activeTab, setActiveTab] = useState('grid')
   const [tooltip, setTooltip] = useState({ show: false, text: '', x: 0, y: 0 })
   const [terminalLines, setTerminalLines] = useState([])
   const [isPushing, setIsPushing] = useState(false)
   const [logs, setLogs] = useState([
-    { id: 1, time: 'Il y a 10 min', repo: 'shop-ci', msg: 'fix: validation du panier et mobile money API', commits: 2 },
-    { id: 2, time: 'Il y a 2 heures', repo: 'akatech', msg: 'feat: ajout des animations GSAP de survol', commits: 1 },
-    { id: 3, time: 'Hier', repo: 'terrasafe', msg: 'security: validation CSRF sur le formulaire', commits: 3 },
-    { id: 4, time: 'Il y a 3 jours', repo: 'chap-chapMAP', msg: 'refactor: optimisation des couches Leaflet', commits: 1 },
+    { id: 1, time: 'Il y a 10 min', repo: 'cnib-platform', msg: 'fix: validation webhook KKiaPay et génération attestation', commits: 2 },
+    { id: 2, time: 'Il y a 2 heures', repo: 'xobo-ticket', msg: 'security: contrôle d\'accès granulaire RBAC et jetons', commits: 1 },
+    { id: 3, time: 'Hier', repo: 'saveurs-d-agojies', msg: 'feat: optimisation du panier et tunnel d\'achat', commits: 3 },
+    { id: 4, time: 'Il y a 3 jours', repo: 'portfolio-frontend', msg: 'refactor: refonte UI et audit de conformité OWASP', commits: 1 },
   ])
 
   const [ghLoading, setGhLoading] = useState(true)
@@ -3536,16 +3476,16 @@ function GitHubInteractiveCard() {
     if (isPushing) return
     setIsPushing(true); setTerminalLines([])
     const lines = [
-      'wthomasss06-stack@desktop:~$ git add .',
-      'wthomasss06-stack@desktop:~$ git commit -m "feat: design interactive stats grid"',
-      'wthomasss06-stack@desktop:~$ git push origin main',
+      'johaoooo@kali:~$ git add .',
+      'johaoooo@kali:~$ git commit -m "feat: design interactive stats grid"',
+      'johaoooo@kali:~$ git push origin main',
       'Enumerating objects: 7, done.',
       'Counting objects: 100% (7/7), done.',
       'Compressing objects: 100% (4/4), done.',
       'Writing objects: 100% (4/4), 485 bytes | 485.00 KiB/s, done.',
-      `To github.com:${GH_USER}/elvis-portfolio.git`,
+      `To github.com:${GH_USER}/portfolio-frontend.git`,
       ' 7c28fb3..9a28cd1 main -> main',
-      'wthomasss06-stack@desktop:~$ _',
+      'johaoooo@kali:~$ _',
     ]
     let cur = 0
     const next = () => {
@@ -3554,7 +3494,7 @@ function GitHubInteractiveCard() {
         setTimeout(next, cur <= 3 ? 600 : 250)
       } else {
         setIsPushing(false)
-        setLogs(p => [{ id: Date.now(), time: "À l'instant", repo: 'elvis-portfolio', msg: 'feat: design interactive stats grid', commits: 1 }, ...p])
+        setLogs(p => [{ id: Date.now(), time: "À l'instant", repo: 'portfolio-frontend', msg: 'feat: design interactive stats grid', commits: 1 }, ...p])
       }
     }
     setTimeout(next, 200)
@@ -3678,14 +3618,14 @@ function GitHubInteractiveCard() {
                 Chargement des dépôts GitHub…
               </div>
             ) : (ghRepos.length > 0 ? ghRepos : [
-              { name: 'ShopCI', description: 'Marketplace E-commerce locale avec intégration mobile money.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
-              { name: 'TerraSafe', description: "Plateforme foncière de prévention des risques d'arnaque.", stargazers_count: 8, forks_count: 2, language: 'Python' },
-              { name: 'AKATech Studio', description: 'Site officiel de mon agence digitale. Responsive + animations.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
-              { name: 'chap-chapMAP', description: "Cartographie interactive pour l'itinéraire et la livraison.", stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
+              { name: 'cnib-platform', description: 'Plateforme E-learning & Certifications avec KKiaPay et Django REST.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
+              { name: 'xobo-ticket', description: 'Gestion & Réservation de Stands avec RBAC et jeton sécurisé.', stargazers_count: 8, forks_count: 2, language: 'Python' },
+              { name: 'JohaoDev', description: 'Portfolio moderne, pentest web et solutions logicielles sécurisées.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
+              { name: 'saveurs-d-agojies', description: 'E-boutique gastronomique et terroir béninois.', stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
             ]).map((repo, i) => {
               const langColor = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#2b7489', HTML: '#e34c26', CSS: '#563d7c' }
               const pct = { JavaScript: '100% JS', Python: '55% Py / 45% HTML', TypeScript: '90% TS / 10% CSS', HTML: '100% HTML' }
-              const color = langColor[repo.language] || '#FF5500'
+              const color = langColor[repo.language] || '#9E0C1B'
               return (
                 <div key={i} className="github-repo-card">
                   <div className="github-repo-header">
@@ -3792,20 +3732,17 @@ function ContactSection({ onToast }) {
       }
       setSent(true); onToast()
     } catch (err) {
-      setBtnTxt(err?.message ? `${err.message}` : 'Erreur — WhatsApp : +225 01 42 50 77 50')
+      setBtnTxt(err?.message ? `${err.message}` : `Erreur — WhatsApp : ${CONTACT.whatsapp}`)
       setTimeout(() => { setBtnTxt('Envoyer le message'); setSending(false) }, 4000)
     }
   }
 
   const nodeLinks = [
-    { id: 'cojn-github', href: 'https://github.com/wthomasss06-stack', label: 'GitHub' },
-    { id: 'cojn-linkedin', href: 'https://www.linkedin.com/in/m-bollo-aka', label: 'LinkedIn' },
-    { id: 'cojn-facebook', href: 'https://web.facebook.com/profile.php?id=61577494705852', label: 'Facebook' },
-    { id: 'cojn-whatsapp', href: 'https://wa.me/2250142507750', label: 'WhatsApp' },
-    { id: 'cojn-akatech', href: 'https://akatech.vercel.app/', label: 'AKATech Studio' },
-    { id: 'cojn-gmail', href: 'mailto:wthomasss06@gmail.com', label: 'Gmail' },
-    { id: 'cojn-uvci', href: 'https://uvci.edu.ci/', label: 'UVCI' },
-    { id: 'cojn-cv', href: '/assets/CV_MBOLLO_AKA_ELVIS.pdf', label: 'Mon CV' },
+    { id: 'cojn-github', href: CONTACT.github, label: 'GitHub' },
+    { id: 'cojn-linkedin', href: CONTACT.linkedin, label: 'LinkedIn' },
+    { id: 'cojn-whatsapp', href: CONTACT.whatsappUrl, label: 'WhatsApp' },
+    { id: 'cojn-gmail', href: `mailto:${CONTACT.email}`, label: 'Gmail' },
+    { id: 'cojn-cv', href: CONTACT.cv, label: 'Mon CV' },
   ]
 
   return (
@@ -3820,7 +3757,7 @@ function ContactSection({ onToast }) {
         {/* ── Colonne gauche : liste compacte "Où me joindre" ── */}
         <div className="contact-info contact-links-col">
           <div className="contact-status-badge" style={{ marginBottom: '1.6rem' }}><span className="cdot" /><span>Disponible maintenant</span></div>
-          <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '.58rem', color: 'rgba(255,85,0,.55)', letterSpacing: '.2em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem' }}>// Où me joindre</span>
+          <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '.58rem', color: 'rgba(158, 12, 27,.55)', letterSpacing: '.2em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem' }}>// Où me joindre</span>
           <ul className="clk-list">
             {nodeLinks.map(n => (
               <li key={n.id} className="clk-item">
@@ -3848,8 +3785,8 @@ function ContactSection({ onToast }) {
           <div className="cf-card">
             {sent ? (
               <div style={{ textAlign: 'center', padding: '3rem 2rem' }}>
-                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,85,0,.12)', border: '1.5px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.2rem' }}>
-                  <AnimIcon type="check" size={28} color="#FF5500" />
+                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(158, 12, 27,.12)', border: '1.5px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.2rem' }}>
+                  <AnimIcon type="check" size={28} color="#9E0C1B" />
                 </div>
                 <h3 style={{ fontFamily: "'Clash Display','Syne',sans-serif", fontWeight: 700, marginBottom: '.5rem' }}>Message envoyé !</h3>
                 <h3 style={{ fontSize: '.85rem', color: 'var(--muted)' }}>Je vous réponds sous 24h. <AnimIcon type="rocket" size={14} /></h3>
@@ -4036,7 +3973,7 @@ function Footer() {
   return (
     <footer id="main-footer" ref={footerRef}>
       <div className="ft-bottom-band">
-        <span className="ft-aka-watermark" aria-hidden="true">AKATECH</span>
+        <span className="ft-aka-watermark" aria-hidden="true">JOHAODEV</span>
 
         <div className="ft-bb-inner" style={{ perspective: '1000px' }}>
           <div ref={floatRef}>
@@ -4047,51 +3984,52 @@ function Footer() {
 
                 {/* Ligne 1 — Nom — silkscreen */}
                 <div className="fts-row fts-row--name">
-                  <ScatterWord className="fts-word fts-word--bright fts-word--silk">M'Bollo</ScatterWord>
-                  <ScatterWord className="fts-word fts-word--bright fts-word--silk">Aka</ScatterWord>
+                  <ScatterWord className="fts-word fts-word--bright fts-word--silk">Joseph</ScatterWord>
+                  <ScatterWord className="fts-word fts-word--bright fts-word--silk">Dehazounde</ScatterWord>
                 </div>
 
                 {/* Ligne 2 — rôle muted */}
                 <div className="fts-row">
-                  <ScatterWord className="fts-word fts-word--muted">dev</ScatterWord>
-                  <ScatterWord className="fts-word fts-word--muted">web</ScatterWord>
+                  <ScatterWord className="fts-word fts-word--muted">cyber</ScatterWord>
+                  <ScatterWord className="fts-word fts-word--muted">fullstack</ScatterWord>
                 </div>
 
                 {/* Ligne 3 — titre + logo centré + titre */}
                 <div className="fts-row fts-row--logo">
-                  <ScatterWord className="fts-word fts-word--muted">CEO</ScatterWord>
+                  <ScatterWord className="fts-word fts-word--muted">Pentest</ScatterWord>
                   <div
                     className="fts-item fts-logo-wrap cursor-pointer"
                     onMouseEnter={handleEnter}
                     onMouseLeave={handleLeave}
                   >
                     <img
-                      src={cld("/assets/images/logo-akatech.webp")}
-                      alt="AKATech Studio logo"
+                      src={CONTACT.photo}
+                      alt="Joseph Dehazounde"
                       className="fts-logo"
+                      style={{ borderRadius: '50%', objectFit: 'cover' }}
                       loading="lazy"
                       onError={e => { e.target.style.display = 'none' }}
                     />
                   </div>
-                  <ScatterWord className="fts-word fts-word--muted">Founder</ScatterWord>
+                  <ScatterWord className="fts-word fts-word--muted">Developer</ScatterWord>
                 </div>
 
                 {/* Ligne 4 — email */}
                 <div className="fts-row fts-row--small">
                   <ScatterWord
                     tag="a"
-                    href="mailto:wthomasss06@gmail.com"
+                    href={`mailto:${CONTACT.email}`}
                     className="fts-word fts-word--link"
                   >
-                    wthomasss06@gmail.com
+                    {CONTACT.email}
                   </ScatterWord>
                   <ScatterWord
                     tag="a"
-                    href="https://akatech.vercel.app/"
+                    href={CONTACT.github}
                     target="_blank"
                     className="fts-word fts-word--link"
                   >
-                    akatech.vercel.app
+                    github.com/johaoooo
                   </ScatterWord>
                 </div>
 
@@ -4106,7 +4044,7 @@ function Footer() {
                     </a>
                   ))}
                 </nav>
-                <span className="ft-bb-copyright">© 2026 · AKATech Studio.</span>
+                <span className="ft-bb-copyright">© 2026 · Joseph Dehazounde — JohaoDev.</span>
               </div>
 
             </div>{/* /fts-card */}

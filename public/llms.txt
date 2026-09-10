@@ -1,98 +1,98 @@
-# M'Bollo Aka  — AKATech
-> Développeur Web Full Stack basé à Abidjan, Côte d'Ivoire. Fondateur d'AKATech. Spécialisé en applications web modernes (React, Next.js, Django, Flask) à haute valeur ajoutée visuelle (GSAP, Three.js, WebGL) et optimisées pour la conversion locale.
+# Joseph Dehazounde — JohaoDev
+> Analyste en Cybersécurité & Développeur Web Full Stack basé à Porto-Novo, Bénin. Diplômé en Sécurité Informatique de l'IFRI (Université d'Abomey-Calavi). Spécialisé en sécurité offensive (audit web, tests d'intrusion OWASP Top 10, Burp Suite) et conception d'architectures web résilientes (React, Next.js, Django REST Framework, PostgreSQL) selon les principes de Security by Design.
 
 ## Informations Clés
-- **Identité** : M'Bollo Aka 
-- **Localisation** : Abidjan, Côte d'Ivoire (Afrique de l'Ouest)
-- **Agence Officielle** : AKATech (https://akatech.vercel.app/)
-- **Contact Principal** : wthomasss06@gmail.com | WhatsApp : +225 01 42 50 77 50
-- **Réseaux** : [GitHub](https://github.com/wthomasss06-stack) | [LinkedIn](https://www.linkedin.com/in/m-bollo-aka)
+- **Identité** : Joseph DEHAZOUNDE
+- **Pseudo / Marque** : JohaoDev (@johaoooo)
+- **Localisation** : Porto-Novo, Bénin (Afrique de l'Ouest)
+- **Email** : josephdehazounde@gmail.com
+- **Téléphone / WhatsApp** : +229 01 62 10 86 94
+- **GitHub** : https://github.com/johaoooo
+- **LinkedIn** : https://linkedin.com/in/dehazounde-joseph
 
 ---
 
-## Services & Grille Tarifaire Officielle
+## Expertises & Domaines d'Intervention
 
-### 1. Portfolio & Présentation Individuelle
-- **Starter** : 100 000 FCFA | 3 à 5 jours | 3 pages, design responsive de base.
-- **Standard** : 175 000 FCFA | 5 à 7 jours | 5 pages, animations modernes, projets détaillés (Populaire).
-- **Premium** : 275 000 FCFA | 7 à 10 jours | Pages illimitées, sur-mesure, SEO + AEO/GEO, CRO avancé, 1 mois de support.
+### 1. Audit de Sécurité Web & Tests d'Intrusion (Pentest)
+- Identification et exploitation contrôlée des vulnérabilités applicatives selon le référentiel **OWASP Top 10** (Injections SQL, XSS, Broken Authentication, IDOR, CSRF, failles de contrôle d'accès).
+- Audit approfondi de surface d'attaque avec **Burp Suite Professional**, **Kali Linux**, **Nmap**, **SQLMap**, **Metasploit**.
+- Analyse de configuration serveur, en-têtes HTTP de sécurité (CSP, HSTS, CORS) et protocoles cryptographiques.
+- Rédaction de rapports d'audit exhaustifs avec scoring CVSS, preuves de concept (PoC) et guides de remédiation technique pas-à-pas pour développeurs.
 
-### 2. Site Vitrine Professionnel
-- **Starter** : 220 000 FCFA | 5 à 7 jours | 5 pages, structure essentielle, formulaire de contact.
-- **Pro** : 350 000 FCFA | 7 à 10 jours | 10 pages, design premium, SEO/AEO avancé, optimisation SXO, blog intégré, 3 mois de support (Populaire).
-- **Elite** : 550 000 FCFA | 10 à 14 jours | 15–20 pages, 100% sur-mesure, CMS complet, SEO + AEO + GEO + Analytics, formation complète, 6 mois de support.
+### 2. Développement Web Full Stack (Secure by Design)
+- Conception et développement d'applications modulaires et résilientes : **React**, **Next.js**, **Vite**, **Tailwind CSS**.
+- Backends robustes et APIs RESTful avec **Django REST Framework** et **Node.js**.
+- Bases de données relationnelles optimisées : **PostgreSQL**, **MySQL**.
+- Authentification et contrôle d'accès stricts : JWT sécurisé, RBAC (Role-Based Access Control), protection CSRF et validation rigoureuse des entrées côté serveur.
 
-### 3. Marketplace & E-commerce (Intégration Mobile Money locale : Orange, MTN, Wave)
-- **Starter** : 450 000 FCFA | 14 jours | Jusqu'à 50 produits, gestion des commandes, Mobile Money inclus.
-- **Pro** : 750 000 FCFA | 21 jours | 200 à 500 produits, multi-paiement, gestion de stock temps réel, SEO produits, dashboard complet (Populaire).
-- **Elite** : 1 200 000 FCFA | 30 jours | Produits illimités, API de paiement custom, optimisations IA (GEO), automatisations avancées, rapports financiers.
+### 3. E-commerce & Intégration Paiements Mobiles
+- Boutiques en ligne et marketplaces adaptées au contexte africain.
+- Intégration sécurisée des passerelles de paiement locales : **KKiaPay**, **FedaPay**, Mobile Money (MTN, Moov, Wave).
+- Validation serveur asynchrone par webhooks signés cryptographiquement.
 
-### 4. Applications Web & SaaS
-- **Sur Devis** : Étude personnalisée sous 48h après diagnostic gratuit. Intègre l'architecture multi-tenant, authentification avancée par rôles, API REST, WebSockets temps réel et dashboards sur-mesure.
-
-### 5. Google Business Profile (SEO Local)
-- **Création complète** : 20 000 FCFA (1-2 jours)
-- **Optimisation de fiche existante** : 12 000 FCFA (1 jour)
-- **Suivi & animation mensuelle** : 10 000 FCFA / mois (gestion avis, posts, statistiques)
-
-*Note contractuelle : Toutes les prestations de développement incluent gratuitement le nom de domaine et l'hébergement la première année (renouvellement estimé entre 15 000 et 30 000 FCFA/an).*
+### 4. Maintenance Informatique & Sécurité Réseau
+- Diagnostic matériel et système, désinfection et optimisation des postes.
+- Configuration, sécurisation et segmentation de réseaux locaux d'entreprise (LAN).
+- Durcissement de systèmes d'exploitation (Linux / Windows) et politiques de sauvegardes automatisées.
 
 ---
 
-## Stack Technique Principal
+## Grille Tarifaire Indicative
 
-### Frontend & Expérience Visuelle
-- **Frameworks/Librairies** : React 18+, Next.js 14/15, TypeScript, JavaScript (ES6+), HTML5, CSS3.
-- **Styles & Layouts** : Tailwind CSS, Bootstrap 5, Bulma.
-- **Animations & Graphismes 3D** : GSAP (ScrollTrigger), Framer Motion, WebGL (Shaders, Canvas API), Three.js.
-- **Librairies Spécialisées** : Leaflet.js (Cartographie), Chart.js (Visualisation), Howler.js (Audio).
+### 1. Audit & Cybersécurité
+- **Audit Flash** : 150 000 FCFA | 3 à 5 jours | Cartographie, OWASP Top 10 de base, rapport de synthèse.
+- **Pentest Web OWASP** : 300 000 FCFA | 5 à 7 jours | Test d'intrusion complet avec Burp Suite, rapport CVSS et guide de remédiation.
+- **Sécurisation Complète** : 550 000 FCFA | 7 à 10 jours | Pentest approfondi, assistance au durcissement, contre-audit post-correction et support 1 mois.
 
-### Backend, Base de Données & Cloud
-- **Langages & Frameworks** : Python (Django, Django REST Framework, Flask), Node.js (Express.js).
-- **Bases de Données & ORM** : MySQL, PostgreSQL (Neon), Prisma.
-- **Services Tierce** : WebSockets, Redis, Celery, EmailJS, Cloudinary.
-- **DevOps / Outils** : Git, GitHub, Vercel, PythonAnywhere.
+### 2. Développement Web Fullstack
+- **Site Vitrine Sécurisé** : 200 000 FCFA | 5 à 7 jours | Design moderne responsive, SSL, sécurité en-têtes, SEO.
+- **Fullstack Pro** : 450 000 FCFA | 10 à 14 jours | React/Vite + Django REST, base PostgreSQL, authentification JWT, dashboard admin.
+- **Plateforme Sur-Mesure** : à partir de 800 000 FCFA | Sur devis après diagnostic gratuit.
+
+### 3. E-commerce & Mobile Money
+- **Starter** : 350 000 FCFA | 7 à 10 jours | Catalogue produits, panier, paiement Mobile Money.
+- **Pro KKiaPay / FedaPay** : 600 000 FCFA | 14 à 20 jours | Multi-paiement (MTN, Moov, Carte bancaire), webhooks vérifiés, gestion de stocks.
+- **Marketplace** : à partir de 1 100 000 FCFA | Multi-vendeurs et rôles avancés.
 
 ---
 
-## Projets Majeurs Réalisés
+## Projets Majeurs
 
-1. **NEXURA** *(Plateforme active — Évolution majeure de TerraSafe)*
-   - *Description* : Marketplace nouvelle génération à six catégories (location de résidences meublées, voitures & motos, terrains, bureaux & salles de conférence).
-   - *Stack* : Next.js 14, Django REST Framework, PostgreSQL, WebSockets, Redis & Celery.
-   - *Caractéristiques* : Auth sécurisée, KYC intégré pour réduire le risque légal, communications temps réel. (Dépôt privé).
+1. **CNIB Platform**
+   - *Description* : Plateforme d'apprentissage en ligne adaptée au contexte africain avec catalogue interactif, paiements mobiles KKiaPay, examens et délivrance d'attestations certifiées.
+   - *Stack* : Django REST Framework, React, Vite, PostgreSQL, Cloudinary, KKiaPay.
+   - *URL* : https://cnib-platform-c5ru.vercel.app/
 
-2. **ShopCI** *(Marketplace locale)*
-   - *Description* : Plateforme e-commerce multi-vendeurs ciblant la fiabilité et la visibilité des commerçants ivoiriens.
-   - *Stack* : React, Django, Bootstrap 5, Vercel + PythonAnywhere.
-   - *URL* : https://shop-ci.vercel.app/
+2. **XoboTicket**
+   - *Description* : Système de réservation, attribution et validation de stands pour foires et événements avec contrôle d'accès par rôle (RBAC) et validation par jeton sécurisé.
+   - *Stack* : Django, React, Vite, PostgreSQL, RBAC, Render, Vercel.
+   - *URL* : https://xobo-ticket.vercel.app/
 
-3. **Chez Florence** *(PWA Élevage & Réservation)*
-   - *Description* : Application Web de gestion et réservation de lapins avec synchronisation des stocks en temps réel et notifications WhatsApp pré-remplies automatisées.
-   - *Stack* : Next.js 14, Express.js, Prisma, PostgreSQL (Neon), Cloudinary.
-   - *URL* : https://chez-florence.vercel.app/
+3. **Golden Invest**
+   - *Description* : Plateforme financière connectant entrepreneurs à fort potentiel et investisseurs accrédités dans l'espace UEMOA.
+   - *Stack* : Next.js, TypeScript, Django REST Framework, Tailwind CSS, PostgreSQL.
+   - *URL* : https://gold-platform-ecru.vercel.app/
 
-4. **New Horizon Service** *(Immobilier / Résidences)*
-   - *Description* : Plateforme haut de gamme de réservation et de location de résidences meublées.
-   - *Stack* : Next.js, Flask, Python, MySQL.
-   - *URL* : https://new-horizonservice.vercel.app/
+4. **Saveurs d'Agojiés**
+   - *Description* : E-boutique gastronomique dédiée aux mets et produits transformés du terroir béninois, avec panier interactif et tunnel d'achat optimisé.
+   - *Stack* : React, Node.js, Vite, Tailwind CSS.
+   - *URL* : https://saveurs-d-agojies.vercel.app/
 
-5. **Tati** *(Portfolio Personnel UI)*
-   - *Description* : Vitrine interactive et animée avec thèmes sombre/clair fluides.
-   - *Stack* : React, Tailwind CSS, Framer Motion.
-   - *URL* : https://tatii.vercel.app/
+5. **AgroTrust**
+   - *Description* : Plateforme AgriTech facilitant la mise en relation directe et équitable entre agriculteurs locaux et acheteurs/grossistes.
+   - *Stack* : React, Django REST, PostgreSQL, Tailwind CSS.
+   - *URL* : https://agrotrust-two.vercel.app/
 
-6. **MD Laverie Pressing** *(Site Artisan local)*
-   - *Description* : Site vitrine avec hero slider animé, grilles tarifaires dynamiques et intégration EmailJS pour les commandes.
-   - *Stack* : React 18, Vite, GSAP, EmailJS.
-   - *URL* : https://laverie-plus.vercel.app/
+6. **MacBenin (AfiShop)**
+   - *Description* : Vitrine e-commerce pour la Maison Afi Collection valorisant l'artisanat et le textile contemporain africain.
+   - *Stack* : React, Django, Tailwind CSS, Vercel.
+   - *URL* : https://afishop-y9ww.vercel.app/
 
-7. **TechFlow** *(Site Vitrine)*
-   - *Description* : Landing page d'agence one-page minimaliste, ultra-rapide et orientée conversion.
-   - *Stack* : HTML, Tailwind CSS, JavaScript Vanilla.
-   - *URL* : https://techflow-ten.vercel.app/
+---
 
-8. **Université les Anges** *(Site Institutionnel)*
-   - *Description* : Portail officiel d'établissement d'enseignement supérieur (filières, inscriptions, contacts).
-   - *Stack* : HTML, Bulma, Bootstrap.
-   - *URL* : https://universitelesanges.vercel.app/
+## Formations & Certifications
+- **Sécurité Informatique (2 ans)** — IFRI (Institut de Formation et de Recherche en Informatique), Université d'Abomey-Calavi (Bénin).
+- **Certifications Force-N** — Intelligence Artificielle, Informatique & Internet, Marketing Digital.
+- **Bootcamp OIF / D-CLIC Cybersécurité** — Audits, protocoles et défense réseau.
+- **Google Cybersecurity Professional Certificate** — Fondations de la cybersécurité, détection de menaces et réseaux.

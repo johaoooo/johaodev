@@ -20,6 +20,9 @@ function normalizeLocalPath(localPath) {
  */
 export function cld(localPath, options = {}) {
   const normalizedPath = normalizeLocalPath(localPath)
+  if (process.env.NEXT_PUBLIC_USE_CLOUDINARY !== 'true') {
+    return normalizedPath
+  }
   const clean = normalizedPath.replace(/^\/assets\/images\//i, '')
   const dotIndex = clean.lastIndexOf('.')
   const base = dotIndex !== -1 ? clean.slice(0, dotIndex) : clean

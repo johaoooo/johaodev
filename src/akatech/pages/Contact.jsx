@@ -41,7 +41,7 @@ export default function Contact({ onNext, onNavigate }) {
       setSent(true)
       setSending(false)
     } catch (err) {
-      setBtnTxt(err?.message ? err.message : 'Erreur — WhatsApp : +225 01 42 50 77 50')
+      setBtnTxt(err?.message ? err.message : `Erreur — WhatsApp : ${CONTACT.whatsapp}`)
       setTimeout(() => {
         setBtnTxt('Envoyer le message')
         setSending(false)
@@ -65,9 +65,9 @@ export default function Contact({ onNext, onNavigate }) {
             {[
               { label: 'Email', href: `mailto:${CONTACT.email}`, value: CONTACT.email },
               { label: 'WhatsApp', href: CONTACT.whatsappUrl, value: CONTACT.phone },
-              { label: 'LinkedIn', href: CONTACT.linkedin, value: 'linkedin.com/in/m-bollo-aka' },
-              { label: 'GitHub', href: CONTACT.github, value: 'github.com/wthomasss06-stack' },
-              { label: 'AKATech Studio', href: CONTACT.agencyUrl, value: 'akatech.vercel.app' },
+              { label: 'LinkedIn', href: CONTACT.linkedin, value: 'linkedin.com/in/dehazounde-joseph' },
+              { label: 'GitHub', href: CONTACT.github, value: 'github.com/johaoooo' },
+              { label: 'JohaoDev', href: CONTACT.agencyUrl, value: 'johaoooo.github.io' },
             ].map((link) => (
               <a
                 key={link.label}

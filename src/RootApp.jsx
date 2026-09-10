@@ -97,7 +97,7 @@ const panelTabStyle = {
   borderRight: 0,
   borderRadius: '14px 0 0 14px',
   background: 'rgba(10,10,10,.9)',
-  color: '#ff5500',
+  color: '#9e0c1b',
   cursor: 'pointer',
   fontSize: '24px',
   lineHeight: 1,
@@ -129,10 +129,10 @@ const switcherStyle = {
 }
 
 const MODE_LABELS = {
-  akatech:   { label: 'AKATech', short: 'AKATech', title: 'Passer au portfolio AKATech', accent: '#ff5500' },
-  app:       { label: 'Moderne', short: 'App desktop', title: 'Passer au mode AKATech', accent: '#f5f2ed' },
-  appmobile: { label: 'Mobile', short: 'App mobile', title: 'Passer au mode AKATech', accent: '#55c7ff' },
-  win95:     { label: 'Win95', short: 'Windows 95', title: 'Passer au mode AKATech', accent: '#f5f2ed' },
+  akatech:   { label: 'JohaoDev', short: 'JohaoDev', title: 'Passer au portfolio JohaoDev', accent: '#9e0c1b' },
+  app:       { label: 'Moderne', short: 'App desktop', title: 'Passer au mode JohaoDev', accent: '#f5f2ed' },
+  appmobile: { label: 'Mobile', short: 'App mobile', title: 'Passer au mode JohaoDev', accent: '#55c7ff' },
+  win95:     { label: 'Win95', short: 'Windows 95', title: 'Passer au mode JohaoDev', accent: '#f5f2ed' },
 }
 
 function SwitcherBtn({ mode, cycle, onToggle, isMobile }) {
@@ -191,8 +191,8 @@ function RootLoader() {
       <div
         style={{
           width: 34, height: 34, borderRadius: '50%',
-          border: '2.5px solid rgba(255,85,0,.25)',
-          borderTopColor: '#FF5500',
+          border: '2.5px solid rgba(158, 12, 27,.25)',
+          borderTopColor: '#9E0C1B',
           animation: 'root-loader-spin .7s linear infinite',
         }}
       />

@@ -50,32 +50,32 @@ export default function Page() {
           rendu côté serveur (voir commentaire ci-dessus et .seo-fallback
           dans globals.css). */}
       <div className="seo-fallback">
-        <h1>M&apos;Bollo aka — Développeur Web Full Stack à Abidjan</h1>
-        <p><strong>AKATech Studio crée des sites web, portfolios et applications sur mesure pour les entrepreneurs et PME en Côte d&apos;Ivoire.</strong></p>
+        <h1>Joseph Dehazounde — Analyste Cybersécurité &amp; Développeur Full Stack à Porto-Novo, Bénin</h1>
+        <p><strong>JohaoDev conçoit des solutions logicielles sécurisées, réalise des audits de sécurité web (OWASP Top 10) et développe des applications web résilientes.</strong></p>
         <p>
-          Développeur web full stack basé à Abidjan, Côte d&apos;Ivoire, spécialisé en React,
-          Django et Flask. Fondateur de AKATech Studio. Création de portfolios, sites vitrines,
-          boutiques e-commerce et applications web sur mesure.
+          Analyste en cybersécurité et développeur full stack basé à Porto-Novo, Bénin. Diplômé de l&apos;IFRI (Université d&apos;Abomey-Calavi),
+          certifié Force-N (Cybersécurité) et Google (Foundations of Cybersecurity). Spécialisé en pentest web Burp Suite, Kali Linux,
+          React, Next.js, Django REST Framework et bases PostgreSQL.
         </p>
 
-        <h2>Services</h2>
+        <h2>Expertise &amp; Services</h2>
         <ul>
-          <li><strong>Conception de Site Web</strong> — sites modernes, responsive et optimisés pour convertir, du portfolio à l&apos;e-commerce.</li>
-          <li><strong>Cartes Interactives &amp; Dashboards</strong> — intégration de cartes Mapbox/Leaflet et de dashboards de visualisation de données.</li>
-          <li><strong>API &amp; Backend Robustes</strong> — API RESTful sécurisées avec Django ou Flask, authentification JWT, intégration Mobile Money.</li>
-          <li><strong>Maintenance &amp; Support</strong> — suivi technique, corrections de bugs, mises à jour de sécurité et améliorations continues.</li>
-          <li><strong>Fiche Google My Business</strong> — création ou optimisation de votre fiche Google, suivi mensuel et SEO local.</li>
+          <li><strong>Audit de Sécurité Web &amp; Pentest</strong> — identification des failles (OWASP Top 10, injections SQL, XSS, CSRF, failles d&apos;authentification), tests d&apos;intrusion avec Burp Suite et rapports de remédiation détaillés.</li>
+          <li><strong>Développement Web Full Stack</strong> — architectures modulaires et résilientes avec Django REST Framework, Python, React et Next.js.</li>
+          <li><strong>Sécurisation d&apos;Infrastructures &amp; API</strong> — durcissement de serveurs Linux, sécurité des API REST, gestion rigoureuse des sessions, CORS et en-têtes CSP/HSTS.</li>
+          <li><strong>E-commerce &amp; Intégration Paiements Mobiles</strong> — boutiques en ligne sécurisées intégrant KKiaPay, FedaPay et Mobile Money.</li>
+          <li><strong>Maintenance &amp; Durcissement Technique</strong> — veille vulnérabilités, corrections de bugs et mises à niveau de sécurité.</li>
         </ul>
 
-        <h2>Tarifs (à partir de)</h2>
+        <h2>Tarifs &amp; Prestations (sur mesure)</h2>
         <ul>
-          <li>Portfolio — à partir de 100 000 FCFA</li>
-          <li>Site Vitrine — à partir de 220 000 FCFA</li>
-          <li>Boutique E-commerce — à partir de 450 000 FCFA</li>
-          <li>Application Web / SaaS — sur devis, après diagnostic gratuit</li>
+          <li>Audit de Sécurité Web / Pentest — à partir de 150 000 FCFA</li>
+          <li>Portfolio / Site Vitrine Sécurisé — à partir de 100 000 FCFA</li>
+          <li>Plateforme E-commerce / Web App — à partir de 450 000 FCFA</li>
+          <li>Architecture &amp; API sur-mesure — sur devis personnalisé</li>
         </ul>
 
-        <p>Contact : wthomasss06@gmail.com · WhatsApp +225 01 42 50 77 50</p>
+        <p>Contact : josephdehazounde@gmail.com · WhatsApp +229 01 62 10 86 94 · Porto-Novo, Bénin</p>
       </div>
 
       <PortfolioApp />

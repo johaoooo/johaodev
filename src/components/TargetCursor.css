@@ -15,7 +15,7 @@
   transform: translate(-50%, -50%);
   width: 4px;
   height: 4px;
-  background-color: #FF5500;
+  background-color: #9E0C1B;
   border-radius: 50%;
 }
 
@@ -25,7 +25,7 @@
   left: 0;
   width: 12px;
   height: 12px;
-  border: 3px solid #FF5500;
+  border: 3px solid #9E0C1B;
 }
 
 .corner-tl {

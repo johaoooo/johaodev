@@ -9,7 +9,7 @@ import MobileLoader from './components/MobileLoader.jsx';
 import { gsap } from 'gsap';
 import SoundToggle from './components/SoundToggle.jsx';
 import { useImmersiveSound } from './hooks/useImmersiveSound.js';
-import { PROJECTS, PRICING_TABS, FAQ_ITEMS, WRITING_POSTS, CONTACT } from './data/portfolioData.js';
+import { PROJECTS, PRICING_TABS, FAQ_ITEMS, WRITING_POSTS, CONTACT, TIMELINE } from './data/portfolioData.js';
 import { cld } from './lib/cloudinary'
 
 
@@ -17,7 +17,7 @@ import { cld } from './lib/cloudinary'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ANIMATED ICON SYSTEM — Lordicon-style
-// Usage :  <LI name="rocket" size={18} color="#ff5500" className="..." style={{}}/>
+// Usage :  <LI name="rocket" size={18} color="#9e0c1b" className="..." style={{}}/>
 // ═══════════════════════════════════════════════════════════════════════════════
 const LI_CSS_ID = 'li-anim-global-v2';
 const LI_CSS = `
@@ -153,7 +153,7 @@ const LI_ICONS = {
   /* ── TIMES — croix fine style iOS ── */
   times: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round"><g className="li-x"><line x1="17" y1="7" x2="7" y2="17" /><line x1="7" y1="7" x2="17" y2="17" /></g></svg>),
   /* ── ROCKET — style Telegram/envoyer ── */
-  rocket: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"><g className="li-rocket"><path d="M12 2.5C8 2.5 4.5 6 4.5 10.5c0 3 1.5 5.5 3.5 7l1 4h6l1-4c2-1.5 3.5-4 3.5-7C19.5 6 16 2.5 12 2.5z" fill={C} fillOpacity=".1" /><circle cx="12" cy="10" r="2.5" fill={C} fillOpacity=".35" /><path d="M9.5 17.5l-2 1.5M14.5 17.5l2 1.5" /></g><g className="li-flame" transform="translate(11.5 21)"><ellipse cx="0" cy="0" rx="1.5" ry="2" fill="#ff5500" stroke="none" opacity=".85" /></g></svg>),
+  rocket: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"><g className="li-rocket"><path d="M12 2.5C8 2.5 4.5 6 4.5 10.5c0 3 1.5 5.5 3.5 7l1 4h6l1-4c2-1.5 3.5-4 3.5-7C19.5 6 16 2.5 12 2.5z" fill={C} fillOpacity=".1" /><circle cx="12" cy="10" r="2.5" fill={C} fillOpacity=".35" /><path d="M9.5 17.5l-2 1.5M14.5 17.5l2 1.5" /></g><g className="li-flame" transform="translate(11.5 21)"><ellipse cx="0" cy="0" rx="1.5" ry="2" fill="#9e0c1b" stroke="none" opacity=".85" /></g></svg>),
   /* ── DOWNLOAD — flèche vers le bas dans plateau ── */
   download: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"><g className="li-dl-arrow"><path d="M12 3v12" /><path d="M8 11l4 4 4-4" /></g><path d="M5 19h14" strokeWidth={sw * .9} /></svg>),
   /* ── MAP-MARKER — goutte épurée ── */
@@ -353,22 +353,19 @@ const SvgCpu = ({ size = 14 }) => (
   </svg>
 );
 
-// ─── Logo AKATech — PNG sans fond ───────────────────
-const AkafolioLogo = ({ size = 58, dark = true, onClick, animate = true }) => {
+// ─── Logo — emblème akafolio ───────────────────
+const AkafolioLogo = ({ size = 52, dark = true, onClick }) => {
   return (
     <img
-      src={cld("/assets/images/logo-akatech.webp")}
-      alt="AKATech Studio Logo"
+      src={cld('/assets/images/logo.webp')}
+      alt="Logo"
       onClick={onClick}
       style={{
         width: size,
         height: size,
         objectFit: 'contain',
         cursor: onClick ? 'pointer' : 'default',
-        flexShrink: 0,
-        display: 'block',
-        filter: animate ? 'drop-shadow(0 0 6px rgba(255,120,0,.45))' : 'none',
-        transition: 'filter .3s',
+        filter: 'drop-shadow(0 0 8px rgba(158, 12, 27,0.45))'
       }}
     />
   );
@@ -459,37 +456,6 @@ const SKILLS = {
     { name: "Support Tech", icon: "https://img.icons8.com/fluency/48/technical-support.png" },
   ],
 };
-
-const TIMELINE = [
-  {
-    date: "2025 – 2026", icon: "rocket", title: "Développeur Freelance Fullstack", company: "AKATech Studio",
-    items: [
-      "Conception et déploiement de plus de 10 applications web (SaaS, e-commerce, plateformes)",
-      "Développement d'API REST avec Django et Flask",
-      "Mise en place de dashboards et systèmes de gestion de données",
-    ],
-    progLabels: ["Apps web", "API REST", "Dashboards", "Déploiement"],
-    progValues: [95, 88, 82, 90],
-    tags: ["Freelance", "Full-Stack", "Django", "React", "SaaS", "Data"]
-  },
-  {
-    date: "Mai – Nov. 2025", icon: "briefcase", title: "Informaticien Stagiaire", company: "Mairie d'Agboville",
-    items: ["Maintenance du parc informatique et du réseau", "Support technique aux utilisateurs", "Contribution à la gestion et à la numérisation des données", "Appui à la création d'outils numériques internes"],
-    progLabels: ["Maintenance", "Support", "Gestion", "Outils"],
-    progValues: [90, 85, 75, 80]
-  },
-  {
-    date: "2023-2024", icon: "laptop-code", title: "Projet Académique – ARTICI", company: "UVCI",
-    items: ["Plateforme web de promotion de l'artisanat local", "Travail collaboratif en équipe pluridisciplinaire", "Optimisation des performances", "Intégration de bonnes pratiques de sécurité"],
-    progLabels: ["Frontend", "Backend", "Perf.", "Sécurité"],
-    progValues: [80, 75, 85, 90]
-  },
-  {
-    date: "2023-2024", icon: "graduation-cap", title: "Licence en Réseau et Sécurité Informatique", company: "UVCI",
-    desc: "Formation complète en développement web, bases de données et sécurité des applications.", tags: ["Certification E-Banking", "Réf: CC/24-002485"]
-  },
-  { date: "2020-2021", icon: "school", title: "Baccalauréat Série D", company: "Lycée Moderne d'Arrah", desc: "Mention : Assez Bien" },
-];
 
 const GRAD = [
   "linear-gradient(135deg,#0d1b2a,#1a3a5c)",
@@ -625,7 +591,7 @@ const TiltCard = ({ children, className = '', style = {}, onClick, intensity = 1
       el.style.transform = `perspective(${perspective}px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.03,1.03,1.03)`;
       el.style.transition = 'transform .08s linear';
       if (glowRef.current) {
-        glowRef.current.style.background = `radial-gradient(280px circle at ${px}% ${py}%, rgba(255,85,0,.13) 0%, transparent 68%)`;
+        glowRef.current.style.background = `radial-gradient(280px circle at ${px}% ${py}%, rgba(158, 12, 27,.13) 0%, transparent 68%)`;
         glowRef.current.style.opacity = '1';
       }
     });
@@ -689,7 +655,7 @@ const SpotlightCard = ({ children, className = '', style = {} }) => {
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left, y = e.clientY - rect.top;
     layerRef.current.style.background =
-      `radial-gradient(320px circle at ${x}px ${y}px, rgba(255,85,0,.09) 0%, transparent 70%)`;
+      `radial-gradient(320px circle at ${x}px ${y}px, rgba(158, 12, 27,.09) 0%, transparent 70%)`;
   }, []);
   return (
     <div ref={ref} className={`mi-spotlight ${className}`} style={style} onMouseMove={onMove}>
@@ -908,8 +874,8 @@ const ParticleCanvas = ({ global: isGlobal = false, light: isLight = false }) =>
   useEffect(() => {
     const cv = cvRef.current; if (!cv) return;
     const ctx = cv.getContext('2d'); let raf;
-    const COLORS = isLight ? ['#ff8c00', '#ff6b00', '#ffa533', '#ffb347', '#e65c00'] : ['#00ff88', '#7EE787', '#00e676', '#69f0ae', '#b9f6ca'];
-    const CONN_COLOR = isLight ? '#ff8c00' : '#00ff88';
+    const COLORS = isLight ? ['#c71a32', '#ff6b00', '#ffa533', '#ffb347', '#e65c00'] : ['#00ff88', '#7EE787', '#00e676', '#69f0ae', '#b9f6ca'];
+    const CONN_COLOR = isLight ? '#c71a32' : '#00ff88';
     const resize = () => { cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; };
     resize(); window.addEventListener('resize', resize);
     const mouse = { x: null, y: null };
@@ -980,10 +946,10 @@ const ParticleCanvas = ({ global: isGlobal = false, light: isLight = false }) =>
       // ── Halo curseur ──
       if (mouse.x !== null) {
         const cg = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 90);
-        cg.addColorStop(0, CONN_COLOR.replace(')', ',0.12)').replace('rgb', 'rgba').replace('#ff8c00', 'rgba(255,140,0,0.12)').replace('#00ff88', 'rgba(0,255,136,0.12)'));
+        cg.addColorStop(0, CONN_COLOR.replace(')', ',0.12)').replace('rgb', 'rgba').replace('#c71a32', 'rgba(184, 20, 42,0.12)').replace('#00ff88', 'rgba(0,255,136,0.12)'));
         cg.addColorStop(1, 'transparent');
         ctx.globalAlpha = 1;
-        ctx.fillStyle = isLight ? 'rgba(255,140,0,0.10)' : 'rgba(0,255,136,0.10)';
+        ctx.fillStyle = isLight ? 'rgba(184, 20, 42,0.10)' : 'rgba(0,255,136,0.10)';
         ctx.beginPath(); ctx.arc(mouse.x, mouse.y, 90, 0, Math.PI * 2); ctx.fill();
       }
 
@@ -1112,7 +1078,7 @@ const Navbar = ({ dark, onToggle }) => {
         <div className="nb-topbar-right">
           <span className="nb-avail">
             <span className="nb-avail-dot" />
-            disponible · Abidjan, CI
+            disponible · Porto-Novo, Bénin
           </span>
           <ThemeToggle dark={dark} onToggle={onToggle} />
           <button className={`nav-hamburger ${open ? 'nav-hamburger--open' : ''} ${dark ? 'nav-hamburger--dark' : ''} nb-hamburger-only`} onClick={() => setOpen(o => !o)} aria-label="Menu" aria-expanded={open}>
@@ -1153,11 +1119,10 @@ const Navbar = ({ dark, onToggle }) => {
           <ThemeToggle dark={dark} onToggle={onToggle} />
         </div>
         <div className="mob-drawer-footer">
-          <a href="https://github.com/wthomasss06-stack" target="_blank" rel="noreferrer"><LI name="github" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-          <a href="https://www.linkedin.com/in/m-bollo-aka" target="_blank" rel="noreferrer"><LI name="linkedin" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-          <a href={FACEBOOK_URL} target="_blank" rel="noreferrer"><LI name="facebook" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-          <a href="https://akatech.vercel.app/" target="_blank" rel="noreferrer" title="AKATech Studio"><LI name="globe" color={dark ? "#fff" : "#1a1a1a"} /></a>
-          <a href="mailto:wthomasss06@gmail.com"><LI name="envelope" color="#ff5500" size={16} /></a>
+          <a href={CONTACT.github} target="_blank" rel="noreferrer"><LI name="github" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
+          <a href={CONTACT.linkedin} target="_blank" rel="noreferrer"><LI name="linkedin" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
+          <a href={CONTACT.whatsappUrl} target="_blank" rel="noreferrer"><LI name="phone" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
+          <a href={`mailto:${CONTACT.email}`}><LI name="envelope" color="#9e0c1b" size={16} /></a>
         </div>
       </div>
     </>
@@ -1167,11 +1132,11 @@ const Navbar = ({ dark, onToggle }) => {
 const RocketFlames = () => (
   <svg className="rocket-big-flames" xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 40 100" style={{ position: 'absolute', bottom: '-70px', left: '50%', transform: 'translateX(-50%)', width: '40px', height: '80px', pointerEvents: 'none', zIndex: 9999 }}>
-    <ellipse cx="20" cy="10" rx="7" ry="14" fill="#FF5500" opacity="0.95">
+    <ellipse cx="20" cy="10" rx="7" ry="14" fill="#9E0C1B" opacity="0.95">
       <animate attributeName="ry" values="14;20;11;18;14" dur=".18s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".95;1;.85;1;.95" dur=".22s" repeatCount="indefinite" />
     </ellipse>
-    <ellipse cx="20" cy="22" rx="5" ry="16" fill="#FF8C00" opacity="0.8">
+    <ellipse cx="20" cy="22" rx="5" ry="16" fill="#C71A32" opacity="0.8">
       <animate attributeName="ry" values="16;22;12;20;16" dur=".22s" repeatCount="indefinite" />
       <animate attributeName="cx" values="20;19;21;20;20" dur=".15s" repeatCount="indefinite" />
     </ellipse>
@@ -1179,11 +1144,11 @@ const RocketFlames = () => (
       <animate attributeName="ry" values="12;18;8;16;12" dur=".25s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".6;.9;.4;.8;.6" dur=".2s" repeatCount="indefinite" />
     </ellipse>
-    <circle cx="12" cy="18" r="2.5" fill="#FF5500" opacity="0.5">
+    <circle cx="12" cy="18" r="2.5" fill="#9E0C1B" opacity="0.5">
       <animate attributeName="cy" values="18;30;18" dur=".3s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".5;0;.5" dur=".3s" repeatCount="indefinite" />
     </circle>
-    <circle cx="28" cy="20" r="2" fill="#FF8C00" opacity="0.5">
+    <circle cx="28" cy="20" r="2" fill="#C71A32" opacity="0.5">
       <animate attributeName="cy" values="20;34;20" dur=".35s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".5;0;.5" dur=".35s" repeatCount="indefinite" />
     </circle>
@@ -1263,14 +1228,14 @@ const ScrollTop = ({ dark }) => {
         style={{ overflow: 'visible', display: 'block' }}>
         <defs>
           <linearGradient id="beamGradM" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#ff5500" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#ff5500" stopOpacity="0" />
+            <stop offset="0%" stopColor="#9e0c1b" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#9e0c1b" stopOpacity="0" />
           </linearGradient>
         </defs>
         <polygon className="st-ufo-beam" points="12,14 2,24 22,24" fill="url(#beamGradM)" stroke="none" />
         <g className="st-ufo-g">
           <path d="M8 10c0-2.5 1.8-4 4-4s4 1.5 4 4" fill="currentColor" fillOpacity=".2" />
-          <path d="M2 12c0-1.5 3-2.5 10-2.5s10 1 10 2.5-3 2.5-10 2.5-10-1-10-2.5z" fill="#ff5500" />
+          <path d="M2 12c0-1.5 3-2.5 10-2.5s10 1 10 2.5-3 2.5-10 2.5-10-1-10-2.5z" fill="#9e0c1b" />
           <path d="M5 12.5c0 1.2 2.8 2.2 7 2.2s7-1 7-2.2" />
           <circle cx="7" cy="12.2" r="0.9" fill="currentColor" stroke="none" />
           <circle cx="12" cy="12.7" r="0.9" fill="currentColor" stroke="none" />
@@ -1397,7 +1362,7 @@ const PlasmaCanvasBg = ({ intensity = 1.0 }) => {
 
 /* ══════════════════════════════════════════════
    PLASMA CANVAS — WebGL background hero
-   Shader plasma AKAfolio : noir profond → orange #FF5500 → ambre
+   Shader plasma AKAfolio : noir profond → orange #9E0C1B → ambre
    ══════════════════════════════════════════════ */
 const AuroraCanvas = ({ dark }) => {
   const cvRef = useRef(null);
@@ -1435,7 +1400,7 @@ const AuroraCanvas = ({ dark }) => {
 
     const vert = `attribute vec2 a_pos; void main(){gl_Position=vec4(a_pos,0.,1.);}`;
 
-    /* ── Plasma shader — palette AKAfolio : noir #0A0A0A → orange #FF5500 → ambre #FF8C00 ── */
+    /* ── Plasma shader — palette AKAfolio : noir #0A0A0A → orange #9E0C1B → ambre #C71A32 ── */
     const frag = `
       precision highp float;
       uniform vec2  u_res;
@@ -1462,17 +1427,17 @@ const AuroraCanvas = ({ dark }) => {
         v += sin((p.x - p.y) * 2.8 + t * 0.6) * 0.5;
         v = v * 0.5 + 0.5; /* normalise 0..1 */
 
-        /* AKAfolio palette :
-           a = noir profond   #0A0A0A  (0.04, 0.04, 0.04)
-           b = gris chaud     #1C1008  (0.11, 0.063, 0.031)
-           c = orange vif     #FF5500  (1.0,  0.333, 0.0)
-           d = ambre brillant #FF8C00  (1.0,  0.549, 0.0)
-           e = blanc chaud    #FFF0D8  (1.0,  0.94,  0.847) */
+        /* Palette rouge au vin :
+           a = noir profond       #0A0A0A  (0.04, 0.04, 0.04)
+           b = vin très sombre    #1F0307  (0.12, 0.015, 0.03)
+           c = rouge vin photo    #61020B  (0.38, 0.01,  0.04)
+           d = bordeaux rubis     #9E0C1B  (0.62, 0.05,  0.11)
+           e = reflet rubis doux  #C71A32  (0.78, 0.10,  0.20) */
         vec3 a = vec3(0.04,  0.04,  0.04);
-        vec3 b = vec3(0.11,  0.063, 0.031);
-        vec3 c = vec3(1.0,   0.333, 0.0);
-        vec3 d = vec3(1.0,   0.549, 0.0);
-        vec3 e = vec3(1.0,   0.94,  0.847);
+        vec3 b = vec3(0.12,  0.015, 0.03);
+        vec3 c = vec3(0.38,  0.01,  0.04);
+        vec3 d = vec3(0.62,  0.05,  0.11);
+        vec3 e = vec3(0.78,  0.10,  0.20);
 
         vec3 col;
         if      (v < 0.25) col = mix(a, b, v * 4.0);
@@ -1490,9 +1455,9 @@ const AuroraCanvas = ({ dark }) => {
         /* bottom darkness — conserve le noir en bas */
         col *= mix(0.08, 1.0, smoothstep(0.0, 0.38, uv.y));
 
-        /* mouse orange glow */
+        /* mouse wine red glow */
         float mdist = length(p - m);
-        col += vec3(1.0, 0.333, 0.0) * exp(-mdist * 2.8) * 0.22;
+        col += vec3(0.62, 0.05, 0.11) * exp(-mdist * 2.8) * 0.22;
 
         /* mode clair : légèrement plus clair */
         col = mix(col, col * 1.18 + vec3(0.02, 0.01, 0.0), u_light * 0.35);
@@ -1558,7 +1523,7 @@ const AuroraCanvas = ({ dark }) => {
 };
 
 const Hero = ({ dark }) => {
-  const phrases = ["Full-Stack", "React & Python", "Django & Flask", "orienté produit", "orienté Data & Carto"];
+  const phrases = ["Audit Web", "DevSecOps", "React", "Django", "Pentesting"];
   const [wi, setWi] = useState(0); const [typed, setTyped] = useState(''); const [del, setDel] = useState(false); const [ch, setCh] = useState(0); const [now, setNow] = useState(new Date());
 
   const heroRef = useRef(null);
@@ -1589,7 +1554,7 @@ const Hero = ({ dark }) => {
       if (cursorRef.current) { cursorRef.current.style.left = `${mx}px`; cursorRef.current.style.top = `${my}px`; }
       /* god rays follow cursor */
       const gx = 50 - (mx / W - 0.5) * 28, gy = 50 - (my / H - 0.5) * 20;
-      if (raysRef.current) raysRef.current.style.background = `radial-gradient(circle at ${gx}% ${gy}%, rgba(255,85,0,0.15) 0%, transparent 55%)`;
+      if (raysRef.current) raysRef.current.style.background = `radial-gradient(circle at ${gx}% ${gy}%, rgba(158, 12, 27,0.15) 0%, transparent 55%)`;
       /* scene rotation (like hhjjj layer-mid) */
       if (sceneRef.current) {
         const rx = (my / H - 0.5) * 10, ry = (mx / W - 0.5) * -10;
@@ -1686,23 +1651,22 @@ const Hero = ({ dark }) => {
 
             <div className="hv4-photo-mob hv4-rv" style={{ '--d': '0.12s' }}>
               <div className="hv4-photo-mob-inner">
-                <img src={cld("/assets/images/IMG_20250124_124101KK.webp")} alt="M'Bollo Aka" className="hv4-photo" />
+                <img src={CONTACT.heroPhoto || CONTACT.photo} alt={CONTACT.name} className="hv4-photo" style={{ objectFit: 'cover', objectPosition: 'center 12%' }} />
                 <div className="hv4-photo-mob-badge"><span className="hero-dot" /><span>disponible</span></div>
               </div>
             </div>
 
-            <h1 className="hv4-name" aria-label="M'Bollo Aka">
-              <ScrambleText text="M'Bollo" tag="span" className="hv4-name-line" style={{ '--d': '0.3s' }} speed={30} step={0.6} threshold={0.15} once={true} />
-              <ScrambleText text="Aka" tag="span" className="hv4-name-line hv4-name-line--u" style={{ "--d": "0.42s" }} speed={28} step={0.5} threshold={0.15} once={true} />
+            <h1 className="hv4-name" aria-label="Joseph Dehazounde">
+              <ScrambleText text="Joseph" tag="span" className="hv4-name-line" style={{ '--d': '0.3s' }} speed={30} step={0.6} threshold={0.15} once={true} />
+              <ScrambleText text="Dehazounde" tag="span" className="hv4-name-line hv4-name-line--u" style={{ "--d": "0.42s" }} speed={28} step={0.5} threshold={0.15} once={true} />
             </h1>
 
             <p className="hv4-typed hv4-rv" style={{ '--d': '0.42s' }}>
-              Développeur&nbsp;<span className="hero-word">{typed}</span><span className="cursor">|</span>
+              Spécialiste&nbsp;<span className="hero-word">{typed}</span><span className="cursor">|</span>
             </p>
 
             <p className="hv4-desc hv4-rv" style={{ '--d': '0.56s' }}>
-              Développeur web orienté produits, spécialisé Django &amp; React.<br />
-              Je construis des applications pensées pour des usages réels.
+              Analyste en cybersécurité, développeur web fullstack et marketeur.
             </p>
 
             <div className="hv4-ctas hv4-rv" style={{ '--d': '0.7s' }}>
@@ -1711,7 +1675,7 @@ const Hero = ({ dark }) => {
                 Voir mes projets <span>↗</span>
               </MagBtn>
               <a className={`btn ${dark ? 'btn--ghost-neon' : 'btn--ghost'} mi-glint`}
-                href="/assets/CV_MBOLLO_AKA_ELVIS.pdf" download>
+                href={CONTACT.cv} download>
                 <LI name="download" color={dark ? "#ffffff" : "#1a1a1a"} /> Télécharger CV
               </a>
             </div>
@@ -1721,7 +1685,7 @@ const Hero = ({ dark }) => {
                 [String(PROJECTS.length), 'Projets'],
                 ['3+', 'Années exp.'],
                 [String(PROJECTS.filter(p => p.cat === 'en-ligne').length), 'En prod.'],
-                ['33', 'Outils']
+                ['15+', 'Outils']
               ].map(([n, l]) => (
                 <div key={l} className="hv4-stat">
                   <span className="hv4-stat-n">{n}</span>
@@ -1734,14 +1698,14 @@ const Hero = ({ dark }) => {
           {/* ════ RIGHT ════ */}
           <div className="hv4-right hv4-rv" style={{ '--d': '0.32s' }} ref={rightRef}>
             <div className="hv4-photo-wrap hv4-photo-wrap--full">
-              <img src={cld("/assets/images/IMG_20250124_124101KK.webp")} alt="M'Bollo Aka" className="hv4-photo hv4-photo--portrait" />
+              <img src={CONTACT.heroPhoto || CONTACT.photo} alt={CONTACT.name} className="hv4-photo hv4-photo--portrait" style={{ objectFit: 'cover', objectPosition: 'center 12%' }} />
               <div className="hv4-photo-overlay">
-                <span><LI name="map-marker-alt" color={dark ? "#aaa" : "#666"} size={12} /> Abidjan, CI</span>
-                <span><LI name="code" color="#ff5500" size={12} /> Full-Stack Dev</span>
+                <span><LI name="map-marker-alt" color={dark ? "#aaa" : "#666"} size={12} /> Porto-Novo, Bénin</span>
+                <span><LI name="code" color="#9e0c1b" size={12} /> Cyber &amp; Fullstack</span>
               </div>
               <div className="hv4-photo-status">
                 <span className="hero-dot" />
-                <span>Open to work · Freelance &amp; CDI</span>
+                <span>Disponible · Projets &amp; Audit</span>
               </div>
             </div>
           </div>
@@ -1824,7 +1788,7 @@ const FeaturedCreation = ({ dark }) => {
               </div>
               <div className="cr-mobile-home" />
             </div>
-            <div className="cr-resp-badge"><LI name="check-circle" color="#ff5500" /> 100% Responsive</div>
+            <div className="cr-resp-badge"><LI name="check-circle" color="#9e0c1b" /> 100% Responsive</div>
           </div>
 
           {/* Dots — un par projet */}
@@ -1863,7 +1827,7 @@ const PANIM_CSS = `
 @keyframes paiGlobeOrbit  { 0%{stroke-dashoffset:62;opacity:.25} 60%{opacity:1} 100%{stroke-dashoffset:0;opacity:.7} }
 @keyframes paiBlink       { 0%,100%{opacity:.3} 50%{opacity:1} }
 @keyframes paiToolWobble  { 0%,100%{transform:rotate(-18deg)} 50%{transform:rotate(18deg)} }
-@keyframes paiGlow        { 0%,100%{filter:drop-shadow(0 0 3px rgba(255,85,0,.35))} 50%{filter:drop-shadow(0 0 8px rgba(255,85,0,.75))} }
+@keyframes paiGlow        { 0%,100%{filter:drop-shadow(0 0 3px rgba(158, 12, 27,.35))} 50%{filter:drop-shadow(0 0 8px rgba(158, 12, 27,.75))} }
 @keyframes paiSpinSlow    { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 @keyframes paiCross       { 0%,100%{opacity:.4;transform:scale(.85)} 50%{opacity:1;transform:scale(1.1)} }
 @keyframes paiCapWobble   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
@@ -1927,7 +1891,7 @@ function usePAnimCSS() {
 
 const PricingAnimIcon = ({ type, size = 20 }) => {
   usePAnimCSS();
-  const C = '#ff5500', Cm = 'rgba(255,85,0,.22)', Cr = 'rgba(200,40,40,.7)';
+  const C = '#9e0c1b', Cm = 'rgba(158, 12, 27,.22)', Cr = 'rgba(200,40,40,.7)';
   if (type === 'globe') return (
     <span className="pai-root" style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
@@ -2614,18 +2578,18 @@ const About = ({ dark }) => {
               <div style={{ position: 'relative', zIndex: 1 }}><p>"Ce n'est pas important de réussir du premier coup. L'essentiel est de réussir au final."</p><span>— Kevin Ressegaire</span></div>
             </div>
             <div className="about-img-wrap">
-              <img src={cld("/assets/images/IMG_20250124_124101KK.webp")} alt="M'Bollo Aka" className={`about-img photo-bw ${aboutPhotoColor ? 'photo-bw--on' : ''}`} />
-              <div className="about-badges"><span><LI name="code" color="#ff5500" size={13} /> Pro</span><span><LI name="lightbulb" color="#ff5500" size={13} /> Créatif</span><span><LI name="eye" color={dark ? "#fff" : "#1a1a1a"} /> Curieux</span></div>
+              <img src={CONTACT.photo} alt={CONTACT.name} className={`about-img photo-bw ${aboutPhotoColor ? 'photo-bw--on' : ''}`} style={{ objectFit: 'cover' }} />
+              <div className="about-badges"><span><LI name="code" color="#9e0c1b" size={13} /> Cyber</span><span><LI name="lightbulb" color="#9e0c1b" size={13} /> Rigueur</span><span><LI name="eye" color={dark ? "#fff" : "#1a1a1a"} /> Audit</span></div>
             </div>
           </div>
           <div className="about-right">
-            <ScrambleText text="Développeur Full-Stack · Django & React / Vite & Next.js · Data & Carto" tag="h3" speed={22} step={0.4} threshold={0.25} once={true} />
-            <p>Je suis développeur web basé à <strong>Abidjan</strong>, avec une vraie envie de créer des produits utiles, beaux et agréables à utiliser.</p>
-            <p>Mon parcours a commencé dans le <strong>réseau</strong> et la <strong>sécurité informatique</strong>, et cette base m'a appris à construire avec méthode, à penser la fiabilité et à garder une vision propre de l'architecture.</p>
-            <p>Avec le temps, j'ai trouvé ma place dans le développement web. Aujourd'hui, j'aime concevoir des interfaces qui respirent, qui bougent, et qui donnent une vraie sensation de produit fini.</p>
-            <p>Je travaille surtout avec <strong>React</strong> et <strong>Django</strong>, tout en explorant <strong>Next.js</strong>, <strong>GSAP</strong>, <strong>Framer Motion</strong> et parfois <strong>Three.js</strong> pour donner plus de vie et de profondeur aux expériences.</p>
-            <p>En grande partie <strong>autodidacte</strong>, j'apprends en construisant, en testant et en améliorant chaque projet. C'est aussi dans cet esprit que j'ai créé <a href="https://akatech.vercel.app/" target="_blank" rel="noreferrer" style={{ color: 'var(--acc)', fontWeight: 700, textDecoration: 'none', borderBottom: '1.5px solid var(--acc)' }}>AKATech Studio</a>, un espace où je donne forme à des idées web modernes et concrètes.</p>
-            <div className={`about-tags ${dark ? 'about-tags--dark' : ''}`}>{["Esprit d'équipe", "Créativité", "Rigueur", "Adaptabilité", "Innovation"].map(t => <span key={t}>{t}</span>)}</div>
+            <ScrambleText text="Analyste Cybersécurité · Développeur Fullstack React & Django REST" tag="h3" speed={22} step={0.4} threshold={0.25} once={true} />
+            <p>Je suis <strong>Joseph Dehazounde</strong>, analyste en cybersécurité et développeur fullstack basé à <strong>Porto-Novo (Bénin)</strong>.</p>
+            <p>Diplômé en <strong>Sécurité Informatique de l'IFRI (Université d'Abomey-Calavi)</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et développement web moderne.</p>
+            <p>Côté dev, je conçois des applications robustes avec <strong>React</strong>, <strong>Django REST Framework</strong>, <strong>PostgreSQL</strong> et <strong>Tailwind CSS</strong>, guidé par les principes de <em>Security by Design</em>.</p>
+            <p>J'ai développé des projets d'envergure comme <strong>CNIB Platform</strong> (e-learning et paiement local KKiaPay), <strong>XoboTicket</strong> (gestion de stands avec contrôle d'accès RBAC) ou <strong>Saveurs d'Agojiés</strong>.</p>
+            <p>Certifié <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet), formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong> et en cours de finalisation du <strong>Google Cybersecurity Certificate</strong>.</p>
+            <div className={`about-tags ${dark ? 'about-tags--dark' : ''}`}>{["Sécurité OWASP", "Burp Suite", "React / Django", "Kali Linux", "Rigueur", "Autonomie"].map(t => <span key={t}>{t}</span>)}</div>
             <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--primary'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Disponible pour opportunités →</MagBtn>
           </div>
         </SpotlightCard>
@@ -2655,7 +2619,7 @@ const About = ({ dark }) => {
               onClick={() => setOpenIdx(i)}
               style={{ cursor: 'pointer' }}>
               <div className={`exp-step-dot ${openIdx === i ? 'exp-step-dot--active' : ''}`}>
-                <LI name={t.icon} color="#ff5500" size={14} />
+                <LI name={t.icon} color="#9e0c1b" size={14} />
               </div>
               <div className="exp-step-line" />
               <span className="exp-step-label">{t.date}</span>
@@ -2682,10 +2646,10 @@ const About = ({ dark }) => {
                     <div className="exp-card-hd" style={{ cursor: 'default' }}>
                       <div className="exp-card-hd-left">
                         <div className={`exp-dot exp-dot--on ${dark ? 'exp-dot--dark' : ''}`}>
-                          <LI name={t.icon} color="#ff5500" size={14} />
+                          <LI name={t.icon} color="#9e0c1b" size={14} />
                         </div>
                         <div className="exp-card-hd-info">
-                          <span className="exp-date"><LI name="calendar-alt" color={dark ? "#ff5500" : "#333"} size={13} /> {t.date}</span>
+                          <span className="exp-date"><LI name="calendar-alt" color={dark ? "#9e0c1b" : "#333"} size={13} /> {t.date}</span>
                           <h4 className="exp-title">{t.title}</h4>
                           <p className="exp-company"><LI name="building" color={dark ? "#aaa" : "#555"} size={13} /> {t.company}</p>
                         </div>
@@ -2778,10 +2742,10 @@ const About = ({ dark }) => {
                 <div className="exp-card-hd" style={{ cursor: 'default' }}>
                   <div className="exp-card-hd-left">
                     <div className={`exp-dot exp-dot--on ${dark ? 'exp-dot--dark' : ''}`}>
-                      <LI name={t.icon} color="#ff5500" size={14} />
+                      <LI name={t.icon} color="#9e0c1b" size={14} />
                     </div>
                     <div className="exp-card-hd-info">
-                      <span className="exp-date"><LI name="calendar-alt" color={dark ? "#ff5500" : "#333"} size={13} /> {t.date}</span>
+                      <span className="exp-date"><LI name="calendar-alt" color={dark ? "#9e0c1b" : "#333"} size={13} /> {t.date}</span>
                       <h4 className="exp-title">{t.title}</h4>
                       <p className="exp-company"><LI name="building" color={dark ? "#aaa" : "#555"} size={13} /> {t.company}</p>
                     </div>
@@ -2831,8 +2795,8 @@ const About = ({ dark }) => {
             <h3>Intéressé par mon profil ?</h3>
             <p>N'hésitez pas à me contacter pour discuter de vos projets ou opportunités.</p>
             <div className="cta-btns">
-              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#ff5500" /> Me contacter</MagBtn>
-              <a className={`btn ${dark ? 'btn--ghost-neon' : 'btn--cta-ghost-light'} mi-glint`} href="/assets/CV_MBOLLO_AKA_ELVIS.pdf" download><LI name="download" color={dark ? "#ffffff" : "#1a1a1a"} /> Télécharger CV</a>
+              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#9e0c1b" /> Me contacter</MagBtn>
+              <a className={`btn ${dark ? 'btn--ghost-neon' : 'btn--cta-ghost-light'} mi-glint`} href={CONTACT.cv} download><LI name="download" color={dark ? "#ffffff" : "#1a1a1a"} /> Télécharger CV</a>
             </div>
           </div>
         </div>
@@ -2890,7 +2854,7 @@ const ProjectModal = ({ project, dark, onClose }) => {
               <a href={project.url} target={project.url.startsWith('http') ? '_blank' : '_self'} rel="noreferrer"
                 className={`btn ${dark ? 'btn--neon' : 'btn--primary'} fd-modal-btn-primary`}>
                 {project.cat === 'demo'
-                  ? <><LI name="play-circle" color="#ff5500" />Voir la démo</>
+                  ? <><LI name="play-circle" color="#9e0c1b" />Voir la démo</>
                   : <><LI name="external-link-alt" color={dark ? "#fff" : "#1a1a1a"} />Voir le site</>}
               </a>
             )}
@@ -3139,9 +3103,9 @@ const FanDeck = ({ items, dark }) => {
                     <div className="fd-agency-scan" aria-hidden />
                     {/* Logo text */}
                     <div className="fd-agency-logo">
-                      <span className="fd-agency-aka">AKA</span><span className="fd-agency-tech">Tech</span>
+                      <span className="fd-agency-aka">Johao</span><span className="fd-agency-tech">Dev</span>
                     </div>
-                    <div className="fd-agency-tagline">Agence Digitale · Abidjan</div>
+                    <div className="fd-agency-tagline">Cybersécurité &amp; Solutions Web</div>
                     {/* Tech pills */}
                     <div className="fd-agency-pills">
                       {item.tech.map(t => <span key={t} className="fd-agency-pill">{t}</span>)}
@@ -3282,7 +3246,7 @@ const SpotlightProjects = ({ items, dark }) => {
             <div className="sp-preview-placeholder"><LI name="code" color={dark ? "#555" : "#aaa"} /></div>
           )}
           {proj.cat === 'en-ligne' && <div className="sp-live-badge"><span className="hero-dot" /><span>EN LIGNE</span></div>}
-          {proj.isPremium && <div className="sp-prem-badge"><LI name="star" color="#ff5500" /> Premium</div>}
+          {proj.isPremium && <div className="sp-prem-badge"><LI name="star" color="#9e0c1b" /> Premium</div>}
         </div>
         {/* Détails */}
         <div className={`sp-details ${dark ? 'sp-details--dark' : ''}`}>
@@ -3294,7 +3258,7 @@ const SpotlightProjects = ({ items, dark }) => {
           <p className="sp-sub">{proj.subtitle}</p>
           <p className="sp-desc">{proj.description}</p>
           <div className="sp-meta">
-            <span className="sp-year"><LI name="calendar-alt" color={dark ? "#ff5500" : "#ff5500"} size={12} /> {proj.year}</span>
+            <span className="sp-year"><LI name="calendar-alt" color={dark ? "#9e0c1b" : "#9e0c1b"} size={12} /> {proj.year}</span>
             {proj.progress != null && (
               <div className="sp-progress-wrap">
                 <div className="sp-progress-track"><div className="sp-progress-fill" style={{ width: `${proj.progress}%` }} /></div>
@@ -3307,7 +3271,7 @@ const SpotlightProjects = ({ items, dark }) => {
             <div className="sp-actions">
               <a href={proj.url} target={isExternal ? '_blank' : '_self'} rel="noreferrer"
                 className={`btn ${dark ? 'btn--neon' : 'btn--primary'} sp-cta mi-glint`}>
-                <LI name={isDemo ? 'play-circle' : 'external-link-alt'} color="#ff5500" />{isDemo ? 'Voir la démo' : 'Voir le site →'}
+                <LI name={isDemo ? 'play-circle' : 'external-link-alt'} color="#9e0c1b" />{isDemo ? 'Voir la démo' : 'Voir le site →'}
               </a>
             </div>
           )}
@@ -3425,7 +3389,7 @@ const SkillBand = ({ title, icon, items, dir, dark }) => {
 
   return (
     <div className="sk-row">
-      <div className="sk-row-lbl"><LI name={icon} color="#ff5500" size={14} />{title}</div>
+      <div className="sk-row-lbl"><LI name={icon} color="#9e0c1b" size={14} />{title}</div>
       <div className="sk-wrap"><div className={`sk-band sk-band--${dir}`} ref={bandRef}>
         {[...items, ...items, ...items].map((sk, i) => (<div key={i} className="sk-item"><img src={sk.icon} alt={sk.name} style={dark && (sk.icon.includes('flask') || sk.icon.includes('django') || sk.icon.includes('github') || sk.icon.includes('vercel')) ? { filter: 'brightness(0) invert(1)' } : {}} /><span>{sk.name}</span></div>))}
       </div></div>
@@ -3459,7 +3423,7 @@ const Skills = ({ dark }) => {
             <h3>Besoin de ces compétences ?</h3>
             <p>Mettons mes compétences au service de votre projet. Discutons-en !</p>
             <div className="cta-btns">
-              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#ff5500" /> Me contacter</MagBtn>
+              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#9e0c1b" /> Me contacter</MagBtn>
               <MagBtn className={`btn ${dark ? 'btn--ghost-neon' : 'btn--cta-ghost-light'} mi-glint`} onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}><LI name="eye" color={dark ? "#fff" : "#1a1a1a"} /> Voir mes projets</MagBtn>
             </div>
           </div>
@@ -3473,23 +3437,23 @@ const Skills = ({ dark }) => {
 const TESTIMONIALS = [
   {
     name: "Koné Ibrahima", role: "Fondateur · TechFlow", avatar: "K",
-    text: "Elvis a livré notre site vitrine en un temps record. Design moderne, responsive, exactement ce qu'on voulait. Très professionnel.", stars: 5
+    text: "Joseph a sécurisé et livré notre plateforme en un temps record. Code robuste, audit OWASP rigoureux et design responsive. Très professionnel.", stars: 5
   },
   {
     name: "Calvin Dexter", role: "Gérant · New Horizon Service", avatar: "C",
-    text: "La plateforme de location est impeccable. Les clients peuvent réserver facilement, le backend est solide. Je recommande à 100%.", stars: 5
+    text: "La plateforme de billetterie est impeccable. Les transactions Mobile Money sont fiables, le backend Django est solide. Je recommande à 100%.", stars: 5
   },
   {
     name: "Mory Koné", role: "Graphiste · MK Portfolio", avatar: "M",
-    text: "Mon portfolio reflète parfaitement mon univers créatif. Elvis a su traduire ma vision en une expérience visuelle mémorable.", stars: 5
+    text: "Mon site reflète parfaitement mon univers visuel. Joseph a su allier performance front-end et sécurité sans compromis.", stars: 5
   },
   {
-    name: "Tatiana D.", role: "Influenceuse · Tatii", avatar: "T",
-    text: "Super boulot ! Mon site de présentation est élégant, rapide et je reçois beaucoup de compliments. Merci Elvis !", stars: 5
+    name: "Tatiana D.", role: "Responsable · AgroTrust", avatar: "T",
+    text: "Super travail d'audit et d'intégration ! La traçabilité et l'expérience utilisateur sont impeccables. Merci Joseph !", stars: 5
   },
   {
-    name: "Manobeat 777", role: "Beatmaker · ManoBeat", avatar: "B",
-    text: "La boutique de beats marche très bien. Les clients achètent facilement via WhatsApp. Interface propre et professionnel.", stars: 5
+    name: "Manobeat 777", role: "Producteur · Studio Beat", avatar: "B",
+    text: "La plateforme de vente fonctionne très bien. Interface fluide, paiements sécurisés et zéro faille constatée.", stars: 5
   },
 ];
 
@@ -3640,14 +3604,11 @@ function AnimatedBeamMobile({ dark }) {
   const centerId = 'mob-cojn-center'
 
   const nodeLinks = [
-    { id: 'mob-cojn-github', href: 'https://github.com/wthomasss06-stack', label: 'GitHub', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
-    { id: 'mob-cojn-linkedin', href: 'https://www.linkedin.com/in/m-bollo-aka', label: 'LinkedIn', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
-    { id: 'mob-cojn-facebook', href: 'https://web.facebook.com/profile.php?id=61577494705852', label: 'Facebook', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
-    { id: 'mob-cojn-whatsapp', href: 'https://wa.me/2250142507750', label: 'WhatsApp', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
-    { id: 'mob-cojn-akatech', href: 'https://akatech.vercel.app/', label: 'AKATech Studio', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" /></svg> },
-    { id: 'mob-cojn-gmail', href: 'mailto:wthomasss06@gmail.com', label: 'Gmail', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
-    { id: 'mob-cojn-uvci', href: 'https://uvci.edu.ci/', label: 'UVCI', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M2 10l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
-    { id: 'mob-cojn-cv', href: '/assets/CV_MBOLLO_AKA_ELVIS.pdf', label: 'Mon CV', download: true, icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF5500" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
+    { id: 'mob-cojn-github', href: CONTACT.github, label: 'GitHub', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
+    { id: 'mob-cojn-linkedin', href: CONTACT.linkedin, label: 'LinkedIn', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
+    { id: 'mob-cojn-whatsapp', href: CONTACT.whatsappUrl, label: 'WhatsApp', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
+    { id: 'mob-cojn-gmail', href: `mailto:${CONTACT.email}`, label: 'Gmail', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
+    { id: 'mob-cojn-cv', href: CONTACT.cv, label: 'Mon CV', download: true, icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
   ]
 
   useEffect(() => {
@@ -3657,7 +3618,7 @@ function AnimatedBeamMobile({ dark }) {
     if (!container || !svg || !centerEl) return
 
     const nodeIds = nodeLinks.map(n => n.id)
-    const colors = ['#FF5500', '#ff7733', '#FF5500', '#ffaa44', '#FF5500', '#ff7733', '#ffaa44', '#FF5500']
+    const colors = ['#9E0C1B', '#b8142a', '#9E0C1B', '#850614', '#9E0C1B', '#b8142a', '#850614', '#9E0C1B']
     const phases = [0, 0.37, 0.74, 1.11, 1.48, 1.85, 2.22, 2.59]
     let paths = [], animating = false, started = false, startTime = null
     const DURATION = 2400
@@ -3738,13 +3699,13 @@ function AnimatedBeamMobile({ dark }) {
             <div id={centerId} className="mob-node-link" style={{ pointerEvents: 'none' }}>
               <div className="mob-node-circle mob-node-main">
                 <img
-                  src={cld("/assets/images/logo-akatech.webp")}
-                  alt="AKATech Studio"
-                  style={{ width: '80px', height: '80px', objectFit: 'contain', borderRadius: '50%' }}
+                  src={CONTACT.photo || "/assets/images/hero-profile.webp"}
+                  alt="JohaoDev"
+                  style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '50%' }}
                   onError={e => { e.target.style.display = 'none' }}
                 />
               </div>
-              <span className="mob-node-label" style={{ color: 'rgba(255,85,0,.8)' }}>AKATech Studio</span>
+              <span className="mob-node-label" style={{ color: 'rgba(158, 12, 27,.8)' }}>JohaoDev</span>
             </div>
           </div>
           {/* Rangée basse */}
@@ -3772,16 +3733,16 @@ function AnimatedBeamMobile({ dark }) {
    (portée depuis App.jsx avec layout adapté)
    ════════════════════════════════════════════ */
 function GitHubInteractiveCard({ dark }) {
-  const GH_USER = 'wthomasss06-stack'
+  const GH_USER = 'johaoooo'
   const [activeTab, setActiveTab] = useState('grid')
   const [tooltip, setTooltip] = useState({ show: false, text: '', x: 0, y: 0 })
   const [terminalLines, setTerminalLines] = useState([])
   const [isPushing, setIsPushing] = useState(false)
   const [logs, setLogs] = useState([
-    { id: 1, time: 'Il y a 10 min', repo: 'shop-ci', msg: 'fix: validation du panier et mobile money API', commits: 2 },
-    { id: 2, time: 'Il y a 2 heures', repo: 'akatech', msg: 'feat: ajout des animations GSAP de survol', commits: 1 },
-    { id: 3, time: 'Hier', repo: 'terrasafe', msg: 'security: validation CSRF sur le formulaire', commits: 3 },
-    { id: 4, time: 'Il y a 3 jours', repo: 'chap-chapMAP', msg: 'refactor: optimisation des couches Leaflet', commits: 1 },
+    { id: 1, time: 'Il y a 10 min', repo: 'cnib-platform', msg: 'fix: validation webhook KKiaPay et génération attestation', commits: 2 },
+    { id: 2, time: 'Il y a 2 heures', repo: 'xobo-ticket', msg: 'security: contrôle d\'accès granulaire RBAC et jetons', commits: 1 },
+    { id: 3, time: 'Hier', repo: 'saveurs-d-agojies', msg: 'feat: optimisation du panier et tunnel d\'achat', commits: 3 },
+    { id: 4, time: 'Il y a 3 jours', repo: 'portfolio-frontend', msg: 'refactor: refonte UI et audit de conformité OWASP', commits: 1 },
   ])
   const [ghLoading, setGhLoading] = useState(true)
   const [ghUser, setGhUser] = useState(null)
@@ -3847,22 +3808,22 @@ function GitHubInteractiveCard({ dark }) {
   const runPushSimulation = () => {
     if (isPushing) return; setIsPushing(true); setTerminalLines([])
     const lines = [
-      `wthomasss06-stack@mobile:~$ git add .`,
-      `wthomasss06-stack@mobile:~$ git status`,
+      `johaoooo@mobile:~$ git add .`,
+      `johaoooo@mobile:~$ git status`,
       `On branch main · Changes to be committed:`,
       `  modified:   src/Appmobile.jsx`,
-      `wthomasss06-stack@mobile:~$ git commit -m "feat: GitHubCard mobile intégré"`,
-      `wthomasss06-stack@mobile:~$ git push origin main`,
+      `johaoooo@mobile:~$ git commit -m "feat: GitHubCard mobile intégré"`,
+      `johaoooo@mobile:~$ git push origin main`,
       `Enumerating objects: 5, done.`,
       `Writing objects: 100% (3/3), 412 bytes | 412.00 KiB/s, done.`,
-      `To github.com:${GH_USER}/elvis-portfolio.git`,
+      `To github.com:${GH_USER}/portfolio-frontend.git`,
       `   7c28fb3..b4a1e9f  main -> main`,
-      `wthomasss06-stack@mobile:~$ _`,
+      `johaoooo@mobile:~$ _`,
     ]
     let cur = 0
     const next = () => {
       if (cur < lines.length) { setTerminalLines(p => [...p, lines[cur++]]); setTimeout(next, cur <= 3 ? 600 : 250) }
-      else { setIsPushing(false); setLogs(p => [{ id: Date.now(), time: "À l'instant", repo: 'elvis-portfolio', msg: 'feat: GitHubCard mobile intégré', commits: 1 }, ...p]) }
+      else { setIsPushing(false); setLogs(p => [{ id: Date.now(), time: "À l'instant", repo: 'portfolio-frontend', msg: 'feat: GitHubCard mobile intégré', commits: 1 }, ...p]) }
     }
     setTimeout(next, 200)
   }
@@ -3874,7 +3835,7 @@ function GitHubInteractiveCard({ dark }) {
       {/* Header */}
       <div className="ghm-header">
         <div className="ghm-header-left">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--acc,#ff5500)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--acc,#9e0c1b)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
           <div>
             <h3 className="ghm-title">Activité GitHub</h3>
             <a href={`https://github.com/${GH_USER}`} target="_blank" rel="noreferrer" className="ghm-user">@{GH_USER}{ghUser && <span> · {ghUser.public_repos} repos</span>}</a>
@@ -3920,13 +3881,13 @@ function GitHubInteractiveCard({ dark }) {
           <div className="ghm-repos">
             {ghLoading ? <div className="ghm-loading">Chargement des dépôts…</div> :
               (ghRepos.length > 0 ? ghRepos : [
-                { name: 'ShopCI', description: 'Marketplace E-commerce avec mobile money.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
-                { name: 'TerraSafe', description: "Plateforme foncière anti-arnaque.", stargazers_count: 8, forks_count: 2, language: 'Python' },
-                { name: 'AKATech Studio', description: 'Site officiel de mon agence digitale.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
-                { name: 'chap-chapMAP', description: "Cartographie interactive de livraison.", stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
+                { name: 'cnib-platform', description: 'Plateforme E-learning & Certifications avec KKiaPay et Django REST.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
+                { name: 'xobo-ticket', description: 'Gestion & Réservation de Stands avec RBAC et jeton sécurisé.', stargazers_count: 8, forks_count: 2, language: 'Python' },
+                { name: 'JohaoDev', description: 'Portfolio moderne, pentest web et solutions logicielles sécurisées.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
+                { name: 'saveurs-d-agojies', description: 'E-boutique gastronomique et terroir béninois.', stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
               ]).map((repo, i) => {
                 const langColor = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#2b7489', HTML: '#e34c26', CSS: '#563d7c' }
-                const color = langColor[repo.language] || '#FF5500'
+                const color = langColor[repo.language] || '#9E0C1B'
                 return (
                   <div key={i} className="ghm-repo">
                     <div className="ghm-repo-hd">
@@ -4016,7 +3977,7 @@ const Contact = ({ dark }) => {
       const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: form.name, email: form.email, projectType: form.projectType, message: form.message }) });
       if (!res.ok) throw new Error('Erreur serveur');
       setSent(true); setForm({ name: '', email: '', projectType: '', message: '' });
-    } catch { alert('❌ Erreur. Contactez-moi sur WhatsApp : +225 01 42 50 77 50'); }
+    } catch { alert(`❌ Erreur. Contactez-moi sur WhatsApp : ${CONTACT.whatsapp}`); }
     finally { setSending(false); }
   };
   return (
@@ -4067,7 +4028,7 @@ const Contact = ({ dark }) => {
                 <textarea id="message" rows={6} placeholder="Décrivez votre projet…" value={form.message} onChange={onChange} required />
               </div>
               <MagBtn type="submit" className={`btn ${dark ? 'btn--neon' : 'btn--primary'} btn--full mi-btn-grad-solid`} disabled={sending}>
-                <LI name="paper-plane" color="#ff5500" />{sending ? 'Envoi en cours…' : 'Envoyer le message'}{sending && <LI name="spinner" color="#ff5500" />}
+                <LI name="paper-plane" color="#9e0c1b" />{sending ? 'Envoi en cours…' : 'Envoyer le message'}{sending && <LI name="spinner" color="#9e0c1b" />}
               </MagBtn>
               <p className="form-privacy"><LI name="lock" color={dark ? "#888" : "#999"} size={13} /> Vos données sont sécurisées et ne seront jamais partagées.</p>
             </form>
@@ -4110,13 +4071,13 @@ const Contact = ({ dark }) => {
                 <div className="cv-v2-inner">
                   <div className="cv-v2-qr-wrap">
                     <img src={cld("/assets/images/qrcodeCV.webp")} alt="QR Code CV" className="cv-v2-qr" />
-                    <div className="cv-v2-qr-badge"><LI name="mobile-alt" size={12} color="#ff5500" /> Scanner</div>
+                    <div className="cv-v2-qr-badge"><LI name="mobile-alt" size={12} color="#9e0c1b" /> Scanner</div>
                   </div>
                   <div className="cv-v2-text">
                     <span className="cv-v2-eyebrow">// document</span>
                     <h4 className="cv-v2-title">Télécharger<br />mon CV</h4>
                     <p className="cv-v2-sub">Scannez le QR code ou cliquez ci-dessous</p>
-                    <a href="/assets/CV_MBOLLO_AKA_ELVIS.pdf" className={`btn ${dark ? 'btn--neon' : 'btn--primary'} mi-glint cv-v2-btn`} download>
+                    <a href={CONTACT.cv} className={`btn ${dark ? 'btn--neon' : 'btn--primary'} mi-glint cv-v2-btn`} download>
                       <LI name="download" color={dark ? "#ffffff" : "#1a1a1a"} /> Télécharger CV
                     </a>
                   </div>
@@ -4135,15 +4096,13 @@ const Footer = ({ dark }) => (
     <div className="footer-inner">
       <div className="footer-logo"><AkafolioLogo size={58} dark={dark} animate={false} /></div>
       <div className="footer-mid">
-        <p>© 2026 — M'Bollo aka — Développeur Full-Stack</p>
-        <p>Abidjan, Côte d'Ivoire</p>
+        <p>© 2026 — Joseph Dehazounde — Cyber &amp; Full-Stack</p>
+        <p>Porto-Novo, Bénin</p>
       </div>
       <div className="footer-links">
-        <a href="https://github.com/wthomasss06-stack" target="_blank" rel="noreferrer"><LI name="github" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-        <a href="https://www.linkedin.com/in/m-bollo-aka" target="_blank" rel="noreferrer"><LI name="linkedin" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-        <a href={FACEBOOK_URL} target="_blank" rel="noreferrer"><LI name="facebook" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-        <a href="https://akatech.vercel.app/" target="_blank" rel="noreferrer" title="AKATech Studio"><LI name="globe" color={dark ? "#fff" : "#1a1a1a"} /></a>
-        <a href="mailto:wthomasss06@gmail.com"><LI name="envelope" color="#ff5500" size={16} /></a>
+        <a href={CONTACT.github} target="_blank" rel="noreferrer"><LI name="github" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
+        <a href={CONTACT.linkedin} target="_blank" rel="noreferrer"><LI name="linkedin" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
+        <a href={`mailto:${CONTACT.email}`}><LI name="envelope" color="#9e0c1b" size={16} /></a>
       </div>
     </div>
   </footer>

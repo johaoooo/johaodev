@@ -6,7 +6,7 @@ import './StaggeredMenu.css'
 /*
   StaggeredMenu — adapté akaFOLIO
   · Panel à droite, fond #0A0A0A (toujours dark)
-  · Accent #FF5500
+  · Accent #9E0C1B
   · items  = NAV_LINKS  { label, id (ancre) }
   · socialItems = socials { label, link }
   · onItemClick(id) → appelé au clic sur un lien de nav
@@ -256,12 +256,12 @@ export function StaggeredMenu({
 
   /* Pre-layers : 2 couleurs de balayage */
   // Deuxième layer = fond du panel → suit le thème via CSS class
-  const SWIPE_COLORS = ['#FF5500', null]
+  const SWIPE_COLORS = ['#9E0C1B', null]
 
   return (
     <div
       className={'sm-root' + (open ? ' sm-root--open' : '')}
-      style={{ '--sm-accent': '#FF5500' }}
+      style={{ '--sm-accent': '#9E0C1B' }}
     >
       {/* ── Pre-layers (balayage d'ouverture) ── */}
       <div ref={preLayersRef} className="sm-prelayers" aria-hidden="true">
@@ -303,11 +303,7 @@ export function StaggeredMenu({
 
           {/* Logo panel */}
           <div className="sm-panel-logo">
-            <img src="/assets/images/logo-akatech.webp" alt="AKATech Studio" className="sm-panel-logo-img"
-              onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='block' }} />
-            <span className="sm-panel-logo-text" style={{ display:'none' }}>
-              aka<span style={{ color:'#FF5500' }}>TECH</span>
-            </span>
+            <img src="/assets/images/logo.webp" alt="Logo" className="sm-panel-logo-img" />
           </div>
 
           {/* Nav links */}

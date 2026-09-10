@@ -1,11 +1,11 @@
 {
-  "name": "M'Bollo Aka — Développeur Web Full Stack",
-  "short_name": "Aka",
-  "description": "Portfolio de M'Bollo Aka, développeur web full stack à Abidjan. AKATech.",
+  "name": "Joseph Dehazounde — Analyste Cybersécurité & Développeur Full Stack",
+  "short_name": "JohaoDev",
+  "description": "Portfolio de Joseph Dehazounde, analyste en cybersécurité et développeur full stack à Porto-Novo, Bénin.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
-  "theme_color": "#FF5500",
+  "theme_color": "#9E0C1B",
   "icons": [
     {
       "src": "/assets/images/favicon.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     },
     {
-      "src": "/assets/images/favicon.png",
+      "src": "/assets/images/favicon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

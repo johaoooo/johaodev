@@ -145,7 +145,7 @@ const Beams = ({
         },
         material: { fog: true },
         uniforms: {
-          diffuse: new THREE.Color(...hexToNormalizedRGB('#FF5500')),
+          diffuse: new THREE.Color(...hexToNormalizedRGB('#9E0C1B')),
           time: { value: 0 },
           roughness: 0.1,
           metalness: 0.6,

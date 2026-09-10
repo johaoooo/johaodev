@@ -63,14 +63,15 @@ export default function MobileLoader({ onDone }) {
   if (!visible) return null
 
   return (
-    <div className="mob-aka-loader" role="status" aria-live="polite" aria-label="Chargement d’AKATech Studio">
+    <div className="mob-aka-loader" role="status" aria-live="polite" aria-label="Chargement de JohaoDev">
       <div className="mob-aka-loader__center">
         <img
           className="mob-aka-loader__logo"
-          src={cld('/assets/images/logo-akatech.webp')}
-          alt="AKATech Studio"
+          src="/assets/images/hero-profile.webp"
+          alt="JohaoDev"
+          style={{ borderRadius: '50%', objectFit: 'cover' }}
         />
-        <div className="mob-aka-loader__name">AKATECH</div>
+        <div className="mob-aka-loader__name">JOHAODEV</div>
         <div className="mob-aka-loader__progress" aria-label={`${progress}% chargé`}>
           {String(progress).padStart(3, '0')}<span>%</span>
         </div>

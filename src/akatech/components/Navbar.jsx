@@ -16,7 +16,7 @@ export default function Navbar({ activePage, onNavigate, shootMode, onToggleShoo
         onClick={() => onNavigate('home')}
         aria-label="Accueil"
       >
-        <img src="/assets/images/logo-akatech.webp" alt="AKATech" />
+        <img src="/assets/images/logo.webp" alt="Logo" />
       </button>
 
       <nav className="akatech-linear-nav">
