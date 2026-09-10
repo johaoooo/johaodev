@@ -495,7 +495,7 @@ function SectionHeading({ num, title, sub, subAs = 'h2', className = '', style =
 /* ════════════════════════════════════════════
  ANIMATED SVG ICONS (replaces emojis)
  ════════════════════════════════════════════ */
-const AnimIcon = ({ type, size = 15, color = '#9E0C1B', className = '' }) => {
+const AnimIcon = ({ type, size = 15, color = '#5E824B', className = '' }) => {
   const icons = {
     globe: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" className={`anim-icon ${className}`}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
     monitor: <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" className={`anim-icon ${className}`}><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
@@ -1149,7 +1149,7 @@ function Navbar({ theme, onToggleTheme, onToggleExplorer, isExplorerOpen }) {
       src={cld('/assets/images/logo.webp')}
       alt="Logo"
       className="nb-logo-img"
-      style={{ filter: 'drop-shadow(0 0 8px rgba(158, 12, 27,0.45))' }}
+      style={{ filter: 'drop-shadow(0 0 8px rgba(94, 130, 75,0.45))' }}
     />
   )
 
@@ -1264,7 +1264,7 @@ function Hero() {
       <div className="hv4-god-rays" id="hv4-rays" aria-hidden="true" />
       <div className="hv4-bg-layer" id="hv4-bg-layer" aria-hidden="true">
         <Iridescence
-          color={[0.38, 0.01, 0.04]}
+          color={[0.24, 0.35, 0.19]}
           speed={0.22}
           amplitude={0.06}
           mouseReact={false}
@@ -1464,7 +1464,7 @@ function NeonFlickerText({ children, tag: Tag = 'h3', className = '', ...rest })
 
       const isLight = document.body.classList.contains('light-mode')
       const cs = getComputedStyle(el)
-      const accent = (cs.getPropertyValue('--accent') || '#9E0C1B').trim()
+      const accent = (cs.getPropertyValue('--accent') || '#5E824B').trim()
       const restColor = isLight ? '#0A0A0A' : (cs.getPropertyValue('--text') || '#F2EDE8').trim()
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -1900,7 +1900,7 @@ function About() {
       className="sec"
       style={{
         padding: 'clamp(6rem, 14vh, 9rem) 0 10vh',
-        borderTop: '1px solid rgba(158, 12, 27,.08)'
+        borderTop: '1px solid rgba(94, 130, 75,.08)'
       }}
     >
       <div
@@ -2269,9 +2269,9 @@ function SkewSection() {
             speed={14}
             textColor="var(--text)"
             bgColor="transparent"
-            marqueeBgColor="#9E0C1B"
+            marqueeBgColor="#5E824B"
             marqueeTextColor="#fff"
-            borderColor="rgba(158, 12, 27,.18)"
+            borderColor="rgba(94, 130, 75,.18)"
           />
         </div>
       </div>
@@ -2904,8 +2904,8 @@ function TestiCard({ t }) {
     const tiltY = (x - xc) / 12
     gsap.to(el, {
       transform: `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.04, 1.04, 1.04)`,
-      borderColor: 'rgba(158, 12, 27,.6)',
-      boxShadow: '0 30px 60px rgba(158, 12, 27,0.12), 0 20px 40px rgba(0,0,0,.5)',
+      borderColor: 'rgba(94, 130, 75,.6)',
+      boxShadow: '0 30px 60px rgba(94, 130, 75,0.12), 0 20px 40px rgba(0,0,0,.5)',
       duration: 0.35,
       ease: 'power2.out',
       overwrite: 'auto'
@@ -2935,7 +2935,7 @@ function TestiCard({ t }) {
         <div className="testi-stars">
           {Array(5).fill(null).map((_, j) => (
             <svg key={j} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#9E0C1B" />
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="#5E824B" />
             </svg>
           ))}
         </div>
@@ -3044,7 +3044,7 @@ function WritingSection() {
                         letterSpacing: '.1em',
                         textTransform: 'uppercase',
                         color: 'var(--accent)',
-                        border: '1px solid rgba(158, 12, 27,.3)',
+                        border: '1px solid rgba(94, 130, 75,.3)',
                         borderRadius: '999px',
                         padding: '3px 10px',
                         marginBottom: '1rem',
@@ -3134,7 +3134,7 @@ function TestimonialsSection() {
                   fontFamily: "'Space Mono',monospace",
                   fontSize: '.58rem',
                   color: 'var(--muted)',
-                  border: '1px solid rgba(158, 12, 27,.18)',
+                  border: '1px solid rgba(94, 130, 75,.18)',
                   borderRadius: '999px',
                   padding: '3px 10px'
                 }}
@@ -3213,7 +3213,7 @@ function TestimonialsSection() {
                         style={{
                           fontSize: '2.2rem',
                           lineHeight: '.5',
-                          color: 'rgba(158, 12, 27,.3)',
+                          color: 'rgba(94, 130, 75,.3)',
                           fontWeight: 800,
                           display: 'block',
                           marginBottom: '.4rem'
@@ -3231,7 +3231,7 @@ function TestimonialsSection() {
                       alignItems: 'center',
                       gap: '.9rem',
                       paddingTop: '1rem',
-                      borderTop: '1px solid rgba(158, 12, 27,.15)',
+                      borderTop: '1px solid rgba(94, 130, 75,.15)',
                       marginTop: '1rem'
                     }}
                   >
@@ -3625,7 +3625,7 @@ function GitHubInteractiveCard() {
             ]).map((repo, i) => {
               const langColor = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#2b7489', HTML: '#e34c26', CSS: '#563d7c' }
               const pct = { JavaScript: '100% JS', Python: '55% Py / 45% HTML', TypeScript: '90% TS / 10% CSS', HTML: '100% HTML' }
-              const color = langColor[repo.language] || '#9E0C1B'
+              const color = langColor[repo.language] || '#5E824B'
               return (
                 <div key={i} className="github-repo-card">
                   <div className="github-repo-header">
@@ -3757,7 +3757,7 @@ function ContactSection({ onToast }) {
         {/* ── Colonne gauche : liste compacte "Où me joindre" ── */}
         <div className="contact-info contact-links-col">
           <div className="contact-status-badge" style={{ marginBottom: '1.6rem' }}><span className="cdot" /><span>Disponible maintenant</span></div>
-          <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '.58rem', color: 'rgba(158, 12, 27,.55)', letterSpacing: '.2em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem' }}>// Où me joindre</span>
+          <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '.58rem', color: 'rgba(94, 130, 75,.55)', letterSpacing: '.2em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem' }}>// Où me joindre</span>
           <ul className="clk-list">
             {nodeLinks.map(n => (
               <li key={n.id} className="clk-item">
@@ -3785,8 +3785,8 @@ function ContactSection({ onToast }) {
           <div className="cf-card">
             {sent ? (
               <div style={{ textAlign: 'center', padding: '3rem 2rem' }}>
-                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(158, 12, 27,.12)', border: '1.5px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.2rem' }}>
-                  <AnimIcon type="check" size={28} color="#9E0C1B" />
+                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(94, 130, 75,.12)', border: '1.5px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.2rem' }}>
+                  <AnimIcon type="check" size={28} color="#5E824B" />
                 </div>
                 <h3 style={{ fontFamily: "'Clash Display','Syne',sans-serif", fontWeight: 700, marginBottom: '.5rem' }}>Message envoyé !</h3>
                 <h3 style={{ fontSize: '.85rem', color: 'var(--muted)' }}>Je vous réponds sous 24h. <AnimIcon type="rocket" size={14} /></h3>

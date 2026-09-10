@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════
    StaggeredMenu — akaFOLIO
    Panel : suit var(--bg) / var(--text) → dark + light
-   Accent #9E0C1B
+   Accent #5E824B
    Neo-brutalism ARRONDI — radius 999px / 50%
    ═══════════════════════════════════════════════ */
 
@@ -121,7 +121,7 @@
   width: clamp(340px, 58vw, 680px);
   height: 100vh;
   background: var(--bg);
-  border-left: 2px solid #9E0C1B;
+  border-left: 2px solid #5E824B;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -129,7 +129,7 @@
   pointer-events: auto;
 }
 .sm-panel::-webkit-scrollbar { width: 3px; }
-.sm-panel::-webkit-scrollbar-thumb { background: #9E0C1B; border-radius: 999px; }
+.sm-panel::-webkit-scrollbar-thumb { background: #5E824B; border-radius: 999px; }
 
 /* ── Inner ── */
 .sm-panel-inner {
@@ -248,7 +248,7 @@
   color: var(--bg);
   background: var(--accent);
   opacity: 1;
-  box-shadow: 3px 3px 0 rgba(158, 12, 27,.55);
+  box-shadow: 3px 3px 0 rgba(94, 130, 75,.55);
   transform: rotate(45deg);
 }
 
@@ -263,7 +263,7 @@
   font-size: .2em;
   font-weight: 400;
   letter-spacing: .06em;
-  color: rgba(158, 12, 27,.5);
+  color: rgba(94, 130, 75,.5);
   opacity: var(--sm-num-opacity, 0);
   pointer-events: none;
   user-select: none;
@@ -276,7 +276,7 @@
   .sm-panel {
     width: 100%;
     border-left: none;
-    border-top: 2px solid #9E0C1B;
+    border-top: 2px solid #5E824B;
   }
 }
 @media (max-width: 480px) {

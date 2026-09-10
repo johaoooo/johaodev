@@ -114,7 +114,7 @@ const CSS = `
   --black:       #000000;
   --navy:        #000080;
   --navy-lt:     #1084d0;
-  --acc:         #9e0c1b;
+  --acc:         #5E824B;
   --acc2:        #00aa44;
   --glass:       rgba(255,255,255,0.06);
   --glass-border:rgba(255,255,255,0.18);

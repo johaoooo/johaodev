@@ -6,7 +6,7 @@ import './StaggeredMenu.css'
 /*
   StaggeredMenu — adapté akaFOLIO
   · Panel à droite, fond #0A0A0A (toujours dark)
-  · Accent #9E0C1B
+  · Accent #5E824B
   · items  = NAV_LINKS  { label, id (ancre) }
   · socialItems = socials { label, link }
   · onItemClick(id) → appelé au clic sur un lien de nav
@@ -256,12 +256,12 @@ export function StaggeredMenu({
 
   /* Pre-layers : 2 couleurs de balayage */
   // Deuxième layer = fond du panel → suit le thème via CSS class
-  const SWIPE_COLORS = ['#9E0C1B', null]
+  const SWIPE_COLORS = ['#5E824B', null]
 
   return (
     <div
       className={'sm-root' + (open ? ' sm-root--open' : '')}
-      style={{ '--sm-accent': '#9E0C1B' }}
+      style={{ '--sm-accent': '#5E824B' }}
     >
       {/* ── Pre-layers (balayage d'ouverture) ── */}
       <div ref={preLayersRef} className="sm-prelayers" aria-hidden="true">

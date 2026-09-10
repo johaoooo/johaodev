@@ -17,7 +17,7 @@ import { cld } from './lib/cloudinary'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ANIMATED ICON SYSTEM — Lordicon-style
-// Usage :  <LI name="rocket" size={18} color="#9e0c1b" className="..." style={{}}/>
+// Usage :  <LI name="rocket" size={18} color="#5E824B" className="..." style={{}}/>
 // ═══════════════════════════════════════════════════════════════════════════════
 const LI_CSS_ID = 'li-anim-global-v2';
 const LI_CSS = `
@@ -153,7 +153,7 @@ const LI_ICONS = {
   /* ── TIMES — croix fine style iOS ── */
   times: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round"><g className="li-x"><line x1="17" y1="7" x2="7" y2="17" /><line x1="7" y1="7" x2="17" y2="17" /></g></svg>),
   /* ── ROCKET — style Telegram/envoyer ── */
-  rocket: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"><g className="li-rocket"><path d="M12 2.5C8 2.5 4.5 6 4.5 10.5c0 3 1.5 5.5 3.5 7l1 4h6l1-4c2-1.5 3.5-4 3.5-7C19.5 6 16 2.5 12 2.5z" fill={C} fillOpacity=".1" /><circle cx="12" cy="10" r="2.5" fill={C} fillOpacity=".35" /><path d="M9.5 17.5l-2 1.5M14.5 17.5l2 1.5" /></g><g className="li-flame" transform="translate(11.5 21)"><ellipse cx="0" cy="0" rx="1.5" ry="2" fill="#9e0c1b" stroke="none" opacity=".85" /></g></svg>),
+  rocket: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"><g className="li-rocket"><path d="M12 2.5C8 2.5 4.5 6 4.5 10.5c0 3 1.5 5.5 3.5 7l1 4h6l1-4c2-1.5 3.5-4 3.5-7C19.5 6 16 2.5 12 2.5z" fill={C} fillOpacity=".1" /><circle cx="12" cy="10" r="2.5" fill={C} fillOpacity=".35" /><path d="M9.5 17.5l-2 1.5M14.5 17.5l2 1.5" /></g><g className="li-flame" transform="translate(11.5 21)"><ellipse cx="0" cy="0" rx="1.5" ry="2" fill="#5E824B" stroke="none" opacity=".85" /></g></svg>),
   /* ── DOWNLOAD — flèche vers le bas dans plateau ── */
   download: (C, sw) => (<svg viewBox="0 0 24 24" fill="none" stroke={C} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"><g className="li-dl-arrow"><path d="M12 3v12" /><path d="M8 11l4 4 4-4" /></g><path d="M5 19h14" strokeWidth={sw * .9} /></svg>),
   /* ── MAP-MARKER — goutte épurée ── */
@@ -365,7 +365,7 @@ const AkafolioLogo = ({ size = 52, dark = true, onClick }) => {
         height: size,
         objectFit: 'contain',
         cursor: onClick ? 'pointer' : 'default',
-        filter: 'drop-shadow(0 0 8px rgba(158, 12, 27,0.45))'
+        filter: 'drop-shadow(0 0 8px rgba(94, 130, 75,0.45))'
       }}
     />
   );
@@ -591,7 +591,7 @@ const TiltCard = ({ children, className = '', style = {}, onClick, intensity = 1
       el.style.transform = `perspective(${perspective}px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.03,1.03,1.03)`;
       el.style.transition = 'transform .08s linear';
       if (glowRef.current) {
-        glowRef.current.style.background = `radial-gradient(280px circle at ${px}% ${py}%, rgba(158, 12, 27,.13) 0%, transparent 68%)`;
+        glowRef.current.style.background = `radial-gradient(280px circle at ${px}% ${py}%, rgba(94, 130, 75,.13) 0%, transparent 68%)`;
         glowRef.current.style.opacity = '1';
       }
     });
@@ -655,7 +655,7 @@ const SpotlightCard = ({ children, className = '', style = {} }) => {
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left, y = e.clientY - rect.top;
     layerRef.current.style.background =
-      `radial-gradient(320px circle at ${x}px ${y}px, rgba(158, 12, 27,.09) 0%, transparent 70%)`;
+      `radial-gradient(320px circle at ${x}px ${y}px, rgba(94, 130, 75,.09) 0%, transparent 70%)`;
   }, []);
   return (
     <div ref={ref} className={`mi-spotlight ${className}`} style={style} onMouseMove={onMove}>
@@ -874,8 +874,8 @@ const ParticleCanvas = ({ global: isGlobal = false, light: isLight = false }) =>
   useEffect(() => {
     const cv = cvRef.current; if (!cv) return;
     const ctx = cv.getContext('2d'); let raf;
-    const COLORS = isLight ? ['#c71a32', '#ff6b00', '#ffa533', '#ffb347', '#e65c00'] : ['#00ff88', '#7EE787', '#00e676', '#69f0ae', '#b9f6ca'];
-    const CONN_COLOR = isLight ? '#c71a32' : '#00ff88';
+    const COLORS = isLight ? ['#96BD7D', '#ff6b00', '#ffa533', '#ffb347', '#e65c00'] : ['#00ff88', '#7EE787', '#00e676', '#69f0ae', '#b9f6ca'];
+    const CONN_COLOR = isLight ? '#96BD7D' : '#00ff88';
     const resize = () => { cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; };
     resize(); window.addEventListener('resize', resize);
     const mouse = { x: null, y: null };
@@ -946,7 +946,7 @@ const ParticleCanvas = ({ global: isGlobal = false, light: isLight = false }) =>
       // ── Halo curseur ──
       if (mouse.x !== null) {
         const cg = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 90);
-        cg.addColorStop(0, CONN_COLOR.replace(')', ',0.12)').replace('rgb', 'rgba').replace('#c71a32', 'rgba(184, 20, 42,0.12)').replace('#00ff88', 'rgba(0,255,136,0.12)'));
+        cg.addColorStop(0, CONN_COLOR.replace(')', ',0.12)').replace('rgb', 'rgba').replace('#96BD7D', 'rgba(184, 20, 42,0.12)').replace('#00ff88', 'rgba(0,255,136,0.12)'));
         cg.addColorStop(1, 'transparent');
         ctx.globalAlpha = 1;
         ctx.fillStyle = isLight ? 'rgba(184, 20, 42,0.10)' : 'rgba(0,255,136,0.10)';
@@ -1122,7 +1122,7 @@ const Navbar = ({ dark, onToggle }) => {
           <a href={CONTACT.github} target="_blank" rel="noreferrer"><LI name="github" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
           <a href={CONTACT.linkedin} target="_blank" rel="noreferrer"><LI name="linkedin" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
           <a href={CONTACT.whatsappUrl} target="_blank" rel="noreferrer"><LI name="phone" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-          <a href={`mailto:${CONTACT.email}`}><LI name="envelope" color="#9e0c1b" size={16} /></a>
+          <a href={`mailto:${CONTACT.email}`}><LI name="envelope" color="#5E824B" size={16} /></a>
         </div>
       </div>
     </>
@@ -1132,11 +1132,11 @@ const Navbar = ({ dark, onToggle }) => {
 const RocketFlames = () => (
   <svg className="rocket-big-flames" xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 40 100" style={{ position: 'absolute', bottom: '-70px', left: '50%', transform: 'translateX(-50%)', width: '40px', height: '80px', pointerEvents: 'none', zIndex: 9999 }}>
-    <ellipse cx="20" cy="10" rx="7" ry="14" fill="#9E0C1B" opacity="0.95">
+    <ellipse cx="20" cy="10" rx="7" ry="14" fill="#5E824B" opacity="0.95">
       <animate attributeName="ry" values="14;20;11;18;14" dur=".18s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".95;1;.85;1;.95" dur=".22s" repeatCount="indefinite" />
     </ellipse>
-    <ellipse cx="20" cy="22" rx="5" ry="16" fill="#C71A32" opacity="0.8">
+    <ellipse cx="20" cy="22" rx="5" ry="16" fill="#96BD7D" opacity="0.8">
       <animate attributeName="ry" values="16;22;12;20;16" dur=".22s" repeatCount="indefinite" />
       <animate attributeName="cx" values="20;19;21;20;20" dur=".15s" repeatCount="indefinite" />
     </ellipse>
@@ -1144,11 +1144,11 @@ const RocketFlames = () => (
       <animate attributeName="ry" values="12;18;8;16;12" dur=".25s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".6;.9;.4;.8;.6" dur=".2s" repeatCount="indefinite" />
     </ellipse>
-    <circle cx="12" cy="18" r="2.5" fill="#9E0C1B" opacity="0.5">
+    <circle cx="12" cy="18" r="2.5" fill="#5E824B" opacity="0.5">
       <animate attributeName="cy" values="18;30;18" dur=".3s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".5;0;.5" dur=".3s" repeatCount="indefinite" />
     </circle>
-    <circle cx="28" cy="20" r="2" fill="#C71A32" opacity="0.5">
+    <circle cx="28" cy="20" r="2" fill="#96BD7D" opacity="0.5">
       <animate attributeName="cy" values="20;34;20" dur=".35s" repeatCount="indefinite" />
       <animate attributeName="opacity" values=".5;0;.5" dur=".35s" repeatCount="indefinite" />
     </circle>
@@ -1228,14 +1228,14 @@ const ScrollTop = ({ dark }) => {
         style={{ overflow: 'visible', display: 'block' }}>
         <defs>
           <linearGradient id="beamGradM" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#9e0c1b" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#9e0c1b" stopOpacity="0" />
+            <stop offset="0%" stopColor="#5E824B" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#5E824B" stopOpacity="0" />
           </linearGradient>
         </defs>
         <polygon className="st-ufo-beam" points="12,14 2,24 22,24" fill="url(#beamGradM)" stroke="none" />
         <g className="st-ufo-g">
           <path d="M8 10c0-2.5 1.8-4 4-4s4 1.5 4 4" fill="currentColor" fillOpacity=".2" />
-          <path d="M2 12c0-1.5 3-2.5 10-2.5s10 1 10 2.5-3 2.5-10 2.5-10-1-10-2.5z" fill="#9e0c1b" />
+          <path d="M2 12c0-1.5 3-2.5 10-2.5s10 1 10 2.5-3 2.5-10 2.5-10-1-10-2.5z" fill="#5E824B" />
           <path d="M5 12.5c0 1.2 2.8 2.2 7 2.2s7-1 7-2.2" />
           <circle cx="7" cy="12.2" r="0.9" fill="currentColor" stroke="none" />
           <circle cx="12" cy="12.7" r="0.9" fill="currentColor" stroke="none" />
@@ -1362,7 +1362,7 @@ const PlasmaCanvasBg = ({ intensity = 1.0 }) => {
 
 /* ══════════════════════════════════════════════
    PLASMA CANVAS — WebGL background hero
-   Shader plasma AKAfolio : noir profond → orange #9E0C1B → ambre
+   Shader plasma AKAfolio : noir profond → orange #5E824B → ambre
    ══════════════════════════════════════════════ */
 const AuroraCanvas = ({ dark }) => {
   const cvRef = useRef(null);
@@ -1400,7 +1400,7 @@ const AuroraCanvas = ({ dark }) => {
 
     const vert = `attribute vec2 a_pos; void main(){gl_Position=vec4(a_pos,0.,1.);}`;
 
-    /* ── Plasma shader — palette AKAfolio : noir #0A0A0A → orange #9E0C1B → ambre #C71A32 ── */
+    /* ── Plasma shader — palette AKAfolio : noir #0A0A0A → orange #5E824B → ambre #96BD7D ── */
     const frag = `
       precision highp float;
       uniform vec2  u_res;
@@ -1430,14 +1430,14 @@ const AuroraCanvas = ({ dark }) => {
         /* Palette rouge au vin :
            a = noir profond       #0A0A0A  (0.04, 0.04, 0.04)
            b = vin très sombre    #1F0307  (0.12, 0.015, 0.03)
-           c = rouge vin photo    #61020B  (0.38, 0.01,  0.04)
-           d = bordeaux rubis     #9E0C1B  (0.62, 0.05,  0.11)
-           e = reflet rubis doux  #C71A32  (0.78, 0.10,  0.20) */
+           c = rouge vin photo    #3D5530  (0.38, 0.01,  0.04)
+           d = bordeaux rubis     #5E824B  (0.62, 0.05,  0.11)
+           e = reflet rubis doux  #96BD7D  (0.78, 0.10,  0.20) */
         vec3 a = vec3(0.04,  0.04,  0.04);
-        vec3 b = vec3(0.12,  0.015, 0.03);
-        vec3 c = vec3(0.38,  0.01,  0.04);
-        vec3 d = vec3(0.62,  0.05,  0.11);
-        vec3 e = vec3(0.78,  0.10,  0.20);
+        vec3 b = vec3(0.12, 0.17, 0.09);
+        vec3 c = vec3(0.24, 0.33, 0.19);
+        vec3 d = vec3(0.37, 0.51, 0.29);
+        vec3 e = vec3(0.48, 0.62, 0.39);
 
         vec3 col;
         if      (v < 0.25) col = mix(a, b, v * 4.0);
@@ -1457,7 +1457,7 @@ const AuroraCanvas = ({ dark }) => {
 
         /* mouse wine red glow */
         float mdist = length(p - m);
-        col += vec3(0.62, 0.05, 0.11) * exp(-mdist * 2.8) * 0.22;
+        col += vec3(0.37, 0.51, 0.29) * exp(-mdist * 2.8) * 0.22;
 
         /* mode clair : légèrement plus clair */
         col = mix(col, col * 1.18 + vec3(0.02, 0.01, 0.0), u_light * 0.35);
@@ -1570,7 +1570,7 @@ const Hero = ({ dark }) => {
       if (cursorRef.current) { cursorRef.current.style.left = `${mx}px`; cursorRef.current.style.top = `${my}px`; }
       /* god rays follow cursor */
       const gx = 50 - (mx / W - 0.5) * 28, gy = 50 - (my / H - 0.5) * 20;
-      if (raysRef.current) raysRef.current.style.background = `radial-gradient(circle at ${gx}% ${gy}%, rgba(158, 12, 27,0.15) 0%, transparent 55%)`;
+      if (raysRef.current) raysRef.current.style.background = `radial-gradient(circle at ${gx}% ${gy}%, rgba(94, 130, 75,0.15) 0%, transparent 55%)`;
       /* scene rotation (like hhjjj layer-mid) */
       if (sceneRef.current) {
         const rx = (my / H - 0.5) * 10, ry = (mx / W - 0.5) * -10;
@@ -1717,7 +1717,7 @@ const Hero = ({ dark }) => {
               <img src={CONTACT.heroPhoto || CONTACT.photo} alt={CONTACT.name} className="hv4-photo hv4-photo--portrait" style={{ objectFit: 'cover', objectPosition: 'center 12%' }} />
               <div className="hv4-photo-overlay">
                 <span><LI name="map-marker-alt" color={dark ? "#aaa" : "#666"} size={12} /> Porto-Novo, Bénin</span>
-                <span><LI name="code" color="#9e0c1b" size={12} /> Cyber &amp; Fullstack</span>
+                <span><LI name="code" color="#5E824B" size={12} /> Cyber &amp; Fullstack</span>
               </div>
               <div className="hv4-photo-status">
                 <span className="hero-dot" />
@@ -1804,7 +1804,7 @@ const FeaturedCreation = ({ dark }) => {
               </div>
               <div className="cr-mobile-home" />
             </div>
-            <div className="cr-resp-badge"><LI name="check-circle" color="#9e0c1b" /> 100% Responsive</div>
+            <div className="cr-resp-badge"><LI name="check-circle" color="#5E824B" /> 100% Responsive</div>
           </div>
 
           {/* Dots — un par projet */}
@@ -1843,7 +1843,7 @@ const PANIM_CSS = `
 @keyframes paiGlobeOrbit  { 0%{stroke-dashoffset:62;opacity:.25} 60%{opacity:1} 100%{stroke-dashoffset:0;opacity:.7} }
 @keyframes paiBlink       { 0%,100%{opacity:.3} 50%{opacity:1} }
 @keyframes paiToolWobble  { 0%,100%{transform:rotate(-18deg)} 50%{transform:rotate(18deg)} }
-@keyframes paiGlow        { 0%,100%{filter:drop-shadow(0 0 3px rgba(158, 12, 27,.35))} 50%{filter:drop-shadow(0 0 8px rgba(158, 12, 27,.75))} }
+@keyframes paiGlow        { 0%,100%{filter:drop-shadow(0 0 3px rgba(94, 130, 75,.35))} 50%{filter:drop-shadow(0 0 8px rgba(94, 130, 75,.75))} }
 @keyframes paiSpinSlow    { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 @keyframes paiCross       { 0%,100%{opacity:.4;transform:scale(.85)} 50%{opacity:1;transform:scale(1.1)} }
 @keyframes paiCapWobble   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
@@ -1907,7 +1907,7 @@ function usePAnimCSS() {
 
 const PricingAnimIcon = ({ type, size = 20 }) => {
   usePAnimCSS();
-  const C = '#9e0c1b', Cm = 'rgba(158, 12, 27,.22)', Cr = 'rgba(200,40,40,.7)';
+  const C = '#5E824B', Cm = 'rgba(94, 130, 75,.22)', Cr = 'rgba(200,40,40,.7)';
   if (type === 'globe') return (
     <span className="pai-root" style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
@@ -2595,7 +2595,7 @@ const About = ({ dark }) => {
             </div>
             <div className="about-img-wrap">
               <img src={CONTACT.photo} alt={CONTACT.name} className={`about-img photo-bw ${aboutPhotoColor ? 'photo-bw--on' : ''}`} style={{ objectFit: 'cover' }} />
-              <div className="about-badges"><span><LI name="code" color="#9e0c1b" size={13} /> Cyber</span><span><LI name="lightbulb" color="#9e0c1b" size={13} /> Rigueur</span><span><LI name="eye" color={dark ? "#fff" : "#1a1a1a"} /> Audit</span></div>
+              <div className="about-badges"><span><LI name="code" color="#5E824B" size={13} /> Cyber</span><span><LI name="lightbulb" color="#5E824B" size={13} /> Rigueur</span><span><LI name="eye" color={dark ? "#fff" : "#1a1a1a"} /> Audit</span></div>
             </div>
           </div>
           <div className="about-right">
@@ -2635,7 +2635,7 @@ const About = ({ dark }) => {
               onClick={() => setOpenIdx(i)}
               style={{ cursor: 'pointer' }}>
               <div className={`exp-step-dot ${openIdx === i ? 'exp-step-dot--active' : ''}`}>
-                <LI name={t.icon} color="#9e0c1b" size={14} />
+                <LI name={t.icon} color="#5E824B" size={14} />
               </div>
               <div className="exp-step-line" />
               <span className="exp-step-label">{t.date}</span>
@@ -2662,10 +2662,10 @@ const About = ({ dark }) => {
                     <div className="exp-card-hd" style={{ cursor: 'default' }}>
                       <div className="exp-card-hd-left">
                         <div className={`exp-dot exp-dot--on ${dark ? 'exp-dot--dark' : ''}`}>
-                          <LI name={t.icon} color="#9e0c1b" size={14} />
+                          <LI name={t.icon} color="#5E824B" size={14} />
                         </div>
                         <div className="exp-card-hd-info">
-                          <span className="exp-date"><LI name="calendar-alt" color={dark ? "#9e0c1b" : "#333"} size={13} /> {t.date}</span>
+                          <span className="exp-date"><LI name="calendar-alt" color={dark ? "#5E824B" : "#333"} size={13} /> {t.date}</span>
                           <h4 className="exp-title">{t.title}</h4>
                           <p className="exp-company"><LI name="building" color={dark ? "#aaa" : "#555"} size={13} /> {t.company}</p>
                         </div>
@@ -2758,10 +2758,10 @@ const About = ({ dark }) => {
                 <div className="exp-card-hd" style={{ cursor: 'default' }}>
                   <div className="exp-card-hd-left">
                     <div className={`exp-dot exp-dot--on ${dark ? 'exp-dot--dark' : ''}`}>
-                      <LI name={t.icon} color="#9e0c1b" size={14} />
+                      <LI name={t.icon} color="#5E824B" size={14} />
                     </div>
                     <div className="exp-card-hd-info">
-                      <span className="exp-date"><LI name="calendar-alt" color={dark ? "#9e0c1b" : "#333"} size={13} /> {t.date}</span>
+                      <span className="exp-date"><LI name="calendar-alt" color={dark ? "#5E824B" : "#333"} size={13} /> {t.date}</span>
                       <h4 className="exp-title">{t.title}</h4>
                       <p className="exp-company"><LI name="building" color={dark ? "#aaa" : "#555"} size={13} /> {t.company}</p>
                     </div>
@@ -2811,7 +2811,7 @@ const About = ({ dark }) => {
             <h3>Intéressé par mon profil ?</h3>
             <p>N'hésitez pas à me contacter pour discuter de vos projets ou opportunités.</p>
             <div className="cta-btns">
-              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#9e0c1b" /> Me contacter</MagBtn>
+              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#5E824B" /> Me contacter</MagBtn>
               <a className={`btn ${dark ? 'btn--ghost-neon' : 'btn--cta-ghost-light'} mi-glint`} href={CONTACT.cv} download><LI name="download" color={dark ? "#ffffff" : "#1a1a1a"} /> Télécharger CV</a>
             </div>
           </div>
@@ -2870,7 +2870,7 @@ const ProjectModal = ({ project, dark, onClose }) => {
               <a href={project.url} target={project.url.startsWith('http') ? '_blank' : '_self'} rel="noreferrer"
                 className={`btn ${dark ? 'btn--neon' : 'btn--primary'} fd-modal-btn-primary`}>
                 {project.cat === 'demo'
-                  ? <><LI name="play-circle" color="#9e0c1b" />Voir la démo</>
+                  ? <><LI name="play-circle" color="#5E824B" />Voir la démo</>
                   : <><LI name="external-link-alt" color={dark ? "#fff" : "#1a1a1a"} />Voir le site</>}
               </a>
             )}
@@ -3262,7 +3262,7 @@ const SpotlightProjects = ({ items, dark }) => {
             <div className="sp-preview-placeholder"><LI name="code" color={dark ? "#555" : "#aaa"} /></div>
           )}
           {proj.cat === 'en-ligne' && <div className="sp-live-badge"><span className="hero-dot" /><span>EN LIGNE</span></div>}
-          {proj.isPremium && <div className="sp-prem-badge"><LI name="star" color="#9e0c1b" /> Premium</div>}
+          {proj.isPremium && <div className="sp-prem-badge"><LI name="star" color="#5E824B" /> Premium</div>}
         </div>
         {/* Détails */}
         <div className={`sp-details ${dark ? 'sp-details--dark' : ''}`}>
@@ -3274,7 +3274,7 @@ const SpotlightProjects = ({ items, dark }) => {
           <p className="sp-sub">{proj.subtitle}</p>
           <p className="sp-desc">{proj.description}</p>
           <div className="sp-meta">
-            <span className="sp-year"><LI name="calendar-alt" color={dark ? "#9e0c1b" : "#9e0c1b"} size={12} /> {proj.year}</span>
+            <span className="sp-year"><LI name="calendar-alt" color={dark ? "#5E824B" : "#5E824B"} size={12} /> {proj.year}</span>
             {proj.progress != null && (
               <div className="sp-progress-wrap">
                 <div className="sp-progress-track"><div className="sp-progress-fill" style={{ width: `${proj.progress}%` }} /></div>
@@ -3287,7 +3287,7 @@ const SpotlightProjects = ({ items, dark }) => {
             <div className="sp-actions">
               <a href={proj.url} target={isExternal ? '_blank' : '_self'} rel="noreferrer"
                 className={`btn ${dark ? 'btn--neon' : 'btn--primary'} sp-cta mi-glint`}>
-                <LI name={isDemo ? 'play-circle' : 'external-link-alt'} color="#9e0c1b" />{isDemo ? 'Voir la démo' : 'Voir le site →'}
+                <LI name={isDemo ? 'play-circle' : 'external-link-alt'} color="#5E824B" />{isDemo ? 'Voir la démo' : 'Voir le site →'}
               </a>
             </div>
           )}
@@ -3405,7 +3405,7 @@ const SkillBand = ({ title, icon, items, dir, dark }) => {
 
   return (
     <div className="sk-row">
-      <div className="sk-row-lbl"><LI name={icon} color="#9e0c1b" size={14} />{title}</div>
+      <div className="sk-row-lbl"><LI name={icon} color="#5E824B" size={14} />{title}</div>
       <div className="sk-wrap"><div className={`sk-band sk-band--${dir}`} ref={bandRef}>
         {[...items, ...items, ...items].map((sk, i) => (<div key={i} className="sk-item"><img src={sk.icon} alt={sk.name} style={dark && (sk.icon.includes('flask') || sk.icon.includes('django') || sk.icon.includes('github') || sk.icon.includes('vercel')) ? { filter: 'brightness(0) invert(1)' } : {}} /><span>{sk.name}</span></div>))}
       </div></div>
@@ -3439,7 +3439,7 @@ const Skills = ({ dark }) => {
             <h3>Besoin de ces compétences ?</h3>
             <p>Mettons mes compétences au service de votre projet. Discutons-en !</p>
             <div className="cta-btns">
-              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#9e0c1b" /> Me contacter</MagBtn>
+              <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--cta-light'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}><LI name="paper-plane" color="#5E824B" /> Me contacter</MagBtn>
               <MagBtn className={`btn ${dark ? 'btn--ghost-neon' : 'btn--cta-ghost-light'} mi-glint`} onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}><LI name="eye" color={dark ? "#fff" : "#1a1a1a"} /> Voir mes projets</MagBtn>
             </div>
           </div>
@@ -3620,11 +3620,11 @@ function AnimatedBeamMobile({ dark }) {
   const centerId = 'mob-cojn-center'
 
   const nodeLinks = [
-    { id: 'mob-cojn-github', href: CONTACT.github, label: 'GitHub', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
-    { id: 'mob-cojn-linkedin', href: CONTACT.linkedin, label: 'LinkedIn', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
-    { id: 'mob-cojn-whatsapp', href: CONTACT.whatsappUrl, label: 'WhatsApp', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
-    { id: 'mob-cojn-gmail', href: `mailto:${CONTACT.email}`, label: 'Gmail', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
-    { id: 'mob-cojn-cv', href: CONTACT.cv, label: 'Mon CV', download: true, icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
+    { id: 'mob-cojn-github', href: CONTACT.github, label: 'GitHub', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
+    { id: 'mob-cojn-linkedin', href: CONTACT.linkedin, label: 'LinkedIn', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
+    { id: 'mob-cojn-whatsapp', href: CONTACT.whatsappUrl, label: 'WhatsApp', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
+    { id: 'mob-cojn-gmail', href: `mailto:${CONTACT.email}`, label: 'Gmail', icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
+    { id: 'mob-cojn-cv', href: CONTACT.cv, label: 'Mon CV', download: true, icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
   ]
 
   useEffect(() => {
@@ -3634,7 +3634,7 @@ function AnimatedBeamMobile({ dark }) {
     if (!container || !svg || !centerEl) return
 
     const nodeIds = nodeLinks.map(n => n.id)
-    const colors = ['#9E0C1B', '#b8142a', '#9E0C1B', '#850614', '#9E0C1B', '#b8142a', '#850614', '#9E0C1B']
+    const colors = ['#5E824B', '#7A9F63', '#5E824B', '#3D5530', '#5E824B', '#7A9F63', '#3D5530', '#5E824B']
     const phases = [0, 0.37, 0.74, 1.11, 1.48, 1.85, 2.22, 2.59]
     let paths = [], animating = false, started = false, startTime = null
     const DURATION = 2400
@@ -3721,7 +3721,7 @@ function AnimatedBeamMobile({ dark }) {
                   onError={e => { e.target.style.display = 'none' }}
                 />
               </div>
-              <span className="mob-node-label" style={{ color: 'rgba(158, 12, 27,.8)' }}>JohaoDev</span>
+              <span className="mob-node-label" style={{ color: 'rgba(94, 130, 75,.8)' }}>JohaoDev</span>
             </div>
           </div>
           {/* Rangée basse */}
@@ -3851,7 +3851,7 @@ function GitHubInteractiveCard({ dark }) {
       {/* Header */}
       <div className="ghm-header">
         <div className="ghm-header-left">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--acc,#9e0c1b)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--acc,#5E824B)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
           <div>
             <h3 className="ghm-title">Activité GitHub</h3>
             <a href={`https://github.com/${GH_USER}`} target="_blank" rel="noreferrer" className="ghm-user">@{GH_USER}{ghUser && <span> · {ghUser.public_repos} repos</span>}</a>
@@ -3903,7 +3903,7 @@ function GitHubInteractiveCard({ dark }) {
                 { name: 'saveurs-d-agojies', description: 'E-boutique gastronomique et terroir béninois.', stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
               ]).map((repo, i) => {
                 const langColor = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#2b7489', HTML: '#e34c26', CSS: '#563d7c' }
-                const color = langColor[repo.language] || '#9E0C1B'
+                const color = langColor[repo.language] || '#5E824B'
                 return (
                   <div key={i} className="ghm-repo">
                     <div className="ghm-repo-hd">
@@ -4044,7 +4044,7 @@ const Contact = ({ dark }) => {
                 <textarea id="message" rows={6} placeholder="Décrivez votre projet…" value={form.message} onChange={onChange} required />
               </div>
               <MagBtn type="submit" className={`btn ${dark ? 'btn--neon' : 'btn--primary'} btn--full mi-btn-grad-solid`} disabled={sending}>
-                <LI name="paper-plane" color="#9e0c1b" />{sending ? 'Envoi en cours…' : 'Envoyer le message'}{sending && <LI name="spinner" color="#9e0c1b" />}
+                <LI name="paper-plane" color="#5E824B" />{sending ? 'Envoi en cours…' : 'Envoyer le message'}{sending && <LI name="spinner" color="#5E824B" />}
               </MagBtn>
               <p className="form-privacy"><LI name="lock" color={dark ? "#888" : "#999"} size={13} /> Vos données sont sécurisées et ne seront jamais partagées.</p>
             </form>
@@ -4087,7 +4087,7 @@ const Contact = ({ dark }) => {
                 <div className="cv-v2-inner">
                   <div className="cv-v2-qr-wrap">
                     <img src={cld("/assets/images/qrcodeCV.webp")} alt="QR Code CV" className="cv-v2-qr" />
-                    <div className="cv-v2-qr-badge"><LI name="mobile-alt" size={12} color="#9e0c1b" /> Scanner</div>
+                    <div className="cv-v2-qr-badge"><LI name="mobile-alt" size={12} color="#5E824B" /> Scanner</div>
                   </div>
                   <div className="cv-v2-text">
                     <span className="cv-v2-eyebrow">// document</span>
@@ -4118,7 +4118,7 @@ const Footer = ({ dark }) => (
       <div className="footer-links">
         <a href={CONTACT.github} target="_blank" rel="noreferrer"><LI name="github" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
         <a href={CONTACT.linkedin} target="_blank" rel="noreferrer"><LI name="linkedin" color={dark ? "#ffffff" : "#1a1a1a"} /></a>
-        <a href={`mailto:${CONTACT.email}`}><LI name="envelope" color="#9e0c1b" size={16} /></a>
+        <a href={`mailto:${CONTACT.email}`}><LI name="envelope" color="#5E824B" size={16} /></a>
       </div>
     </div>
   </footer>

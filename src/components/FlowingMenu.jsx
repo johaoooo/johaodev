@@ -7,9 +7,9 @@ function FlowingMenu({
   speed = 15,
   textColor = '#fff',
   bgColor = 'transparent',
-  marqueeBgColor = '#9E0C1B',
+  marqueeBgColor = '#5E824B',
   marqueeTextColor = '#fff',
-  borderColor = 'rgba(158, 12, 27,.15)'
+  borderColor = 'rgba(94, 130, 75,.15)'
 }) {
   return (
     <div className="menu-wrap" style={{ backgroundColor: bgColor }}>

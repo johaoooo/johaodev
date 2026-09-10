@@ -128,7 +128,7 @@ function useWebGLTerrain(canvasRef, dark) {
 
     const geo = new THREE.PlaneGeometry(60, 60, 80, 80);
     const mat = new THREE.MeshBasicMaterial({
-      color: dark ? 0x9E0C1B : 0x111111,
+      color: dark ? 0x5E824B : 0x111111,
       wireframe: true,
       transparent: true,
       opacity: dark ? 0.12 : 0.10,
@@ -143,7 +143,7 @@ function useWebGLTerrain(canvasRef, dark) {
     for (let i = 0; i < 120 * 3; i++) partPos[i] = (Math.random() - 0.5) * 60;
     partGeo.setAttribute('position', new THREE.BufferAttribute(partPos, 3));
     const partMat = new THREE.PointsMaterial({
-      color: dark ? 0x9E0C1B : 0x111111,
+      color: dark ? 0x5E824B : 0x111111,
       size: 0.12,
       transparent: true,
       opacity: dark ? 0.35 : 0.22,

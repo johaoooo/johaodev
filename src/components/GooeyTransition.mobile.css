@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════════════
    GooeyTransition.mobile.css — variante MOBILE
    Transition "Volets Lignes Fines" (effet 10, 30 lignes) — version Appmobile.jsx
-   Couleur des lignes : orange akaFOLIO (#9E0C1B)
+   Couleur des lignes : orange akaFOLIO (#5E824B)
    ════════════════════════════════════════════════ */
 
 .gooey-layer--mobile {
@@ -18,7 +18,7 @@
   position: relative;
   flex: 1;
   height: 100%;
-  background: #9E0C1B;
+  background: #5E824B;
   transform: scaleY(0);
   will-change: transform;
 }

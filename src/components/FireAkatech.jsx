@@ -272,9 +272,9 @@ export default function Fireakatech({ className = '' }) {
             -4px 4px 0 #f43f5e,
             -5px 5px 0 #e11d48,
             -6px 6px 0 #be123c,
-            -7px 7px 0 #9e0c1b,
+            -7px 7px 0 #5E824B,
             -8px 8px 0 #880817,
-            -9px 9px 0 #61020b,
+            -9px 9px 0 #3D5530,
             -10px 10px 0 #400107,
             -12px 12px 20px rgba(0,0,0,0.92)
           `,

@@ -6,7 +6,7 @@ import { gsap } from '../lib/gsapSetup'
 // Palette "papier brûlé" adaptée à l'identité AKATECH : au lieu des
 // 10 variantes du fichier de référence (pensées pour un sélecteur
 // visuel), un seul réglage — papier sombre proche du fond du site
-// (--bg), braise dans l'orange de la marque (--accent, #9E0C1B). Pour
+// (--bg), braise dans l'orange de la marque (--accent, #5E824B). Pour
 // changer d'ambiance, il suffit de modifier ces 5 valeurs : ce sont
 // exactement les mêmes uniformes que dans le fichier de référence.
 const BURN_THEME = {
