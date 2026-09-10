@@ -41,7 +41,6 @@ export function useImmersiveSound(muted, started) {
 
     return () => {
       audio.pause()
-      audio.src = ''
       audioRef.current = null
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

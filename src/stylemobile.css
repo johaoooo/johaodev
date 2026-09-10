@@ -397,16 +397,7 @@
      85%  { transform: translate(7%, 2%) }
      100% { transform: translate(0,0) }
    }
-   .hv4-grain {
-     position: absolute; inset: -100%;
-     z-index: 6; pointer-events: none;
-     background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_filmgrain.png");
-     background-repeat: repeat;
-     opacity: 0.045;
-     animation: hv4Grain 9s steps(10) infinite;
-     will-change: transform;
-   }
-   .app--light .hv4-grain { opacity: 0.025; }
+   .hv4-grain { display: none; }
    
    /* God rays — alignés palette plasma orange */
    .hv4-god-rays {
@@ -616,10 +607,11 @@
        margin: 0 auto;
        transform: none !important;
      }
-     .hv4-name {
+     h1.hv4-name, .hv4-name {
+       font-size: 1rem;
        width: 100%;
        text-align: center;
-       margin: 0 auto clamp(12px, 2vh, 20px);
+       margin: 0 auto clamp(12px, 2vh, 20px) auto;
      }
      .hv4-name-line {
        font-size: clamp(28px, 8.2vw, 44px);
@@ -752,7 +744,7 @@
    .hv4-clock { opacity:.5; font-size:.82em; white-space:nowrap; }
    
    /* Name — each line is a separate animated block */
-   .hv4-name { margin-bottom:clamp(12px,2.2vh,22px); line-height:.88; }
+   h1.hv4-name, .hv4-name { font-size: 1rem; margin: 0 0 clamp(12px,2.2vh,22px) 0; line-height:.88; }
    .hv4-name-line {
      display:block;
      font-family:var(--fd); font-weight:900; letter-spacing:-.045em; color:var(--ink);

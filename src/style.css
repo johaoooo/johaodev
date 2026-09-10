@@ -630,7 +630,7 @@
      transform: translateX(clamp(112px, 10vw, 200px));
    }
    .hv4-portrait-name {
-     position: relative; margin: 0; width: 100%;
+     position: relative; margin: 0; width: 100%; font-size: 1rem;
      display: flex; flex-direction: column; line-height: .86;
    }
    .hv4-portrait-row {

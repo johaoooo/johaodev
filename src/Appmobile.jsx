@@ -435,7 +435,7 @@ const SKILLS = {
     { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
     { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
     { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-    { name: "ChatGPT", icon: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
+    { name: "ChatGPT", icon: "/assets/icons/simple-icons/openai.svg" },
     { name: "Gemini", icon: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
     { name: "Claude AI", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.svg" },
     { name: "PythonAnywhere", icon: "https://www.pythonanywhere.com/static/anywhere/images/PA-logo.svg" },
