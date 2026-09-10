@@ -758,25 +758,26 @@
    }
    @keyframes scrollLine { from { top: -50%; } to { top: 150%; } }
 
-   @media(max-width:900px){
-     #hero { min-height: 100svh; height: auto; padding: 104px 0 56px; }
-     .hv4-scene-wrap { flex-direction: column; gap: 28px; padding: 0 6vw; }
-     .hv4-portrait { position: relative; height: auto; padding-top: 12px; transform: none; }
-     .hv4-portrait-photo {
-       position: relative; top: auto; left: auto; transform: none;
-       margin: 20px auto 0; width: min(58vw, 280px);
-     }
-     .hv4-corner--left {
-       position: relative; left: auto; top: auto; bottom: auto;
-       transform: none;
-       align-items: center; text-align: center; max-width: 100%; width: 100%;
-     }
-     .hv4-typed { justify-content: center; }
-     .hv4-ctas { justify-content: center; }
-     .hv4-stats { margin: 0 auto; }
-     .hv4-badge-neo { justify-content: center; }
-     .hero-scroll { display: none; }
-   }
+    @media(max-width:900px){
+      #hero { min-height: 100svh; height: auto; padding: 104px 0 56px; overflow-x: hidden; }
+      .hv4-scene-wrap { flex-direction: column; gap: 28px; padding: 0 4vw; justify-content: center; align-items: center; width: 100%; max-width: 100%; margin: 0 auto; box-sizing: border-box; transform: none !important; }
+      .hv4-portrait { position: relative; height: auto; padding-top: 12px; transform: none !important; margin: 0 auto; width: 100%; }
+      .hv4-portrait-photo {
+        position: relative; top: auto; left: auto; transform: none;
+        margin: 20px auto 0; width: min(58vw, 280px);
+      }
+      .hv4-corner--left {
+        position: relative; left: auto; top: auto; bottom: auto;
+        transform: none;
+        align-items: center; text-align: center; max-width: 100%; width: 100%; margin: 0 auto;
+      }
+      .hv4-left-description { text-align: center; margin: 0 auto; }
+      .hv4-typed { justify-content: center; text-align: center; width: 100%; }
+      .hv4-ctas { justify-content: center; width: 100%; }
+      .hv4-stats { margin: 0 auto; justify-content: center; }
+      .hv4-badge-neo { justify-content: center; margin: 0 auto; }
+      .hero-scroll { display: none !important; }
+    }
    @media(max-width:560px){ #hero { min-height: 100svh; height: auto; padding-bottom: 40px; } }
    
    /* ══════════ BUTTONS ══════════ */

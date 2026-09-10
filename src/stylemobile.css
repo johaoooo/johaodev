@@ -553,7 +553,14 @@
      /* Hero : hauteur plein écran mobile (svh évite le bug barre d'adresse) */
      .hero {
        min-height: 100svh;
-       height: 100svh;
+       height: auto;
+       padding-top: clamp(80px, 12vh, 100px);
+       padding-bottom: clamp(36px, 6vh, 60px);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       overflow-x: hidden;
      }
      /* Aurora : le canvas remplit le parent qui a maintenant une hauteur définie */
      .aurora-canvas {
@@ -563,29 +570,140 @@
        height: 100% !important;
      }
      /* Cacher scroll indicator sur mobile */
-     .hero-scroll { display: none; }
+     .hero-scroll { display: none !important; }
+     /* Centrage parfait de la scène hero et de la grille */
+     .hv4-scene-wrap {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+       max-width: 100%;
+       margin: 0 auto;
+       padding: 0;
+       transform: none !important;
+     }
+     .hv4-grid {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       width: 100%;
+       max-width: 100%;
+       margin: 0 auto;
+       gap: 0;
+     }
+     .hv4-right {
+       display: none !important;
+     }
      /* Centrer la photo mobile */
      .hv4-photo-mob {
        display: flex;
        justify-content: center;
        align-items: center;
        width: 100%;
+       margin-left: auto;
+       margin-right: auto;
      }
      .hv4-photo-mob-inner { margin: 0 auto; }
      /* Centrer le contenu hero gauche */
-     .hv4-left { align-items: center; text-align: center; }
-     .hv4-name { text-align: center; }
-     .hv4-typed { justify-content: center; }
-     .hv4-desc { text-align: left; }
-     .hv4-ctas { justify-content: center; }
-     .hv4-stats { margin: 0 auto; }
-     .hv4-badge { justify-content: center; }
+     .hv4-left {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       width: 100%;
+       max-width: 100%;
+       margin: 0 auto;
+       transform: none !important;
+     }
+     .hv4-name {
+       width: 100%;
+       text-align: center;
+       margin: 0 auto clamp(12px, 2vh, 20px);
+     }
+     .hv4-name-line {
+       font-size: clamp(28px, 8.2vw, 44px);
+       letter-spacing: -0.035em;
+       text-align: center;
+       display: block;
+       margin: 0 auto;
+       max-width: 100%;
+       overflow-wrap: break-word;
+     }
+     .hv4-typed {
+       justify-content: center;
+       text-align: center;
+       width: 100%;
+       margin: 0 auto clamp(10px, 1.8vh, 16px);
+     }
+     .hv4-desc {
+       text-align: center;
+       margin: 0 auto clamp(20px, 3vh, 30px);
+       max-width: 92%;
+       font-size: clamp(13px, 3.4vw, 15px);
+       line-height: 1.75;
+     }
+     .hv4-ctas {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+       margin: 0 auto clamp(22px, 3.5vh, 34px);
+     }
+     .hv4-stats {
+       margin: 0 auto;
+       justify-content: center;
+     }
+     .hv4-badge {
+       justify-content: center;
+       margin-left: auto;
+       margin-right: auto;
+     }
    }
    @media (max-width: 560px) {
      .hero {
        min-height: 100svh;
        height: auto;
+       padding-top: 84px;
        padding-bottom: 40px;
+     }
+     .hv4-name-line {
+       font-size: clamp(24px, 8vw, 38px);
+     }
+     .hv4-stats {
+       width: 100%;
+       max-width: 360px;
+       margin: 0 auto;
+     }
+     .hv4-stat {
+       flex: 1;
+       padding: 10px 8px;
+     }
+   }
+   @media (max-width: 480px) {
+     .hv4-name-line {
+       font-size: clamp(22px, 7.6vw, 32px);
+     }
+     .hv4-desc {
+       font-size: 13px;
+       line-height: 1.7;
+       max-width: 100%;
+     }
+     .hv4-ctas {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 10px;
+       width: 100%;
+     }
+     .hv4-ctas .btn {
+       width: 100%;
+       max-width: 290px;
+       justify-content: center;
+     }
+     .hv4-stats {
+       max-width: 100%;
      }
    }
    

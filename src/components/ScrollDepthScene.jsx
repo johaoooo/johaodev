@@ -106,6 +106,15 @@ function useWebGLTerrain(canvasRef, dark) {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+    } catch (e) {
+      console.warn('ScrollDepthScene: WebGL context could not be created', e);
+      return;
+    }
+    if (!renderer) return;
+
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(dark ? 0x0A0A0A : 0xFFFFFF);
 
@@ -114,7 +123,6 @@ function useWebGLTerrain(canvasRef, dark) {
     camera.position.set(0, 8, 20);
     camera.lookAt(0, 0, 0);
 
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 

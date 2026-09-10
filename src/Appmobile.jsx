@@ -1538,11 +1538,27 @@ const Hero = ({ dark }) => {
   const cursorRef = useRef(null);
   const dustRef = useRef(null);
   const rafRef = useRef(null);
-  const mTarget = useRef({ x: 0, y: 0 });
+  const mTarget = useRef({ x: typeof window !== 'undefined' ? window.innerWidth / 2 : 0, y: typeof window !== 'undefined' ? window.innerHeight / 2 : 0 });
   const mCurrent = useRef({ x: typeof window !== 'undefined' ? window.innerWidth / 2 : 0, y: typeof window !== 'undefined' ? window.innerHeight / 2 : 0 });
 
-  /* ── lerp mouse loop ── */
+  /* ── lerp mouse loop (désactivé sur tactile/mobile pour éviter tout décalage) ── */
   useEffect(() => {
+    const isTouch = typeof window !== 'undefined' && (
+      window.innerWidth <= 900 ||
+      window.matchMedia('(hover: none) and (pointer: coarse)').matches ||
+      !window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    );
+    if (isTouch) {
+      if (sceneRef.current) sceneRef.current.style.transform = 'none';
+      if (leftRef.current) leftRef.current.style.transform = 'none';
+      if (rightRef.current) rightRef.current.style.transform = 'none';
+      return;
+    }
+
+    const W0 = window.innerWidth, H0 = window.innerHeight;
+    mTarget.current = { x: W0 / 2, y: H0 / 2 };
+    mCurrent.current = { x: W0 / 2, y: H0 / 2 };
+
     const onMove = e => { mTarget.current.x = e.clientX; mTarget.current.y = e.clientY; };
     window.addEventListener('mousemove', onMove);
     const loop = () => {
