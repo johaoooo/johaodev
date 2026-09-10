@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://mbolloaka-dev.vercel.app'
+  const baseUrl = 'https://johaodev.vercel.app'
   const lastModified = new Date()
 
   return [

@@ -617,7 +617,7 @@ function Loader({ onDone }) {
 
     if (!el) return
 
-    const original = "MBOLLO aka"
+    const original = "JOSEPH DEHAZOUNDE"
 
     const interval = setInterval(() => {
 
@@ -668,7 +668,7 @@ function Loader({ onDone }) {
         {/* NAME */}
         <div className="ld-name">
           <div className="decrypt-text">
-            MBOLLO aka
+            JOSEPH DEHAZOUNDE
           </div>
         </div>
 
@@ -801,7 +801,7 @@ function Navbar({ theme, onToggleTheme }) {
           <span>{clock.date}</span><span className="nb-sep">·</span><span>{clock.time}</span>
         </div>
         <div className="nb-topbar-right">
-          <span className="nb-avail"><span className="nb-avail-dot" />disponible · Abidjan, CI</span>
+          <span className="nb-avail"><span className="nb-avail-dot" />disponible · Porto-Novo, Bénin</span>
           <AnimatedThemeToggler theme={theme} onClick={onToggleTheme} />
           <button className={`nb-hamburger${drawerOpen ? ' open' : ''}`} aria-label="Menu" aria-expanded={drawerOpen}
             onClick={() => setDrawerOpen(v => !v)}>
@@ -854,10 +854,10 @@ function Navbar({ theme, onToggleTheme }) {
         </div>
         <div className="nb-drawer-footer">
           {[
-            { href: 'https://github.com/wthomasss06-stack', title: 'GitHub', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
-            { href: 'https://www.linkedin.com/in/m-bollo-aka', title: 'LinkedIn', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
-            { href: 'mailto:wthomasss06@gmail.com', title: 'Email', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="15" rx="3" /><path d="M2 8l10 7 10-7" /></svg> },
-            { href: 'https://akatech.vercel.app/', title: 'akaTech', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="9.5" /><ellipse cx="12" cy="12" rx="4.5" ry="9.5" /><line x1="2.5" y1="12" x2="21.5" y2="12" opacity=".5" /></svg> },
+            { href: 'https://github.com/johaoooo', title: 'GitHub', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
+            { href: 'https://linkedin.com/in/dehazounde-joseph', title: 'LinkedIn', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
+            { href: 'mailto:josephdehazounde@gmail.com', title: 'Email', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="15" rx="3" /><path d="M2 8l10 7 10-7" /></svg> },
+            { href: 'https://github.com/johaoooo', title: 'JohaoDev', d: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="9.5" /><ellipse cx="12" cy="12" rx="4.5" ry="9.5" /><line x1="2.5" y1="12" x2="21.5" y2="12" opacity=".5" /></svg> },
           ].map(({ href, title, d }) => (
             <a key={title} href={href} target="_blank" rel="noreferrer" title={title}>{d}</a>
           ))}
@@ -889,9 +889,9 @@ function Hero() {
           {/* LEFT */}
           <div className="hv4-left hv4-rv" style={{ '--d': '0s' }} id="hv4-left">
             {/* Nom ScrambleText */}
-            <h1 className="hv4-name" aria-label="M'Bollo aka">
+            <h1 className="hv4-name" aria-label="Joseph Dehazounde">
               <ScrambleText
-                text="M'BOLLO"
+                text="JOSEPH"
                 tag="span"
                 className="hv4-name-line"
                 style={{ '--d': '.1s' }}
@@ -901,7 +901,7 @@ function Hero() {
                 once={false}
               />
               <ScrambleText
-                text="aka"
+                text="DEHAZOUNDE"
                 tag="span"
                 className="hv4-name-line hv4-name-line--u"
                 style={{ '--d': '.2s' }}
@@ -915,7 +915,7 @@ function Hero() {
             {/* Photo mobile */}
             <div className="hv4-photo-mob hv4-rv" style={{ '--d': '.3s' }}>
               <div className="hv4-photo-mob-inner">
-                <img src="/assets/images/IMG_20250124_124101KK.webp" alt="M'Bollo aka" className="hv4-photo"
+                <img src="/assets/images/hero-profile.webp" alt="Joseph Dehazounde" className="hv4-photo"
                   onError={e => { e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600' }} />
                 <div className="hv4-photo-mob-badge"><span className="hero-dot" /><span>disponible</span></div>
               </div>
@@ -923,11 +923,11 @@ function Hero() {
 
             {/* Rotating Text */}
             <p className="hv4-typed hv4-rv" style={{ '--d': '.42s' }}>
-              Développeur&nbsp;<RotatingText texts={['Full-Stack', 'React & Python', 'Django & Flask', 'orienté produit', 'Data & Carto']} rotationInterval={2500} className="hero-word" style={{ color: '#ffffff' }} />
+              Expertise&nbsp;<RotatingText texts={['Cybersécurité', 'Fullstack', 'React & Django', 'Marketeur']} rotationInterval={2500} className="hero-word" style={{ color: '#ffffff' }} />
             </p>
 
             <p className="hv4-desc hv4-rv" style={{ '--d': '.56s' }}>
-              Développeur web orienté produit — Django &amp; React. Je construis des applications pensées pour des usages réels. Basé à <strong style={{ color: 'var(--accent)' }}>Abidjan</strong>.
+              Analyste en cybersécurité, développeur web fullstack et marketeur. Je conçois des solutions performantes et sécurisées. Basé à <strong style={{ color: 'var(--accent)' }}>Porto-Novo, Bénin</strong>.
             </p>
 
             {/* CTAs */}
@@ -935,7 +935,7 @@ function Hero() {
               <button className="btn-fill" onClick={() => scrollTo('gallery-section')}>
                 Voir mes projets ↗
               </button>
-              <a href="/assets/CV_MBOLLO_aka_ELVIS.pdf" download className="btn-fill" style={{ gap: '.5rem', display: 'inline-flex', alignItems: 'center' }}>
+              <a href="/assets/CV_DEHAZOUNDE_Joseph.pdf" download className="btn-fill" style={{ gap: '.5rem', display: 'inline-flex', alignItems: 'center' }}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
@@ -2226,17 +2226,17 @@ function TestimonialsSection() {
    INTERACTIVE GITHUB CARD  — Temps réel via GitHub API
    ════════════════════════════════════════════ */
 function GitHubInteractiveCard() {
-  const GH_USER = 'wthomasss06-stack'
+  const GH_USER = 'johaoooo'
 
   const [activeTab, setActiveTab] = useState('grid')
   const [tooltip, setTooltip] = useState({ show: false, text: '', x: 0, y: 0 })
   const [terminalLines, setTerminalLines] = useState([])
   const [isPushing, setIsPushing] = useState(false)
   const [logs, setLogs] = useState([
-    { id: 1, time: 'Il y a 10 min', repo: 'shop-ci', msg: 'fix: validation du panier et mobile money API', commits: 2 },
-    { id: 2, time: 'Il y a 2 heures', repo: 'akatech', msg: 'feat: ajout des animations GSAP de survol', commits: 1 },
-    { id: 3, time: 'Hier', repo: 'terrasafe', msg: 'security: validation CSRF sur le formulaire', commits: 3 },
-    { id: 4, time: 'Il y a 3 jours', repo: 'chap-chapMAP', msg: 'refactor: optimisation des couches Leaflet', commits: 1 },
+    { id: 1, time: 'Il y a 10 min', repo: 'cnib-platform', msg: 'security: renforcement auth JWT et RBAC', commits: 2 },
+    { id: 2, time: 'Il y a 2 heures', repo: 'xobo-ticket', msg: 'feat: réservation de stands et validation', commits: 1 },
+    { id: 3, time: 'Hier', repo: 'johaodev', msg: 'security: audit OWASP et durcissement des headers', commits: 3 },
+    { id: 4, time: 'Il y a 3 jours', repo: 'agro-market', msg: 'feat: passerelle paiement KKiaPay', commits: 1 },
   ])
 
   const [ghLoading, setGhLoading] = useState(true)
@@ -2379,16 +2379,16 @@ function GitHubInteractiveCard() {
     if (isPushing) return
     setIsPushing(true); setTerminalLines([])
     const lines = [
-      'wthomasss06-stack@desktop:~$ git add .',
-      'wthomasss06-stack@desktop:~$ git commit -m "feat: design interactive stats grid"',
-      'wthomasss06-stack@desktop:~$ git push origin main',
+      'johaoooo@desktop:~$ git add .',
+      'johaoooo@desktop:~$ git commit -m "feat: design interactive stats grid"',
+      'johaoooo@desktop:~$ git push origin main',
       'Enumerating objects: 7, done.',
       'Counting objects: 100% (7/7), done.',
       'Compressing objects: 100% (4/4), done.',
       'Writing objects: 100% (4/4), 485 bytes | 485.00 KiB/s, done.',
-      `To github.com:${GH_USER}/elvis-portfolio.git`,
+      `To github.com:${GH_USER}/johaodev.git`,
       '   7c28fb3..9a28cd1  main -> main',
-      'wthomasss06-stack@desktop:~$ _',
+      'johaoooo@desktop:~$ _',
     ]
     let cur = 0
     const next = () => {
@@ -2397,7 +2397,7 @@ function GitHubInteractiveCard() {
         setTimeout(next, cur <= 3 ? 600 : 250)
       } else {
         setIsPushing(false)
-        setLogs(p => [{ id: Date.now(), time: "À l'instant", repo: 'elvis-portfolio', msg: 'feat: design interactive stats grid', commits: 1 }, ...p])
+        setLogs(p => [{ id: Date.now(), time: "À l'instant", repo: 'johaodev', msg: 'feat: design interactive stats grid', commits: 1 }, ...p])
       }
     }
     setTimeout(next, 200)
@@ -2679,14 +2679,14 @@ function ContactSection({ onToast }) {
   }, [])
 
   const nodeLinks = [
-    { id: 'cojn-github', href: 'https://github.com/wthomasss06-stack', label: 'GitHub', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
-    { id: 'cojn-linkedin', href: 'https://www.linkedin.com/in/m-bollo-aka', label: 'LinkedIn', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
-    { id: 'cojn-facebook', href: 'https://web.facebook.com/profile.php?id=61577494705852', label: 'Facebook', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
-    { id: 'cojn-whatsapp', href: 'https://wa.me/2250142507750', label: 'WhatsApp', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
-    { id: 'cojn-akatech', href: 'https://akatech.vercel.app/', label: 'akaTech', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" /></svg> },
-    { id: 'cojn-gmail', href: 'mailto:wthomasss06@gmail.com', label: 'Gmail', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
-    { id: 'cojn-uvci', href: 'https://uvci.edu.ci/', label: 'UVCI', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M2 10l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
-    { id: 'cojn-cv', href: '/assets/CV_MBOLLO_aka_ELVIS.pdf', label: 'Mon CV', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
+    { id: 'cojn-github', href: 'https://github.com/johaoooo', label: 'GitHub', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg> },
+    { id: 'cojn-linkedin', href: 'https://linkedin.com/in/dehazounde-joseph', label: 'LinkedIn', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
+    { id: 'cojn-facebook', href: 'https://facebook.com', label: 'Facebook', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
+    { id: 'cojn-whatsapp', href: 'https://wa.me/2290162108694', label: 'WhatsApp', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
+    { id: 'cojn-akatech', href: 'https://github.com/johaoooo', label: 'JohaoDev', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" /></svg> },
+    { id: 'cojn-gmail', href: 'mailto:josephdehazounde@gmail.com', label: 'Gmail', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
+    { id: 'cojn-uvci', href: 'https://github.com/johaoooo', label: 'JohaoLab', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M2 10l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
+    { id: 'cojn-cv', href: '/assets/CV_DEHAZOUNDE_Joseph.pdf', label: 'Mon CV', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
   ]
 
   return (
@@ -2715,8 +2715,8 @@ function ContactSection({ onToast }) {
             </div>
           </div>
           {[
-            { href: 'tel:+2250142507750', text: '+225 01 42 50 77 50', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.86 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.66a16 16 0 006.29 6.29l1.02-1.02a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg> },
-            { href: 'mailto:wthomasss06@gmail.com', text: 'wthomasss06@gmail.com', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
+            { href: 'tel:+2290162108694', text: '+229 01 62 10 86 94', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.86 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.66a16 16 0 006.29 6.29l1.02-1.02a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg> },
+            { href: 'mailto:josephdehazounde@gmail.com', text: 'josephdehazounde@gmail.com', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
           ].map((item, i) => (
             <div key={i} className="contact-item" style={{ marginTop: i === 0 ? '1.8rem' : 0 }}>
               <div className="c-icon">{item.svg}</div>
@@ -2725,7 +2725,7 @@ function ContactSection({ onToast }) {
           ))}
           <div className="contact-item">
             <div className="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E0C1B" strokeWidth="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg></div>
-            <span style={{ color: 'var(--muted)' }}>Abidjan, Côte d'Ivoire</span>
+            <span style={{ color: 'var(--muted)' }}>Porto-Novo, Bénin</span>
           </div>
         </div>
         <div>
@@ -2870,7 +2870,7 @@ function Footer() {
               <span className="ft-cv-eyebrow">// document</span>
               <h4 className="ft-cv-title">Télécharger<br />mon CV</h4>
               <p className="ft-cv-sub">Scannez le QR code ou cliquez ci-dessous</p>
-              <a href="/assets/CV_MBOLLO_aka_ELVIS.pdf" download className="btn-fill ft-dl-btn">
+              <a href="/assets/CV_DEHAZOUNDE_Joseph.pdf" download className="btn-fill ft-dl-btn">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />
@@ -2898,9 +2898,9 @@ function Footer() {
 
       {/* Barre de bas */}
       <div className="ft-bottom">
-        <span>© 2026 — M'Bollo aka · <a href="https://akatech.vercel.app/" target="_blank" rel="noreferrer">akaTech</a> · Abidjan</span>
+        <span>© 2026 — Joseph Dehazounde · <a href="https://github.com/johaoooo" target="_blank" rel="noreferrer">JohaoDev</a> · Porto-Novo</span>
         <span style={{ color: 'rgba(255,255,255,.15)' }}>·</span>
-        <a href="https://akatech.vercel.app/" target="_blank" rel="noreferrer">akatech-agence.vercel.app</a>
+        <a href="https://github.com/johaoooo" target="_blank" rel="noreferrer">github.com/johaoooo</a>
       </div>
     </footer>
   )

@@ -106,19 +106,19 @@ export default function Home({ onNext, onNavigate }) {
           className="mono akatech-hero-eyebrow"
           style={{ fontSize: '0.75rem', color: 'var(--muted)', letterSpacing: '0.2em', marginBottom: '1.5rem' }}
         >
-          DÉVELOPPEUR WEB FULL-STACK
+          ANALYSTE CYBERSÉCURITÉ & DÉVELOPPEUR FULLSTACK
         </span>
 
         <h1 className="akatech-hero-title">
-          <span>M&apos;Bollo </span><span className="accent">Aka</span>
+          <span>Joseph </span><span className="accent">Dehazounde</span>
         </h1>
 
         <p
           className="akatech-hero-tagline"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', marginTop: '1.5rem', maxWidth: '50ch', lineHeight: 1.7 }}
         >
-          Je ne présente pas seulement mes projets. Je montre <strong style={{ color: 'var(--text)' }}>comment je les construis</strong>.
-          Autodidacte depuis le 25 octobre 2025. Basé à {CONTACT.location}.
+          Je ne présente pas seulement mes projets. Je montre <strong style={{ color: 'var(--text)' }}>comment je les construis et les sécurise</strong>.
+          Basé à {CONTACT.location}.
         </p>
 
         <div className="akatech-hero-actions" style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

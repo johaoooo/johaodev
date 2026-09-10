@@ -60,7 +60,7 @@ function usePageTransition() {
  dupliquer cette liste ailleurs dans le fichier.
  ════════════════════════════════════════════ */
 const NAV_LINKS = [
-  { id: 'hero', label: 'Accueil', num: '00', sub: 'M\'Bollo Aka' },
+  { id: 'hero', label: 'Accueil', num: '00', sub: 'Joseph Dehazounde' },
   { id: 'projets-section', label: 'Projets', num: '01', sub: null },  // sub calculé dynamiquement juste après PROJECTS ↓
   { id: 'about-section', label: 'À propos', num: '02', sub: 'Parcours & stack' },
   { id: 'process-section', label: 'Process', num: '03', sub: 'De l\'acompte à la livraison' },

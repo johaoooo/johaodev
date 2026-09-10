@@ -2,7 +2,7 @@
 
 /**
  * ╔══════════════════════════════════════════════════════════════════╗
- * ║       akaFOLIO v3 — Win95 OS Interactive Portfolio  (v3.1)      ║
+ * ║     JOHAOFOLIO v3 — Win95 OS Interactive Portfolio  (v3.1)      ║
  * ║  XP Wallpaper · Fix cursor/switch · Gallery · Services/Tarifs   ║
  * ╚══════════════════════════════════════════════════════════════════╝
  */
@@ -899,7 +899,7 @@ const ICON_SVGS = {
   ),
   akatech: (
     <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#002211" />
-      <text x="4" y="26" fontFamily="monospace" fontSize="20" fontWeight="900" fill="#00ff88">AK</text>
+      <text x="4" y="26" fontFamily="monospace" fontSize="20" fontWeight="900" fill="#00ff88">JD</text>
       <rect x="4" y="28" width="32" height="2" fill="#00ff88" opacity=".5" /></svg>
   ),
   welcome: (
@@ -992,7 +992,7 @@ function BootScreen({ onDone }) {
     <div className="w95-boot">
       <canvas ref={canvasRef} className="w95-boot-canvas" style={{ pointerEvents: 'none' }} />
       <div className="w95-boot-content">
-        <div className="w95-boot-title">AKAfolio OS v3</div>
+        <div className="w95-boot-title">JOHAOFOLIO OS v3</div>
         {lines.map((l, i) => (
           <div key={i} className={`w95-boot-line ${l.cls}`}>{l.txt}</div>
         ))}
@@ -1014,15 +1014,15 @@ function BootScreen({ onDone }) {
 
 /* Chemins d'adresse par type de fenêtre */
 const WIN_ADDRESS = {
-  welcome: 'C:\\akafolio\\Accueil',
-  about: 'C:\\akafolio\\À_propos',
-  skills: 'C:\\akafolio\\Compétences',
-  projects: 'C:\\akafolio\\Projets',
-  services: 'C:\\akafolio\\Services_&_Tarifs',
-  contact: 'C:\\akafolio\\Contact',
-  gallery: 'C:\\akafolio\\Galerie',
-  faq: 'C:\\akafolio\\FAQ',
-  detail: 'C:\\akafolio\\Projets\\Détail',
+  welcome: 'C:\\johaodev\\Accueil',
+  about: 'C:\\johaodev\\À_propos',
+  skills: 'C:\\johaodev\\Compétences',
+  projects: 'C:\\johaodev\\Projets',
+  services: 'C:\\johaodev\\Services_&_Tarifs',
+  contact: 'C:\\johaodev\\Contact',
+  gallery: 'C:\\johaodev\\Galerie',
+  faq: 'C:\\johaodev\\FAQ',
+  detail: 'C:\\johaodev\\Projets\\Détail',
 };
 
 /* Logo Windows 4 carrés */
@@ -1144,7 +1144,7 @@ function Window({ id, winType, title, defaultPos, defaultSize, isMinimized, isFo
 
   if (isMinimized) return null;
 
-  const addr = WIN_ADDRESS[winType] || `C:\\akafolio\\${title}`;
+  const addr = WIN_ADDRESS[winType] || `C:\\johaodev\\${title}`;
 
   return (
     <div
@@ -1234,7 +1234,7 @@ function Lightbox({ items, index = 0, onClose }) {
     return () => { window.removeEventListener('keydown', esc); window.removeEventListener('keydown', arr); };
   }, [onClose, hasPrev, hasNext]);
 
-  const addrPath = `C:\\akafolio\\Images\\${title.replace(/\s+/g, '_')}`;
+  const addrPath = `C:\\johaodev\\Images\\${title.replace(/\s+/g, '_')}`;
 
   const goNext = () => { if (hasNext) { setCur(i => i + 1); setZoomed(false); } };
   const goPrev = () => { if (hasPrev) { setCur(i => i - 1); setZoomed(false); } };

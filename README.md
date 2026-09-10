@@ -2,12 +2,12 @@
 <img src="public/assets/images/logo-akatech.webp" alt="AKATech Logo" width="200" />
 
 <br /><br />
-# AKAFOLIO — M'Bollo Aka
+# JOHAODEV — Joseph Dehazounde
 
-**Portfolio interactif full-stack** · React 18 · Next.js (App Router) · WebGL · GSAP · Neo-Brutalism
+**Portfolio interactif full-stack & cybersécurité** · React 18 · Next.js (App Router) · WebGL · GSAP · Neo-Brutalism
 
-[![Live Demo](https://img.shields.io/badge/Démo_live-AKAFOLIO160502.vercel.app-FF5500?style=for-the-badge)](https://mbolloaka-dev.vercel.app/)
-[![akaTech](https://img.shields.io/badge/akaTech-akatech.vercel.app-0A0A0A?style=for-the-badge)](https://akatech.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-johaoooo-181717?style=for-the-badge&logo=github)](https://github.com/johaoooo)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-dehazounde--joseph-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/dehazounde-joseph)
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-App_Router-000000?style=flat-square&logo=next.js&logoColor=white)
@@ -46,7 +46,7 @@
 
 ## À propos
 
-**AKAFOLIO** est le portfolio personnel d'M'Bollo Aka (akaTech) — développeur web full-stack basé à Abidjan, Côte d'Ivoire. Longtemps SPA React/Vite pure, il tourne désormais sur **Next.js App Router** : la même expérience interactive (animations au scroll pilotées par GSAP, fonds WebGL — OGL / Three.js via React Three Fiber —, carte GitHub en temps réel, formulaire de contact avec envoi d'email réel via Resend, bascule entre une interface **neo-brutalism** moderne et un **easter egg Windows 95** entièrement reconstitué) tourne désormais **au-dessus d'une base réellement indexable côté serveur**, plutôt que dans un `<div id="root"></div>` vide.
+**JOHAODEV** est le portfolio personnel de Joseph Dehazounde — analyste en cybersécurité et développeur web full-stack basé à Porto-Novo, Bénin. Bâti sur **Next.js App Router** : une expérience interactive riche (animations au scroll pilotées par GSAP, fonds WebGL — OGL / Three.js via React Three Fiber —, carte GitHub interactive, formulaire de contact avec envoi d'email via Resend, bascule entre une interface **neo-brutalism** moderne, une version **mobile** soignée et un **easter egg Windows 95** entièrement reconstitué) tournant **au-dessus d'une base réellement indexable côté serveur**.
 
 Tout est codé sur mesure, sans librairie UI (pas de MUI/Chakra). Le projet regroupe trois expériences front dans le même dépôt — orchestrées par `RootApp.jsx` — plus une quatrième en chantier (`Appv4.jsx`).
 
@@ -308,7 +308,7 @@ Fonctionnalités :
 |---|---|---|
 | `RESEND_API_KEY` | Clé API Resend (obligatoire) | — |
 | `FROM_EMAIL` | Adresse d'expédition | `onboarding@resend.dev` |
-| `ADMIN_EMAIL` | Adresse de réception | `wthomasss06@gmail.com` |
+| `ADMIN_EMAIL` | Adresse de réception | `josephdehazounde@gmail.com` |
 
 En dev local : `npm run dev` suffit désormais — la Route Handler tourne nativement dans `next dev`. Plus besoin du second terminal `vercel dev --listen 3001` ni du proxy `/api` de l'ancien `vite.config.js`.
 
@@ -468,18 +468,17 @@ Le Hero reste verrouillé en thème sombre quelle que soit la sélection globale
 
 ## Contact
 
-**M'Bollo Aka** — Développeur Web Full-Stack — Abidjan, Côte d'Ivoire
+**Joseph Dehazounde** — Analyste Cybersécurité & Développeur Web Full-Stack — Porto-Novo, Bénin
 
-[![Email](https://img.shields.io/badge/Email-wthomasss06@gmail.com-EA4335?style=flat-square&logo=gmail)](mailto:wthomasss06@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-m--bollo--aka-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/m-bollo-aka-60a1b1340/)
-[![GitHub](https://img.shields.io/badge/GitHub-wthomasss06--stack-181717?style=flat-square&logo=github)](https://github.com/wthomasss06-stack)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2B225_01_42_50_77_50-25D366?style=flat-square&logo=whatsapp)](https://wa.me/2250142507750)
-[![akaTech](https://img.shields.io/badge/akaTech-akatech.vercel.app-FF5500?style=flat-square)](https://akatech.vercel.app/)
+[![Email](https://img.shields.io/badge/Email-josephdehazounde@gmail.com-EA4335?style=flat-square&logo=gmail)](mailto:josephdehazounde@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-dehazounde--joseph-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/dehazounde-joseph)
+[![GitHub](https://img.shields.io/badge/GitHub-johaoooo-181717?style=flat-square&logo=github)](https://github.com/johaoooo)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-%2B229_01_62_10_86_94-25D366?style=flat-square&logo=whatsapp)](https://wa.me/2290162108694)
 
 ---
 
 <div align="center">
 
-© 2026 M'Bollo Aka — MIT License
+© 2026 Joseph Dehazounde — MIT License
 
 </div>

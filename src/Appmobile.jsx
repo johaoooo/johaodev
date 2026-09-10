@@ -383,7 +383,7 @@ const WindowChrome = ({ title, dark, inner = false }) => (
   </div>
 );
 
-const FACEBOOK_URL = "https://web.facebook.com/profile.php?id=61577494705852";
+const FACEBOOK_URL = "https://facebook.com";
 
 
 const SERVICES = [
