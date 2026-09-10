@@ -3848,11 +3848,11 @@ function ContactSection({ onToast }) {
  FOOTER — simplifié v7 : QR centré + AKATECH MASSIF
  ════════════════════════════════════════════ */
 
-/* BeamsInteractive — fond statique orange, sans réactivité curseur */
+/* BeamsInteractive — fond statique vert treillis, sans réactivité curseur */
 function BeamsInteractive() {
   return (
     <Iridescence
-      color={[1, 0.22, 0.04]}
+      color={[0.37, 0.51, 0.29]}
       speed={0.28}
       amplitude={0.06}
       mouseReact={false}
