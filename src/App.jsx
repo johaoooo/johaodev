@@ -1616,13 +1616,13 @@ function ProjectVideoMedia({ project }) {
   )
 }
 
-const RECENT_PROJECT_TITLES = ['CNIB Platform', 'XoboTicket', 'Golden Invest', "Saveurs d'Agojiés"]
+const RECENT_PROJECT_TITLES = ['Agro Véto Services', "Saveurs d'Agojiés"]
 
 const RECENT_PROJECTS = (() => {
   const matched = RECENT_PROJECT_TITLES
     .map(t => PROJECTS.find(p => p.title === t))
     .filter(Boolean)
-  return matched.length >= 4 ? matched.slice(0, 4) : PROJECTS.slice(0, 4)
+  return matched.length > 0 ? matched : PROJECTS.slice(0, 4)
 })()
 
 function RecentProjects() {

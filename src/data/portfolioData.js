@@ -30,15 +30,50 @@ export const CONTACT = {
 }
 
 // ─── Projets ────────────────────────────────────────────────────
+// Ordre = ordre d'affichage : AVS + Saveurs d'Agojiés en premier (mis en avant).
 export const PROJECTS = [
+  {
+    id: 7,
+    title: 'Agro Véto Services',
+    sub: 'Santé animale, Provenderie & Excellence QHSE',
+    cat: 'en-ligne',
+    img: cld('/assets/images/projects/avs-preview.webp'),
+    responsive: cld('/assets/images/projects/avs-responsive.webp'),
+    imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147484/avs_dslfdb.png',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Vercel', 'Mobile Money'],
+    url: 'https://avs-wine.vercel.app/',
+    github: 'https://github.com/johaoooo',
+    desc: "Plateforme complète pour Agro Véto Services Congo à Pointe-Noire : clinique vétérinaire 24/7, provenderie certifiée, boutique d'intrants (poussins Cobb 500), formations fermes-écoles et management QHSE.",
+    year: '2026',
+    problem: "Entreprise pluridisciplinaire sans vitrine digitale unifiée pour ses 6 pôles (santé animale, QHSE, agroalimentaire, cosmétique, formation, événementiel) et prise de commande manuelle.",
+    solution: "Site Next.js déployé sur Vercel avec boutique et tarifs, prise de rendez-vous clinique, catalogue formations, blog conseils d'élevage et contact WhatsApp direct.",
+    result: "Vitrine unique qui centralise clients éleveurs, commandes de poussins et inscriptions aux formations, avec demande de devis QHSE pour les PME."
+  },
+  {
+    id: 4,
+    title: "Saveurs d'Agojiés",
+    sub: 'E-Boutique Gastronomique & Terroir Béninois',
+    cat: 'en-ligne',
+    img: cld('/assets/images/projects/saveurs-preview.webp'),
+    responsive: cld('/assets/images/projects/saveurs-responsive.webp'),
+    imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147490/agojie_qwlp0m.png',
+    tech: ['React', 'Node.js', 'Vite', 'Tailwind CSS'],
+    url: 'https://saveurs-d-agojies.vercel.app/',
+    github: 'https://github.com/johaoooo',
+    desc: "E-boutique gastronomique dédiée aux mets et produits transformés du terroir béninois, avec panier interactif et tunnel d'achat optimisé.",
+    year: '2025',
+    problem: "Faible valorisation numérique des produits du terroir béninois et commande complexe sur les réseaux sociaux.",
+    solution: "Site e-commerce épuré et rapide avec présentation appétissante des produits, panier dynamique en LocalStorage et commande directe.",
+    result: "Hausse de la visibilité des produits locaux et expérience d'achat directe pour les clients locaux et de la diaspora."
+  },
   {
     id: 1,
     title: 'CNIB Platform',
     sub: 'Plateforme E-learning & Certifications',
     cat: 'en-ligne',
-    img: cld('/assets/images/projects/nexura-preview.webp'),
-    responsive: cld('/assets/images/projects/nexura-responsive.webp'),
-    imgFb: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600',
+    img: cld('/assets/images/projects/cnib-preview.webp'),
+    responsive: cld('/assets/images/projects/cnib-responsive.webp'),
+    imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147729/cnib_iaxfzw.png',
     tech: ['Django REST', 'React', 'Vite', 'PostgreSQL', 'Cloudinary', 'KKiaPay'],
     url: 'https://cnib-platform-c5ru.vercel.app/',
     github: 'https://github.com/johaoooo',
@@ -81,23 +116,6 @@ export const PROJECTS = [
     problem: "Manque d'infrastructures fiables et structurées pour mettre en relation investisseurs et startups en Afrique francophone.",
     solution: "Application Next.js / TypeScript avec API Django REST, flux d'authentification robuste (JWT), vérification de profil KYC et tableaux de bord d'analyse.",
     result: "Mise en relation fluidifiée et confiance renforcée grâce aux profils validés par les administrateurs."
-  },
-  {
-    id: 4,
-    title: "Saveurs d'Agojiés",
-    sub: 'E-Boutique Gastronomique & Terroir Béninois',
-    cat: 'en-ligne',
-    img: cld('/assets/images/projects/kokoeat-preview.webp'),
-    responsive: cld('/assets/images/projects/kokoeat-responsive.webp'),
-    imgFb: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600',
-    tech: ['React', 'Node.js', 'Vite', 'Tailwind CSS'],
-    url: 'https://saveurs-d-agojies.vercel.app/',
-    github: 'https://github.com/johaoooo',
-    desc: "E-boutique gastronomique dédiée aux mets et produits transformés du terroir béninois, avec panier interactif et tunnel d'achat optimisé.",
-    year: '2025',
-    problem: "Faible valorisation numérique des produits du terroir béninois et commande complexe sur les réseaux sociaux.",
-    solution: "Site e-commerce épuré et rapide avec présentation appétissante des produits, panier dynamique en LocalStorage et commande directe.",
-    result: "Hausse de la visibilité des produits locaux et expérience d'achat directe pour les clients locaux et de la diaspora."
   },
   {
     id: 5,
@@ -342,10 +360,11 @@ TIMELINE.forEach((t, i) => { if (TIMELINE_EXTRAS[i]) Object.assign(t, TIMELINE_E
 
 // ─── Compatibilité champs PROJECTS ───────────────────────────────
 const PROJECT_EXTRAS = {
+  7: { progress: 100, isPremium: true, color: '#ea8025' },
+  4: { progress: 100, isPremium: true, color: '#cc4400' },
   1: { progress: 100, isPremium: true, color: '#0066cc' },
   2: { progress: 100, isPremium: true, color: '#8B0000' },
   3: { progress: 95, isPremium: true, color: '#b8860b' },
-  4: { progress: 100, isPremium: true, color: '#cc4400' },
   5: { progress: 90, color: '#2e7d32' },
   6: { progress: 100, isPremium: true, color: '#552277' },
 }
