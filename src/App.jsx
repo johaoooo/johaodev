@@ -4249,7 +4249,7 @@ export default function App() {
         <DissolveTransition
           id="cta-dissolve"
           frontSrc={cld("/assets/images/about-1.webp")}
-          backSrc={cld("/assets/images/hero-bg.webp")}
+          backSrc={cld("/assets/images/about-1.webp")}
           heightVh={320}
           revealVh={100}
           cta={{

@@ -1361,167 +1361,8 @@ const PlasmaCanvasBg = ({ intensity = 1.0 }) => {
 };
 
 /* ══════════════════════════════════════════════
-   PLASMA CANVAS — WebGL background hero
-   Shader plasma AKAfolio : noir profond → orange #5E824B → ambre
+   HERO MOBILE
    ══════════════════════════════════════════════ */
-const AuroraCanvas = ({ dark }) => {
-  const cvRef = useRef(null);
-  const rafRef = useRef(null);
-  const glRef = useRef(null);
-  const uRef = useRef({});
-  const darkRef = useRef(dark);
-  const mouseRef = useRef({ x: 0, y: 0 });
-  const lastTs = useRef(0);
-  const INTERVAL = 1000 / 60;
-
-  useEffect(() => { darkRef.current = dark; }, [dark]);
-
-  useEffect(() => {
-    const cv = cvRef.current; if (!cv) return;
-    const gl = cv.getContext('webgl') || cv.getContext('experimental-webgl');
-    if (!gl) return;
-    glRef.current = gl;
-
-    const SCALE = 0.75;
-    const resize = () => {
-      const parent = cv.parentElement;
-      const w = parent ? parent.getBoundingClientRect().width : cv.offsetWidth;
-      const h = parent ? parent.getBoundingClientRect().height : (cv.offsetHeight || window.innerHeight);
-      cv.width = Math.round(w * SCALE);
-      cv.height = Math.round(h * SCALE);
-      if (cv.width < 1) cv.width = Math.round(window.innerWidth * SCALE);
-      if (cv.height < 1) cv.height = Math.round(window.innerHeight * SCALE);
-      gl.viewport(0, 0, cv.width, cv.height);
-    };
-    resize();
-    const resizeDeferred = setTimeout(resize, 150);
-    const ro = new ResizeObserver(resize);
-    ro.observe(cv);
-
-    const vert = `attribute vec2 a_pos; void main(){gl_Position=vec4(a_pos,0.,1.);}`;
-
-    /* ── Plasma shader — palette AKAfolio : noir #0A0A0A → orange #5E824B → ambre #96BD7D ── */
-    const frag = `
-      precision highp float;
-      uniform vec2  u_res;
-      uniform float u_time;
-      uniform vec2  u_mouse;
-      uniform float u_light;
-      #define TAU 6.28318530
-
-      void main(){
-        vec2 uv = gl_FragCoord.xy / u_res;
-        vec2 p  = uv * 2.0 - 1.0; p.x *= u_res.x / u_res.y;
-        vec2 m  = (u_mouse / u_res) * 2.0 - 1.0; m.x *= u_res.x / u_res.y;
-        float t = u_time * 0.5;
-
-        /* layered plasma sines */
-        float v = 0.0;
-        v += sin(p.x * 5.0 + t);
-        v += sin(p.y * 4.5 + t * 0.85);
-        v += sin((p.x + p.y) * 3.5 + t * 0.7);
-        float cx = p.x + 0.55 * sin(t * 0.38) + m.x * 0.28;
-        float cy = p.y + 0.55 * cos(t * 0.30) + m.y * 0.28;
-        v += sin(sqrt(90.0 * (cx*cx + cy*cy) + 1.0) + t);
-        /* extra diagonal wave for richness */
-        v += sin((p.x - p.y) * 2.8 + t * 0.6) * 0.5;
-        v = v * 0.5 + 0.5; /* normalise 0..1 */
-
-        /* Palette rouge au vin :
-           a = noir profond       #0A0A0A  (0.04, 0.04, 0.04)
-           b = vin très sombre    #1F0307  (0.12, 0.015, 0.03)
-           c = rouge vin photo    #3D5530  (0.38, 0.01,  0.04)
-           d = bordeaux rubis     #5E824B  (0.62, 0.05,  0.11)
-           e = reflet rubis doux  #96BD7D  (0.78, 0.10,  0.20) */
-        vec3 a = vec3(0.04,  0.04,  0.04);
-        vec3 b = vec3(0.12, 0.17, 0.09);
-        vec3 c = vec3(0.24, 0.33, 0.19);
-        vec3 d = vec3(0.37, 0.51, 0.29);
-        vec3 e = vec3(0.48, 0.62, 0.39);
-
-        vec3 col;
-        if      (v < 0.25) col = mix(a, b, v * 4.0);
-        else if (v < 0.55) col = mix(b, c, (v - 0.25) / 0.30);
-        else if (v < 0.80) col = mix(c, d, (v - 0.55) / 0.25);
-        else               col = mix(d, e, (v - 0.80) / 0.20);
-
-        /* pulsing brightness */
-        col *= 0.78 + 0.22 * sin(t * 0.45);
-
-        /* vignette douce */
-        float vig = 1.0 - smoothstep(0.45, 1.35, length(uv - 0.5) * 1.9);
-        col *= vig;
-
-        /* bottom darkness — conserve le noir en bas */
-        col *= mix(0.08, 1.0, smoothstep(0.0, 0.38, uv.y));
-
-        /* mouse wine red glow */
-        float mdist = length(p - m);
-        col += vec3(0.37, 0.51, 0.29) * exp(-mdist * 2.8) * 0.22;
-
-        /* mode clair : légèrement plus clair */
-        col = mix(col, col * 1.18 + vec3(0.02, 0.01, 0.0), u_light * 0.35);
-
-        /* grain subtil */
-        float grain = fract(sin(dot(gl_FragCoord.xy, vec2(127.1, 311.7)) + u_time * 80.0) * 43758.5) * 0.025 - 0.0125;
-        col += grain;
-
-        gl_FragColor = vec4(clamp(col, 0.0, 1.0), 1.0);
-      }
-    `;
-
-    const compile = (type, src) => {
-      const s = gl.createShader(type);
-      gl.shaderSource(s, src); gl.compileShader(s); return s;
-    };
-    const prog = gl.createProgram();
-    gl.attachShader(prog, compile(gl.VERTEX_SHADER, vert));
-    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, frag));
-    gl.linkProgram(prog); gl.useProgram(prog);
-
-    const buf = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-    const aPos = gl.getAttribLocation(prog, 'a_pos');
-    gl.enableVertexAttribArray(aPos);
-    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
-
-    uRef.current = {
-      res: gl.getUniformLocation(prog, 'u_res'),
-      time: gl.getUniformLocation(prog, 'u_time'),
-      mouse: gl.getUniformLocation(prog, 'u_mouse'),
-      light: gl.getUniformLocation(prog, 'u_light'),
-    };
-
-    // Mouse interaction désactivée — position fixe au centre
-    mouseRef.current = { x: cv.width * 0.5, y: cv.height * 0.5 };
-
-    const render = ts => {
-      if (!glRef.current) return;
-      rafRef.current = requestAnimationFrame(render);
-      if (ts - lastTs.current < INTERVAL) return;
-      lastTs.current = ts;
-      const u = uRef.current;
-      gl.uniform2f(u.res, cv.width, cv.height);
-      gl.uniform1f(u.time, ts * 0.001);
-      gl.uniform2f(u.mouse, mouseRef.current.x, mouseRef.current.y);
-      gl.uniform1f(u.light, darkRef.current ? 0.0 : 1.0);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    };
-    rafRef.current = requestAnimationFrame(render);
-
-    return () => {
-      cancelAnimationFrame(rafRef.current);
-      clearTimeout(resizeDeferred);
-      ro.disconnect();
-      // no mouse listeners to remove
-      glRef.current = null;
-    };
-  }, []);
-
-  return <canvas ref={cvRef} className="aurora-canvas" aria-hidden />;
-};
-
 const Hero = ({ dark }) => {
   const phrases = ["Audit Web", "DevSecOps", "React", "Django", "Pentesting"];
   const [wi, setWi] = useState(0); const [typed, setTyped] = useState(''); const [del, setDel] = useState(false); const [ch, setCh] = useState(0); const [now, setNow] = useState(new Date());
@@ -1645,13 +1486,8 @@ const Hero = ({ dark }) => {
       {/* ── god rays ── */}
       <div className="hv4-god-rays" ref={raysRef} aria-hidden />
 
-      {/* ── aurora bg layer (zoom on scroll, parallax on mouse) ── */}
-      <div className="hv4-bg-layer" ref={bgRef} aria-hidden>
-        <AuroraCanvas dark={dark} />
-      </div>
-
-      {/* ── scan line ── */}
-      <div className="hv4-scan" aria-hidden />
+      {/* ── bg layer (zoom on scroll, parallax on mouse) ── */}
+      <div className="hv4-bg-layer" ref={bgRef} aria-hidden />
 
 
 
@@ -4124,22 +3960,29 @@ const Footer = ({ dark }) => (
   </footer>
 );
 
-const getAutoLight = () => { try { const h = new Date().getHours(); return h < 6 || h >= 18; } catch { return true; } };
-
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [light, setLight] = useState(() => {
     try {
-      const saved = localStorage.getItem('aka-theme');
+      const saved = localStorage.getItem('johao-theme');
       if (saved === 'light') return true;
       if (saved === 'dark') return false;
-      return getAutoLight();
-    } catch { return getAutoLight(); }
+    } catch { }
+    return false; // Mode sombre par défaut
   });
+
+  useEffect(() => {
+    document.body.classList.toggle('light-mode', light);
+    return () => { document.body.classList.remove('light-mode'); };
+  }, [light]);
 
   const toggleDark = () => setLight(l => {
     const next = !l;
-    try { localStorage.setItem('aka-theme', next ? 'light' : 'dark'); } catch { }
+    try {
+      localStorage.setItem('johao-theme', next ? 'light' : 'dark');
+      localStorage.setItem('aka-theme', next ? 'light' : 'dark');
+      localStorage.setItem('aka-html-theme', next ? 'light' : 'dark');
+    } catch { }
     return next;
   });
   const dark = !light;
