@@ -29,7 +29,7 @@ import dynamic from 'next/dynamic'
 import ProjectDetailModal from './components/ProjectDetailModal.jsx'
 const HeroZoomSection = dynamic(() => import('./components/HeroZoomSection.jsx'), { ssr: false })
 const ProjectsTunnel = dynamic(() => import('./components/ProjectsTunnel.jsx'), { ssr: false })
-import { cld } from './lib/cloudinary'
+import { cld, SITE_LOGO } from './lib/cloudinary'
 gsap.registerPlugin(ScrollTrigger)
 
 
@@ -1146,7 +1146,7 @@ function Navbar({ theme, onToggleTheme, onToggleExplorer, isExplorerOpen }) {
 
   const logoBlock = (
     <img
-      src={cld('/assets/images/logo.webp')}
+      src={SITE_LOGO}
       alt="Logo"
       className="nb-logo-img"
       style={{ filter: 'drop-shadow(0 0 8px rgba(94, 130, 75,0.45))' }}

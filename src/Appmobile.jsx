@@ -10,7 +10,7 @@ import { gsap } from 'gsap';
 import SoundToggle from './components/SoundToggle.jsx';
 import { useImmersiveSound } from './hooks/useImmersiveSound.js';
 import { PROJECTS, PRICING_TABS, FAQ_ITEMS, WRITING_POSTS, CONTACT, TIMELINE } from './data/portfolioData.js';
-import { cld } from './lib/cloudinary'
+import { cld, SITE_LOGO } from './lib/cloudinary'
 
 
 /* ── SVG icon replacements (pas de dépendance lucide-react) ── */
@@ -357,7 +357,7 @@ const SvgCpu = ({ size = 14 }) => (
 const AkafolioLogo = ({ size = 52, dark = true, onClick }) => {
   return (
     <img
-      src={cld('/assets/images/logo.webp')}
+      src={SITE_LOGO}
       alt="Logo"
       onClick={onClick}
       style={{

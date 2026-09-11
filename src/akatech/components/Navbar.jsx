@@ -1,6 +1,7 @@
 'use client'
 
 import { NAV_LINKS } from '../../data/portfolioData'
+import { SITE_LOGO } from '../../lib/cloudinary'
 import LuxuryAction from './LuxuryAction'
 
 /**
@@ -16,7 +17,7 @@ export default function Navbar({ activePage, onNavigate, shootMode, onToggleShoo
         onClick={() => onNavigate('home')}
         aria-label="Accueil"
       >
-        <img src="/assets/images/logo.webp" alt="Logo" />
+        <img src={SITE_LOGO} alt="Logo" />
       </button>
 
       <nav className="akatech-linear-nav">

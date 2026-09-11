@@ -9,6 +9,10 @@ const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'dwuybrjxh'
 const BASE_FOLDER = process.env.NEXT_PUBLIC_CLOUDINARY_BASE_FOLDER || 'elvis-portfolio/images'
 const VIDEO_EXTENSIONS = new Set(['webm', 'mp4', 'mov'])
 
+// Logo officiel du site — remplace tous les anciens logo.webp / logo-akatech.webp
+export const SITE_LOGO =
+  'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789143433/WhatsApp_Image_2026-09-11_at_17.16.04_oljqqs.png'
+
 function normalizeLocalPath(localPath) {
   return `/${localPath.replace(/^\/?assets\/images\//i, 'assets/images/')}`
 }

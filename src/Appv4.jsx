@@ -21,6 +21,7 @@ import Lanyard from './components/Lanyard.jsx'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { SITE_LOGO } from './lib/cloudinary'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -792,7 +793,7 @@ function Navbar({ theme, onToggleTheme }) {
       {/* TOPBAR */}
       <header className="nb-topbar">
         <div className="nb-topbar-left" onClick={() => scrollTo('hero')}>
-          <img src="/assets/images/logo-akatech.webp" alt="akaTech" className="nb-logo-img"
+          <img src={SITE_LOGO} alt="akaTech" className="nb-logo-img"
             onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'inline' }}
           />
           <span className="nb-logo-text" style={{ display: 'none' }}>aka<span className="nb-logo-acc">TECH</span></span>
@@ -829,7 +830,7 @@ function Navbar({ theme, onToggleTheme }) {
       <div className={`nb-drawer${drawerOpen ? ' open' : ''}`} aria-hidden={!drawerOpen}>
         <div className="nb-drawer-header">
           <span className="nb-drawer-logo">
-            <img src="/assets/images/logo-akatech.webp" alt="akaTech" className="nb-drawer-logo-img"
+            <img src={SITE_LOGO} alt="akaTech" className="nb-drawer-logo-img"
               onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'inline' }}
             />
             <span style={{ display: 'none' }}>aka<span style={{ color: '#5E824B' }}>TECH</span></span>
@@ -1741,7 +1742,7 @@ function ShowcaseSection() {
                       {/* Logo image avec tilt 3D — v7 */}
                       <img
                         ref={logoRef}
-                        src="/assets/images/logo-akatech.webp"
+                        src={SITE_LOGO}
                         alt="akaTech"
                         className="sc-logo-img"
                         onError={e => { e.target.style.opacity = '0.9' }}
@@ -2799,7 +2800,7 @@ function ContactSection({ onToast }) {
               <div className="coj-beam-row" style={{ justifyContent: 'center' }}>
                 <div id="cojn-center" className="coj-node-center-wrap coj-node-link" style={{ pointerEvents: 'none' }}>
                   <div className="coj-node-circle coj-node-main">
-                    <img src="/assets/images/logo-akatech.webp" alt="akaTech" className="coj-center-logo"
+                    <img src={SITE_LOGO} alt="akaTech" className="coj-center-logo"
                       style={{ width: '70px', height: '70px', objectFit: 'contain', borderRadius: '50%' }}
                       onError={e => { e.target.style.display = 'none' }} />
                   </div>

@@ -1,6 +1,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import GhostParticleText from './GhostParticleText'
+import { SITE_LOGO } from '../lib/cloudinary'
 import './StaggeredMenu.css'
 
 /*
@@ -303,7 +304,7 @@ export function StaggeredMenu({
 
           {/* Logo panel */}
           <div className="sm-panel-logo">
-            <img src="/assets/images/logo.webp" alt="Logo" className="sm-panel-logo-img" />
+            <img src={SITE_LOGO} alt="Logo" className="sm-panel-logo-img" />
           </div>
 
           {/* Nav links */}

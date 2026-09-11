@@ -114,7 +114,7 @@ export const STRUCTURED_DATA = {
       name: "Joseph Dehazounde",
     },
     url: 'https://github.com/johaoooo',
-    logo: '/assets/images/logo.webp',
+    logo: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789143433/WhatsApp_Image_2026-09-11_at_17.16.04_oljqqs.png',
     image: '/assets/images/hero-profile.webp',
     description:
       "Audit de sécurité web (OWASP Top 10), tests d'intrusion Burp Suite et développement d'applications web sécurisées et résilientes (React, Django REST Framework).",
