@@ -80,11 +80,12 @@ export const STRUCTURED_DATA = {
       name: 'JohaoDev',
       url: 'https://github.com/johaoooo',
     },
-    alumniOf: {
-      '@type': 'CollegeOrUniversity',
-      name: "IFRI - Institut de Formation et de Recherche en Informatique (UAC)",
-      url: 'https://uac.bj',
-    },
+    hasCredential: [
+      { '@type': 'EducationalOccupationalCredential', name: 'Cisco — Cybersecurity & Networking' },
+      { '@type': 'EducationalOccupationalCredential', name: 'FORCE-N via Université Cheikh Amidou Kane — IA, Marketing Digital, Informatique & Internet' },
+      { '@type': 'EducationalOccupationalCredential', name: 'Bootcamp Cybersécurité OIF / D-CLIC' },
+      { '@type': 'EducationalOccupationalCredential', name: 'OpenClassrooms & Coursera — Développement web & Sécurité' },
+    ],
     sameAs: [
       'https://github.com/johaoooo',
       'https://linkedin.com/in/dehazounde-joseph',

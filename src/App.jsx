@@ -1922,7 +1922,7 @@ function About() {
             <NeonFlickerText tag="p" className="about-text-lg">
               Je suis <strong>Joseph Dehazounde</strong>, analyste en cybersécurité et développeur fullstack basé à <strong>Porto-Novo (Bénin)</strong>.
               <br /><br />
-              Diplômé en <strong>Sécurité Informatique de l'IFRI (Université d'Abomey-Calavi)</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et expertise de développement web moderne.
+              Titulaire d'un <strong>Bac scientifique</strong> et <strong>autodidacte passionné</strong>, formé via <strong>OpenClassrooms, Coursera, Cisco, Université Cheikh Amidou Kane via FORCE-N</strong> et <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et expertise de développement web moderne.
               <br /><br />
               Côté développement, je conçois des applications robustes et scalables avec <strong>React</strong>, <strong>Django REST Framework</strong>, <strong>PostgreSQL</strong> et <strong>Tailwind CSS</strong>, guidé par les principes de <em>Security by Design</em>.
               <br /><br />

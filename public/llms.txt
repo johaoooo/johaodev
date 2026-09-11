@@ -1,5 +1,5 @@
 # Joseph Dehazounde — JohaoDev
-> Analyste en Cybersécurité & Développeur Web Full Stack basé à Porto-Novo, Bénin. Diplômé en Sécurité Informatique de l'IFRI (Université d'Abomey-Calavi). Spécialisé en sécurité offensive (audit web, tests d'intrusion OWASP Top 10, Burp Suite) et conception d'architectures web résilientes (React, Next.js, Django REST Framework, PostgreSQL) selon les principes de Security by Design.
+> Analyste en Cybersécurité & Développeur Web Full Stack basé à Porto-Novo, Bénin. Bac scientifique, autodidacte certifié (OpenClassrooms, Coursera, Cisco, FORCE-N via Univ. Cheikh Amidou Kane, OIF/D-CLIC). Spécialisé en sécurité offensive (audit web, tests d'intrusion OWASP Top 10, Burp Suite) et conception d'architectures web résilientes (React, Next.js, Django REST Framework, PostgreSQL) selon les principes de Security by Design.
 
 ## Informations Clés
 - **Identité** : Joseph DEHAZOUNDE
@@ -92,7 +92,8 @@
 ---
 
 ## Formations & Certifications
-- **Sécurité Informatique (2 ans)** — IFRI (Institut de Formation et de Recherche en Informatique), Université d'Abomey-Calavi (Bénin).
-- **Certifications Force-N** — Intelligence Artificielle, Informatique & Internet, Marketing Digital.
+- **Baccalauréat Scientifique (Série D)** — CSP Hamadou Hampâté Bâ.
+- **Parcours Autodidacte & Certifications** — OpenClassrooms, Coursera, Cisco (Réseaux & Cybersécurité).
+- **Certifications Force-N via Université Cheikh Amidou Kane** — Intelligence Artificielle, Informatique & Internet, Marketing Digital.
 - **Bootcamp OIF / D-CLIC Cybersécurité** — Audits, protocoles et défense réseau.
 - **Google Cybersecurity Professional Certificate** — Fondations de la cybersécurité, détection de menaces et réseaux.

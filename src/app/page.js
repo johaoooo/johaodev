@@ -53,8 +53,8 @@ export default function Page() {
         <h1>Joseph Dehazounde — Analyste Cybersécurité &amp; Développeur Full Stack à Porto-Novo, Bénin</h1>
         <p><strong>JohaoDev conçoit des solutions logicielles sécurisées, réalise des audits de sécurité web (OWASP Top 10) et développe des applications web résilientes.</strong></p>
         <p>
-          Analyste en cybersécurité et développeur full stack basé à Porto-Novo, Bénin. Diplômé de l&apos;IFRI (Université d&apos;Abomey-Calavi),
-          certifié Force-N (Cybersécurité) et Google (Foundations of Cybersecurity). Spécialisé en pentest web Burp Suite, Kali Linux,
+          Analyste en cybersécurité et développeur full stack basé à Porto-Novo, Bénin. Bac scientifique, autodidacte
+          certifié (OpenClassrooms, Coursera, Cisco, FORCE-N via Univ. Cheikh Amidou Kane, OIF/D-CLIC) et Google (Foundations of Cybersecurity). Spécialisé en pentest web Burp Suite, Kali Linux,
           React, Next.js, Django REST Framework et bases PostgreSQL.
         </p>
 

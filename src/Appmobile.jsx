@@ -2437,7 +2437,7 @@ const About = ({ dark }) => {
           <div className="about-right">
             <ScrambleText text="Analyste Cybersécurité · Développeur Fullstack React & Django REST" tag="h3" speed={22} step={0.4} threshold={0.25} once={true} />
             <p>Je suis <strong>Joseph Dehazounde</strong>, analyste en cybersécurité et développeur fullstack basé à <strong>Porto-Novo (Bénin)</strong>.</p>
-            <p>Diplômé en <strong>Sécurité Informatique de l'IFRI (Université d'Abomey-Calavi)</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et développement web moderne.</p>
+            <p>Titulaire d'un <strong>Bac scientifique</strong> et <strong>autodidacte passionné</strong>, formé via <strong>OpenClassrooms, Coursera, Cisco, Université Cheikh Amidou Kane via FORCE-N</strong> et <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et développement web moderne.</p>
             <p>Côté dev, je conçois des applications robustes avec <strong>React</strong>, <strong>Django REST Framework</strong>, <strong>PostgreSQL</strong> et <strong>Tailwind CSS</strong>, guidé par les principes de <em>Security by Design</em>.</p>
             <p>J'ai développé des projets d'envergure comme <strong>CNIB Platform</strong> (e-learning et paiement local KKiaPay), <strong>XoboTicket</strong> (gestion de stands avec contrôle d'accès RBAC) ou <strong>Saveurs d'Agojiés</strong>.</p>
             <p>Certifié <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet), formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong> et en cours de finalisation du <strong>Google Cybersecurity Certificate</strong>.</p>

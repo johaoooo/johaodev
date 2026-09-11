@@ -326,15 +326,15 @@ export const TIMELINE = [
     tags: ['Maintenance', 'Hardware', 'Réseaux', 'Support']
   },
   {
-    date: '2016 – 2018',
-    title: 'Formation Sécurité Informatique (2 ans)',
-    company: 'IFRI — Université d\'Abomey-Calavi',
+    date: '2018 – Présent',
+    title: 'Parcours Autodidacte & Certifications',
+    company: 'OpenClassrooms · Coursera · Cisco · FORCE-N · OIF/D-CLIC',
     items: [
-      "Programme universitaire approfondi en sécurité informatique et réseaux",
-      "Cryptographie appliquée, protocoles de communication et administration Linux",
-      "Sécurisation des architectures web et gestion des bases de données relationnelles"
+      "Formation continue en cybersécurité, réseaux et administration Linux",
+      "Certifications : Cisco, FORCE-N via Université Cheikh Amidou Kane, Bootcamp Cybersécurité OIF/D-CLIC",
+      "Spécialisation applicative : sécurisation web, OWASP Top 10 et bases de données relationnelles"
     ],
-    tags: ['IFRI', 'Sécurité', 'Réseaux', 'Linux']
+    tags: ['Autodidacte', 'Sécurité', 'Réseaux', 'Linux']
   },
   {
     date: '2011',
@@ -353,7 +353,7 @@ const TIMELINE_EXTRAS = [
   { icon: 'fa-user-secret', desc: "Tests d'intrusion applicatifs, détection de failles OWASP Top 10 et rapport d'audit.", progLabels: ['Pentest', 'Burp Suite', 'Rapport', 'Remédiation'], progValues: [90, 88, 92, 90] },
   { icon: 'fa-chalkboard-teacher', desc: "Formateur en informatique, compétences numériques et initiation au code web.", progLabels: ['Pédagogie', 'Bureautique', 'Web', 'Accompagnement'], progValues: [95, 90, 88, 92] },
   { icon: 'fa-wrench', desc: "Maintenance curative et préventive, dépannage système, réseau LAN et sauvegarde.", progLabels: ['Dépannage', 'Réseau', 'Système', 'Sauvegarde'], progValues: [92, 88, 90, 85] },
-  { icon: 'fa-graduation-cap', desc: "Formation spécialisée en sécurité informatique à l'IFRI (Université d'Abomey-Calavi).", progLabels: ['Sécurité', 'Réseaux', 'Linux', 'Bases de données'], progValues: [85, 88, 90, 82] },
+  { icon: 'fa-graduation-cap', desc: "Parcours autodidacte : certifications en sécurité, réseaux et Linux via OpenClassrooms, Coursera, Cisco, FORCE-N et OIF/D-CLIC.", progLabels: ['Sécurité', 'Réseaux', 'Linux', 'Bases de données'], progValues: [85, 88, 90, 82] },
   { icon: 'fa-school', desc: "Baccalauréat Série D au CSP Hamadou Hampâté Bâ." },
 ]
 TIMELINE.forEach((t, i) => { if (TIMELINE_EXTRAS[i]) Object.assign(t, TIMELINE_EXTRAS[i]) })
