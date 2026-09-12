@@ -1274,24 +1274,31 @@ function Hero() {
 
       <div className="hv4-scene-wrap" id="hv4-scene">
 
-        {/* ── Portrait central — nom en sandwich (fond plein + contour)
-           avec la photo carrée qui vient "trancher" les deux lignes,
-           repris du prototype de référence (variante Double Stack) ── */}
+        {/* ── Portrait central — photo au-dessus, nom et prénom en bas ── */}
         <div className="hv4-portrait">
+          <div className="hv4-portrait-photo">
+            <img
+              ref={photoRef}
+              className="hv4-rv"
+              style={{ '--d': '.16s', objectFit: 'cover', objectPosition: 'center 12%' }}
+              src={CONTACT.heroPhoto || CONTACT.photo}
+              alt="Joseph Dehazounde"
+              onError={e => { e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600' }}
+            />
+          </div>
+
           <h1 className="hv4-portrait-name" aria-label="Joseph Dehazounde">
-            <span className="hv4-portrait-row hv4-portrait-row--top">
-              <span className="hv4-portrait-bg hv4-rv" style={{ '--d': '.1s' }} aria-hidden="true">JOSEPH</span>
+            <span className="hv4-portrait-row">
+              <span className="hv4-portrait-bg hv4-rv" style={{ '--d': '.25s' }} aria-hidden="true">
+                JOSEPH DEHAZOUNDE
+              </span>
               <span className="hv4-portrait-fg" aria-hidden="true">
                 <span className="sh-cycle-wrap" style={{ height: '0.86em', verticalAlign: 'bottom' }}>
                   <span className="sh-cycle-inner" ref={nameLine1.innerRef}>
                     {nameLine1.lines.map((l, i) => <span className="sh-cycle-line" style={{ height: '0.86em', lineHeight: '0.86em' }} key={i}>{l}</span>)}
                   </span>
                 </span>
-              </span>
-            </span>
-            <span className="hv4-portrait-row hv4-portrait-row--bottom">
-              <span className="hv4-portrait-bg hv4-rv" style={{ '--d': '.16s' }} aria-hidden="true">Dehazounde</span>
-              <span className="hv4-portrait-fg" aria-hidden="true">
+                <span style={{ display: 'inline-block', width: '0.35em' }} />
                 <span className="sh-cycle-wrap" style={{ height: '0.86em', verticalAlign: 'bottom' }}>
                   <span className="sh-cycle-inner" ref={nameLine2.innerRef}>
                     {nameLine2.lines.map((l, i) => <span className="sh-cycle-line" style={{ height: '0.86em', lineHeight: '0.86em' }} key={i}>{l}</span>)}
@@ -1300,17 +1307,6 @@ function Hero() {
               </span>
             </span>
           </h1>
-
-          <div className="hv4-portrait-photo">
-            <img
-              ref={photoRef}
-              className="hv4-rv"
-              style={{ '--d': '.26s', objectFit: 'cover', objectPosition: 'center 12%' }}
-              src={CONTACT.heroPhoto || CONTACT.photo}
-              alt="Joseph Dehazounde"
-              onError={e => { e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600' }}
-            />
-          </div>
         </div>
 
         {/* ── Coin gauche — mot rotatif, CTA, disponibilité
@@ -1323,7 +1319,7 @@ function Hero() {
 
           {/* Rotating words — cycle-text scramble */}
           <h3 className="hv4-typed hv4-rv" style={{ '--d': '.56s' }}>
-            Spécialiste&nbsp;<span className="hero-word" style={{ color: '#ffffff', display: 'inline-block' }}>
+            Spécialiste&nbsp;<span className="hero-word" style={{ display: 'inline-block' }}>
               <span className="sh-cycle-wrap">
                 <span className="sh-cycle-inner" ref={rotating.innerRef}>
                   {rotating.lines.map((l, i) => (
@@ -1615,13 +1611,13 @@ function ProjectVideoMedia({ project }) {
   )
 }
 
-const RECENT_PROJECT_TITLES = ['Agro Véto Services', "Saveurs d'Agojiés", 'CNIB Platform']
+const RECENT_PROJECT_TITLES = ['Agro Véto Services', "Saveurs d'Agojiés"]
 
 const RECENT_PROJECTS = (() => {
   const matched = RECENT_PROJECT_TITLES
     .map(t => PROJECTS.find(p => p.title === t))
     .filter(Boolean)
-  return matched.length > 0 ? matched : PROJECTS
+  return matched.length > 0 ? matched : PROJECTS.slice(0, 2)
 })()
 
 function RecentProjects() {
@@ -4142,10 +4138,10 @@ function CursorAndScrollBar() {
 export default function App() {
   const [theme, setTheme] = useState(() => {
     try {
-      const saved = localStorage.getItem('aka-html-theme')
+      const saved = localStorage.getItem('aka-html-theme') || localStorage.getItem('johao-theme')
       if (saved === 'light' || saved === 'dark') return saved
     } catch { }
-    return 'dark'
+    return 'light'
   })
   const [toastVisible, setToastVisible] = useState(false)
   const transitionRef = useRef(null)
@@ -4192,6 +4188,7 @@ export default function App() {
     setTheme(next)
     try {
       localStorage.setItem('aka-html-theme', next)
+      localStorage.setItem('johao-theme', next)
     } catch { }
   }
 

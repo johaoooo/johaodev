@@ -624,17 +624,19 @@
    .hv4-portrait {
      position: relative; width: 100%; height: 100%;
      display: flex; flex-direction: column; align-items: center; justify-content: center;
+     gap: clamp(14px, 2.2vh, 22px);
      pointer-events: none; z-index: 2;
      /* Décalé à droite pour laisser respirer le coin bas-gauche
         (texte rotatif + disponibilité + CTA) sans chevauchement */
-     transform: translateX(clamp(112px, 10vw, 200px));
+     transform: translateX(clamp(80px, 7vw, 150px));
    }
    .hv4-portrait-name {
      position: relative; margin: 0; width: 100%; font-size: 1rem;
-     display: flex; flex-direction: column; line-height: .86;
+     display: flex; flex-direction: column; line-height: 1;
+     align-items: center; text-align: center;
    }
    .hv4-portrait-row {
-     position: relative; width: 100%; display: flex; justify-content: center;
+     position: relative; width: 100%; display: flex; justify-content: center; align-items: center;
    }
    .hv4-portrait-row--top { align-items: flex-end; }
    .hv4-portrait-row--bottom { align-items: flex-start; }
@@ -643,28 +645,29 @@
      font-family: var(--fs-retro);
      font-weight: 400;
      text-transform: uppercase;
-     font-size: clamp(1.8rem, 7.5vw, 4.8rem);
-     letter-spacing: 0.06em;
+     font-size: clamp(1.4rem, 2.4vw, 2.3rem);
+     letter-spacing: 0.08em;
      white-space: nowrap;
    }
    .hv4-portrait-bg { position: relative; z-index: 1; color: var(--text); }
    .hv4-portrait-fg {
      position: absolute; inset: 0; z-index: 3;
-     display: flex; align-items: inherit; justify-content: center;
+     display: flex; align-items: center; justify-content: center;
      color: transparent;
    }
    .hv4-portrait-fg .sh-cycle-line {
      color: transparent;
-     -webkit-text-stroke: 1.6px var(--text);
+     -webkit-text-stroke: 1.4px var(--text);
    }
     .hv4-portrait-photo {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: min(32vw, 60vh, 460px); aspect-ratio: 1 / 1; z-index: 2;
+      position: relative; top: auto; left: auto; transform: none;
+      width: min(22vw, 36vh, 310px); aspect-ratio: 1 / 1; z-index: 2;
       border: 1px solid rgba(94, 130, 75, 0.35);
-      box-shadow: 0 30px 80px -15px rgba(0,0,0,0.95), 0 0 50px rgba(0,0,0,0.9), 0 0 25px rgba(94, 130, 75,0.12);
+      box-shadow: 0 20px 50px -10px rgba(0,0,0,0.9), 0 0 35px rgba(0,0,0,0.7), 0 0 20px rgba(94, 130, 75,0.12);
       border-radius: 18px; overflow: hidden;
       pointer-events: auto; cursor: pointer;
       background: #060608;
+      margin: 0 auto;
     }
     .hv4-portrait-photo img {
       position: absolute; inset: -4%; width: 108%; height: 108%;
@@ -764,7 +767,7 @@
       .hv4-portrait { position: relative; height: auto; padding-top: 12px; transform: none !important; margin: 0 auto; width: 100%; }
       .hv4-portrait-photo {
         position: relative; top: auto; left: auto; transform: none;
-        margin: 20px auto 0; width: min(58vw, 280px);
+        margin: 0 auto; width: min(52vw, 240px);
       }
       .hv4-corner--left {
         position: relative; left: auto; top: auto; bottom: auto;
@@ -5843,7 +5846,7 @@ body.light-mode .writing-card    { background: #f7f5f2 !important; }
    largeur d'écran. */
 .rp-featured-grid {
   position: relative;
-  height: 202vh;
+  height: 118vh;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -6480,13 +6483,15 @@ body.light-mode .nf-flicker strong {
   .hv4-left-description { max-width: 100%; font-size: clamp(18px, 5.2vw, 24px); }
 }
 
-/* Équilibre final du Hero : description aussi grasse que le cycle et photo
-   légèrement plus grande/décalée à droite sur desktop. */
+/* Équilibre du Hero : description grasse */
 .hv4-left-description { font-weight: 700; }
 @media (min-width: 901px) {
   .hv4-portrait-photo {
-    width: min(43vw, 78vh, 670px);
-    left: calc(50% + clamp(14px, 2.5vw, 44px));
+    width: min(22vw, 36vh, 310px);
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
   }
 }
 

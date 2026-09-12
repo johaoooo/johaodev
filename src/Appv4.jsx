@@ -3160,9 +3160,11 @@ function CursorAndScrollBar() {
    ════════════════════════════════════════════ */
 export default function App() {
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('aka-html-theme')
-    if (saved) return saved
-    return new Date().getHours() >= 6 && new Date().getHours() < 18 ? 'light' : 'dark'
+    try {
+      const saved = localStorage.getItem('aka-html-theme') || localStorage.getItem('johao-theme')
+      if (saved === 'light' || saved === 'dark') return saved
+    } catch { }
+    return 'light'
   })
   const [toastVisible, setToastVisible] = useState(false)
 

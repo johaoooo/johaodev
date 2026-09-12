@@ -842,7 +842,7 @@
    .hv4-photo-mob { display:none; margin-bottom:clamp(16px,3vh,26px); margin-top:clamp(10px,2vh,18px); width:100%; justify-content:center; align-items:center; }
    .hv4-photo-mob-inner {
      position:relative;
-     width: min(240px, 70vw);
+     width: min(200px, 60vw);
      margin: 0 auto;
      border: 1px solid rgba(94, 130, 75, 0.35);
      box-shadow: 0 20px 60px rgba(0,0,0,0.95), 0 0 25px rgba(94, 130, 75,0.12);
@@ -853,7 +853,7 @@
    }
    .hv4-photo-mob-inner .hv4-photo {
      aspect-ratio: unset;
-     height: min(58vw, 290px);
+     height: min(50vw, 240px);
      width: 100%;
      object-fit: cover;
      object-position: center 12%;

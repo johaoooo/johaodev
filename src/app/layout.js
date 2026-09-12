@@ -62,7 +62,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body>
+      <body className="light-mode">
         {children}
         <Analytics />
       </body>

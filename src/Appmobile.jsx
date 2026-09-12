@@ -3954,11 +3954,11 @@ export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [light, setLight] = useState(() => {
     try {
-      const saved = localStorage.getItem('johao-theme');
+      const saved = localStorage.getItem('aka-html-theme') || localStorage.getItem('johao-theme') || localStorage.getItem('aka-theme');
       if (saved === 'light') return true;
       if (saved === 'dark') return false;
     } catch { }
-    return false; // Mode sombre par défaut
+    return true; // Mode clair par défaut
   });
 
   useEffect(() => {
