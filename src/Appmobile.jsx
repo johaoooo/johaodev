@@ -3912,13 +3912,13 @@ const Contact = ({ dark }) => {
               <SpotlightCard style={{ height: '100%' }}>
                 <div className="cv-v2-inner">
                   <div className="cv-v2-qr-wrap">
-                    <img src={cld("/assets/images/qrcodeCV.webp")} alt="QR Code CV" className="cv-v2-qr" />
+                    <img src="/assets/images/qrcodeCV.webp" alt="QR Code JohaoDev" className="cv-v2-qr" />
                     <div className="cv-v2-qr-badge"><LI name="mobile-alt" size={12} color="#5E824B" /> Scanner</div>
                   </div>
                   <div className="cv-v2-text">
-                    <span className="cv-v2-eyebrow">// document</span>
-                    <h4 className="cv-v2-title">Télécharger<br />mon CV</h4>
-                    <p className="cv-v2-sub">Scannez le QR code ou cliquez ci-dessous</p>
+                    <span className="cv-v2-eyebrow">// Portfolio & CV</span>
+                    <h4 className="cv-v2-title">Scannez<br />le site</h4>
+                    <p className="cv-v2-sub">Accédez à johaodev.vercel.app ou téléchargez mon CV</p>
                     <a href={CONTACT.cv} className={`btn ${dark ? 'btn--neon' : 'btn--primary'} mi-glint cv-v2-btn`} download>
                       <LI name="download" color={dark ? "#ffffff" : "#1a1a1a"} /> Télécharger CV
                     </a>

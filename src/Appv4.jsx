@@ -2851,7 +2851,7 @@ function Footer() {
                   src="/assets/images/qrcodeCV.webp"
                   alt="QR Code CV"
                   className="ft-qr-img"
-                  onError={e => { e.target.src = 'https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://github.com/johaoooo' }}
+                  onError={e => { e.target.src = 'https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://johaodev.vercel.app/' }}
                 />
                 <div className="ft-qr-badge">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">

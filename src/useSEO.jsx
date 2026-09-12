@@ -25,7 +25,7 @@ export const SEO_CONFIG = {
       "Joseph Dehazounde, analyste en cybersécurité et développeur full stack : audits de sécurité web (OWASP), pentest Burp Suite et développement d'applications résilientes React / Django REST.",
     keywords:
       "analyste cybersécurité Bénin, pentest web Cotonou, développeur full stack Bénin, OWASP Top 10, audit de sécurité web, développeur React Django, Joseph Dehazounde, JohaoDev",
-    url: 'https://github.com/johaoooo',
+    url: 'https://johaodev.vercel.app/',
     image: '/assets/images/hero-profile.webp',
   },
 }
@@ -36,7 +36,7 @@ export const STRUCTURED_DATA = {
     '@type': 'WebSite',
     name: 'Joseph Dehazounde — Portfolio Cybersécurité & Dev',
     alternateName: 'JohaoDev',
-    url: 'https://github.com/johaoooo',
+    url: 'https://johaodev.vercel.app/',
     inLanguage: 'fr-FR',
     description: SEO_CONFIG.default.description,
     publisher: { '@id': 'https://github.com/johaoooo#person' },

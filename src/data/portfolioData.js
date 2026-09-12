@@ -14,8 +14,8 @@ export const CONTACT = {
   title: 'Analyste en cybersécurité, développeur web fullstack et marketeur',
   tagline: "Analyste en cybersécurité, développeur web fullstack et marketeur",
   agency: 'JohaoDev',
-  agencyUrl: 'https://github.com/johaoooo',
-  site: 'https://github.com/johaoooo',
+  agencyUrl: 'https://johaodev.vercel.app/',
+  site: 'https://johaodev.vercel.app/',
   location: "Porto-Novo, Bénin",
   email: 'josephdehazounde@gmail.com',
   phone: '+229 01 62 10 86 94',
@@ -27,6 +27,7 @@ export const CONTACT = {
   photo: '/assets/images/hero-profile.webp',
   heroPhoto: '/assets/images/hero-profile.webp',
   cv: '/assets/CV_DEHAZOUNDE_Joseph.pdf',
+  qrCode: '/assets/images/qrcodeCV.webp',
 }
 
 // ─── Projets ────────────────────────────────────────────────────

@@ -3511,8 +3511,11 @@
    }
    .cv-v2-qr {
      width: 130px; height: 130px;
-     border-radius: 10px;
+     border-radius: 12px;
      border: 2px solid rgba(94, 130, 75,0.25);
+     background: #FFFFFF;
+     padding: 5px;
+     object-fit: contain;
      display: block;
    }
    .cv-v2-qr-badge {

@@ -3773,6 +3773,31 @@ function ContactSection({ onToast }) {
               </li>
             ))}
           </ul>
+
+          {/* ── QR Code vers le portfolio ── */}
+          <div className="contact-qr-card" style={{ marginTop: '1.8rem', padding: '1rem 1.2rem', background: 'var(--glass)', border: '1px solid var(--gb)', borderRadius: '16px', display: 'flex', alignItems: 'center', gap: '1.1rem' }}>
+            <div style={{ position: 'relative', flexShrink: 0 }}>
+              <img
+                src="/assets/images/qrcodeCV.webp"
+                alt="QR Code JohaoDev"
+                style={{ width: '80px', height: '80px', borderRadius: '12px', border: '1.5px solid rgba(94, 130, 75, 0.35)', background: '#FFFFFF', padding: '4px', display: 'block', objectFit: 'contain' }}
+              />
+              <span style={{ position: 'absolute', bottom: '-7px', left: '50%', transform: 'translateX(-50%)', background: '#5E824B', color: '#fff', fontSize: '8px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', padding: '2px 7px', borderRadius: '999px', whiteSpace: 'nowrap' }}>
+                Scanner
+              </span>
+            </div>
+            <div>
+              <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '.58rem', color: '#5E824B', letterSpacing: '.14em', textTransform: 'uppercase', display: 'block', marginBottom: '3px' }}>
+                // Version Mobile
+              </span>
+              <div style={{ fontSize: '.84rem', fontWeight: 700, color: 'var(--text)', marginBottom: '3px' }}>
+                johaodev.vercel.app
+              </div>
+              <p style={{ fontSize: '.72rem', color: 'var(--muted)', margin: 0, lineHeight: 1.4 }}>
+                Scannez ce code pour ouvrir le portfolio sur votre smartphone.
+              </p>
+            </div>
+          </div>
         </div>
         <div>
           <h3 className="rp-slider-title" style={{ marginBottom: '.5rem' }}>Envoyez-moi un message</h3>
