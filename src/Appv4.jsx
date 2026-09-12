@@ -692,7 +692,7 @@ function Loader({ onDone }) {
 
       {/* CORNER */}
       <div className="ld-corner">
-        akaTech Experience System v2.6
+        JohaoDev Experience System v2.6
       </div>
 
     </div>
@@ -793,10 +793,10 @@ function Navbar({ theme, onToggleTheme }) {
       {/* TOPBAR */}
       <header className="nb-topbar">
         <div className="nb-topbar-left" onClick={() => scrollTo('hero')}>
-          <img src={SITE_LOGO} alt="akaTech" className="nb-logo-img"
+          <img src={SITE_LOGO} alt="JohaoDev" className="nb-logo-img"
             onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'inline' }}
           />
-          <span className="nb-logo-text" style={{ display: 'none' }}>aka<span className="nb-logo-acc">TECH</span></span>
+          <span className="nb-logo-text" style={{ display: 'none' }}>Johao<span className="nb-logo-acc">Dev</span></span>
         </div>
         <div className="nb-topbar-center">
           <span>{clock.date}</span><span className="nb-sep">·</span><span>{clock.time}</span>
@@ -830,10 +830,10 @@ function Navbar({ theme, onToggleTheme }) {
       <div className={`nb-drawer${drawerOpen ? ' open' : ''}`} aria-hidden={!drawerOpen}>
         <div className="nb-drawer-header">
           <span className="nb-drawer-logo">
-            <img src={SITE_LOGO} alt="akaTech" className="nb-drawer-logo-img"
+            <img src={SITE_LOGO} alt="JohaoDev" className="nb-drawer-logo-img"
               onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'inline' }}
             />
-            <span style={{ display: 'none' }}>aka<span style={{ color: '#5E824B' }}>TECH</span></span>
+            <span style={{ display: 'none' }}>Johao<span style={{ color: '#5E824B' }}>Dev</span></span>
           </span>
           <button className="nb-drawer-close" onClick={() => setDrawerOpen(false)} aria-label="Fermer">✕</button>
         </div>
@@ -1015,7 +1015,7 @@ function StickyStack() {
       num: '04 — Autodidacte',
       title: 'CURIEUX\n& AUTODIDACTE ',
       body:
-        "Je suis en grande partie autodidacte. J’apprends vite, j’expérimente beaucoup et je progresse projet après projet. akaTech est devenu mon terrain d’expression pour transformer mes idées en expériences web concrètes.",
+        "Je suis en grande partie autodidacte. J’apprends vite, j’expérimente beaucoup et je progresse projet après projet. JohaoDev est devenu mon terrain d’expression pour transformer mes idées en expériences web concrètes.",
       cls: 'ss-dark3',
     },
   ]
@@ -1288,11 +1288,8 @@ function About() {
             </p>
 
             <p className="about-text" style={{ marginTop: '1rem' }}>
-              Et pour transformer cette évolution en quelque chose de concret, j'ai créé{' '}
-              <a href="https://akatech.vercel.app/" target="_blank" rel="noreferrer"
-                style={{ color: 'var(--accent)', fontWeight: 700, textDecoration: 'none', borderBottom: '1.5px solid var(--accent)' }}>
-                akaTech
-              </a>{' '}: un espace où je conçois des produits web modernes, des portfolios immersifs
+              Et pour transformer cette évolution en quelque chose de concret, j'ai développé{' '}
+              <strong style={{ color: 'var(--accent)' }}>JohaoDev</strong> : un espace où je conçois des produits web modernes, des applications sécurisées
               et des solutions digitales pensées pour de vrais usages.
             </p>
           </div>
@@ -1743,7 +1740,7 @@ function ShowcaseSection() {
                       <img
                         ref={logoRef}
                         src={SITE_LOGO}
-                        alt="akaTech"
+                        alt="JohaoDev"
                         className="sc-logo-img"
                         onError={e => { e.target.style.opacity = '0.9' }}
                         onMouseMove={handleLogoMove}
@@ -2524,7 +2521,7 @@ function GitHubInteractiveCard() {
             ) : (ghRepos.length > 0 ? ghRepos : [
               { name: 'ShopCI', description: 'Marketplace E-commerce locale avec intégration mobile money.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
               { name: 'TerraSafe', description: "Plateforme foncière de prévention des risques d'arnaque.", stargazers_count: 8, forks_count: 2, language: 'Python' },
-              { name: 'akaTech', description: 'Site officiel de mon agence digitale. Responsive + animations.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
+              { name: 'JohaoDev', description: 'Portfolio interactif fullstack & cybersécurité.', stargazers_count: 21, forks_count: 5, language: 'JavaScript' },
               { name: 'chap-chapMAP', description: "Cartographie interactive pour l'itinéraire et la livraison.", stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
             ]).map((repo, i) => {
               const langColor = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#2b7489', HTML: '#e34c26', CSS: '#563d7c' }
@@ -2642,7 +2639,7 @@ function ContactSection({ onToast }) {
     const svg = document.getElementById('coj-svg')
     const centerEl = document.getElementById('cojn-center')
     if (!container || !svg || !centerEl) return
-    const nodeIds = ['cojn-github', 'cojn-linkedin', 'cojn-facebook', 'cojn-whatsapp', 'cojn-akatech', 'cojn-gmail', 'cojn-uvci', 'cojn-cv']
+    const nodeIds = ['cojn-github', 'cojn-linkedin', 'cojn-facebook', 'cojn-whatsapp', 'cojn-johaodev', 'cojn-gmail', 'cojn-uvci', 'cojn-cv']
     const colors = ['#5E824B', '#7A9F63', '#5E824B', '#3D5530', '#5E824B', '#7A9F63', '#3D5530', '#5E824B']
     const phases = [0, 0.37, 0.74, 1.11, 1.48, 1.85, 2.22, 2.59]
     let paths = [], animating = false, started = false, startTime = null
@@ -2684,7 +2681,7 @@ function ContactSection({ onToast }) {
     { id: 'cojn-linkedin', href: 'https://linkedin.com/in/dehazounde-joseph', label: 'LinkedIn', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v2a6 6 0 0 1 6-3z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg> },
     { id: 'cojn-facebook', href: 'https://facebook.com', label: 'Facebook', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
     { id: 'cojn-whatsapp', href: 'https://wa.me/2290162108694', label: 'WhatsApp', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /></svg> },
-    { id: 'cojn-akatech', href: 'https://github.com/johaoooo', label: 'JohaoDev', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" /></svg> },
+    { id: 'cojn-johaodev', href: 'https://github.com/johaoooo', label: 'JohaoDev', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" /></svg> },
     { id: 'cojn-gmail', href: 'mailto:josephdehazounde@gmail.com', label: 'Gmail', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" /></svg> },
     { id: 'cojn-uvci', href: 'https://github.com/johaoooo', label: 'JohaoLab', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M2 10l10-7 10 7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
     { id: 'cojn-cv', href: '/assets/CV_DEHAZOUNDE_Joseph.pdf', label: 'Mon CV', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E824B" strokeWidth="1.8" strokeLinecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg> },
@@ -2800,11 +2797,11 @@ function ContactSection({ onToast }) {
               <div className="coj-beam-row" style={{ justifyContent: 'center' }}>
                 <div id="cojn-center" className="coj-node-center-wrap coj-node-link" style={{ pointerEvents: 'none' }}>
                   <div className="coj-node-circle coj-node-main">
-                    <img src={SITE_LOGO} alt="akaTech" className="coj-center-logo"
+                    <img src={SITE_LOGO} alt="JohaoDev" className="coj-center-logo"
                       style={{ width: '70px', height: '70px', objectFit: 'contain', borderRadius: '50%' }}
                       onError={e => { e.target.style.display = 'none' }} />
                   </div>
-                  <span className="coj-node-label">akaTech</span>
+                  <span className="coj-node-label">JohaoDev</span>
                 </div>
               </div>
               <div className="coj-beam-row">
@@ -2824,13 +2821,13 @@ function ContactSection({ onToast }) {
 }
 
 /* ════════════════════════════════════════════
-   FOOTER — simplifié v7 : QR centré + akaTECH MASSIF
+   FOOTER — simplifié v7 : QR centré + JOHAODEV MASSIF
    ════════════════════════════════════════════ */
 
 
 function Footer() {
 
-  /* akaTECH massif — observer pour fade-in du wrapper iridescent */
+  /* JOHAODEV massif — observer pour fade-in du wrapper iridescent */
   useEffect(() => {
     const wrap = document.querySelector('.ft-aka-wrap')
     if (!wrap) return
@@ -2856,7 +2853,7 @@ function Footer() {
                   src="/assets/images/qrcodeCV.webp"
                   alt="QR Code CV"
                   className="ft-qr-img"
-                  onError={e => { e.target.src = 'https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://akatech.vercel.app/' }}
+                  onError={e => { e.target.src = 'https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://github.com/johaoooo' }}
                 />
                 <div className="ft-qr-badge">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
@@ -2888,7 +2885,7 @@ function Footer() {
         <div style={{ height: '1px', background: 'rgba(94, 130, 75,.1)', margin: '3rem 0 0' }} />
       </div>
 
-      {/* akaTECH massif — Iridescence clippée dans les lettres via CSS mask */}
+      {/* JOHAODEV massif — Iridescence clippée dans les lettres via CSS mask */}
       <div className="ft-aka-wrap">
         {/* Canvas iridescent en fond — même config que le hero */}
         <div className="ft-aka-canvas">

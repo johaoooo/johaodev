@@ -11,7 +11,7 @@ import Iridescence from './components/Iridescence.jsx'
 
 // NOTE perf : InfiniteMenu (gl-matrix + shaders) était importé mais jamais rendu
 // nulle part dans ce fichier -> pur poids mort dans le bundle. Retiré.
-import PageTransitionOverlay from './akatech/components/PageTransitionOverlay.jsx'
+import PageTransitionOverlay from './components/PageTransitionOverlay.jsx'
 // ImageTrail (marquee logos) remplacé par PixelSliceTrail dans SkillsSection —
 // import retiré, le fichier components/ImageTrail.jsx reste disponible si besoin.
 import DissolveTransition, { VERTEX_SHADER, FRONT_FRAGMENT_SHADER, BACK_FRAGMENT_SHADER } from './components/DissolveTransition.jsx'
@@ -3845,7 +3845,7 @@ function ContactSection({ onToast }) {
 }
 
 /* ════════════════════════════════════════════
- FOOTER — simplifié v7 : QR centré + AKATECH MASSIF
+ FOOTER — simplifié v7 : QR centré + JOHAODEV MASSIF
  ════════════════════════════════════════════ */
 
 /* BeamsInteractive — fond statique vert treillis, sans réactivité curseur */

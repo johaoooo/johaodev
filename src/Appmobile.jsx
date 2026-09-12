@@ -468,7 +468,7 @@ const GRAD = [
   "linear-gradient(135deg,#1a0a28,#3a1a58)",
   "linear-gradient(135deg,#0a2a1a,#1a5a3a)",
   "linear-gradient(135deg,#2a1a0a,#5a3a1a)",
-  "linear-gradient(135deg,#060e09,#0a2a12)",  // AKATech — vert forêt profond
+  "linear-gradient(135deg,#060e09,#0a2a12)",  // Vert forêt profond
 ];
 
 const BADGE_LIGHT = { "en-ligne": "#C94B2A", "demo": "#A0522D", "en-cours": "#E06B2A" };
@@ -2049,10 +2049,6 @@ const PricingTabs = ({ dark }) => {
           <AnimPricingFeature key={fi} text={f} dark={dark} />
         ))}</ul>
         <div className="pc3-ctas">
-          <a href="https://akatech.vercel.app/pricing/" target="_blank" rel="noreferrer"
-            className={`btn ${dark ? 'btn--ghost-neon' : 'btn--ghost'} btn--full mi-glint pc3-cta`}>
-            <SvgGlobe size={14} /> Détails
-          </a>
           <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--primary'} btn--full mi-glint pc3-cta`}
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             Me contacter <SvgArrowRight size={14} />
@@ -2943,7 +2939,7 @@ const FanDeck = ({ items, dark }) => {
                   if (phase === 'focus' && isActive) handleFocusCardClick(e, item);
                 }}
               >
-                {/* ── Carte spéciale AKATech ── */}
+                {/* ── Carte spéciale JohaoDev ── */}
                 {isAgency ? (
                   <div className="fd-agency-card">
                     {/* Grille animée en arrière-plan */}
@@ -3447,7 +3443,7 @@ const Testimonials = ({ dark }) => {
 };
 
 /* ════════════════════════════════════════════
-   ANIMATED BEAM — nœuds connectés au logo AKATech
+   ANIMATED BEAM — nœuds connectés au logo JohaoDev
    (portée depuis App.jsx, version mobile avec IDs uniques)
    ════════════════════════════════════════════ */
 function AnimatedBeamMobile({ dark }) {

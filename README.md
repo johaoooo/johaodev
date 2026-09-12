@@ -1,5 +1,5 @@
 <div align="center">
-<img src="public/assets/images/logo-akatech.webp" alt="AKATech Logo" width="200" />
+<img src="public/assets/images/hero-profile.webp" alt="Joseph Dehazounde" width="140" style="border-radius: 50%" />
 
 <br /><br />
 # JOHAODEV — Joseph Dehazounde
@@ -186,7 +186,6 @@ Nouveauté directe de la migration : au-delà du SEO classique (désormais réel
 | `Beams.jsx` | Fond de faisceaux lumineux 3D — matériau shader Three.js étendu (`extendMaterial` sur `THREE.ShaderLib.physical`) via React Three Fiber | Utilisé — Hero + Footer (`App.jsx`) |
 | `CardSwap.jsx` | Pile de cartes qui s'échangent en boucle (GSAP) ; exporte aussi le sous-composant `Card` | Utilisé — `App.jsx` |
 | `DissolveTransition.jsx` | Transition shader WebGL "dissolve" entre deux plans (front qui se dissout / back qui se révèle), glow de bord façon "scan" + grain de bruit — pilotée par `ScrollTrigger` (scrub) plutôt qu'un rAF continu. Exporte ses shaders (réutilisés par `Loader.jsx`) et intègre `HoverFadeText` pour son CTA | Utilisé — `App.jsx` |
-| `FireAkatech.jsx` | Animation de flammes GSAP (60 layers + canvas d'embers), prévue pour remplacer le bloc `.ft-aka-wrap` du footer | Non importé actuellement |
 | `FireBackground.jsx` | Simulation de feu cellulaire façon demoscene sur canvas 2D — grille de chaleur qui diffuse vers le haut, palette noir → rouge → orange → jaune → blanc ; fond du bloc QR/CV du footer | Non importé actuellement |
 | `FlowingMenu.jsx` | Menu marquee au survol (GSAP) | Écrit et importé dans `App.jsx`, mais seulement utilisé à l'intérieur de `SkewSection()`, qui n'est jamais appelée — non rendu en pratique |
 | `GhostParticleText.jsx` | Effet "particules fantômes" au survol (scramble, jeu de caractères custom `*+;·:.`) | **Désormais actif** — intégré au wrapper `SectionHeading` commun (tous les titres de section) et dans `StaggeredMenu` |
@@ -365,7 +364,6 @@ Pensé pour **Vercel** :
 | 10 | **MK**<br>Portfolio graphiste avec galerie immersive | <img src="./public/assets/images/projects/mk.webp" alt="Aperçu MK" width="180" /> | Voir `portfolioData.js` | Voir `portfolioData.js` | Voir `portfolioData.js` | React, Tailwind CSS, Framer Motion, Vercel | [mory01ff.vercel.app](https://mory01ff.vercel.app/) |
 | 11 | **ManoBeat 777**<br>Portfolio beatmaker avec lecteur audio intégré | <img src="./public/assets/images/projects/beatstore.webp" alt="Aperçu ManoBeat 777" width="180" /> | Voir `portfolioData.js` | Voir `portfolioData.js` | Voir `portfolioData.js` | React, Tailwind CSS, Howler.js, Vercel | [xxx-x.vercel.app](https://xxx-x.vercel.app/) |
 | 12 | **New Horizon Service**<br>Location de résidences meublées haut de gamme | <img src="./public/assets/images/projects/newhorizon.webp" alt="Aperçu New Horizon Service" width="180" /> | Voir `portfolioData.js` | Voir `portfolioData.js` | Voir `portfolioData.js` | Next.js, Flask, Python, MySQL, Vercel | [new-horizonservice.vercel.app](https://new-horizonservice.vercel.app/) |
-| 13 | **akaTech**<br>Site officiel de l’agence avec expérience WebGL Aurora | <img src="./public/assets/images/projects/akatech.webp" alt="Aperçu akaTech" width="180" /> | Voir `portfolioData.js` | Voir `portfolioData.js` | Voir `portfolioData.js` | Next.js 15, Framer Motion, WebGL Aurora, Vercel | [akatech.vercel.app](https://akatech.vercel.app/) |
 | 14 | **Université les Anges**<br>Site institutionnel : filières, inscriptions et contact | <img src="./public/assets/images/projects/universitelesanges.webp" alt="Aperçu Université les Anges" width="180" /> | Voir `portfolioData.js` | Voir `portfolioData.js` | Voir `portfolioData.js` | HTML, CSS, Bulma, Bootstrap, Vercel | [universitelesanges.vercel.app](https://universitelesanges.vercel.app/) |
 | 15 | **NEXURA**<br>Marketplace de biens avec KYC, réservations et transactions sécurisées | <img src="./public/assets/images/projects/nexura-preview.webp" alt="Aperçu NEXURA" width="180" /> | Voir `portfolioData.js` | Voir `portfolioData.js` | Voir `portfolioData.js` | Next.js 14, Django REST, PostgreSQL, WebSockets, Redis & Celery | [nexura-one.vercel.app](https://nexura-one.vercel.app/) *(repo privé)* |
 | 16 | **KokoEat**<br>Marketplace locale de restauration et livraison | <img src="./public/assets/images/projects/kokoeat-responsive.webp" alt="Aperçu KokoEat" width="180" /> | Voir `portfolioData.js` | Voir `portfolioData.js` | Voir `portfolioData.js` | React, Django REST, PostgreSQL, WebSockets, Redis + Celery, Cloudinary, Vercel + Render | [koko-eats.vercel.app](https://koko-eats.vercel.app/) |
@@ -462,7 +460,7 @@ Le Hero reste verrouillé en thème sombre quelle que soit la sélection globale
 - `overflow: hidden` sur un parent casse `position: sticky` — utiliser `overflow-x: clip`
 - Indentation JSX : 1 espace · CSS : 3 espaces
 - CSS des modes desktop/mobile précompilée par `scripts/compile-mode-styles.mjs` (mêmes plugins PostCSS que le reste du projet) vers `public/styles/*.compiled.css`, chargée via deux `<link disabled={...}>` togglées par `RootApp.jsx` — remplace l'injection de `<style>` par texte (`?inline` Vite). Une seule feuille active à la fois : `style.css` et `stylemobile.css` définissent les mêmes variables (`--border`, `--fd`, `--fb`, `--muted`...) avec des valeurs incompatibles entre elles.
-- Dual codebase : `App.jsx` (desktop) et `Appmobile.jsx` (mobile) maintenus en parallèle pour le rendu/l'UI. Le **contenu** (projets, tarifs, FAQ, parcours, posts blog) est centralisé dans `src/data/portfolioData.js`, importé par `Appmobile.jsx`, `Win95Portfolio.jsx` et `Appv4.jsx`. **`App.jsx` fait toujours exception** : il garde sa propre copie locale de `PROJECTS`, `SERVICES`, `PROCESS_STEPS`, `PRICING_TABS`, `TIMELINE` et `FAQ_ITEMS` (section `DONNÉES` en tête de fichier) — donc un vrai risque de désync si un projet/tarif est modifié d'un seul côté, à surveiller (ex. actuellement : `'AKATech'` dans la copie locale de `App.jsx` vs `'akaTech'` dans `portfolioData.js` — casse différente). `SKILLS` reste local à chaque fichier dans tous les cas.
+- Dual codebase : `App.jsx` (desktop) et `Appmobile.jsx` (mobile) maintenus en parallèle pour le rendu/l'UI. Le **contenu** (projets, tarifs, FAQ, parcours, posts blog) est centralisé dans `src/data/portfolioData.js`, importé par `Appmobile.jsx`, `Win95Portfolio.jsx` et `App.jsx`. `SKILLS` reste local à chaque fichier dans tous les cas.
 
 ---
 

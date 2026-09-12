@@ -27,33 +27,20 @@
 //      fichiers pointés sont pré-compilés par
 //      scripts/compile-mode-styles.mjs (voir ce fichier).
 //
-// ── AKATECH V2 (ajout) ────────────────────────────────────────────
-// 4e mode, chargé la même façon (dynamic + ssr:false). Contrairement
-// à app/appmobile, il n'a pas besoin d'un <link> togglé séparément :
-// AKATECH.jsx importe sa propre CSS scopée sous .akatech-root (voir
-// src/akatech/AKATECH.css), donc rien à ajouter ici côté feuilles de
-// style. C'est le mode PAR DÉFAUT pour un nouveau visiteur, et le
-// premier des deux cycles du switcher (desktop : akatech → app →
-// win95 ; mobile : akatech → appmobile → win95).
-// ════════════════════════════════════════════════════════════════
-
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 
-// ── Les quatre portfolios — chargés à la demande, un seul monté à la fois.
-const AkatechApp = dynamic(() => import('./akatech/AKATECH.jsx'), { ssr: false, loading: () => <RootLoader /> })
+// ── Les portfolios — chargés à la demande, un seul monté à la fois.
 const ModernApp  = dynamic(() => import('./App.jsx'), { ssr: false, loading: () => <RootLoader /> })
 const AppMobile  = dynamic(() => import('./Appmobile.jsx'), { ssr: false, loading: () => <RootLoader /> })
 const Win95App   = dynamic(() => import('./Win95Portfolio.jsx'), { ssr: false, loading: () => <RootLoader /> })
 
 const MODE_KEY           = 'akafolio-mode-v2'
-const VALID_MODES        = ['akatech', 'app', 'appmobile', 'win95']
+const VALID_MODES        = ['app', 'appmobile', 'win95']
 const DESKTOP_ONLY_MODES = ['app']
 const MOBILE_ONLY_MODES  = ['appmobile']
-// Le mode moderne est prioritaire : App sur desktop, Appmobile sur
-// mobile. AKATech et Win95 restent accessibles dans le cycle secondaire.
-const DESKTOP_CYCLE = ['app', 'akatech', 'win95']
-const MOBILE_CYCLE  = ['appmobile', 'akatech', 'win95']
+const DESKTOP_CYCLE      = ['app', 'win95']
+const MOBILE_CYCLE       = ['appmobile', 'win95']
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(
@@ -129,10 +116,9 @@ const switcherStyle = {
 }
 
 const MODE_LABELS = {
-  akatech:   { label: 'JohaoDev', short: 'JohaoDev', title: 'Passer au portfolio JohaoDev', accent: '#5E824B' },
-  app:       { label: 'Moderne', short: 'App desktop', title: 'Passer au mode JohaoDev', accent: '#f5f2ed' },
-  appmobile: { label: 'Mobile', short: 'App mobile', title: 'Passer au mode JohaoDev', accent: '#5E824B' },
-  win95:     { label: 'Win95', short: 'Windows 95', title: 'Passer au mode JohaoDev', accent: '#f5f2ed' },
+  app:       { label: 'Moderne', short: 'App desktop', title: 'Passer au mode Windows 95', accent: '#f5f2ed' },
+  appmobile: { label: 'Mobile', short: 'App mobile', title: 'Passer au mode Windows 95', accent: '#5E824B' },
+  win95:     { label: 'Win95', short: 'Windows 95', title: 'Passer au mode Moderne', accent: '#f5f2ed' },
 }
 
 function SwitcherBtn({ mode, cycle, onToggle, isMobile }) {
@@ -141,7 +127,7 @@ function SwitcherBtn({ mode, cycle, onToggle, isMobile }) {
   const idx = cycle.indexOf(mode)
   const nextMode = cycle[(idx === -1 ? 0 : idx + 1) % cycle.length]
   const current = MODE_LABELS[mode] || MODE_LABELS.app
-  const next = MODE_LABELS[nextMode] || MODE_LABELS.akatech
+  const next = MODE_LABELS[nextMode] || MODE_LABELS.app
   return (
     <aside
       aria-label="Sélecteur de portfolio"
@@ -255,12 +241,10 @@ export default function RootApp() {
           remplace l'injection de <style> par texte (`?inline` Vite).
           Une seule des deux est jamais active : leurs variables --border,
           --fd, --fb, --muted etc. portent les mêmes noms avec des valeurs
-          incompatibles. AKATECH gère sa propre CSS scopée (import direct
-          dans AKATECH.jsx), donc rien à toggler ici pour ce mode. */}
+          incompatibles. */}
       <link rel="stylesheet" href="/styles/style.compiled.css" disabled={mode !== 'app'} />
       <link rel="stylesheet" href="/styles/stylemobile.compiled.css" disabled={mode !== 'appmobile'} />
 
-      {mode === 'akatech'   && <AkatechApp />}
       {mode === 'win95'     && <div style={{ height: '100%' }}><Win95App /></div>}
       {mode === 'appmobile' && <AppMobile />}
       {mode === 'app'       && <ModernApp />}

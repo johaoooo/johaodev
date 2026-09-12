@@ -33,7 +33,7 @@ function hexToRgb(hex) {
  * Couleur au repos théma-consciente (lit --text-dim, voir
  * refreshBaseColor) : reste correcte en thème clair comme sombre.
  */
-export default function FluidWatermark({ text = 'AKATECH' }) {
+export default function FluidWatermark({ text = 'JOHAODEV' }) {
   const containerRef = useRef(null)
   const canvasRef = useRef(null)
   // Lu de façon synchrone dès le premier rendu (comme useIsMobile dans
