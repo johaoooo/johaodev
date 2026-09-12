@@ -1541,12 +1541,12 @@ function ProjectsContent({ onDetail }) {
 
   // Items pour le lightbox — seulement ceux avec une image
   const lbItems = useMemo(() =>
-    list.filter(p => p.image).map(p => ({
-      src: p.image,
+    list.filter(p => p.img || p.image).map(p => ({
+      src: p.img || p.image,
       title: p.title,
-      subtitle: p.subtitle + ' · ' + p.year,
+      subtitle: (p.sub || p.subtitle) + ' · ' + p.year,
       url: p.url,
-      color: p.color,
+      color: p.color || '#5E824B',
     })), [list]);
 
   const openLightbox = (p, e) => {
@@ -1565,31 +1565,34 @@ function ProjectsContent({ onDetail }) {
         ))}
       </div>
       <div className="w95-proj-grid">
-        {list.map(p => (
-          <div key={p.id} className="w95-proj-card" onClick={() => onDetail?.(p)}>
-            <div className="w95-proj-bar" style={{ background: p.color }} />
-            {p.image
-              ? <img src={p.image} alt={p.title} className="w95-proj-img"
-                style={{ cursor: 'zoom-in' }}
-                onClick={e => openLightbox(p, e)}
-                onError={e => { e.target.style.display = 'none'; }} />
-              : <div className="w95-proj-img-ph" style={{ background: p.color }}>
-                <Fa icon="folder" style={{ fontSize: 28, color: '#fff', opacity: .6 }} />
-              </div>
-            }
-            <div className="w95-proj-body">
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div className="w95-proj-title">{p.title}</div>
-                {p.isPremium && <span className="w95-proj-badge"><Fa icon="star" /></span>}
-              </div>
-              <div className="w95-proj-sub">{p.subtitle} — {p.year}</div>
-              <div className="w95-proj-desc">{p.desc}</div>
-              <div className="w95-proj-tags">
-                {p.tech.map(t => <span key={t} className="w95-proj-tag">{t}</span>)}
+        {list.map(p => {
+          const pImg = p.img || p.image;
+          return (
+            <div key={p.id} className="w95-proj-card" onClick={() => onDetail?.(p)}>
+              <div className="w95-proj-bar" style={{ background: p.color || '#5E824B' }} />
+              {pImg
+                ? <img src={pImg} alt={p.title} className="w95-proj-img"
+                  style={{ cursor: 'zoom-in' }}
+                  onClick={e => openLightbox(p, e)}
+                  onError={e => { e.target.style.display = 'none'; }} />
+                : <div className="w95-proj-img-ph" style={{ background: p.color || '#5E824B' }}>
+                  <Fa icon="folder" style={{ fontSize: 28, color: '#fff', opacity: .6 }} />
+                </div>
+              }
+              <div className="w95-proj-body">
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div className="w95-proj-title">{p.title}</div>
+                  {p.isPremium && <span className="w95-proj-badge"><Fa icon="star" /></span>}
+                </div>
+                <div className="w95-proj-sub">{p.sub || p.subtitle} — {p.year}</div>
+                <div className="w95-proj-desc">{p.desc || p.description}</div>
+                <div className="w95-proj-tags">
+                  {p.tech.map(t => <span key={t} className="w95-proj-tag">{t}</span>)}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Lightbox avec navigation prev/next sur les images filtrées */}

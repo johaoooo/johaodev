@@ -926,9 +926,8 @@ const ABOUT_ITEMS = ABOUT_IMAGES.map(img => ({ image: img, link: '#', title: '',
 
 const TESTIMONIALS = [
   { name: 'Dr. Mensah K.', role: 'Directeur · CNIB Platform', avatar: 'M', proj: 'Plateforme E-learning', text: "Joseph a développé l'architecture complète de CNIB Platform avec une rigueur exemplaire. Paiements KKiaPay fluides et gestion des certifications sans faille." },
-  { name: 'Arnaud B.', role: 'Organisateur · XoboTicket', avatar: 'A', proj: 'Gestion Stands RBAC', text: "La solution XoboTicket conçue par Joseph a sécurisé et automatisé l'attribution des stands de notre événement. Un vrai gain d'efficacité." },
+  { name: 'Direction AVS', role: 'Direction · Agro Véto Services', avatar: 'A', proj: 'Clinique & Provenderie', text: "La plateforme développée par Joseph pour Agro Véto Services centralise nos consultations, nos commandes d'intrants et notre offre de formations. Un travail rigoureux et parfaitement sécurisé." },
   { name: 'Aïcha D.', role: 'Fondatrice · Saveurs d\'Agojiés', avatar: 'S', proj: 'E-commerce Terroir', text: "Notre boutique en ligne valorise parfaitement nos produits locaux. Joseph a su allier esthétique, rapidité et sécurité pour nos clients." },
-  { name: 'Maison Afi Collection', role: 'Direction · AfiShop', avatar: 'A', proj: 'Audit & E-commerce', text: "Joseph nous a accompagnés sur l'audit cyber de notre infrastructure et la réalisation de notre vitrine e-commerce. Professionnel et très compétent." },
 ]
 
 /* ─── FAQ — 6 questions les plus pertinentes avant/pendant une commande ─── */
@@ -1616,13 +1615,13 @@ function ProjectVideoMedia({ project }) {
   )
 }
 
-const RECENT_PROJECT_TITLES = ['Agro Véto Services', "Saveurs d'Agojiés"]
+const RECENT_PROJECT_TITLES = ['Agro Véto Services', "Saveurs d'Agojiés", 'CNIB Platform']
 
 const RECENT_PROJECTS = (() => {
   const matched = RECENT_PROJECT_TITLES
     .map(t => PROJECTS.find(p => p.title === t))
     .filter(Boolean)
-  return matched.length > 0 ? matched : PROJECTS.slice(0, 4)
+  return matched.length > 0 ? matched : PROJECTS
 })()
 
 function RecentProjects() {
@@ -1632,10 +1631,10 @@ function RecentProjects() {
   const nudgeTimerRef = useRef(null)
   const cascadeRefs = useRef([])
 
-  /* Piste dupliquée x2 pour boucle infinie — scroll réel (scrollLeft
+  /* Piste dupliquée pour boucle infinie — scroll réel (scrollLeft
      + rAF), pas une animation CSS, pour que les boutons prev/next
      marchent vraiment. */
-  const loopedProjects = [...PROJECTS, ...PROJECTS]
+  const loopedProjects = [...PROJECTS, ...PROJECTS, ...PROJECTS, ...PROJECTS]
 
   useEffect(() => {
     const wrap = trackWrapRef.current
@@ -1926,7 +1925,7 @@ function About() {
               <br /><br />
               Côté développement, je conçois des applications robustes et scalables avec <strong>React</strong>, <strong>Django REST Framework</strong>, <strong>PostgreSQL</strong> et <strong>Tailwind CSS</strong>, guidé par les principes de <em>Security by Design</em>.
               <br /><br />
-              J'ai conçu et déployé des plateformes complètes telles que <strong>CNIB Platform</strong> (e-learning avec paiement local KKiaPay), <strong>XoboTicket</strong> (gestion de stands avec contrôle d'accès RBAC) ou <strong>Saveurs d'Agojiés</strong>.
+              J'ai conçu et déployé des plateformes complètes telles que <strong>Agro Véto Services</strong> (clinique vétérinaire & provenderie), <strong>Saveurs d'Agojiés</strong> (e-boutique gastronomique) ou <strong>CNIB Platform</strong> (e-learning avec paiement local KKiaPay).
               <br /><br />
               Certifié par <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet), formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong> et en cours de finalisation du <strong>Google Cybersecurity Certificate</strong>, je mets mon savoir-faire au service de projets web résilients et sécurisés.
             </NeonFlickerText>
@@ -3331,7 +3330,7 @@ function GitHubInteractiveCard() {
   const [isPushing, setIsPushing] = useState(false)
   const [logs, setLogs] = useState([
     { id: 1, time: 'Il y a 10 min', repo: 'cnib-platform', msg: 'fix: validation webhook KKiaPay et génération attestation', commits: 2 },
-    { id: 2, time: 'Il y a 2 heures', repo: 'xobo-ticket', msg: 'security: contrôle d\'accès granulaire RBAC et jetons', commits: 1 },
+    { id: 2, time: 'Il y a 2 heures', repo: 'AgroVetoService', msg: 'feat: intégration catalogue provenderie et prise de rendez-vous', commits: 1 },
     { id: 3, time: 'Hier', repo: 'saveurs-d-agojies', msg: 'feat: optimisation du panier et tunnel d\'achat', commits: 3 },
     { id: 4, time: 'Il y a 3 jours', repo: 'portfolio-frontend', msg: 'refactor: refonte UI et audit de conformité OWASP', commits: 1 },
   ])
@@ -3619,7 +3618,7 @@ function GitHubInteractiveCard() {
               </div>
             ) : (ghRepos.length > 0 ? ghRepos : [
               { name: 'cnib-platform', description: 'Plateforme E-learning & Certifications avec KKiaPay et Django REST.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
-              { name: 'xobo-ticket', description: 'Gestion & Réservation de Stands avec RBAC et jeton sécurisé.', stargazers_count: 8, forks_count: 2, language: 'Python' },
+              { name: 'AgroVetoService', description: 'Plateforme complète pour Agro Véto Services Congo : clinique vétérinaire, provenderie et formations.', stargazers_count: 12, forks_count: 3, language: 'JavaScript' },
               { name: 'JohaoDev', description: 'Portfolio moderne, pentest web et solutions logicielles sécurisées.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
               { name: 'saveurs-d-agojies', description: 'E-boutique gastronomique et terroir béninois.', stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
             ]).map((repo, i) => {

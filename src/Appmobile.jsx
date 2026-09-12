@@ -1572,7 +1572,7 @@ const Hero = ({ dark }) => {
 };
 
 /* Projets fixes pour la section vitrine mobile — même logique que le desktop */
-const FC_PROJECT_IDS = [16, 19];
+const FC_PROJECT_IDS = [1, 2];
 
 const FeaturedCreation = ({ dark }) => {
   const [ref, vis] = useInView(0.08);
@@ -1600,11 +1600,13 @@ const FeaturedCreation = ({ dark }) => {
     return () => clearInterval(t);
   }, []);
 
-  const proj = PROJECTS.find(p => p.id === FC_PROJECT_IDS[projIdx]);
+  const proj = PROJECTS.find(p => p.id === FC_PROJECT_IDS[projIdx]) || PROJECTS[0];
   if (!proj) return null;
 
   // Les deux images mobiles : version responsive (slide 0) puis preview (slide 1)
-  const mobileImgs = [proj.images?.[1] || proj.image, proj.image];
+  const projImg = proj.img || proj.image;
+  const projResp = proj.responsive || proj.images?.[1] || projImg;
+  const mobileImgs = [projResp, projImg];
   const barUrl = (proj.url && proj.url !== '#') ? proj.url.replace('https://', '').replace(/\/$/, '') : proj.title.toLowerCase().replace(/\s+/g, '') + '.vercel.app';
 
   return (
@@ -1622,7 +1624,7 @@ const FeaturedCreation = ({ dark }) => {
                 <span className="cr-bar-url">{barUrl}</span>
               </div>
               <div className="cr-desktop-screen" style={{ position: 'relative', overflow: 'hidden' }}>
-                <img key={proj.image} src={proj.image} alt={`${proj.title} desktop`} className="cr-screen-img" />
+                <img key={projImg} src={projImg} alt={`${proj.title} desktop`} className="cr-screen-img" />
               </div>
             </div>
           </div>
@@ -1655,13 +1657,13 @@ const FeaturedCreation = ({ dark }) => {
 
         {/* Info panel */}
         <div className="cr-info" style={{ position: 'relative', minHeight: '260px', opacity: fading ? 0 : 1, transition: 'opacity .35s ease' }}>
-          <div><h3 className="cr-title">{proj.title}</h3><p className="cr-sub">{proj.subtitle}</p></div>
+          <div><h3 className="cr-title">{proj.title}</h3><p className="cr-sub">{proj.sub || proj.subtitle}</p></div>
           <div className="cr-meta-block">
             <div className="cr-meta-row"><span className="cr-ml">Type</span><span className="cr-mv">Application Web Full-Stack</span></div>
             <div className="cr-meta-row"><span className="cr-ml">Année</span><span className="cr-mv">{proj.year}</span></div>
           </div>
           <div className="cr-tags">{proj.tech.slice(0, 3).map(t => <span key={t} className="cr-tag">{t}</span>)}</div>
-          <p className="cr-desc">{proj.description}</p>
+          <p className="cr-desc">{proj.desc || proj.description}</p>
           {proj.url && proj.url !== '#' ? (
             <a href={proj.url} target="_blank" rel="noreferrer" className={`btn ${dark ? 'btn--neon' : 'btn--primary'} cr-cta mi-glint`}><LI name="external-link-alt" color={dark ? "#fff" : "#1a1a1a"} /> Voir le site</a>
           ) : (
@@ -2435,7 +2437,7 @@ const About = ({ dark }) => {
             <p>Je suis <strong>Joseph Dehazounde</strong>, analyste en cybersécurité et développeur fullstack basé à <strong>Porto-Novo (Bénin)</strong>.</p>
             <p>Titulaire d'un <strong>Bac scientifique</strong> et <strong>autodidacte passionné</strong>, formé via <strong>OpenClassrooms, Coursera, Cisco, Université Cheikh Amidou Kane via FORCE-N</strong> et <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et développement web moderne.</p>
             <p>Côté dev, je conçois des applications robustes avec <strong>React</strong>, <strong>Django REST Framework</strong>, <strong>PostgreSQL</strong> et <strong>Tailwind CSS</strong>, guidé par les principes de <em>Security by Design</em>.</p>
-            <p>J'ai développé des projets d'envergure comme <strong>CNIB Platform</strong> (e-learning et paiement local KKiaPay), <strong>XoboTicket</strong> (gestion de stands avec contrôle d'accès RBAC) ou <strong>Saveurs d'Agojiés</strong>.</p>
+            <p>J'ai développé des projets d'envergure comme <strong>Agro Véto Services</strong> (clinique vétérinaire et provenderie), <strong>Saveurs d'Agojiés</strong> (e-boutique gastronomique) ou <strong>CNIB Platform</strong> (e-learning et paiement local KKiaPay).</p>
             <p>Certifié <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet), formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong> et en cours de finalisation du <strong>Google Cybersecurity Certificate</strong>.</p>
             <div className={`about-tags ${dark ? 'about-tags--dark' : ''}`}>{["Sécurité OWASP", "Burp Suite", "React / Django", "Kali Linux", "Rigueur", "Autonomie"].map(t => <span key={t}>{t}</span>)}</div>
             <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--primary'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Disponible pour opportunités →</MagBtn>
@@ -3084,7 +3086,7 @@ const SpotlightProjects = ({ items, dark }) => {
         <div className="sp-preview" style={{ background: GRAD[(proj.id - 1) % GRAD.length], overflow: 'hidden', position: 'relative' }}>
           {!imgErr[proj.id] ? (
             <img
-              src={proj.image}
+              src={proj.img || proj.image}
               alt={proj.title}
               className="sp-preview-img"
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
@@ -3103,8 +3105,8 @@ const SpotlightProjects = ({ items, dark }) => {
             <h3 className="sp-title">{proj.title}</h3>
             <span className={`sp-cat-badge sp-cat-badge--${proj.cat}`}>{CAT_LABELS[proj.cat]}</span>
           </div>
-          <p className="sp-sub">{proj.subtitle}</p>
-          <p className="sp-desc">{proj.description}</p>
+          <p className="sp-sub">{proj.sub || proj.subtitle}</p>
+          <p className="sp-desc">{proj.desc || proj.description}</p>
           <div className="sp-meta">
             <span className="sp-year"><LI name="calendar-alt" color={dark ? "#5E824B" : "#5E824B"} size={12} /> {proj.year}</span>
             {proj.progress != null && (
@@ -3153,7 +3155,7 @@ const SpotlightProjects = ({ items, dark }) => {
               onClick={() => setSelected(i)} title={item.title}>
               <div className="sp-thumb-img" style={{ background: GRAD[(item.id - 1) % GRAD.length] }}>
                 {!imgErr[item.id]
-                  ? <img src={item.image} alt={item.title} onError={() => setImgErr(e => ({ ...e, [item.id]: true }))} />
+                  ? <img src={item.img || item.image} alt={item.title} onError={() => setImgErr(e => ({ ...e, [item.id]: true }))} />
                   : <LI name="code" color={dark ? "#555" : "#aaa"} />}
                 {item.cat === 'en-ligne' && <div className="sp-thumb-live" />}
               </div>
@@ -3284,24 +3286,16 @@ const Skills = ({ dark }) => {
 // ─── Témoignages clients ─────────────────────────────────────────────────────
 const TESTIMONIALS = [
   {
-    name: "Koné Ibrahima", role: "Fondateur · TechFlow", avatar: "K",
-    text: "Joseph a sécurisé et livré notre plateforme en un temps record. Code robuste, audit OWASP rigoureux et design responsive. Très professionnel.", stars: 5
+    name: "Dr. Mensah K.", role: "Directeur · CNIB Platform", avatar: "M",
+    text: "Joseph a développé l'architecture complète de CNIB Platform avec une rigueur exemplaire. Paiements KKiaPay fluides et gestion des certifications sans faille.", stars: 5
   },
   {
-    name: "Calvin Dexter", role: "Gérant · New Horizon Service", avatar: "C",
-    text: "La plateforme de billetterie est impeccable. Les transactions Mobile Money sont fiables, le backend Django est solide. Je recommande à 100%.", stars: 5
+    name: "Direction AVS", role: "Direction · Agro Véto Services", avatar: "A",
+    text: "La plateforme développée par Joseph pour Agro Véto Services centralise nos consultations, nos commandes d'intrants et notre offre de formations. Un travail rigoureux et parfaitement sécurisé.", stars: 5
   },
   {
-    name: "Mory Koné", role: "Graphiste · MK Portfolio", avatar: "M",
-    text: "Mon site reflète parfaitement mon univers visuel. Joseph a su allier performance front-end et sécurité sans compromis.", stars: 5
-  },
-  {
-    name: "Tatiana D.", role: "Responsable · AgroTrust", avatar: "T",
-    text: "Super travail d'audit et d'intégration ! La traçabilité et l'expérience utilisateur sont impeccables. Merci Joseph !", stars: 5
-  },
-  {
-    name: "Manobeat 777", role: "Producteur · Studio Beat", avatar: "B",
-    text: "La plateforme de vente fonctionne très bien. Interface fluide, paiements sécurisés et zéro faille constatée.", stars: 5
+    name: "Aïcha D.", role: "Fondatrice · Saveurs d'Agojiés", avatar: "S",
+    text: "Notre boutique en ligne valorise parfaitement nos produits locaux. Joseph a su allier esthétique, rapidité et sécurité pour nos clients.", stars: 5
   },
 ];
 
@@ -3588,7 +3582,7 @@ function GitHubInteractiveCard({ dark }) {
   const [isPushing, setIsPushing] = useState(false)
   const [logs, setLogs] = useState([
     { id: 1, time: 'Il y a 10 min', repo: 'cnib-platform', msg: 'fix: validation webhook KKiaPay et génération attestation', commits: 2 },
-    { id: 2, time: 'Il y a 2 heures', repo: 'xobo-ticket', msg: 'security: contrôle d\'accès granulaire RBAC et jetons', commits: 1 },
+    { id: 2, time: 'Il y a 2 heures', repo: 'AgroVetoService', msg: 'feat: intégration catalogue provenderie et prise de rendez-vous', commits: 1 },
     { id: 3, time: 'Hier', repo: 'saveurs-d-agojies', msg: 'feat: optimisation du panier et tunnel d\'achat', commits: 3 },
     { id: 4, time: 'Il y a 3 jours', repo: 'portfolio-frontend', msg: 'refactor: refonte UI et audit de conformité OWASP', commits: 1 },
   ])
@@ -3730,7 +3724,7 @@ function GitHubInteractiveCard({ dark }) {
             {ghLoading ? <div className="ghm-loading">Chargement des dépôts…</div> :
               (ghRepos.length > 0 ? ghRepos : [
                 { name: 'cnib-platform', description: 'Plateforme E-learning & Certifications avec KKiaPay et Django REST.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
-                { name: 'xobo-ticket', description: 'Gestion & Réservation de Stands avec RBAC et jeton sécurisé.', stargazers_count: 8, forks_count: 2, language: 'Python' },
+                { name: 'AgroVetoService', description: 'Plateforme complète pour Agro Véto Services Congo : clinique vétérinaire, provenderie et formations.', stargazers_count: 12, forks_count: 3, language: 'JavaScript' },
                 { name: 'JohaoDev', description: 'Portfolio moderne, pentest web et solutions logicielles sécurisées.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
                 { name: 'saveurs-d-agojies', description: 'E-boutique gastronomique et terroir béninois.', stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
               ]).map((repo, i) => {

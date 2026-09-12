@@ -529,11 +529,9 @@ const ABOUT_IMAGES = [
 const ABOUT_ITEMS = ABOUT_IMAGES.map(img => ({ image: img, link: '#', title: '', description: '' }))
 
 const TESTIMONIALS = [
-  { name: 'Koné Ibrahima', role: 'Fondateur · TechFlow', avatar: 'K', proj: 'Site Vitrine', text: "Elvis a livré notre site vitrine en un temps record. Design moderne, responsive, exactement ce qu'on voulait. Très professionnel." },
-  { name: 'Calvin Dexter', role: 'Gérant · New Horizon Service', avatar: 'C', proj: 'Location Résidences', text: 'La plateforme de location est impeccable. Les clients peuvent réserver facilement, le backend est solide. Je recommande à 100%.' },
-  { name: 'Mory Koné', role: 'Graphiste · MK Portfolio', avatar: 'M', proj: 'Portfolio Créatif', text: "Mon portfolio reflète parfaitement mon univers créatif. Elvis a su traduire ma vision en une expérience visuelle mémorable." },
-  { name: 'Tatiana D.', role: 'Influenceuse · Tatii', avatar: 'T', proj: 'Portfolio', text: "Super boulot ! Mon site de présentation est élégant, rapide et je reçois beaucoup de compliments. Merci Elvis !" },
-  { name: 'Manobeat 777', role: 'Beatmaker · ManoBeat', avatar: 'B', proj: 'Beat Store', text: "La boutique de beats marche très bien. Les clients achètent facilement via WhatsApp. Interface propre et professionnelle." },
+  { name: 'Dr. Mensah K.', role: 'Directeur · CNIB Platform', avatar: 'M', proj: 'Plateforme E-learning', text: "Joseph a développé l'architecture complète de CNIB Platform avec une rigueur exemplaire. Paiements KKiaPay fluides et gestion des certifications sans faille." },
+  { name: 'Direction AVS', role: 'Direction · Agro Véto Services', avatar: 'A', proj: 'Clinique & Provenderie', text: "La plateforme développée par Joseph pour Agro Véto Services centralise nos consultations, nos commandes d'intrants et notre offre de formations. Un travail rigoureux et parfaitement sécurisé." },
+  { name: 'Aïcha D.', role: 'Fondatrice · Saveurs d\'Agojiés', avatar: 'S', proj: 'E-commerce Terroir', text: "Notre boutique en ligne valorise parfaitement nos produits locaux. Joseph a su allier esthétique, rapidité et sécurité pour nos clients." },
 ]
 
 function Loader({ onDone }) {
@@ -1100,12 +1098,12 @@ function Marquee() {
    FEATURED CREATION — desktop
    ════════════════════════════════════════════ */
 const FC_MOBILE_SLIDES = [
-  '/assets/images/projects/nexura-responsive.webp',
-  '/assets/images/projects/nexura-responsive2.webp',
+  '/assets/images/projects/avs-responsive.webp',
+  '/assets/images/projects/avs-preview.webp',
 ]
 
 function FeaturedCreationDesktop() {
-  const proj = PROJECTS.find(p => p.id === 15)
+  const proj = PROJECTS[0]
   const sectionRef = useRef(null)
   const [slide, setSlide] = useState(0)
 
@@ -1142,12 +1140,12 @@ function FeaturedCreationDesktop() {
                 <span className="fc-dot fc-dot--r" />
                 <span className="fc-dot fc-dot--y" />
                 <span className="fc-dot fc-dot--g" />
-                <span className="fc-bar-url">nexura-one.vercel.app</span>
+                <span className="fc-bar-url">avs-wine.vercel.app</span>
               </div>
               <div className="fc-desktop-screen">
                 <img
-                  src={proj.img}
-                  alt="Nexura desktop"
+                  src={proj.img || proj.image}
+                  alt="Agro Véto Services desktop"
                   className="fc-screen-img"
                   onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
                 />
@@ -1163,7 +1161,7 @@ function FeaturedCreationDesktop() {
               <div className="fc-mobile-screen">
                 <div className="fc-slide-track" style={{ transform: `translateY(-${slide * 50}%)`, transition: 'transform .6s cubic-bezier(.4,0,.2,1)', willChange: 'transform' }}>
                   {FC_MOBILE_SLIDES.map((src, i) => (
-                    <img key={i} src={src} alt={`Nexura mobile ${i + 1}`} className="fc-screen-img fc-slide-img" />
+                    <img key={i} src={src} alt={`Agro Véto Services mobile ${i + 1}`} className="fc-screen-img fc-slide-img" />
                   ))}
                 </div>
               </div>
@@ -1304,9 +1302,9 @@ function About() {
             <div className="sec-eyebrow">// Réalisations de cœur</div>
             <div className="skew-gallery" style={{ marginTop: '1.5rem' }}>
               {[
-                { src: '/assets/images/projects/newhorizon-preview.webp', fb: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500', label: 'New Horizon Service', url: 'https://new-horizonservice.vercel.app/' },
-                { src: '/assets/images/projects/monmarket-preview.webp', fb: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500', label: 'ShopCI Marketplace', url: 'https://shop-ci.vercel.app/' },
-                { src: '/assets/images/projects/nexura-preview.webp', fb: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500', label: 'NEXURA Marketplace', url: 'https://nexura-one.vercel.app/' },
+                { src: '/assets/images/projects/avs-preview.webp', fb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147484/avs_dslfdb.png', label: 'Agro Véto Services', url: 'https://avs-wine.vercel.app/' },
+                { src: '/assets/images/projects/saveurs-preview.webp', fb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147490/agojie_qwlp0m.png', label: "Saveurs d'Agojiés", url: 'https://saveurs-d-agojies.vercel.app/' },
+                { src: '/assets/images/projects/cnib-preview.webp', fb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147729/cnib_iaxfzw.png', label: 'CNIB Platform', url: 'https://cnib-platform-c5ru.vercel.app/' },
               ].map(item => (
                 <div key={item.label} className="skew-item skew-item--linked">
                   <div className="skew-item-inner">
@@ -2232,9 +2230,9 @@ function GitHubInteractiveCard() {
   const [isPushing, setIsPushing] = useState(false)
   const [logs, setLogs] = useState([
     { id: 1, time: 'Il y a 10 min', repo: 'cnib-platform', msg: 'security: renforcement auth JWT et RBAC', commits: 2 },
-    { id: 2, time: 'Il y a 2 heures', repo: 'xobo-ticket', msg: 'feat: réservation de stands et validation', commits: 1 },
+    { id: 2, time: 'Il y a 2 heures', repo: 'AgroVetoService', msg: 'feat: intégration catalogue provenderie et rdv clinique', commits: 1 },
     { id: 3, time: 'Hier', repo: 'johaodev', msg: 'security: audit OWASP et durcissement des headers', commits: 3 },
-    { id: 4, time: 'Il y a 3 jours', repo: 'agro-market', msg: 'feat: passerelle paiement KKiaPay', commits: 1 },
+    { id: 4, time: 'Il y a 3 jours', repo: 'saveurs-d-agojies', msg: 'feat: passerelle de paiement et panier interactif', commits: 1 },
   ])
 
   const [ghLoading, setGhLoading] = useState(true)
@@ -2519,10 +2517,10 @@ function GitHubInteractiveCard() {
                 Chargement des dépôts GitHub…
               </div>
             ) : (ghRepos.length > 0 ? ghRepos : [
-              { name: 'ShopCI', description: 'Marketplace E-commerce locale avec intégration mobile money.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
-              { name: 'TerraSafe', description: "Plateforme foncière de prévention des risques d'arnaque.", stargazers_count: 8, forks_count: 2, language: 'Python' },
-              { name: 'JohaoDev', description: 'Portfolio interactif fullstack & cybersécurité.', stargazers_count: 21, forks_count: 5, language: 'JavaScript' },
-              { name: 'chap-chapMAP', description: "Cartographie interactive pour l'itinéraire et la livraison.", stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
+              { name: 'cnib-platform', description: 'Plateforme E-learning & Certifications avec KKiaPay et Django REST.', stargazers_count: 14, forks_count: 4, language: 'JavaScript' },
+              { name: 'AgroVetoService', description: 'Plateforme complète pour Agro Véto Services Congo : clinique vétérinaire, provenderie et formations.', stargazers_count: 12, forks_count: 3, language: 'JavaScript' },
+              { name: 'JohaoDev', description: 'Portfolio interactif fullstack & cybersécurité.', stargazers_count: 21, forks_count: 5, language: 'TypeScript' },
+              { name: 'saveurs-d-agojies', description: 'E-boutique gastronomique et terroir béninois.', stargazers_count: 5, forks_count: 1, language: 'JavaScript' },
             ]).map((repo, i) => {
               const langColor = { JavaScript: '#f1e05a', Python: '#3572A5', TypeScript: '#2b7489', HTML: '#e34c26', CSS: '#563d7c' }
               const pct = { JavaScript: '100% JS', Python: '55% Py / 45% HTML', TypeScript: '90% TS / 10% CSS', HTML: '100% HTML' }

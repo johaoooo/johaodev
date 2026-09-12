@@ -59,35 +59,20 @@
 
 ## Projets Majeurs
 
-1. **CNIB Platform**
-   - *Description* : Plateforme d'apprentissage en ligne adaptée au contexte africain avec catalogue interactif, paiements mobiles KKiaPay, examens et délivrance d'attestations certifiées.
-   - *Stack* : Django REST Framework, React, Vite, PostgreSQL, Cloudinary, KKiaPay.
-   - *URL* : https://cnib-platform-c5ru.vercel.app/
+1. **Agro Véto Services**
+   - *Description* : Plateforme complète pour Agro Véto Services Congo à Pointe-Noire : clinique vétérinaire 24/7, provenderie certifiée, boutique d'intrants (poussins Cobb 500), formations fermes-écoles et management QHSE.
+   - *Stack* : Next.js, React, Tailwind CSS, Vercel, Mobile Money.
+   - *URL* : https://avs-wine.vercel.app/
 
-2. **XoboTicket**
-   - *Description* : Système de réservation, attribution et validation de stands pour foires et événements avec contrôle d'accès par rôle (RBAC) et validation par jeton sécurisé.
-   - *Stack* : Django, React, Vite, PostgreSQL, RBAC, Render, Vercel.
-   - *URL* : https://xobo-ticket.vercel.app/
-
-3. **Golden Invest**
-   - *Description* : Plateforme financière connectant entrepreneurs à fort potentiel et investisseurs accrédités dans l'espace UEMOA.
-   - *Stack* : Next.js, TypeScript, Django REST Framework, Tailwind CSS, PostgreSQL.
-   - *URL* : https://gold-platform-ecru.vercel.app/
-
-4. **Saveurs d'Agojiés**
+2. **Saveurs d'Agojiés**
    - *Description* : E-boutique gastronomique dédiée aux mets et produits transformés du terroir béninois, avec panier interactif et tunnel d'achat optimisé.
    - *Stack* : React, Node.js, Vite, Tailwind CSS.
    - *URL* : https://saveurs-d-agojies.vercel.app/
 
-5. **AgroTrust**
-   - *Description* : Plateforme AgriTech facilitant la mise en relation directe et équitable entre agriculteurs locaux et acheteurs/grossistes.
-   - *Stack* : React, Django REST, PostgreSQL, Tailwind CSS.
-   - *URL* : https://agrotrust-two.vercel.app/
-
-6. **MacBenin (AfiShop)**
-   - *Description* : Vitrine e-commerce pour la Maison Afi Collection valorisant l'artisanat et le textile contemporain africain.
-   - *Stack* : React, Django, Tailwind CSS, Vercel.
-   - *URL* : https://afishop-y9ww.vercel.app/
+3. **CNIB Platform**
+   - *Description* : Plateforme d'apprentissage en ligne adaptée au contexte africain avec catalogue interactif, paiements mobiles KKiaPay, examens et délivrance d'attestations certifiées.
+   - *Stack* : Django REST Framework, React, Vite, PostgreSQL, Cloudinary, KKiaPay.
+   - *URL* : https://cnib-platform-c5ru.vercel.app/
 
 ---
 
