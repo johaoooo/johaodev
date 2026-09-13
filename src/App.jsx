@@ -1611,7 +1611,7 @@ function ProjectVideoMedia({ project }) {
   )
 }
 
-const RECENT_PROJECT_TITLES = ['Agro Véto Services', "Saveurs d'Agojiés"]
+const RECENT_PROJECT_TITLES = ['Maison Afi Collection', 'Agro Véto Services', "Saveurs d'Agojiés"]
 
 const RECENT_PROJECTS = (() => {
   const matched = RECENT_PROJECT_TITLES

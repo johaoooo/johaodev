@@ -31,8 +31,32 @@ export const CONTACT = {
 }
 
 // ─── Projets ────────────────────────────────────────────────────
-// Ordre = ordre d'affichage : AVS + Saveurs d'Agojiés en premier (mis en avant).
+// Ordre = ordre d'affichage : Maison Afi Collection en premier (mise en vedette).
 export const PROJECTS = [
+  {
+    id: 4,
+    title: 'Maison Afi Collection',
+    sub: 'Boutique Artisanale & E-commerce',
+    subtitle: 'Boutique Artisanale & E-commerce',
+    cat: 'en-ligne',
+    img: cld('/assets/images/projects/afi-collection-preview.png'),
+    image: cld('/assets/images/projects/afi-collection-preview.png'),
+    responsive: cld('/assets/images/projects/afi-collection-responsive.png'),
+    images: [
+      cld('/assets/images/projects/afi-collection-preview.png'),
+      cld('/assets/images/projects/afi-collection-responsive.png'),
+    ],
+    imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789313916/Capture_d_%C3%A9cran_du_2026-09-13_16-38-06_vzc83a.png',
+    tech: ['React', 'Node.js', 'Tailwind CSS', 'Vercel'],
+    url: 'https://afishop-y9ww.vercel.app/',
+    github: 'https://github.com/johaoooo',
+    desc: "Boutique e-commerce artisanale de la Maison Afi Collection : catalogue de créations artisanales, panier interactif et commande en ligne, avec audit de sécurité et durcissement.",
+    description: "Boutique e-commerce artisanale de la Maison Afi Collection : catalogue de créations artisanales, panier interactif et commande en ligne, avec audit de sécurité et durcissement.",
+    year: '2026',
+    problem: "Maison artisanale sans boutique en ligne unifiée pour valoriser ses collections et commandes gérées manuellement sur les réseaux sociaux.",
+    solution: "Plateforme e-commerce React déployée sur Vercel avec catalogue produits, panier dynamique, commande directe et contact WhatsApp, durcie après audit de sécurité web.",
+    result: "Vitrine e-commerce en ligne qui centralise le catalogue artisanal et les commandes clients, avec base sécurisée pour les évolutions (paiement Mobile Money, stocks)."
+  },
   {
     id: 1,
     title: 'Agro Véto Services',

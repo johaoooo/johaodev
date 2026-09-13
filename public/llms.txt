@@ -59,17 +59,22 @@
 
 ## Projets Majeurs
 
-1. **Agro Véto Services**
+1. **Maison Afi Collection**
+   - *Description* : Boutique e-commerce artisanale de la Maison Afi Collection : catalogue de créations artisanales, panier interactif et commande en ligne, avec audit de sécurité et durcissement.
+   - *Stack* : React, Node.js, Tailwind CSS, Vercel.
+   - *URL* : https://afishop-y9ww.vercel.app/
+
+2. **Agro Véto Services**
    - *Description* : Plateforme complète pour Agro Véto Services Congo à Pointe-Noire : clinique vétérinaire 24/7, provenderie certifiée, boutique d'intrants (poussins Cobb 500), formations fermes-écoles et management QHSE.
    - *Stack* : Next.js, React, Tailwind CSS, Vercel, Mobile Money.
    - *URL* : https://avs-wine.vercel.app/
 
-2. **Saveurs d'Agojiés**
+3. **Saveurs d'Agojiés**
    - *Description* : E-boutique gastronomique dédiée aux mets et produits transformés du terroir béninois, avec panier interactif et tunnel d'achat optimisé.
    - *Stack* : React, Node.js, Vite, Tailwind CSS.
    - *URL* : https://saveurs-d-agojies.vercel.app/
 
-3. **CNIB Platform**
+4. **CNIB Platform**
    - *Description* : Plateforme d'apprentissage en ligne adaptée au contexte africain avec catalogue interactif, paiements mobiles KKiaPay, examens et délivrance d'attestations certifiées.
    - *Stack* : Django REST Framework, React, Vite, PostgreSQL, Cloudinary, KKiaPay.
    - *URL* : https://cnib-platform-c5ru.vercel.app/
