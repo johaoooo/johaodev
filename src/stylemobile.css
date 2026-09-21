@@ -408,7 +408,7 @@
      transition: background 0.15s ease;
      will-change: background;
    }
-   .app--light .hv4-god-rays { opacity: 0.35; }
+   .app--light .hv4-god-rays { opacity: 0; display: none !important; }
    
    /* Floating glass cards — desktop only */
    .hv4-float-card {
@@ -851,6 +851,11 @@
      cursor:pointer;
      background: #060608;
    }
+   .app--light .hv4-photo-mob-inner {
+     background: #ffffff;
+     border: 1.5px solid rgba(94, 130, 75, 0.35);
+     box-shadow: none !important;
+   }
    .hv4-photo-mob-inner .hv4-photo {
      aspect-ratio: unset;
      height: min(50vw, 240px);
@@ -860,6 +865,9 @@
      filter: contrast(1.05) brightness(0.96);
      transition: filter .5s cubic-bezier(.22,1,.36,1);
    }
+   .app--light .hv4-photo-mob-inner .hv4-photo {
+     filter: grayscale(0%) contrast(1) brightness(1);
+   }
    .hv4-photo-mob-inner:hover .hv4-photo { filter: contrast(1.08) brightness(1.02); }
    .hv4-photo-mob-badge {
      position:absolute; bottom:0; left:0; right:0;
@@ -867,6 +875,13 @@
      padding:5px 8px;
      background:rgba(0,0,0,.65);
      font-family:var(--fb); font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:#fff;
+   }
+   .app--light .hv4-photo-mob-badge {
+     background: rgba(255, 255, 255, 0.9);
+     backdrop-filter: blur(8px);
+     -webkit-backdrop-filter: blur(8px);
+     color: #111111;
+     border-top: 1px solid rgba(0, 0, 0, 0.08);
    }
    
    .hv4-card {
@@ -2299,7 +2314,7 @@
    
    /* Hero avec aurora : fond transparent (le canvas WebGL gère le fond) */
    .hero.hv4 { background: #050505; }
-   .app--light .hero.hv4 { background: #f0ece8; }
+   .app--light .hero.hv4 { background: #ffffff !important; }
    
    /* Overlay fort côté gauche pour lisibilité du texte — pas de flash */
    .hero.hv4::after {
@@ -2315,13 +2330,7 @@
        );
    }
    .app--light .hero.hv4::after {
-     background:
-       linear-gradient(105deg,
-         rgba(240,236,232,.92) 0%,
-         rgba(240,236,232,.68) 38%,
-         rgba(240,236,232,.22) 62%,
-         transparent 100%
-       );
+     display: none !important;
    }
    
    /* Contenu au-dessus du canvas et de l'overlay */
