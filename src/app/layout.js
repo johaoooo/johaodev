@@ -41,7 +41,14 @@ export const metadata = {
     url: seo.url,
     title: seo.title,
     description: seo.description,
-    images: [{ url: seo.image, width: 1200, height: 1200 }],
+    images: [
+      {
+        url: seo.image,
+        width: 1200,
+        height: 1200,
+        alt: "Joseph Dehazounde — Analyste Cybersécurité & Développeur Full Stack",
+      },
+    ],
     locale: 'fr_BJ',
     siteName: "Joseph Dehazounde — Portfolio Cybersécurité & Dev Fullstack",
   },
@@ -50,6 +57,7 @@ export const metadata = {
     title: seo.title,
     description: seo.description,
     images: [seo.image],
+    creator: '@johaoooo',
   },
 }
 

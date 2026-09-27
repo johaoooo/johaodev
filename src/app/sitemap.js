@@ -6,7 +6,7 @@ export default function sitemap() {
     {
       url: `${baseUrl}/`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
     },
   ]
