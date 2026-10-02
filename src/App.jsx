@@ -1351,6 +1351,17 @@ function Hero() {
               <HoverFadeText>Contactez-moi</HoverFadeText>
               <span className="btn-arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></svg></span>
             </a>
+            <a
+              href={CONTACT.cv}
+              download="CV_DEHAZOUNDE_Joseph.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ghost"
+              title="Télécharger mon CV actualisé (PDF)"
+            >
+              <HoverFadeText>Mon CV</HoverFadeText>
+              <span aria-hidden="true" style={{ fontSize: '.9rem', marginLeft: '2px' }}>↓</span>
+            </a>
           </div>
 
           {/* Réassurance CRO — sous le bouton */}
@@ -1958,7 +1969,7 @@ function About() {
           </div>
         </div>
 
-        <div className="about-block" style={{ marginTop: '2rem', textAlign: 'center' }}>
+        <div className="about-block" style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <a
             href="#contact"
             className="btn-fill"
@@ -1970,6 +1981,18 @@ function About() {
           >
             <HoverFadeText>Parlons d’un projet</HoverFadeText>
             <span className="btn-arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></svg></span>
+          </a>
+          <a
+            href={CONTACT.cv}
+            download="CV_DEHAZOUNDE_Joseph.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-ghost"
+            style={{ display: 'inline-flex' }}
+            title="Télécharger mon CV actualisé (PDF)"
+          >
+            <HoverFadeText>Télécharger mon CV</HoverFadeText>
+            <span aria-hidden="true" style={{ fontSize: '.9rem', marginLeft: '2px' }}>↓</span>
           </a>
         </div>
       </div>
@@ -3498,6 +3521,7 @@ function ContactSection({ onToast }) {
                   href={n.href}
                   target={n.href.startsWith('mailto') || n.href.startsWith('/') || n.href.startsWith('tel') ? '_self' : '_blank'}
                   rel="noreferrer"
+                  download={n.id === 'cojn-cv' ? 'CV_DEHAZOUNDE_Joseph.pdf' : undefined}
                   className="clk-link"
                 >
                   <span className="clk-label"><HoverFadeText>{n.label}</HoverFadeText></span>

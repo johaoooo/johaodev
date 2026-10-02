@@ -321,6 +321,36 @@ export function StaggeredMenu({
             ))}
           </ul>
 
+          {socialItems?.length > 0 && (
+            <div className="sm-panel-socials" style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '.6rem' }}>
+              {socialItems.map((s, idx) => (
+                <a
+                  key={idx}
+                  href={s.link}
+                  target={s.link.startsWith('mailto:') ? '_self' : '_blank'}
+                  rel="noreferrer"
+                  download={s.label === 'Mon CV' ? 'CV_DEHAZOUNDE_Joseph.pdf' : undefined}
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: '.72rem',
+                    color: s.label === 'Mon CV' ? 'var(--accent)' : 'var(--muted)',
+                    textDecoration: 'none',
+                    border: s.label === 'Mon CV' ? '1px solid var(--accent)' : '1px solid rgba(255,255,255,.12)',
+                    padding: '5px 12px',
+                    borderRadius: '8px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    transition: 'all .2s ease',
+                  }}
+                  className="sm-social-link"
+                >
+                  {s.label}
+                  {s.label === 'Mon CV' && <span aria-hidden="true">↓</span>}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </aside>
     </div>
