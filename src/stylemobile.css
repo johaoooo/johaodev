@@ -39,7 +39,7 @@
      /* Loader liquid-blur invert : 1 = force blanc (dark), 0 = force noir (light).
         Source de vérité unique pour .mob-ld-name-xl ET .mob-ld-role — voir body.light-mode plus bas. */
      --ld-liquid-invert: 1;
-     /* Texte identité du loader (AKATECH 2026 / Abidjan) — plein contraste
+     /* Texte identité du loader (AKATECH 2026) — plein contraste
         dans les 2 thèmes, pas un rgba discret. Voir body.light-mode plus bas. */
      --ld-text: #F0F0F0;
    }

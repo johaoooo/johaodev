@@ -31,7 +31,8 @@ export const CONTACT = {
 }
 
 // ─── Projets ────────────────────────────────────────────────────
-// Ordre = ordre d'affichage : Maison Afi Collection en premier (mise en vedette).
+// ─── Projets ────────────────────────────────────────────────────
+// Ordre = ordre d'affichage : Projets phares en tête
 export const PROJECTS = [
   {
     id: 4,
@@ -39,6 +40,7 @@ export const PROJECTS = [
     sub: 'Boutique Artisanale & E-commerce',
     subtitle: 'Boutique Artisanale & E-commerce',
     cat: 'en-ligne',
+    market: 'Bénin',
     img: cld('/assets/images/projects/afi-collection-preview.png'),
     image: cld('/assets/images/projects/afi-collection-preview.png'),
     responsive: cld('/assets/images/projects/afi-collection-responsive.png'),
@@ -47,9 +49,9 @@ export const PROJECTS = [
       cld('/assets/images/projects/afi-collection-responsive.png'),
     ],
     imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789313916/Capture_d_%C3%A9cran_du_2026-09-13_16-38-06_vzc83a.png',
-    tech: ['React', 'Node.js', 'Tailwind CSS', 'Vercel'],
+    tech: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
     url: 'https://afishop-y9ww.vercel.app/',
-    github: 'https://github.com/johaoooo',
+    github: 'https://github.com/johaoooo/Afishop',
     desc: "Boutique e-commerce artisanale de la Maison Afi Collection : catalogue de créations artisanales, panier interactif et commande en ligne, avec audit de sécurité et durcissement.",
     description: "Boutique e-commerce artisanale de la Maison Afi Collection : catalogue de créations artisanales, panier interactif et commande en ligne, avec audit de sécurité et durcissement.",
     year: '2026',
@@ -63,6 +65,7 @@ export const PROJECTS = [
     sub: 'Santé animale, Provenderie & Excellence QHSE',
     subtitle: 'Santé animale, Provenderie & Excellence QHSE',
     cat: 'en-ligne',
+    market: 'Congo',
     img: cld('/assets/images/projects/avs-preview.webp'),
     image: cld('/assets/images/projects/avs-preview.webp'),
     responsive: cld('/assets/images/projects/avs-responsive.webp'),
@@ -71,15 +74,63 @@ export const PROJECTS = [
       cld('/assets/images/projects/avs-responsive.webp'),
     ],
     imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147484/avs_dslfdb.png',
-    tech: ['Next.js', 'React', 'Tailwind CSS', 'Vercel', 'Mobile Money'],
-    url: 'https://avs-wine.vercel.app/',
-    github: 'https://github.com/johaoooo',
+    tech: ['Next.js 14', 'React', 'Prisma', 'Tailwind CSS', 'Gemini AI', 'Three.js'],
+    url: 'https://avs-congo.vercel.app/',
+    github: 'https://github.com/johaoooo/avs',
     desc: "Plateforme complète pour Agro Véto Services Congo à Pointe-Noire : clinique vétérinaire 24/7, provenderie certifiée, boutique d'intrants (poussins Cobb 500), formations fermes-écoles et management QHSE.",
     description: "Plateforme complète pour Agro Véto Services Congo à Pointe-Noire : clinique vétérinaire 24/7, provenderie certifiée, boutique d'intrants (poussins Cobb 500), formations fermes-écoles et management QHSE.",
     year: '2026',
     problem: "Entreprise pluridisciplinaire sans vitrine digitale unifiée pour ses 6 pôles (santé animale, QHSE, agroalimentaire, cosmétique, formation, événementiel) et prise de commande manuelle.",
-    solution: "Site Next.js déployé sur Vercel avec boutique et tarifs, prise de rendez-vous clinique, catalogue formations, blog conseils d'élevage et contact WhatsApp direct.",
+    solution: "Site Next.js déployé sur Vercel avec boutique et tarifs, prise de rendez-vous clinique, catalogue formations, blog conseils d'élevage et intégration de l'IA Gemini.",
     result: "Vitrine unique qui centralise clients éleveurs, commandes de poussins et inscriptions aux formations, avec demande de devis QHSE pour les PME."
+  },
+  {
+    id: 9,
+    title: 'Wappé Food',
+    sub: 'Commande & Livraison Gastronomique',
+    subtitle: 'Commande & Livraison Gastronomique',
+    cat: 'en-ligne',
+    market: 'Bénin',
+    img: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790924039/Capture_d_%C3%A9cran_du_2026-10-02_07-37-55_emgrr9.png',
+    image: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790924039/Capture_d_%C3%A9cran_du_2026-10-02_07-37-55_emgrr9.png',
+    responsive: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790924039/Capture_d_%C3%A9cran_du_2026-10-02_07-37-55_emgrr9.png',
+    images: [
+      'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790924039/Capture_d_%C3%A9cran_du_2026-10-02_07-37-55_emgrr9.png',
+      cld('/assets/images/projects/wappe-food-responsive.png'),
+    ],
+    imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790924039/Capture_d_%C3%A9cran_du_2026-10-02_07-37-55_emgrr9.png',
+    tech: ['Next.js 14', 'TypeScript', 'React 18', 'Tailwind CSS'],
+    url: 'https://wappe-food.vercel.app/',
+    github: 'https://github.com/johaoooo/wappe-food',
+    desc: "Plateforme moderne de commande et de livraison gastronomique en ligne : panier dynamique réactif, menus à la carte, suggestions du chef et interface responsive fluide.",
+    description: "Plateforme moderne de commande et de livraison gastronomique en ligne : panier dynamique réactif, menus à la carte, suggestions du chef et interface responsive fluide.",
+    year: '2026',
+    problem: "Expérience de commande de repas en ligne souvent lente, peu intuitive sur mobile et sans clarté sur la composition des menus.",
+    solution: "Architecture Next.js 14 optimisée avec panier dynamique (Drawer), filtres de menus en temps réel, animations fluides et affichage des spécialités.",
+    result: "Parcours client fluide et rapide de la découverte des plats jusqu'à la validation de commande."
+  },
+  {
+    id: 10,
+    title: 'Lab Cybersecurity',
+    sub: 'Sandbox Malware & Analyse Dynamique',
+    subtitle: 'Sandbox Malware & Analyse Dynamique',
+    cat: 'en-ligne',
+    market: 'Bénin',
+    img: cld('/assets/images/projects/cyber-preview.png'),
+    image: cld('/assets/images/projects/cyber-preview.png'),
+    responsive: cld('/assets/images/projects/cyber-preview.png'),
+    images: [
+      cld('/assets/images/projects/cyber-preview.png'),
+    ],
+    tech: ['Kali Linux', 'Python', 'VirtualBox', 'Wireshark', 'Reverse Eng.'],
+    url: 'https://github.com/johaoooo/Lab-Cybersecurity',
+    github: 'https://github.com/johaoooo/Lab-Cybersecurity',
+    desc: "Conception et exploitation d'une sandbox d'analyse dynamique et statique de malwares en environnement isolé : rétro-ingénierie, surveillance des appels système et trafic réseau.",
+    description: "Conception et exploitation d'une sandbox d'analyse dynamique et statique de malwares en environnement isolé : rétro-ingénierie, surveillance des appels système et trafic réseau.",
+    year: '2026',
+    problem: "Risques critiques lors de l'exécution d'échantillons malveillants sans cloisonnement réseau ni instrumentation rigoureuse.",
+    solution: "Déploiement d'une sandbox sécurisée hôte Kali Linux / guest Windows isolé, scripts Python d'automatisation et capture complète des artefacts d'infection.",
+    result: "Génération de rapports d'analyse de menaces exploitables pour la réponse aux incidents et l'amélioration des règles de détection SIEM."
   },
   {
     id: 2,
@@ -87,6 +138,7 @@ export const PROJECTS = [
     sub: 'E-Boutique Gastronomique & Terroir Béninois',
     subtitle: 'E-Boutique Gastronomique & Terroir Béninois',
     cat: 'en-ligne',
+    market: 'Bénin',
     img: cld('/assets/images/projects/saveurs-preview.webp'),
     image: cld('/assets/images/projects/saveurs-preview.webp'),
     responsive: cld('/assets/images/projects/saveurs-responsive.webp'),
@@ -97,7 +149,7 @@ export const PROJECTS = [
     imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1789147490/agojie_qwlp0m.png',
     tech: ['React', 'Node.js', 'Vite', 'Tailwind CSS'],
     url: 'https://saveurs-d-agojies.vercel.app/',
-    github: 'https://github.com/johaoooo',
+    github: 'https://github.com/johaoooo/saveurs-d-agojies',
     desc: "E-boutique gastronomique dédiée aux mets et produits transformés du terroir béninois, avec panier interactif et tunnel d'achat optimisé.",
     description: "E-boutique gastronomique dédiée aux mets et produits transformés du terroir béninois, avec panier interactif et tunnel d'achat optimisé.",
     year: '2025',
@@ -111,6 +163,7 @@ export const PROJECTS = [
     sub: 'Plateforme E-learning & Certifications',
     subtitle: 'Plateforme E-learning & Certifications',
     cat: 'en-ligne',
+    market: 'Bénin',
     img: cld('/assets/images/projects/cnib-preview.webp'),
     image: cld('/assets/images/projects/cnib-preview.webp'),
     responsive: cld('/assets/images/projects/cnib-responsive.webp'),
@@ -129,6 +182,55 @@ export const PROJECTS = [
     solution: "Architecture découplée Django REST Framework + React/Vite déployée sur Render/Vercel. Intégration KKiaPay, stockage médias Cloudinary, avis et contrôle d'accès conditionnel.",
     result: "Plateforme fonctionnelle avec parcours apprenant complet, tests de validation et déblocage automatisé des attestations après paiement vérifié."
   },
+  {
+    id: 5,
+    title: 'XoboTicket',
+    sub: "Gestion & Réservation de Stands d'Exposition",
+    subtitle: "Gestion & Réservation de Stands d'Exposition",
+    cat: 'en-ligne',
+    market: 'Bénin',
+    img: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790938531/Capture_d_%C3%A9cran_du_2026-10-02_11-54-59_btn13p.png',
+    image: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790938531/Capture_d_%C3%A9cran_du_2026-10-02_11-54-59_btn13p.png',
+    responsive: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790938531/Capture_d_%C3%A9cran_du_2026-10-02_11-54-59_btn13p.png',
+    images: [
+      'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790938531/Capture_d_%C3%A9cran_du_2026-10-02_11-54-59_btn13p.png',
+      cld('/assets/images/projects/xobo-ticket-responsive.png'),
+    ],
+    imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790938531/Capture_d_%C3%A9cran_du_2026-10-02_11-54-59_btn13p.png',
+    tech: ['Django', 'React', 'Vite', 'PostgreSQL', 'RBAC', 'Render'],
+    url: 'https://xobo-ticket.vercel.app/',
+    github: 'https://github.com/johaoooo/xobo-ticket',
+    desc: "Système de réservation, attribution et validation de stands pour foires et événements avec contrôle d'accès par rôle (RBAC) et validation par jeton sécurisé.",
+    description: "Système de réservation, attribution et validation de stands pour foires et événements avec contrôle d'accès par rôle (RBAC) et validation par jeton sécurisé.",
+    year: '2026',
+    problem: "Gestion manuelle, lente et désorganisée des stands lors d'événements, avec risques de doublons et absence de traçabilité des exposants.",
+    solution: "Workflow complet : génération de code sécurisé envoyé par email, tableau de bord exposant/admin, navigation adaptée aux rôles et déploiement Render/Vercel.",
+    result: "Gain de temps de 80% dans la validation des stands et élimination complète des conflits d'attribution."
+  },
+  {
+    id: 13,
+    title: 'SchoolManager',
+    sub: 'Gestion Scolaire & Bibliothèque Numérique',
+    subtitle: 'Gestion Scolaire & Bibliothèque Numérique',
+    cat: 'en-ligne',
+    market: 'Bénin',
+    img: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790950553/Capture_d_%C3%A9cran_du_2026-10-02_15-13-35_pdk7mn.png',
+    image: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790950553/Capture_d_%C3%A9cran_du_2026-10-02_15-13-35_pdk7mn.png',
+    responsive: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790950553/Capture_d_%C3%A9cran_du_2026-10-02_15-13-35_pdk7mn.png',
+    images: [
+      'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790950553/Capture_d_%C3%A9cran_du_2026-10-02_15-13-35_pdk7mn.png',
+    ],
+    imgFb: 'https://res.cloudinary.com/dzxesa3wi/image/upload/v1790950553/Capture_d_%C3%A9cran_du_2026-10-02_15-13-35_pdk7mn.png',
+    tech: ['React.js', 'FastAPI', 'Python', 'SQLite', 'TailwindCSS', 'Vercel'],
+    url: 'https://school-manager-nu.vercel.app/',
+    github: 'https://github.com/johaoooo/school-manager',
+    desc: "Logiciel de gestion scolaire et académique avec bibliothèque numérique intégrée : gestion des élèves, bulletins de notes, finances et emplois du temps.",
+    description: "Logiciel de gestion scolaire et académique avec bibliothèque numérique intégrée : gestion des élèves, bulletins de notes, finances et emplois du temps.",
+    year: '2026',
+    problem: "Coupures d'internet fréquentes et manque d'outils logiciels fiables pour gérer les établissements scolaires et leur bibliothèque numérique.",
+    solution: "Application complète avec interface moderne React/Vite et API FastAPI, déployée en multi-services sur Vercel avec gestion des rôles et génération automatique des bulletins.",
+    result: "Gestion administrative et pédagogique continue sans interruption, réduction des erreurs de bulletins et accès instantané aux ressources éducatives."
+  }
 ]
 
 // ─── Pricing / Prestations ───────────────────────────────────────
@@ -306,10 +408,10 @@ export const TIMELINE = [
   {
     date: '2018 – Présent',
     title: 'Parcours Autodidacte & Certifications',
-    company: 'OpenClassrooms · Coursera · Cisco · FORCE-N · OIF/D-CLIC',
+    company: 'Google Cybersecurity · FORCE-N · Cisco · OIF/D-CLIC · Coursera',
     items: [
       "Formation continue en cybersécurité, réseaux et administration Linux",
-      "Certifications : Cisco, FORCE-N via Université Cheikh Amidou Kane, Bootcamp Cybersécurité OIF/D-CLIC",
+      "Certifications : Google Cybersecurity Professional Certificate, Cisco, FORCE-N via Université Cheikh Amidou Kane, Bootcamp Cybersécurité OIF/D-CLIC",
       "Spécialisation applicative : sécurisation web, OWASP Top 10 et bases de données relationnelles"
     ],
     tags: ['Autodidacte', 'Sécurité', 'Réseaux', 'Linux']
@@ -331,20 +433,22 @@ const TIMELINE_EXTRAS = [
   { icon: 'fa-user-secret', desc: "Tests d'intrusion applicatifs, détection de failles OWASP Top 10 et rapport d'audit.", progLabels: ['Pentest', 'Burp Suite', 'Rapport', 'Remédiation'], progValues: [90, 88, 92, 90] },
   { icon: 'fa-chalkboard-teacher', desc: "Formateur en informatique, compétences numériques et initiation au code web.", progLabels: ['Pédagogie', 'Bureautique', 'Web', 'Accompagnement'], progValues: [95, 90, 88, 92] },
   { icon: 'fa-wrench', desc: "Maintenance curative et préventive, dépannage système, réseau LAN et sauvegarde.", progLabels: ['Dépannage', 'Réseau', 'Système', 'Sauvegarde'], progValues: [92, 88, 90, 85] },
-  { icon: 'fa-graduation-cap', desc: "Parcours autodidacte : certifications en sécurité, réseaux et Linux via OpenClassrooms, Coursera, Cisco, FORCE-N et OIF/D-CLIC.", progLabels: ['Sécurité', 'Réseaux', 'Linux', 'Bases de données'], progValues: [85, 88, 90, 82] },
+  { icon: 'fa-graduation-cap', desc: "Parcours autodidacte & certifications : Google Cybersecurity Professional Certificate, FORCE-N, Cisco, OIF/D-CLIC et OpenClassrooms.", progLabels: ['Sécurité', 'Réseaux', 'Linux', 'Bases de données'], progValues: [85, 88, 90, 82] },
   { icon: 'fa-school', desc: "Baccalauréat Série D au CSP Hamadou Hampâté Bâ." },
 ]
 TIMELINE.forEach((t, i) => { if (TIMELINE_EXTRAS[i]) Object.assign(t, TIMELINE_EXTRAS[i]) })
 
 // ─── Compatibilité champs PROJECTS ───────────────────────────────
 const PROJECT_EXTRAS = {
-  7: { progress: 100, isPremium: true, color: '#ea8025' },
   4: { progress: 100, isPremium: true, color: '#cc4400' },
   1: { progress: 100, isPremium: true, color: '#0066cc' },
+  9: { progress: 100, isPremium: true, color: '#f59e0b' },
+  10: { progress: 95, isPremium: true, color: '#10b981' },
   2: { progress: 100, isPremium: true, color: '#8B0000' },
   3: { progress: 95, isPremium: true, color: '#b8860b' },
-  5: { progress: 90, color: '#2e7d32' },
-  6: { progress: 100, isPremium: true, color: '#552277' },
+  5: { progress: 95, isPremium: true, color: '#552277' },
+  13: { progress: 95, isPremium: true, color: '#2563eb' },
+  12: { progress: 90, color: '#ef4444' },
 }
 PROJECTS.forEach(p => {
   p.subtitle = p.sub

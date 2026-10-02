@@ -121,7 +121,7 @@ function ProjectDetailModal({ project, caseFlipped, onFlip, onClose }) {
                 <h3 className="fc-name">{project.title}</h3>
                 <h3 className="fc-sub">{project.sub}</h3>
                 <div className="fc-meta">
-                  <div className="fc-meta-row"><span className="fc-ml">Marché</span><span className="fc-mv">Côte d'Ivoire</span></div>
+                  <div className="fc-meta-row"><span className="fc-ml">Marché</span><span className="fc-mv">{project.market || (project.id === 1 || project.title?.includes('Agro Véto') ? 'Congo' : 'Bénin')}</span></div>
                   <div className="fc-meta-row"><span className="fc-ml">Rôle</span><span className="fc-mv">Conception & Développement</span></div>
                   <div className="fc-meta-row"><span className="fc-ml">Année</span><span className="fc-mv">{project.year}</span></div>
                 </div>

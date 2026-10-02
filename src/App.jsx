@@ -20,7 +20,7 @@ import HoverFadeText from './components/HoverFadeText.jsx'
 import PixelSliceTrail from './components/PixelSliceTrail.jsx'
 import CardSwap, { Card } from './components/CardSwap.jsx'
 import FlowingMenu from './components/FlowingMenu.jsx'
-import { PROJECTS, PRICING_TABS, FAQ_ITEMS, WRITING_POSTS, CONTACT, SKILLS, TIMELINE } from './data/portfolioData.js'
+import { PROJECTS, PRICING_TABS, FAQ_ITEMS, CONTACT, SKILLS, TIMELINE } from './data/portfolioData.js'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -1923,7 +1923,7 @@ function About() {
               <br /><br />
               J'ai conçu et déployé des plateformes complètes telles que <strong>Agro Véto Services</strong> (clinique vétérinaire & provenderie), <strong>Saveurs d'Agojiés</strong> (e-boutique gastronomique) ou <strong>CNIB Platform</strong> (e-learning avec paiement local KKiaPay).
               <br /><br />
-              Certifié par <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet), formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong> et en cours de finalisation du <strong>Google Cybersecurity Certificate</strong>, je mets mon savoir-faire au service de projets web résilients et sécurisés.
+              Titulaire du <strong>Google Cybersecurity Certificate</strong>, certifié par <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet) et formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong>, je mets mon savoir-faire au service de projets web résilients et sécurisés.
             </NeonFlickerText>
 
             {/* Bloc identitaire */}
@@ -1991,20 +1991,11 @@ function About() {
  snap, sans spotlight ni tilt (même garde-fou `canHover`
  que la parallaxe souris du Hero ci-dessus).
  ════════════════════════════════════════════ */
-const TL_BOARD_LAYOUT = [
-  { left: '0%', top: '6%', rot: -7 },
-  { left: '19%', top: '34%', rot: 5 },
-  { left: '38%', top: '4%', rot: -4 },
-  { left: '57%', top: '32%', rot: 8 },
-  { left: '74%', top: '10%', rot: -6 },
-]
-
-function TimelineCard({ item, index, layout, setCardRef }) {
+function TimelineCard({ item, index, setCardRef }) {
   return (
     <div
       ref={(el) => setCardRef(index, el)}
       className="tl-card"
-      style={{ left: layout.left, top: layout.top, zIndex: 10 + (TIMELINE.length - index) }}
     >
       <svg className="tl-pin" viewBox="0 0 100 100" aria-hidden="true">
         <ellipse cx="60" cy="85" rx="15" ry="5" fill="rgba(0,0,0,.35)" />
@@ -2035,8 +2026,6 @@ function TimelineBoard() {
   const boardRef = useRef(null)
   const spotlightRef = useRef(null)
   const cardsRef = useRef([])
-  const highestZRef = useRef(30)
-  const draggingRef = useRef(null)
 
   const setCardRef = useCallback((i, el) => { cardsRef.current[i] = el }, [])
 
@@ -2048,11 +2037,16 @@ function TimelineBoard() {
 
     const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (!canHover || reduceMotion) return /* le CSS prend le relais : rangée horizontale, cf. style.css */
+    if (!canHover || reduceMotion) {
+      cards.forEach(card => {
+        if (card) {
+          card.style.opacity = '1'
+          card.style.transform = ''
+        }
+      })
+      return
+    }
 
-    /* ── Spotlight — suit le curseur en x/y (transform GSAP), jamais en
-       left/top comme le prototype de référence : reste sur le
-       compositeur, zéro reflow à chaque mousemove. ── */
     gsap.set(spotlight, { xPercent: -50, yPercent: -50, x: -9999, y: -9999 })
     const spotX = gsap.quickTo(spotlight, 'x', { duration: 0.35, ease: 'power3.out' })
     const spotY = gsap.quickTo(spotlight, 'y', { duration: 0.35, ease: 'power3.out' })
@@ -2068,106 +2062,44 @@ function TimelineBoard() {
     board.addEventListener('pointermove', onBoardMove)
     board.addEventListener('pointerleave', onBoardLeave)
 
-    /* ── Par carte : position de repos + tilt 3D au survol + drag borné ── */
-    const perCardCleanups = cards.map((card, i) => {
-      gsap.set(card, { x: 0, y: 0, rotation: TL_BOARD_LAYOUT[i]?.rot || 0 })
-
-      const rxTo = gsap.quickTo(card, 'rotationX', { duration: 0.5, ease: 'power2.out' })
-      const ryTo = gsap.quickTo(card, 'rotationY', { duration: 0.5, ease: 'power2.out' })
-      let xSet = null, ySet = null
-      let originX = 0, originY = 0, startX = 0, startY = 0
-      let boundsX = [0, 0], boundsY = [0, 0]
-
-      const bringToFront = () => { highestZRef.current += 1; card.style.zIndex = highestZRef.current }
-
-      const onEnter = () => {
-        if (draggingRef.current !== null) return
-        bringToFront()
-        card.classList.add('tl-card--active')
-      }
-      const onMove = (e) => {
-        if (draggingRef.current !== null) return
-        const rect = card.getBoundingClientRect()
-        ryTo(gsap.utils.mapRange(0, rect.width, -14, 14, e.clientX - rect.left))
-        rxTo(gsap.utils.mapRange(0, rect.height, 14, -14, e.clientY - rect.top))
-      }
-      const onLeave = () => {
-        if (draggingRef.current !== null) return
-        rxTo(0); ryTo(0)
-        card.classList.remove('tl-card--active')
-      }
-
-      const onPointerMove = (e) => {
-        e.preventDefault()
-        xSet(gsap.utils.clamp(boundsX[0], boundsX[1], originX + (e.clientX - startX)))
-        ySet(gsap.utils.clamp(boundsY[0], boundsY[1], originY + (e.clientY - startY)))
-      }
-      const onPointerUp = () => {
-        draggingRef.current = null
-        card.classList.remove('tl-card--dragging')
-        gsap.to(card, { scale: 1, duration: 0.35, ease: 'back.out(2.6)' })
-        window.removeEventListener('pointermove', onPointerMove)
-        window.removeEventListener('pointerup', onPointerUp)
-      }
-      const onPointerDown = (e) => {
-        if (e.button > 0) return
-        draggingRef.current = i
-        bringToFront()
-        card.classList.add('tl-card--dragging')
-        rxTo(0); ryTo(0)
-        gsap.to(card, { scale: 1.03, duration: 0.2 })
-
-        xSet = gsap.quickSetter(card, 'x', 'px')
-        ySet = gsap.quickSetter(card, 'y', 'px')
-        originX = gsap.getProperty(card, 'x')
-        originY = gsap.getProperty(card, 'y')
-        startX = e.clientX
-        startY = e.clientY
-
-        /* Bornes calculées à la volée depuis la position actuelle —
-           tolère un léger débordement (comme un vrai post-it), mais
-           empêche de perdre une carte hors de l'écran (limite du
-           prototype HTML de référence, qui ne bornait rien). */
-        const boardRect = board.getBoundingClientRect()
-        const cardRect = card.getBoundingClientRect()
-        const margin = 50
-        boundsX = [-(cardRect.left - boardRect.left) - margin, (boardRect.right - cardRect.right) + margin]
-        boundsY = [-(cardRect.top - boardRect.top) - margin, (boardRect.bottom - cardRect.bottom) + margin]
-
-        window.addEventListener('pointermove', onPointerMove)
-        window.addEventListener('pointerup', onPointerUp)
-      }
-
-      card.addEventListener('pointerenter', onEnter)
-      card.addEventListener('pointermove', onMove)
-      card.addEventListener('pointerleave', onLeave)
-      card.addEventListener('pointerdown', onPointerDown)
-
-      return () => {
-        card.removeEventListener('pointerenter', onEnter)
-        card.removeEventListener('pointermove', onMove)
-        card.removeEventListener('pointerleave', onLeave)
-        card.removeEventListener('pointerdown', onPointerDown)
-        window.removeEventListener('pointermove', onPointerMove)
-        window.removeEventListener('pointerup', onPointerUp)
-      }
-    })
-
-    /* ── Entrée au scroll : les cartes "tombent" en place, en cascade ── */
+    /* ── Entrée au scroll : cascade fluide et propre ── */
     const introTween = gsap.fromTo(
       cards,
-      { opacity: 0, y: 46, scale: 0.92 },
+      { opacity: 0.05, y: 35, scale: 0.96 },
       {
-        opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out', stagger: 0.09,
-        scrollTrigger: { trigger: board, start: 'top 85%', toggleActions: 'play none none reverse' },
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.65,
+        ease: 'power3.out',
+        stagger: 0.07,
+        scrollTrigger: {
+          trigger: board,
+          start: 'top 90%',
+          once: true,
+          onEnter: () => {
+            cards.forEach(c => { if (c) c.style.opacity = '1' })
+          },
+        },
+        onComplete: () => {
+          cards.forEach(c => { if (c) gsap.set(c, { clearProps: 'transform' }) })
+        },
       }
     )
 
+    const safetyTimer = setTimeout(() => {
+      cards.forEach(card => {
+        if (card && (window.getComputedStyle(card).opacity === '0' || card.style.opacity === '0')) {
+          gsap.to(card, { opacity: 1, y: 0, scale: 1, duration: 0.35, onComplete: () => gsap.set(card, { clearProps: 'transform' }) })
+        }
+      })
+    }, 1200)
+
     return () => {
+      clearTimeout(safetyTimer)
       board.removeEventListener('pointerenter', onBoardEnter)
       board.removeEventListener('pointermove', onBoardMove)
       board.removeEventListener('pointerleave', onBoardLeave)
-      perCardCleanups.forEach(fn => fn())
       introTween.scrollTrigger?.kill()
       introTween.kill()
     }
@@ -2188,7 +2120,6 @@ function TimelineBoard() {
             key={i}
             item={item}
             index={i}
-            layout={TL_BOARD_LAYOUT[i] || TL_BOARD_LAYOUT[TL_BOARD_LAYOUT.length - 1]}
             setCardRef={setCardRef}
           />
         ))}
@@ -2205,7 +2136,6 @@ function Timeline() {
         De la <strong>sécurité informatique</strong> au développement web : chaque étape
         a renforcé ma méthode et ma rigueur technique.
       </NeonFlickerText>
-      <p className="tl-board-hint">Glisse les cartes pour explorer</p>
       <TimelineBoard />
     </section>
   )
@@ -2378,20 +2308,13 @@ const CrossIcon = () => (
  Gauche : images du process empilées (stack crossfade)
  Droite : textes étape (sticky switch scrub)
  ════════════════════════════════════════════ */
-const CONTENT_BOARD_LAYOUT = [
-  { left: '0%', top: '8%', rot: -6 },
-  { left: '20%', top: '35%', rot: 5 },
-  { left: '39%', top: '5%', rot: -4 },
-  { left: '58%', top: '33%', rot: 7 },
-  { left: '76%', top: '10%', rot: -5 },
-]
-function ContentBoardCard({ item, index, layout, setCardRef, total }) {
+function ContentBoardCard({ item, index, setCardRef, total }) {
   const features = item.features?.length ? item.features : [item.tag || item.sub]
+  const isCentered = total % 3 === 1 && index === total - 1
   return (
     <div
       ref={(el) => setCardRef(index, el)}
-      className="tl-card content-board-card"
-      style={{ left: layout.left, top: layout.top, zIndex: 10 + (total - index) }}
+      className={`tl-card content-board-card ${isCentered ? 'content-board-card--centered' : ''}`}
     >
       <svg className="tl-pin" viewBox="0 0 100 100" aria-hidden="true">
         <ellipse cx="60" cy="85" rx="15" ry="5" fill="rgba(0,0,0,.35)" />
@@ -2415,14 +2338,12 @@ function ContentBoardCard({ item, index, layout, setCardRef, total }) {
     </div>
   )
 }
+
 function InteractiveContentBoard({ items, variant }) {
   const boardRef = useRef(null)
   const spotlightRef = useRef(null)
   const cardsRef = useRef([])
-  const highestZRef = useRef(30)
-  const draggingRef = useRef(null)
   const setCardRef = useCallback((i, el) => { cardsRef.current[i] = el }, [])
-  const layoutFor = (i) => CONTENT_BOARD_LAYOUT[i % CONTENT_BOARD_LAYOUT.length]
 
   useEffect(() => {
     const board = boardRef.current
@@ -2431,7 +2352,15 @@ function InteractiveContentBoard({ items, variant }) {
     if (!board || !spotlight || !cards.length) return
     const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (!canHover || reduceMotion) return
+    if (!canHover || reduceMotion) {
+      cards.forEach(card => {
+        if (card) {
+          card.style.opacity = '1'
+          card.style.transform = ''
+        }
+      })
+      return
+    }
 
     gsap.set(spotlight, { xPercent: -50, yPercent: -50, x: -9999, y: -9999 })
     const spotX = gsap.quickTo(spotlight, 'x', { duration: 0.35, ease: 'power3.out' })
@@ -2447,78 +2376,33 @@ function InteractiveContentBoard({ items, variant }) {
     board.addEventListener('pointermove', onBoardMove)
     board.addEventListener('pointerleave', onBoardLeave)
 
-    const cleanups = cards.map((card, i) => {
-      gsap.set(card, { x: 0, y: 0, rotation: layoutFor(i).rot })
-      const rxTo = gsap.quickTo(card, 'rotationX', { duration: 0.5, ease: 'power2.out' })
-      const ryTo = gsap.quickTo(card, 'rotationY', { duration: 0.5, ease: 'power2.out' })
-      let xSet = null, ySet = null
-      let originX = 0, originY = 0, startX = 0, startY = 0
-      let boundsX = [0, 0], boundsY = [0, 0]
-      const bringToFront = () => { highestZRef.current += 1; card.style.zIndex = highestZRef.current }
-      const onEnter = () => { if (draggingRef.current === null) { bringToFront(); card.classList.add('tl-card--active') } }
-      const onMove = (e) => {
-        if (draggingRef.current !== null) return
-        const rect = card.getBoundingClientRect()
-        ryTo(gsap.utils.mapRange(0, rect.width, -14, 14, e.clientX - rect.left))
-        rxTo(gsap.utils.mapRange(0, rect.height, 14, -14, e.clientY - rect.top)
-        )
-      }
-      const onLeave = () => { if (draggingRef.current === null) { rxTo(0); ryTo(0); card.classList.remove('tl-card--active') } }
-      const onPointerMove = (e) => {
-        e.preventDefault()
-        xSet(gsap.utils.clamp(boundsX[0], boundsX[1], originX + (e.clientX - startX)))
-        ySet(gsap.utils.clamp(boundsY[0], boundsY[1], originY + (e.clientY - startY)))
-      }
-      const onPointerUp = () => {
-        draggingRef.current = null
-        card.classList.remove('tl-card--dragging')
-        gsap.to(card, { scale: 1, duration: 0.35, ease: 'back.out(2.6)' })
-        window.removeEventListener('pointermove', onPointerMove)
-        window.removeEventListener('pointerup', onPointerUp)
-      }
-      const onPointerDown = (e) => {
-        if (e.button > 0) return
-        draggingRef.current = i
-        bringToFront()
-        card.classList.add('tl-card--dragging')
-        rxTo(0); ryTo(0)
-        gsap.to(card, { scale: 1.03, duration: 0.2 })
-        xSet = gsap.quickSetter(card, 'x', 'px')
-        ySet = gsap.quickSetter(card, 'y', 'px')
-        originX = gsap.getProperty(card, 'x')
-        originY = gsap.getProperty(card, 'y')
-        startX = e.clientX
-        startY = e.clientY
-        const boardRect = board.getBoundingClientRect()
-        const cardRect = card.getBoundingClientRect()
-        const margin = 50
-        boundsX = [-(cardRect.left - boardRect.left) - margin, (boardRect.right - cardRect.right) + margin]
-        boundsY = [-(cardRect.top - boardRect.top) - margin, (boardRect.bottom - cardRect.bottom) + margin]
-        window.addEventListener('pointermove', onPointerMove)
-        window.addEventListener('pointerup', onPointerUp)
-      }
-      card.addEventListener('pointerenter', onEnter)
-      card.addEventListener('pointermove', onMove)
-      card.addEventListener('pointerleave', onLeave)
-      card.addEventListener('pointerdown', onPointerDown)
-      return () => {
-        card.removeEventListener('pointerenter', onEnter)
-        card.removeEventListener('pointermove', onMove)
-        card.removeEventListener('pointerleave', onLeave)
-        card.removeEventListener('pointerdown', onPointerDown)
-        window.removeEventListener('pointermove', onPointerMove)
-        window.removeEventListener('pointerup', onPointerUp)
-      }
+    const introTween = gsap.fromTo(cards, { opacity: 0.05, y: 35, scale: 0.96 }, {
+      opacity: 1, y: 0, scale: 1, duration: 0.65, ease: 'power3.out', stagger: 0.07,
+      scrollTrigger: {
+        trigger: board,
+        start: 'top 90%',
+        once: true,
+        onEnter: () => {
+          cards.forEach(c => { if (c) c.style.opacity = '1' })
+        },
+      },
+      onComplete: () => {
+        cards.forEach(c => { if (c) gsap.set(c, { clearProps: 'transform' }) })
+      },
     })
-    const introTween = gsap.fromTo(cards, { opacity: 0, y: 46, scale: 0.92 }, {
-      opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out', stagger: 0.09,
-      scrollTrigger: { trigger: board, start: 'top 85%', toggleActions: 'play none none reverse' },
-    })
+    const safetyTimer = setTimeout(() => {
+      cards.forEach(card => {
+        if (card && (window.getComputedStyle(card).opacity === '0' || card.style.opacity === '0')) {
+          gsap.to(card, { opacity: 1, y: 0, scale: 1, duration: 0.35, onComplete: () => gsap.set(card, { clearProps: 'transform' }) })
+        }
+      })
+    }, 1200)
+
     return () => {
+      clearTimeout(safetyTimer)
       board.removeEventListener('pointerenter', onBoardEnter)
       board.removeEventListener('pointermove', onBoardMove)
       board.removeEventListener('pointerleave', onBoardLeave)
-      cleanups.forEach(fn => fn())
       introTween.scrollTrigger?.kill()
       introTween.kill()
     }
@@ -2530,7 +2414,7 @@ function InteractiveContentBoard({ items, variant }) {
       <div className="tl-board-bgtext" aria-hidden="true"><span>{variant}</span><span>JOHAODEV</span></div>
       <div className="tl-board-cards">
         {items.map((item, i) => (
-          <ContentBoardCard key={`${variant}-${item.n || i}`} item={item} index={i} total={items.length} layout={layoutFor(i)} setCardRef={setCardRef} />
+          <ContentBoardCard key={`${variant}-${item.n || i}`} item={item} index={i} total={items.length} setCardRef={setCardRef} />
         ))}
       </div>
     </div>
@@ -2946,152 +2830,6 @@ function TestiCard({ t }) {
         </div>
       </div>
     </div>
-  )
-}
-
-/* ════════════════════════════════════════════
- BLOG — 6 posts LinkedIn, carrousel auto-défilant
- (CardSwap, même mécanique que TESTIMONIALS) +
- renvoi vers le profil complet.
- ════════════════════════════════════════════ */
-function WritingSection() {
-  return (
-    <section id="writing-section" className="blog-cardswap-section" style={{ padding: '10vh 0 4vh', overflow: 'hidden' }}>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-          gap: '2.5rem',
-          flexWrap: 'wrap',
-          padding: '0 4vw',
-        }}
-      >
-        <div className="content-section-layout blog-cardswap-layout">
-        <div className="content-section-copy blog-cardswap-copy" style={{ maxWidth: 360, flexShrink: 0 }}>
-          <SectionHeading num="02" title="BLOG" sub="Ce que je partage sur LinkedIn" style={{ marginBottom: '1.2rem' }} />
-
-          <h3 style={{ fontSize: '.88rem', color: 'var(--muted)', lineHeight: 1.7 }}>
-            Clique dessus pour lire le post complet sur LinkedIn.
-          </h3>
-
-          <a
-            href={CONTACT.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              display: 'inline-flex',
-              marginTop: '1.5rem',
-              fontSize: '.85rem',
-              fontWeight: 600,
-              color: 'var(--text)',
-              textDecoration: 'none',
-              borderBottom: '1px solid var(--text)',
-              paddingBottom: '2px',
-            }}
-          >
-            Voir tous mes posts sur LinkedIn →
-          </a>
-        </div>
-
-        <div className="blog-cardswap-slot"
-          style={{
-            position: 'relative',
-            width: 440,
-            height: 420,
-            flexShrink: 0,
-            marginLeft: 'clamp(0rem, 1vw, .5rem)'
-          }}
-        >
-          <CardSwap
-            width={440}
-            height={420}
-            cardDistance={48}
-            verticalDistance={54}
-            delay={7000}
-            pauseOnHover={true}
-            skewAmount={4}
-            easing="elastic.out(1, 0.8)"
-          >
-            {WRITING_POSTS.map((post) => (
-              <Card key={post.id} customClass="writing-card">
-                <a
-                  href={post.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    height: '100%',
-                    padding: '1.5rem',
-                    boxSizing: 'border-box',
-                    textDecoration: 'none',
-                    color: 'inherit',
-                  }}
-                >
-                  <div>
-                    <span
-                      style={{
-                        display: 'inline-block',
-                        fontFamily: "'Space Mono',monospace",
-                        fontSize: '.58rem',
-                        letterSpacing: '.1em',
-                        textTransform: 'uppercase',
-                        color: 'var(--accent)',
-                        border: '1px solid rgba(94, 130, 75,.3)',
-                        borderRadius: '999px',
-                        padding: '3px 10px',
-                        marginBottom: '1rem',
-                      }}
-                    >
-                      {post.tag}
-                    </span>
-                    <h3
-                      style={{
-                        fontFamily: 'var(--fd)',
-                        fontSize: '1.05rem',
-                        lineHeight: 1.4,
-                        color: 'var(--text)',
-                        marginBottom: '.7rem',
-                      }}
-                    >
-                      {post.hook}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: 'var(--fb)',
-                        fontSize: '.82rem',
-                        lineHeight: 1.6,
-                        color: 'var(--muted)',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 4,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
-                      }}
-                    >
-                      {post.excerpt}
-                    </p>
-                  </div>
-                  <span
-                    style={{
-                      fontFamily: 'var(--fb)',
-                      fontSize: '.76rem',
-                      fontWeight: 700,
-                      color: 'var(--accent)',
-                      marginTop: '1rem',
-                    }}
-                  >
-                    Lire sur LinkedIn ↗
-                  </span>
-                </a>
-              </Card>
-            ))}
-          </CardSwap>
-        </div>
-        </div>
-      </div>
-    </section>
   )
 }
 
@@ -4259,7 +3997,6 @@ export default function App() {
             <GitHubInteractiveCard />
           </div>
         </section>
-        <WritingSection />
         <HorizontalParallax />
         <SkillsSection />
         <ProcessSection />

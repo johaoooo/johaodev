@@ -1181,7 +1181,7 @@ function FeaturedCreationDesktop() {
           </div>
           <div className="fc-meta">
             <div className="fc-meta-row"><span className="fc-ml">Type</span><span className="fc-mv">Application Web Full-Stack</span></div>
-            <div className="fc-meta-row"><span className="fc-ml">Marché</span><span className="fc-mv">Côte d'Ivoire</span></div>
+            <div className="fc-meta-row"><span className="fc-ml">Marché</span><span className="fc-mv">{proj.market || (proj.id === 1 || proj.title?.includes('Agro Véto') ? 'Congo' : 'Bénin')}</span></div>
             <div className="fc-meta-row"><span className="fc-ml">Mon rôle</span><span className="fc-mv">Conception & Développement</span></div>
             <div className="fc-meta-row"><span className="fc-ml">Année</span><span className="fc-mv">{proj.year}</span></div>
           </div>
@@ -1280,7 +1280,7 @@ function About() {
             </p>
 
             <p className="about-text" style={{ marginTop: '1rem' }}>
-              Je suis aussi en grande partie <strong>autodidacte</strong>.
+              Je suis en grande partie <strong>autodidacte</strong>, titulaire du <strong>Google Cybersecurity Certificate</strong> et certifié <strong>Force-N</strong>.
               J’apprends vite, j’expérimente beaucoup et chaque projet est pour moi
               une nouvelle manière de progresser, tester des idées et repousser mon niveau.
             </p>

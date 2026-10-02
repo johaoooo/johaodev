@@ -169,7 +169,7 @@ export const STRUCTURED_DATA = {
       { '@type': 'City', name: 'Porto-Novo' },
       { '@type': 'City', name: 'Cotonou' },
       { '@type': 'Country', name: 'Togo' },
-      { '@type': 'Country', name: 'Côte d’Ivoire' },
+      { '@type': 'Country', name: 'Congo' },
       { '@type': 'Country', name: 'Sénégal' },
       { '@type': 'Country', name: 'France' },
     ],

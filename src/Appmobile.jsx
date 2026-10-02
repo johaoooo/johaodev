@@ -9,7 +9,7 @@ import MobileLoader from './components/MobileLoader.jsx';
 import { gsap } from 'gsap';
 import SoundToggle from './components/SoundToggle.jsx';
 import { useImmersiveSound } from './hooks/useImmersiveSound.js';
-import { PROJECTS, PRICING_TABS, FAQ_ITEMS, WRITING_POSTS, CONTACT, TIMELINE } from './data/portfolioData.js';
+import { PROJECTS, PRICING_TABS, FAQ_ITEMS, CONTACT, TIMELINE } from './data/portfolioData.js';
 import { cld, SITE_LOGO } from './lib/cloudinary'
 
 
@@ -2438,7 +2438,7 @@ const About = ({ dark }) => {
             <p>Titulaire d'un <strong>Bac scientifique</strong> et <strong>autodidacte passionné</strong>, formé via <strong>OpenClassrooms, Coursera, Cisco, Université Cheikh Amidou Kane via FORCE-N</strong> et <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong>, j'allie rigueur d'audit (OWASP Top 10, tests d'intrusion avec Burp Suite, Kali Linux) et développement web moderne.</p>
             <p>Côté dev, je conçois des applications robustes avec <strong>React</strong>, <strong>Django REST Framework</strong>, <strong>PostgreSQL</strong> et <strong>Tailwind CSS</strong>, guidé par les principes de <em>Security by Design</em>.</p>
             <p>J'ai développé des projets d'envergure comme <strong>Agro Véto Services</strong> (clinique vétérinaire et provenderie), <strong>Saveurs d'Agojiés</strong> (e-boutique gastronomique) ou <strong>CNIB Platform</strong> (e-learning et paiement local KKiaPay).</p>
-            <p>Certifié <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet), formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong> et en cours de finalisation du <strong>Google Cybersecurity Certificate</strong>.</p>
+            <p>Titulaire du <strong>Google Cybersecurity Certificate</strong>, certifié <strong>Force-N</strong> (IA, Marketing Digital, Informatique & Internet) et formé au <strong>Bootcamp Cybersécurité OIF/D-CLIC</strong>.</p>
             <div className={`about-tags ${dark ? 'about-tags--dark' : ''}`}>{["Sécurité OWASP", "Burp Suite", "React / Django", "Kali Linux", "Rigueur", "Autonomie"].map(t => <span key={t}>{t}</span>)}</div>
             <MagBtn className={`btn ${dark ? 'btn--neon' : 'btn--primary'} mi-glint`} onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Disponible pour opportunités →</MagBtn>
           </div>
@@ -3299,90 +3299,6 @@ const TESTIMONIALS = [
   },
 ];
 
-/* ════════════════════════════════════════════
-   BLOG — 6 posts LinkedIn, carrousel auto-défilant
-   toutes les 4s (même mécanique que Testimonials
-   juste en dessous : 1 card affichée à la fois,
-   barre de progression, dots cliquables). Classes
-   dédiées wr-* dans stylemobile.css, mêmes variables
-   thème que le reste (var(--ink)/--paper/--acc/
-   --muted/--border) : s'adapte automatiquement au
-   thème via .app--light, sans logique dark/light
-   séparée à maintenir ici.
-   ════════════════════════════════════════════ */
-const WritingSection = ({ dark }) => {
-  const [active, setActive] = useState(0);
-  const total = WRITING_POSTS.length;
-  const post = WRITING_POSTS[active];
-
-  /* ── Auto-slide toutes les 4s ── */
-  useEffect(() => {
-    const id = setInterval(() => setActive(a => (a + 1) % total), 7000);
-    return () => clearInterval(id);
-  }, [total]);
-
-  return (
-    <section id="writing" className={dark ? 'section--dark' : ''} style={{ padding: '0 5vw 4vh' }}>
-      <div className="s-hd">
-        <span className="s-lbl">// BLOG</span>
-        <h2 className="s-ttl">Ce que je<br />partage.</h2>
-      </div>
-
-      <div className="wr-wrap">
-        <div className={`wr-counter ${dark ? 'wr-counter--dark' : ''}`}>
-          <span className="wr-count-cur">{String(active + 1).padStart(2, '0')}</span>
-          <span className="wr-count-sep"> / </span>
-          <span>{String(total).padStart(2, '0')}</span>
-        </div>
-
-        <a
-          key={active}
-          href={post.url}
-          target="_blank"
-          rel="noreferrer"
-          className={`wr-card ${dark ? 'wr-card--dark' : ''}`}
-        >
-          <span className="wr-tag">{post.tag}</span>
-          <h3 className="wr-hook">{post.hook}</h3>
-          <p className="wr-excerpt">{post.excerpt}</p>
-          <span className="wr-link">Lire sur LinkedIn ↗</span>
-          <div className="wr-progress"><div className="wr-progress-fill" /></div>
-        </a>
-
-        <div className="wr-dots-only">
-          {WRITING_POSTS.map((_, i) => (
-            <button
-              key={i}
-              className={`wr-dot ${i === active ? 'wr-dot--on' : ''} ${dark ? 'wr-dot--dark' : ''}`}
-              onClick={() => setActive(i)}
-              aria-label={`Post ${i + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-
-      <a
-        href={CONTACT.linkedin}
-        target="_blank"
-        rel="noreferrer"
-        style={{
-          display: 'inline-flex',
-          marginTop: '1.3rem',
-          fontFamily: 'var(--fb)',
-          fontSize: '.8rem',
-          fontWeight: 700,
-          color: 'var(--ink)',
-          textDecoration: 'none',
-          borderBottom: '1px solid var(--ink)',
-          paddingBottom: '2px',
-        }}
-      >
-        Voir tous mes posts sur LinkedIn →
-      </a>
-    </section>
-  );
-};
-
 const Testimonials = ({ dark }) => {
   const [ref, vis] = useInView(0.08);
   const [active, setActive] = useState(0);
@@ -4002,7 +3918,6 @@ export default function App() {
             <Projects dark={dark} />
             <Skills dark={dark} />
             <Testimonials dark={dark} />
-            <WritingSection dark={dark} />
             <FAQSection dark={dark} />
             <Contact dark={dark} />
           </ScrollDepthScene>
